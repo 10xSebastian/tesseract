@@ -1,0 +1,32 @@
+/* No files to import found in mixins/* */
+.font-size-extra-small, .headline-extra-small {
+  font-size: 80%; }
+
+.font-size-small, .headline-small {
+  font-size: 100%; }
+
+.font-size-medium, .headline-medium {
+  font-size: 140%; }
+
+.font-size-large, .headline-large {
+  font-size: 200%; }
+
+.font-size-extra-large, .headline-extra-large {
+  font-size: 280%; }
+
+.font-weight-extra-small, .headline-extra-small {
+  font-weight: 200; }
+
+.font-weight-small, .headline-small {
+  font-weight: 300; }
+
+.font-weight-medium, .headline-medium {
+  font-weight: 400; }
+
+.font-weight-large, .headline-large {
+  font-weight: 500; }
+
+.font-weight-extra-large, .headline-extra-large {
+  font-weight: 600; }
+
+/*# sourceMappingURL=cssop.css.map */
