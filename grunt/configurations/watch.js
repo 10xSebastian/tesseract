@@ -3,11 +3,11 @@ module.exports = {
     livereload: true
   },
   sass: {
-    files: 'src/sass/**',
+    files: 'src/sass/{**/,}*.sass',
     tasks: ['compass:serve']
   },
   haml: {
-    files: 'src/**.haml',
+    files: 'src/index.haml',
     tasks: ['haml:serve']
   }
 };
