@@ -2,6 +2,7 @@ module.exports = {
   options: {
     require: 'sass-globbing',
     sassDir: 'src/sass',
+    importPath: ['node_modules/normalize-scss'],
     sourcemap: true
   },
   dist: {

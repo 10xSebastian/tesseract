@@ -10,6 +10,9 @@ This css framework is build upon existing software principles to help keeping th
 
 ## Principles
 
+## CSS Normalization / CSS Reset
+CSSoP uses [normalize.css](https://necolas.github.io/normalize.css/) to make browsers render all elements more consistently and in line with modern standards. It precisely targets only the styles that need normalizing.
+
 ## Development
 
 Requires to have node.js, ruby and bundler installed.
