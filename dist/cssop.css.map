@@ -1,6 +1,6 @@
 {
 "version": 3,
-"mappings": ";AAAA,6CAAsB;EACpB,SAAS,ECDuB,GAAG;;ADGrC,iCAAgB;EACd,SAAS,ECHuB,IAAI;;ADKtC,mCAAiB;EACf,SAAS,ECLuB,IAAI;;ADOtC,iCAAgB;EACd,SAAS,ECPuB,IAAI;;ADStC,6CAAsB;EACpB,SAAS,ECTuB,IAAI;;ACJtC,+CAAwB;EACtB,WAAW,ECDqB,GAAG;;ADGrC,mCAAkB;EAChB,WAAW,ECHqB,GAAG;;ADKrC,qCAAmB;EACjB,WAAW,ECLqB,GAAG;;ADOrC,mCAAkB;EAChB,WAAW,ECPqB,GAAG;;ADSrC,+CAAwB;EACtB,WAAW,ECTqB,GAAG",
+"mappings": ";;AAAA,6CAAsB;EACpB,SAAS,ECDuB,GAAG;;;;ADGrC,iCAAgB;EACd,SAAS,ECHuB,IAAI;;;;ADKtC,mCAAiB;EACf,SAAS,ECLuB,IAAI;;;;ADOtC,iCAAgB;EACd,SAAS,ECPuB,IAAI;;;;ADStC,6CAAsB;EACpB,SAAS,ECTuB,IAAI;;;;ACJtC,+CAAwB;EACtB,WAAW,ECDqB,GAAG;;;;ADGrC,mCAAkB;EAChB,WAAW,ECHqB,GAAG;;;;ADKrC,qCAAmB;EACjB,WAAW,ECLqB,GAAG;;;;ADOrC,mCAAkB;EAChB,WAAW,ECPqB,GAAG;;;;ADSrC,+CAAwB;EACtB,WAAW,ECTqB,GAAG",
 "sources": ["../src/sass/modules/font-size.sass","../src/sass/variables/font-size.sass","../src/sass/modules/font-weight.sass","../src/sass/variables/font-weight.sass"],
 "names": [],
 "file": "cssop.css"

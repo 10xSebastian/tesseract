@@ -3,7 +3,7 @@ module.exports = function(grunt) {
   grunt.registerTask('serve', function () {
 
     grunt.task.run([
-      'sass:serve',
+      'compass:serve',
       'haml:serve',
       'connect:serve',
       'open:serve',
