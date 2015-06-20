@@ -12,6 +12,22 @@ This css framework is build upon existing software principles to help keeping th
 
 ## Development
 
+Requires to have node.js, ruby and bundler installed.
+
+###  Intitial checkout
+
+```
+git clone git@github.com:pape-io/cssop.git
+
+cd cssop
+
+bundle install
+
+npm install
+
+grunt
+```
+
 ### Build processes
 
 #### Serve
