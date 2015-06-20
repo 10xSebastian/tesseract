@@ -5,6 +5,9 @@ module.exports = function(grunt) {
     grunt.task.run([
       'compass:serve',
       'haml:serve',
+      'uncss:serve',
+      'diffalert:serve',
+      'concat_css:serve',
       'connect:serve',
       'open:serve',
       'watch'

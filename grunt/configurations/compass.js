@@ -2,8 +2,9 @@ module.exports = {
   options: {
     require: 'sass-globbing',
     sassDir: 'src/sass',
-    importPath: ['node_modules/normalize-scss'],
-    sourcemap: true
+    importPath: ['node_modules'],
+    sourcemap: true,
+    noLineComments: true
   },
   dist: {
     options : {
@@ -14,7 +15,10 @@ module.exports = {
   serve: {
     options : {
       cssDir: '.tmp',
-      specify: 'src/sass/cssop.sass'
+      specify: [
+        'src/sass/cssop.sass',
+        'src/sass/normalize.sass'
+      ]
     }
   }
 };

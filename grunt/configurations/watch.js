@@ -4,7 +4,7 @@ module.exports = {
   },
   sass: {
     files: 'src/sass/{**/,}*.sass',
-    tasks: ['compass:serve']
+    tasks: ['compass:serve', 'uncss:serve', 'diffalert:serve', 'concat_css:serve']
   },
   haml: {
     files: 'src/index.haml',
