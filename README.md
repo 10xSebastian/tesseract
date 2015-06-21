@@ -31,6 +31,10 @@ npm install
 grunt
 ```
 
+###  Ensuring CSS Performance
+
+Because the amount css rules has a big impact on the browsers rendering performance, CSSoP uses [uncss](https://github.com/giakki/uncss) for detecting unused and [csscss](https://github.com/zmoazeni/csscss) for detecting redundant css rules.
+
 ### Build processes
 
 #### Serve
