@@ -18,6 +18,7 @@
     "normalize-scss": "~3.0.1-a",
     "grunt-uncss": "~0.4.2",
     "grunt-concat-css": "~0.3.1",
-    "diff": "~1.4.0"
+    "diff": "~1.4.0",
+    "grunt-csscss": "~0.6.2"
   }
 }

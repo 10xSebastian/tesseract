@@ -7,6 +7,7 @@ module.exports = function(grunt) {
       'haml:serve',
       'uncss:serve',
       'diffalert:serve',
+      'csscss:serve',
       'concat_css:serve',
       'connect:serve',
       'open:serve',
