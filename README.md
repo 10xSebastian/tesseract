@@ -4,11 +4,17 @@ It’s a challenge in any web development project to structure and organize all 
 
 Existing css frameworks often try to introduce new principles. You always have to learn the new concepts behind, what is not simplifying the use of them.
 
-This css framework is build upon existing software principles to help keeping things simple and manageable.
+This css framework is build upon existing software principles and terminology to help keeping things simple and manageable.
 
 ## Quick start guide
 
 ## Principles
+
+## Modules & Components
+With modules, concerns are separated. It's a self-contained unit that in a bigger context can be reused to execute the same action/functionality over and over again.
+Flexibility and reuseablity are the benefits of modules. 
+
+A component, by definition, is a unit of composition. It the context of this css-framwork, a component is made up of multiple modules.
 
 ## CSS Normalization / CSS Reset
 CSSoP uses [normalize.css](https://necolas.github.io/normalize.css/) to make browsers render all elements more consistently and in line with modern standards. It precisely targets only the styles that need normalizing.
