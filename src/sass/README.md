@@ -1,6 +1,6 @@
 # Sass
 
-All the Sass-files are seperated in variables (sass-variables), mixins (sass-mixins), modules and components.
+All the Sass-files are seperated in variables (sass-variables), modules and components.
 
 ## Modules
 With modules, concerns are separated. It's a self-contained unit that in a bigger context can be reused to execute the same action/functionality over and over again.

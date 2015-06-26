@@ -23,7 +23,7 @@ CSSoP uses [normalize.css](https://necolas.github.io/normalize.css/) to make bro
 
 Requires to have node.js, ruby and bundler installed.
 
-###  Intitial checkout
+### Intitial checkout
 
 ```
 git clone git@github.com:pape-io/cssop.git
@@ -37,7 +37,12 @@ npm install
 grunt
 ```
 
-###  Ensuring CSS Performance
+### Regression testing
+
+This project uses [PhanomCSS](https://github.com/Huddle/PhantomCSS) and [grunt-phantomcss](https://github.com/chrisgladd/grunt-phantomcss) for testing the reference page for regressions during development.
+It tests the latest distribution reference html page against the one you are currently working on for visual changes/differences.
+
+### Ensuring CSS Performance
 
 Because the amount css rules has a big impact on the browsers rendering performance, CSSoP uses [uncss](https://github.com/giakki/uncss) for detecting unused and [csscss](https://github.com/zmoazeni/csscss) for detecting redundant css rules.
 

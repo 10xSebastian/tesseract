@@ -16,8 +16,7 @@ module.exports = {
     options : {
       cssDir: '.tmp',
       specify: [
-        'src/sass/cssop.sass',
-        'src/sass/normalize.sass'
+        'src/sass/cssop.sass'
       ]
     }
   }

@@ -1,6 +1,10 @@
 module.exports = {
   serve: {
-    src: ['.tmp/normalize.css', '.tmp/cssop.css'],
+    src: ['node_modules/normalize-css/normalize.css', '.tmp/cssop.css'],
     dest: '.tmp/cssop.css'
+  },
+  dist: {
+    src: ['node_modules/normalize-css/normalize.css', 'dist/cssop.css'],
+    dest: 'dist/cssop.css'
   },
 };

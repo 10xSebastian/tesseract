@@ -5,6 +5,8 @@ module.exports = {
   sass: {
     files: 'src/sass/{**/,}*.sass',
     tasks: [
+      'clean:serve',
+      'haml:serve', 
       'compass:serve', 
       'uncss:serve', 
       'diffalert:serve', 
@@ -15,6 +17,7 @@ module.exports = {
   haml: {
     files: 'src/index.haml',
     tasks: [
+      'clean:serve',
       'haml:serve', 
       'compass:serve', 
       'uncss:serve', 

@@ -3,6 +3,7 @@ module.exports = function(grunt) {
   grunt.registerTask('serve', function () {
 
     grunt.task.run([
+      'clean:serve',
       'compass:serve',
       'haml:serve',
       'uncss:serve',

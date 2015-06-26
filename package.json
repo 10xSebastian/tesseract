@@ -15,10 +15,14 @@
     "grunt-contrib-cssmin": "~0.12.3",
     "grunt-contrib-clean": "~0.6.0",
     "grunt-contrib-compass": "~1.0.3",
-    "normalize-scss": "~3.0.1-a",
     "grunt-uncss": "~0.4.2",
     "grunt-concat-css": "~0.3.1",
+    "normalize-css": "~2.3.1",
     "diff": "~1.4.0",
-    "grunt-csscss": "~0.6.2"
+    "grunt-csscss": "~0.6.2",
+    "phantomcss": "~0.10.1",
+    "phantomjs": "~1.9.17",
+    "grunt-phantomcss": "git://github.com/pape-io/grunt-phantomcss",
+    "casperjs": "~1.1.0-beta3"
   }
 }

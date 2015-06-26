@@ -1,4 +1,4 @@
 module.exports = {
-  serve: ".tmp",
-  dist: "dist"
+  serve: '.tmp' ,
+  dist: 'dist'
 };
