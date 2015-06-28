@@ -39,8 +39,9 @@ grunt
 
 ### Regression testing
 
-This project uses [PhanomCSS](https://github.com/Huddle/PhantomCSS) and [grunt-phantomcss](https://github.com/chrisgladd/grunt-phantomcss) for testing the reference page for regressions during development.
-It tests the latest distribution reference html page against the one you are currently working on for visual changes/differences.
+This project uses [PhanomCSS](https://github.com/Huddle/PhantomCSS) and [grunt-phantomcss](https://github.com/chrisgladd/grunt-phantomcss).
+For every distribution it creates a screenshot from the reference page (overview) and screenshots from every module and component.
+The screenshots are used to compare visual changes.
 
 ### Ensuring CSS Performance
 
