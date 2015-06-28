@@ -1,0 +1,16 @@
+*
+  padding: 0
+
+@each $name, $size in $spaces
+
+  @each $side in $sides
+
+    .padding-#{$side}-#{$name}
+      padding-#{$side}: $size
+
+  @each $side-combination, $sides in $side-combinations
+    
+    .padding-#{$side-combination}-#{$name}
+
+      @each $side in $sides
+        @extend .padding-#{$side}-#{$name}

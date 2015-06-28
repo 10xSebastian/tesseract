@@ -1,30 +1,41 @@
 !!!
-%html{:lang => "en"}
+%html.background-color-purple{:lang => "en"}
+
   %head
     %link(rel="stylesheet" type="text/css" href="cssop.css")
-  %body
 
-    %h1.headline-extra-large CSSoP (CSS on principles)
+  %body.padding-inset-small
+
+    .height-extra-large
+      %h1.headline-extra-large.text-align-center.text-color-white CSSoP 
+      %h2.headline-medium.text-align-center.text-color-white CSS on principles
 
     %section
 
       %h2.headline-large Modules
 
-      %section
+      %section(data-module='colors')
+        %h3.headline-medium Colors
+        .row.background-color-purple
+        .row.background-color-black
+        .row.background-color-white
+        .row.text-color-purple
+        .row.text-color-black
+        .row.text-color-white
 
-        %h3.headline-medium Font Sizes
+      %section(data-module='flow')
+        %h3.headline-medium Flow
+        .clearfix
+        .clear-both
 
+      %section(data-module='fonts')
+        %h3.headline-medium Fonts
         %p
           %span.font-size-extra-small .font-size-extra-small
           %span.font-size-small .font-size-small
           %span.font-size-medium .font-size-medium
           %span.font-size-large .font-size-large
           %span.font-size-extra-large .font-size-extra-large
-
-      %section
-
-        %h3.headline-medium Font Weights
-
         %p
           %span.font-weight-extra-small .font-weight-extra-small
           %span.font-weight-small .font-weight-small
@@ -32,12 +43,84 @@
           %span.font-weight-large .font-weight-large
           %span.font-weight-extra-large .font-weight-extra-large
 
+      %section(data-module='paddings')
+        %h3.headline-medium.text-color-white Paddings
+        .background-color-white.border-radius-small
+          .padding-top-extra-small
+          .padding-right-extra-small
+          .padding-bottom-extra-small
+          .padding-left-extra-small
+          .padding-top-small
+          .padding-right-small
+          .padding-bottom-small
+          .padding-left-small
+          .padding-top-medium
+          .padding-right-medium
+          .padding-bottom-medium
+          .padding-left-medium
+          .padding-top-large
+          .padding-right-large
+          .padding-bottom-large
+          .padding-left-large
+          .padding-top-extra-large
+          .padding-right-extra-large
+          .padding-bottom-extra-large
+          .padding-left-extra-large
+          .padding-vertical-extra-small
+          .padding-horizontal-extra-small
+          .padding-vertical-small
+          .padding-horizontal-small
+          .padding-vertical-medium
+          .padding-horizontal-medium
+          .padding-vertical-large
+          .padding-horizontal-large
+          .padding-vertical-extra-large
+          .padding-horizontal-extra-large
+          .padding-inset-extra-small
+          .padding-inset-small
+          .padding-inset-medium
+          .padding-inset-large
+          .padding-inset-extra-large
+
+      %section(data-module='border-radius')
+        %h3.headline-medium Border Radius
+        .border-radius-extra-small
+        .border-radius-medium
+        .border-radius-large
+        .border-radius-extra-large
+
+      %section(data-module='position')
+        %h3.headline-medium Position
+        .position-relative
+
+      %section(data-module='sizes')
+        %h3.headline-medium Sizes
+        .width-extra-small
+        .width-small
+        .width-medium
+        .width-large
+        .width-extra-large.width-full
+        .height-extra-small
+        .height-small
+        .height-medium
+        .height-large
+        .height-extra-large.height-full
+
+      %section(data-module='text-align')
+        %h3.headline-medium Text Align
+        .text-align-center
+        .text-align-left
+        .text-align-right
+
     %section
 
       %h2.headline-large Components
 
-      .headline-extra-large .headline-extra-large
-      .headline-large .headline-large
-      .headline-medium .headline-medium
-      .headline-small .headline-small
-      .headline-extra-small .headline-extra-small
+      %section(data-component='headlines')
+        %h3.headline-medium Headlines
+
+        .headline-extra-large .headline-extra-large
+        .headline-large .headline-large
+        .headline-medium .headline-medium
+        .headline-small .headline-small
+        .headline-extra-small .headline-extra-small

@@ -1,8 +1,8 @@
 module.exports = {
   screenshots: {
     options: {
-      screenshots: 'screenshots',
-      results: 'screenshots'
+      screenshots: '.tmp/screenshots',
+      results: '.tmp/screenshots'
     },
     src: 'screenshots.js'
   }

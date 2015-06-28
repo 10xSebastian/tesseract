@@ -1,14 +1,31 @@
 <!DOCTYPE html>
-<html lang='en'>
+<html class='background-color-purple' lang='en'>
 <head>
 <link href='cssop.css' rel='stylesheet' type='text/css'>
 </head>
-<body>
-<h1 class='headline-extra-large'>CSSoP (CSS on principles)</h1>
+<body class='padding-inset-small'>
+<div class='height-extra-large'>
+<h1 class='headline-extra-large text-align-center text-color-white'>CSSoP</h1>
+<h2 class='headline-medium text-align-center text-color-white'>CSS on principles</h2>
+</div>
 <section>
 <h2 class='headline-large'>Modules</h2>
-<section>
-<h3 class='headline-medium'>Font Sizes</h3>
+<section data-module='colors'>
+<h3 class='headline-medium'>Colors</h3>
+<div class='row background-color-purple'></div>
+<div class='row background-color-black'></div>
+<div class='row background-color-white'></div>
+<div class='row text-color-purple'></div>
+<div class='row text-color-black'></div>
+<div class='row text-color-white'></div>
+</section>
+<section data-module='flow'>
+<h3 class='headline-medium'>Flow</h3>
+<div class='clearfix'></div>
+<div class='clear-both'></div>
+</section>
+<section data-module='fonts'>
+<h3 class='headline-medium'>Fonts</h3>
 <p>
 <span class='font-size-extra-small'>.font-size-extra-small</span>
 <span class='font-size-small'>.font-size-small</span>
@@ -16,9 +33,6 @@
 <span class='font-size-large'>.font-size-large</span>
 <span class='font-size-extra-large'>.font-size-extra-large</span>
 </p>
-</section>
-<section>
-<h3 class='headline-medium'>Font Weights</h3>
 <p>
 <span class='font-weight-extra-small'>.font-weight-extra-small</span>
 <span class='font-weight-small'>.font-weight-small</span>
@@ -27,14 +41,87 @@
 <span class='font-weight-extra-large'>.font-weight-extra-large</span>
 </p>
 </section>
+<section data-module='paddings'>
+<h3 class='headline-medium text-color-white'>Paddings</h3>
+<div class='background-color-white border-radius-small'>
+<div class='padding-top-extra-small'></div>
+<div class='padding-right-extra-small'></div>
+<div class='padding-bottom-extra-small'></div>
+<div class='padding-left-extra-small'></div>
+<div class='padding-top-small'></div>
+<div class='padding-right-small'></div>
+<div class='padding-bottom-small'></div>
+<div class='padding-left-small'></div>
+<div class='padding-top-medium'></div>
+<div class='padding-right-medium'></div>
+<div class='padding-bottom-medium'></div>
+<div class='padding-left-medium'></div>
+<div class='padding-top-large'></div>
+<div class='padding-right-large'></div>
+<div class='padding-bottom-large'></div>
+<div class='padding-left-large'></div>
+<div class='padding-top-extra-large'></div>
+<div class='padding-right-extra-large'></div>
+<div class='padding-bottom-extra-large'></div>
+<div class='padding-left-extra-large'></div>
+<div class='padding-vertical-extra-small'></div>
+<div class='padding-horizontal-extra-small'></div>
+<div class='padding-vertical-small'></div>
+<div class='padding-horizontal-small'></div>
+<div class='padding-vertical-medium'></div>
+<div class='padding-horizontal-medium'></div>
+<div class='padding-vertical-large'></div>
+<div class='padding-horizontal-large'></div>
+<div class='padding-vertical-extra-large'></div>
+<div class='padding-horizontal-extra-large'></div>
+<div class='padding-inset-extra-small'></div>
+<div class='padding-inset-small'></div>
+<div class='padding-inset-medium'></div>
+<div class='padding-inset-large'></div>
+<div class='padding-inset-extra-large'></div>
+</div>
+</section>
+<section data-module='border-radius'>
+<h3 class='headline-medium'>Border Radius</h3>
+<div class='border-radius-extra-small'></div>
+<div class='border-radius-medium'></div>
+<div class='border-radius-large'></div>
+<div class='border-radius-extra-large'></div>
+</section>
+<section data-module='position'>
+<h3 class='headline-medium'>Position</h3>
+<div class='position-relative'></div>
+</section>
+<section data-module='sizes'>
+<h3 class='headline-medium'>Sizes</h3>
+<div class='width-extra-small'></div>
+<div class='width-small'></div>
+<div class='width-medium'></div>
+<div class='width-large'></div>
+<div class='width-extra-large width-full'></div>
+<div class='height-extra-small'></div>
+<div class='height-small'></div>
+<div class='height-medium'></div>
+<div class='height-large'></div>
+<div class='height-extra-large height-full'></div>
+</section>
+<section data-module='text-align'>
+<h3 class='headline-medium'>Text Align</h3>
+<div class='text-align-center'></div>
+<div class='text-align-left'></div>
+<div class='text-align-right'></div>
+</section>
 </section>
 <section>
 <h2 class='headline-large'>Components</h2>
+<section data-component='headlines'>
+<h3 class='headline-medium'>Headlines</h3>
 <div class='headline-extra-large'>.headline-extra-large</div>
 <div class='headline-large'>.headline-large</div>
 <div class='headline-medium'>.headline-medium</div>
 <div class='headline-small'>.headline-small</div>
 <div class='headline-extra-small'>.headline-extra-small</div>
+</section>
 </section>
 </body>
 </html>

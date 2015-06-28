@@ -1,0 +1,7 @@
+@each $name, $height in $heights
+
+  .height-#{$name}
+    height: $height
+
+.height-full
+  @extend .height-extra-large

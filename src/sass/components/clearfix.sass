@@ -1,0 +1,12 @@
+.clearfix 
+  &:before,
+  &:after 
+    content: ""
+    display: table
+  
+  &:after 
+    @extend .clear-both
+
+  & 
+    zoom: 1
+  

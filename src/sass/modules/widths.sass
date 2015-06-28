@@ -1,0 +1,7 @@
+@each $name, $width in $widths
+
+  .width-#{$name}
+    width: $width
+
+.width-full
+  @extend .width-extra-large
