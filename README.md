@@ -1,4 +1,4 @@
-# CSSoP (CSS on principles)
+# Tesseract (CSS-Framework on principles)
 
 It’s a challenge in any web development project to structure and organize all the css code.
 
@@ -17,7 +17,7 @@ Flexibility and reuseablity are the benefits of modules.
 A component, by definition, is a unit of composition. It the context of this css-framwork, a component is made up of multiple modules.
 
 ## CSS Normalization / CSS Reset
-CSSoP uses [normalize.css](https://necolas.github.io/normalize.css/) to make browsers render all elements more consistently and in line with modern standards. It precisely targets only the styles that need normalizing.
+Tesseract uses [normalize.css](https://necolas.github.io/normalize.css/) to make browsers render all elements more consistently and in line with modern standards. It precisely targets only the styles that need normalizing.
 
 ## Development
 
@@ -26,9 +26,9 @@ Requires to have node.js, ruby and bundler installed.
 ### Intitial checkout
 
 ```
-git clone git@github.com:pape-io/cssop.git
+git clone git@github.com:pape-io/tesseract.git
 
-cd cssop
+cd tesseract
 
 bundle install
 
@@ -45,7 +45,7 @@ The screenshots are used to compare visual changes.
 
 ### Ensuring CSS Performance
 
-Because the amount of css rules has a big impact on the browsers rendering performance, CSSoP uses [uncss](https://github.com/giakki/uncss) for detecting unused and [csscss](https://github.com/zmoazeni/csscss) for detecting redundant css rules.
+Because the amount of css rules has a big impact on the browsers rendering performance, Tesseract uses [uncss](https://github.com/giakki/uncss) for detecting unused and [csscss](https://github.com/zmoazeni/csscss) for detecting redundant css rules.
 
 ### Build processes
 

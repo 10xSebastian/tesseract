@@ -1,0 +1,61 @@
+@import "compass/css3/box-shadow"
+@import "compass/css3/opacity"
+
+.starfield-background
+  @include opacity(0.12)
+  z-index: -1
+
+.tesseract-font
+  font-family: 'Advent Pro', sans-serif
+
+.tesseract
+  height: 200px
+  margin-left: -100px
+  margin-top: -100px
+  perspective: 1000px
+  position: absolute
+  width: 200px
+
+.tesseract-outside
+  height: 100%
+  position: absolute
+  transform-style: preserve-3d
+  transform: translateZ(-100px) rotateX(-220deg) rotateY(45deg)
+  width: 100%
+
+.tesseract-inside
+  height: 100%
+  position: absolute
+  transform-style: preserve-3d
+  transform: translateZ(-150px) scale(0.5) rotateX(-220deg) rotateY(45deg)
+  width: 100%
+
+.tesseract-side
+  background: rgba(180,180,255,0.4)
+  border: 1px solid white
+  display: block
+  height: 200px
+  position: absolute
+  width: 200px
+  @include box-shadow(0 0 400px #2181a7, 0 0 15px #66dbef)
+
+.tesseract-starfield
+  @include opacity(0.3)
+
+.tesseract-front
+  transform: rotateY(0deg) translateZ(100px)
+
+.tesseract-back
+  transform: rotateX(180deg) translateZ(100px)
+
+.tesseract-right
+  transform: rotateY(90deg) translateZ(100px)
+
+.tesseract-left
+  transform: rotateY(-90deg) translateZ(100px)
+
+.tesseract-top
+  transform: rotateX(90deg) translateZ(100px)
+
+.tesseract-bottom
+  transform: rotateX(-90deg) translateZ(100px)

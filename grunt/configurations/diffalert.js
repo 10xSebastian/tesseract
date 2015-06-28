@@ -4,7 +4,7 @@ module.exports = {
       alertOn: ['removed']
     },
     files: {
-      '.tmp/cssop.css': '.tmp/cssop.uncss'
+      '.tmp/tesseract.css': '.tmp/tesseract.uncss'
     }
   }
 };

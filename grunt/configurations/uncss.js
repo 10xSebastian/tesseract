@@ -1,7 +1,8 @@
 module.exports = {
   serve: {
     files: {
-      '.tmp/cssop.uncss': '.tmp/index.html'
-    }
+      '.tmp/tesseract.uncss': '.tmp/index.html'
+    },
+    ignoreSheets : [/fonts.googleapis/]
   }
 };

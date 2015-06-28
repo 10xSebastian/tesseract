@@ -8,7 +8,7 @@ module.exports = {
     outputJson: true
   },
   serve: {
-    src: ['.tmp/cssop.css']
+    src: ['.tmp/tesseract.css']
   }
 };
 

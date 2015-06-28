@@ -1,21 +1,67 @@
 !!!
-%html.background-color-purple{:lang => "en"}
+%html.background-color-black.height-full{:lang => "en"}
 
   %head
-    %link(rel="stylesheet" type="text/css" href="cssop.css")
+    %link(rel="stylesheet" type="text/css" href="tesseract.css")
+    %link(rel="stylesheet" type="text/css" href="tesseract-page.css")
+    %link{:href => "http://fonts.googleapis.com/css?family=Advent+Pro:400,200", :rel => "stylesheet", :type => "text/css"}
 
-  %body.padding-inset-small
+  %body.height-full
 
-    .height-extra-large
-      %h1.headline-extra-large.text-align-center.text-color-white CSSoP 
-      %h2.headline-medium.text-align-center.text-color-white CSS on principles
+    .starfield-background.height-full.width-full.position-absolute
+      %canvas.height-full.width-full
+
+    .height-full
+      .row1of3.padding-top-medium
+        .display-table.width-full.height-full
+          .display-table-row
+            .display-table-cell.vertical-align-middle
+              %h1.font-size-extra-large.text-align-center.text-color-white.tesseract-font.font-weight-extra-small 
+                Tesseract
+              %h2.font-size-small.text-align-center.text-color-white.tesseract-font.font-weight-extra-medium 
+                A CSS-Framework on principles
+      .row1of3
+        .display-table.width-full.height-full
+          .display-table-row
+            .display-table-cell.vertical-align-middle
+              .text-align-center.padding-top-medium
+                .tesseract.display-inline-block
+                  .tesseract-inside
+                    .tesseract-side.tesseract-front
+                    .tesseract-side.tesseract-back
+                    .tesseract-side.tesseract-right
+                    .tesseract-side.tesseract-left
+                    .tesseract-side.tesseract-top
+                    .tesseract-side.tesseract-bottom
+                .tesseract.display-inline-block
+                  .tesseract-outside
+                    .tesseract-side.tesseract-front
+                      %canvas.tesseract-starfield
+                    .tesseract-side.tesseract-back
+                      %canvas.tesseract-starfield
+                    .tesseract-side.tesseract-right
+                      %canvas.tesseract-starfield
+                    .tesseract-side.tesseract-left
+                      %canvas.tesseract-starfield
+                    .tesseract-side.tesseract-top
+                      %canvas.tesseract-starfield
+                    .tesseract-side.tesseract-bottom
+                      %canvas.tesseract-starfield
+      .row1of3
 
     %section
 
-      %h2.headline-large Modules
+      %h2.font-size-large Modules
+
+      %section(data-module='border-radius')
+        %h3.font-size-medium Border Radius
+        .border-radius-extra-small
+        .border-radius-medium
+        .border-radius-large
+        .border-radius-extra-large
 
       %section(data-module='colors')
-        %h3.headline-medium Colors
+        %h3.font-size-medium Colors
         .row.background-color-purple
         .row.background-color-black
         .row.background-color-white
@@ -23,13 +69,17 @@
         .row.text-color-black
         .row.text-color-white
 
+      %section(data-module='display')
+        %h3.font-size-medium Display
+        .row.display-inline-block
+
       %section(data-module='flow')
-        %h3.headline-medium Flow
+        %h3.font-size-medium Flow
         .clearfix
         .clear-both
 
       %section(data-module='fonts')
-        %h3.headline-medium.text-color-white Fonts
+        %h3.font-size-medium.text-color-white Fonts
         .background-color-white.border-radius-small.padding-inset-medium
           %p
             %span.font-size-extra-small .font-size-extra-small
@@ -45,7 +95,7 @@
             %span.font-weight-extra-large .font-weight-extra-large
 
       %section(data-module='paddings')
-        %h3.headline-medium.text-color-white Paddings
+        %h3.font-size-medium.text-color-white Paddings
         .background-color-white.border-radius-small
           .padding-top-extra-small
           .padding-right-extra-small
@@ -81,21 +131,96 @@
           .padding-inset-small
           .padding-inset-medium
           .padding-inset-large
-          .padding-inset-extra-large
-
-      %section(data-module='border-radius')
-        %h3.headline-medium Border Radius
-        .border-radius-extra-small
-        .border-radius-medium
-        .border-radius-large
-        .border-radius-extra-large
+          .padding-inset-extra-large      
 
       %section(data-module='position')
-        %h3.headline-medium Position
+        %h3.font-size-medium Position
         .position-relative
+        .position-absolute
+
+      %section(data-module='rows')
+        %h3.font-size-medium Rows
+        .row1of1
+        .row1of2
+        .row2of2
+        .row1of3
+        .row2of3
+        .row3of3
+        .row1of4
+        .row2of4
+        .row3of4
+        .row4of4
+        .row1of5
+        .row2of5
+        .row3of5
+        .row4of5
+        .row5of5
+        .row1of6
+        .row2of6
+        .row3of6
+        .row4of6
+        .row5of6
+        .row6of6
+        .row1of7
+        .row2of7
+        .row3of7
+        .row4of7
+        .row5of7
+        .row6of7
+        .row7of7
+        .row1of8
+        .row2of8
+        .row3of8
+        .row4of8
+        .row5of8
+        .row6of8
+        .row7of8
+        .row8of8
+        .row1of9
+        .row2of9
+        .row3of9
+        .row4of9
+        .row5of9
+        .row6of9
+        .row7of9
+        .row8of9
+        .row9of9
+        .row1of10
+        .row2of10
+        .row3of10
+        .row4of10
+        .row5of10
+        .row6of10
+        .row7of10
+        .row8of10
+        .row9of10
+        .row10of10
+        .row1of11
+        .row2of11
+        .row3of11
+        .row4of11
+        .row5of11
+        .row6of11
+        .row7of11
+        .row8of11
+        .row9of11
+        .row10of11
+        .row11of11
+        .row1of12
+        .row2of12
+        .row3of12
+        .row4of12
+        .row5of12
+        .row6of12
+        .row7of12
+        .row8of12
+        .row9of12
+        .row10of12
+        .row11of12
+        .row12of12
 
       %section(data-module='sizes')
-        %h3.headline-medium Sizes
+        %h3.font-size-medium Sizes
         .width-extra-small
         .width-small
         .width-medium
@@ -108,20 +233,33 @@
         .height-extra-large.height-full
 
       %section(data-module='text-align')
-        %h3.headline-medium Text Align
+        %h3.font-size-medium Text Align
         .text-align-center
         .text-align-left
         .text-align-right
 
     %section
 
-      %h2.headline-large Components
+      %h2.font-size-large Components
 
-      %section(data-component='headlines')
-        %h3.headline-medium Headlines
+  %script(src="../js/jquery.js")
+  %script(src="../js/underscore.js")
+  %script(src="../js/starfield.js")
+  :javascript
+    $('.tesseract canvas').each(function(i, el){
+      new StarField(el, '180,180,255').render(333, 3);
+    });
+    new StarField($('.starfield-background canvas')[0], '0,0,0').render(333, 3);
 
-        .headline-extra-large .headline-extra-large
-        .headline-large .headline-large
-        .headline-medium .headline-medium
-        .headline-small .headline-small
-        .headline-extra-small .headline-extra-small
+    // Tesseract roll
+    var $outside = $('.tesseract-outside');
+    var $inside = $('.tesseract-inside');
+    $(document).on('scroll', _.throttle(function(){
+      var ratio = $(window).scrollTop()/$(window).height();
+      var outsideRotateX = 220 + (180*ratio);
+      var insideRotateX = 220 - (180*ratio);
+      var valueOutside = 'translateZ(-100px) rotateX(-'+outsideRotateX+'deg) rotateY(45deg)';
+      var valueInside = 'translateZ(-150px) scale(0.5) rotateX(-'+insideRotateX+'deg) rotateY(45deg)';
+      $outside.css({'transform': valueOutside});
+      $inside.css({'transform': valueInside});
+    }, 25));
