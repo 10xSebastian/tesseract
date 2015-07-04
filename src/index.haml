@@ -2,24 +2,20 @@
 %html.background-color-black.height-full{:lang => "en"}
 
   %head
+    %title Tesseract | A CSS-Framework on Principles ▣
     %link(rel="stylesheet" type="text/css" href="tesseract.css")
     %link(rel="stylesheet" type="text/css" href="tesseract-page.css")
     %link{:href => "http://fonts.googleapis.com/css?family=Advent+Pro:400,200", :rel => "stylesheet", :type => "text/css"}
 
-  %body.height-full
+  %body.height-full.no-padding
 
-    .starfield-background.height-full.width-full.position-absolute
+    .position-fixed.width-full.fixed-height-medium.background-color-white.z-index-top.border-bottom.display-none
+
+    .starfield-background.height-full.width-full.position-absolute.z-index-minus
       %canvas.height-full.width-full
 
-    .height-full
-      .row1of3.padding-top-medium
-        .display-table.width-full.height-full
-          .display-table-row
-            .display-table-cell.vertical-align-middle
-              %h1.font-size-extra-large.text-align-center.text-color-white.tesseract-font.font-weight-extra-small 
-                Tesseract
-              %h2.font-size-small.text-align-center.text-color-white.tesseract-font.font-weight-extra-medium 
-                A CSS-Framework on principles
+    .height-full.width-full.position-absolute
+      .row1of3
       .row1of3
         .display-table.width-full.height-full
           .display-table-row
@@ -33,6 +29,14 @@
                     .tesseract-side.tesseract-left
                     .tesseract-side.tesseract-top
                     .tesseract-side.tesseract-bottom
+                .tesseract.display-inline-block
+                  .tesseract-outside
+                    .tesseract-side.tesseract-blur.tesseract-front
+                    .tesseract-side.tesseract-blur.tesseract-back
+                    .tesseract-side.tesseract-blur.tesseract-right
+                    .tesseract-side.tesseract-blur.tesseract-left
+                    .tesseract-side.tesseract-blur.tesseract-top
+                    .tesseract-side.tesseract-blur.tesseract-bottom
                 .tesseract.display-inline-block
                   .tesseract-outside
                     .tesseract-side.tesseract-front
@@ -49,25 +53,417 @@
                       %canvas.tesseract-starfield
       .row1of3
 
+    .height-full.width-full.position-absolute
+      .row1of3.padding-top-medium
+        .display-table.width-full.height-full
+          .display-table-row
+            .display-table-cell.vertical-align-middle
+              %h1.font-size-extra-large.text-align-center.text-color-white.tesseract-font.font-weight-extra-small.text-shadow-strong
+                Tesseract
+              %h2.font-size-small.text-align-center.text-color-white.tesseract-font.font-weight-extra-medium.text-shadow-strong
+                A CSS-Framework on Principles
+
+    .height-full.width-full
+
+    %section
+
+      %h2.font-size-large Components
+
+      %section(data-component='columns')
+        %h3.font-size-medium.text-color-white.padding-left-small.tesseract-font
+          Columns
+
+        .background-color-white.padding-inset-medium.text-align-center
+          .row
+            .column1of1.column2of2.column3of3.column4of4.column5of5.column6of6.column7of7.column8of8.column9of9.column10of10.column11of11.column12of12.border-all.padding-inset-extra-small
+              %span.font-size-small .column1of1
+          .row
+            .column.column1of2.column2of4.column3of6.column4of8.column5of10.column6of12.border-left.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column1of2
+            .column.column1of2.column2of4.column3of6.column4of8.column5of10.column6of12.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column1of2
+          .row
+            .column.column1of3.column2of6.column4of12.border-left.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column1of3
+            .column.column1of3.column2of6.column4of12.border-left.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column1of3
+            .column.column1of3.column2of6.column4of12.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column1of3
+          .row
+            .column.column1of4.column2of8.column3of12.border-left.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column1of4
+            .column.column1of4.column2of8.column3of12.border-left.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column1of4
+            .column.column1of4.column2of8.column3of12.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column1of4
+            .column.column1of4.column2of8.column3of12.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column1of4
+          .row
+            .column.column1of5.column2of10.border-left.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column1of5
+            .column.column1of5.column2of10.border-left.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column1of5
+            .column.column1of5.column2of10.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column1of5
+            .column.column1of5.column2of10.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column1of5
+            .column.column1of5.column2of10.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column1of5
+          .row
+            .column.column1of6.column2of12.border-left.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column1of6
+            .column.column1of6.column2of12.border-left.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column1of6
+            .column.column1of6.column2of12.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column1of6
+            .column.column1of6.column2of12.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column1of6
+            .column.column1of6.column2of12.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column1of6
+            .column.column1of6.column2of12.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column1of6
+          .row
+            .column.column1of7.border-left.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column1of7
+            .column.column1of7.border-left.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column1of7
+            .column.column1of7.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column1of7
+            .column.column1of7.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column1of7
+            .column.column1of7.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column1of7
+            .column.column1of7.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column1of7
+            .column.column1of7.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column1of7
+          .row
+            .column.column1of8.border-left.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column1of8
+            .column.column1of8.border-left.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column1of8
+            .column.column1of8.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column1of8
+            .column.column1of8.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column1of8
+            .column.column1of8.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column1of8
+            .column.column1of8.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column1of8
+            .column.column1of8.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column1of8
+            .column.column1of8.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column1of8
+          .row
+            .column.column1of9.border-left.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column1of9
+            .column.column1of9.border-left.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column1of9
+            .column.column1of9.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column1of9
+            .column.column1of9.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column1of9
+            .column.column1of9.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column1of9
+            .column.column1of9.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column1of9
+            .column.column1of9.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column1of9
+            .column.column1of9.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column1of9
+            .column.column1of9.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column1of9
+          .row
+            .column.column1of10.border-left.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column1of10
+            .column.column1of10.border-left.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column1of10
+            .column.column1of10.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column1of10
+            .column.column1of10.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column1of10
+            .column.column1of10.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column1of10
+            .column.column1of10.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column1of10
+            .column.column1of10.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column1of10
+            .column.column1of10.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column1of10
+            .column.column1of10.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column1of10
+            .column.column1of10.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column1of10
+          .row
+            .column.column1of11.border-left.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column1of11
+            .column.column1of11.border-left.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column1of11
+            .column.column1of11.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column1of11
+            .column.column1of11.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column1of11
+            .column.column1of11.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column1of11
+            .column.column1of11.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column1of11
+            .column.column1of11.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column1of11
+            .column.column1of11.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column1of11
+            .column.column1of11.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column1of11
+            .column.column1of11.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column1of11
+            .column.column1of11.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column1of11
+          .row
+            .column.column1of12.border-left.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column1of12
+            .column.column1of12.border-left.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column1of12
+            .column.column1of12.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column1of12
+            .column.column1of12.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column1of12
+            .column.column1of12.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column1of12
+            .column.column1of12.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column1of12
+            .column.column1of12.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column1of12
+            .column.column1of12.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column1of12
+            .column.column1of12.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column1of12
+            .column.column1of12.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column1of12
+            .column.column1of12.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column1of12
+            .column.column1of12.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column1of12
+          .row
+            .column.column2of3.column4of6.column8of12.border-left.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column2of3
+            .column.column1of3.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column1of3
+          .row
+            .column.column2of5.border-left.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column2of5
+            .column.column3of5.column6of10.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column3of5
+          .row
+            .column.column2of7.border-left.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column2of7
+            .column.column5of7.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column5of7
+          .row
+            .column.column2of9.border-left.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column2of9
+            .column.column7of9.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column7of9
+          .row
+            .column.column2of11.border-left.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column2of11
+            .column.column9of11.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column9of11
+          .row
+            .column.column3of4.column6of8.column9of12.border-left.border-right.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column3of4
+            .column.column1of4.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column1of4  
+          .row
+            .column.column3of5.border-left.border-right.border-bottom.border-right.padding-inset-extra-small
+              %span.font-size-small .column3of5
+            .column.column2of5.column4of10.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column2of5
+          .row
+            .column.column3of7.border-left.border-right.border-bottom.border-right.padding-inset-extra-small
+              %span.font-size-small .column3of7
+            .column.column4of7.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column4of7
+          .row
+            .column.column3of9.border-left.border-right.border-bottom.border-right.padding-inset-extra-small
+              %span.font-size-small .column3of9
+            .column.column6of9.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column6of9
+          .row
+            .column.column3of11.border-left.border-right.border-bottom.border-right.padding-inset-extra-small
+              %span.font-size-small .column3of11
+            .column.column8of11.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column8of11
+          .row
+            .column.column4of5.column8of10.border-left.border-bottom.border-right.padding-inset-extra-small
+              %span.font-size-small .column4of5
+            .column.column1of5.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column1of5
+          .row
+            .column.column4of7.border-left.border-bottom.border-right.padding-inset-extra-small
+              %span.font-size-small .column4of7
+            .column.column3of7.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column3of7
+          .row
+            .column.column4of9.border-left.border-bottom.border-right.padding-inset-extra-small
+              %span.font-size-small .column4of9
+            .column.column5of9.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column5of9
+          .row
+            .column.column4of11.border-left.border-bottom.border-right.padding-inset-extra-small
+              %span.font-size-small .column4of11
+            .column.column7of11.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column7of11
+          .row
+            .column.column5of6.column10of12.border-left.border-bottom.border-right.padding-inset-extra-small
+              %span.font-size-small .column5of6
+            .column.column1of6.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column1of6
+          .row
+            .column.column5of7.border-left.border-bottom.border-right.padding-inset-extra-small
+              %span.font-size-small .column5of7
+            .column.column2of7.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column2of7
+          .row
+            .column.column5of8.border-left.border-bottom.border-right.padding-inset-extra-small
+              %span.font-size-small .column5of8
+            .column.column3of8.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column3of8
+          .row
+            .column.column5of9.border-left.border-bottom.border-right.padding-inset-extra-small
+              %span.font-size-small .column5of9
+            .column.column4of9.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column4of9
+          .row
+            .column.column5of11.border-left.border-bottom.border-right.padding-inset-extra-small
+              %span.font-size-small .column5of11
+            .column.column6of11.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column6of11
+          .row
+            .column.column5of12.border-left.border-bottom.border-right.padding-inset-extra-small
+              %span.font-size-small .column5of12
+            .column.column7of12.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column7of12
+          .row
+            .column.column6of7.border-left.border-bottom.border-right.padding-inset-extra-small
+              %span.font-size-small .column6of7
+            .column.column1of7.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column1of7
+          .row
+            .column.column6of9.border-left.border-bottom.border-right.padding-inset-extra-small
+              %span.font-size-small .column6of9
+            .column.column2of9.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column1of9
+          .row
+            .column.column6of11.border-left.border-bottom.border-right.padding-inset-extra-small
+              %span.font-size-small .column6of11
+            .column.column5of11.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column5of11
+          .row
+            .column.column7of8.border-left.border-bottom.border-right.padding-inset-extra-small
+              %span.font-size-small .column7of8
+            .column.column1of8.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column1of8
+          .row
+            .column.column7of9.border-left.border-bottom.border-right.padding-inset-extra-small
+              %span.font-size-small .column7of9
+            .column.column2of9.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column2of9
+          .row
+            .column.column7of10.border-left.border-bottom.border-right.padding-inset-extra-small
+              %span.font-size-small .column7of10
+            .column.column3of10.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column3of10
+          .row
+            .column.column7of11.border-left.border-bottom.border-right.padding-inset-extra-small
+              %span.font-size-small .column7of11
+            .column.column4of11.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column4of11
+          .row
+            .column.column7of12.border-left.border-bottom.border-right.padding-inset-extra-small
+              %span.font-size-small .column7of12
+            .column.column5of12.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column5of12
+          .row
+            .column.column8of9.border-left.border-bottom.border-right.padding-inset-extra-small
+              %span.font-size-small .column8of9
+            .column.column1of9.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column1of9
+          .row
+            .column.column8of11.border-left.border-bottom.border-right.padding-inset-extra-small
+              %span.font-size-small .column8of11
+            .column.column3of11.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column3of11
+          .row
+            .column.column9of10.border-left.border-bottom.border-right.padding-inset-extra-small
+              %span.font-size-small .column9of10
+            .column.column1of10.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column1of10
+          .row
+            .column.column9of11.border-left.border-bottom.border-right.padding-inset-extra-small
+              %span.font-size-small .column9of11
+            .column.column2of11.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column2of11
+          .row
+            .column.column10of11.border-left.border-bottom.border-right.padding-inset-extra-small
+              %span.font-size-small .column10of11
+            .column.column1of11.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column1of11
+          .row
+            .column.column11of12.border-left.border-bottom.border-right.padding-inset-extra-small
+              %span.font-size-small .column11of12
+            .column.column1of12.border-right.border-bottom.padding-inset-extra-small
+              %span.font-size-small .column1of12
+          
     %section
 
       %h2.font-size-large Modules
 
-      %section(data-module='border-radius')
-        %h3.font-size-medium Border Radius
-        .border-radius-extra-small
-        .border-radius-medium
-        .border-radius-large
-        .border-radius-extra-large
+      %section(data-module='borders')
+
+        %h3.font-size-medium.text-color-white.padding-left-small.tesseract-font
+          Borders
+
+        .background-color-white.padding-inset-medium.text-align-center
+
+          .border-top.padding-inset-small
+            %span.font-size-small .border-top
+          .border-right.padding-inset-small.margin-top-extra-small
+            %span.font-size-small .border-right
+          .border-bottom.padding-inset-small.margin-top-extra-small
+            %span.font-size-small .border-bottom
+          .border-left.padding-inset-small.margin-top-extra-small
+            %span.font-size-small .border-left
+          .border-all.padding-inset-small.margin-top-extra-small
+            %span.font-size-small .border-all
+
+          .border-all.padding-inset-small.border-radius-extra-small.margin-top-extra-small
+            %span.font-size-small .border-radius-extra-small
+          .border-all.padding-inset-small.border-radius-small.margin-top-extra-small
+            %span.font-size-small .border-radius-small
+          .border-all.padding-inset-small.border-radius-medium.margin-top-extra-small
+            %span.font-size-small .border-radius-medium
+          .border-all.padding-inset-small.border-radius-large.margin-top-extra-small
+            %span.font-size-small .border-radius-large
+
+          .row.margin-top-extra-small
+            .column.column2of5
+            .column.column1of5.text-align-center
+              .border-radius-extra-large.fixed-height-extra-large.border-all.padding-inset-small.display-inline-block
+                .display-table.height-full
+                  .display-table-row
+                    .display-table-cell.vertical-align-middle
+                      %span.font-size-small .border-radius-extra-large
+            .column.column2of5
 
       %section(data-module='colors')
-        %h3.font-size-medium Colors
-        .row.background-color-purple
-        .row.background-color-black
-        .row.background-color-white
-        .row.text-color-purple
-        .row.text-color-black
-        .row.text-color-white
+        %h3.font-size-medium.text-color-white.padding-left-small.tesseract-font
+          Colors
+        .background-color-white.padding-inset-medium
+          .row.background-color-black.padding-inset-extra-small.text-align-center
+            %span.font-size-small.text-color-white .background-color-black, .text-color-white
+          .row.background-color-white.padding-inset-extra-small.text-align-center
+            %span.font-size-small.text-color-grey .background-color-white, .text-color-grey
+          .row.background-color-grey.padding-inset-extra-small.text-align-center
+            %span.font-size-small.text-color-black .background-color-grey, .text-color-black
 
       %section(data-module='display')
         %h3.font-size-medium Display
@@ -77,26 +473,84 @@
         %h3.font-size-medium Flow
         .clearfix
         .clear-both
+        .float-left
+        .float-right
 
       %section(data-module='fonts')
-        %h3.font-size-medium.text-color-white Fonts
-        .background-color-white.border-radius-small.padding-inset-medium
-          %p
-            %span.font-size-extra-small .font-size-extra-small
-            %span.font-size-small .font-size-small
-            %span.font-size-medium .font-size-medium
-            %span.font-size-large .font-size-large
-            %span.font-size-extra-large .font-size-extra-large
-          %p
-            %span.font-weight-extra-small .font-weight-extra-small
-            %span.font-weight-small .font-weight-small
-            %span.font-weight-medium .font-weight-medium
-            %span.font-weight-large .font-weight-large
-            %span.font-weight-extra-large .font-weight-extra-large
+
+        %h3.font-size-medium.text-color-white.padding-left-small.tesseract-font
+          Fonts
+
+        .background-color-white.padding-inset-medium.text-align-center
+
+          .row.padding-bottom-medium
+            .display-inline-block.padding-right-small
+              %span.font-size-extra-small .font-size-extra-small
+            .display-inline-block.padding-right-small.padding-left-small
+              %span.font-size-small .font-size-small
+            .display-inline-block.padding-right-small.padding-left-small
+              %span.font-size-medium .font-size-medium
+            .display-inline-block.padding-right-small.padding-left-small
+              %span.font-size-large .font-size-large
+            .display-inline-block.padding-right-small.padding-left-small
+              %span.font-size-extra-large .font-size-extra-large
+
+          .row
+            .display-inline-block.padding-right-small.padding-left-small
+              %span.font-weight-extra-small .font-weight-extra-small
+            .display-inline-block.padding-right-small.padding-left-small
+              %span.font-weight-small .font-weight-small
+            .display-inline-block.padding-right-small.padding-left-small
+              %span.font-weight-medium .font-weight-medium
+            .display-inline-block.padding-right-small.padding-left-small
+              %span.font-weight-large .font-weight-large
+            .display-inline-block.padding-right-small.padding-left-small
+              %span.font-weight-extra-large .font-weight-extra-large
+
+      %section(data-module='margins')
+
+        %h3.font-size-medium.text-color-white.padding-left-small.tesseract-font
+          Margins
+
+        .background-color-white.padding-inset-medium.text-align-center
+          .margin-top-extra-small
+          .margin-right-extra-small
+          .margin-bottom-extra-small
+          .margin-left-extra-small
+          .margin-top-small
+          .margin-right-small
+          .margin-bottom-small
+          .margin-left-small
+          .margin-top-medium
+          .margin-right-medium
+          .margin-bottom-medium
+          .margin-left-medium
+          .margin-top-large
+          .margin-right-large
+          .margin-bottom-large
+          .margin-left-large
+          .margin-top-extra-large
+          .margin-right-extra-large
+          .margin-bottom-extra-large
+          .margin-left-extra-large
+          .margin-vertical-extra-small
+          .margin-horizontal-extra-small
+          .margin-vertical-small
+          .margin-horizontal-small
+          .margin-vertical-medium
+          .margin-horizontal-medium
+          .margin-vertical-large
+          .margin-horizontal-large
+          .margin-vertical-extra-large
+          .margin-horizontal-extra-large     
+          .no-margin
 
       %section(data-module='paddings')
-        %h3.font-size-medium.text-color-white Paddings
-        .background-color-white.border-radius-small
+
+        %h3.font-size-medium.text-color-white.padding-left-small.tesseract-font
+          Paddings
+
+        .background-color-white.padding-inset-medium.text-align-center
           .padding-top-extra-small
           .padding-right-extra-small
           .padding-bottom-extra-small
@@ -132,6 +586,7 @@
           .padding-inset-medium
           .padding-inset-large
           .padding-inset-extra-large      
+          .no-padding
 
       %section(data-module='position')
         %h3.font-size-medium Position
@@ -219,8 +674,8 @@
         .row11of12
         .row12of12
 
-      %section(data-module='sizes')
-        %h3.font-size-medium Sizes
+      %section(data-module='heights')
+        %h3.font-size-medium Heights
         .width-extra-small
         .width-small
         .width-medium
@@ -231,6 +686,12 @@
         .height-medium
         .height-large
         .height-extra-large.height-full
+        .fixed-height-extra-small
+        .fixed-height-small
+        .fixed-height-medium
+        .fixed-height-large
+        .fixed-height-extra-large
+        .height-fix
 
       %section(data-module='text-align')
         %h3.font-size-medium Text Align
@@ -238,9 +699,10 @@
         .text-align-left
         .text-align-right
 
-    %section
-
-      %h2.font-size-large Components
+      %section(data-module='text-shadow')
+        %h3.font-size-medium Text Shadow
+        .text-shadow-strong
+        .text-shadow
 
   %script(src="../js/jquery.js")
   %script(src="../js/underscore.js")

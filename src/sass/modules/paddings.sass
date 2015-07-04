@@ -1,6 +1,3 @@
-*
-  padding: 0
-
 @each $name, $size in $spaces
 
   @each $side in $sides
@@ -8,9 +5,12 @@
     .padding-#{$side}-#{$name}
       padding-#{$side}: $size
 
-  @each $side-combination, $sides in $side-combinations
+  @each $side-combination, $sides in $padding-side-combinations
     
     .padding-#{$side-combination}-#{$name}
 
       @each $side in $sides
         @extend .padding-#{$side}-#{$name}
+
+.no-padding
+  padding: 0 !important

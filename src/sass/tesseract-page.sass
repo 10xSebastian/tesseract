@@ -1,9 +1,9 @@
 @import "compass/css3/box-shadow"
 @import "compass/css3/opacity"
+@import "compass/css3/animation"
 
 .starfield-background
   @include opacity(0.12)
-  z-index: -1
 
 .tesseract-font
   font-family: 'Advent Pro', sans-serif
@@ -31,13 +31,21 @@
   width: 100%
 
 .tesseract-side
-  background: rgba(180,180,255,0.4)
+  background: rgba(180,180,255,0.3)
   border: 1px solid white
   display: block
   height: 200px
   position: absolute
   width: 200px
-  @include box-shadow(0 0 400px #2181a7, 0 0 15px #66dbef)
+
+.tesseract-inside .tesseract-side
+  @include animation(tesseractglow 10s 1)
+  @include animation-iteration-count(infinite)
+  @include animation-timing-function(linear)
+
+.tesseract-blur
+  background: rgba(180,180,255,0.4)
+  -webkit-filter: blur(20px)
 
 .tesseract-starfield
   @include opacity(0.3)
@@ -59,3 +67,11 @@
 
 .tesseract-bottom
   transform: rotateX(-90deg) translateZ(100px)
+
+@include keyframes(tesseractglow)
+  0%
+    background: rgba(180,180,255,0.4)
+  50%
+    background: rgba(255,255,255,1.0)
+  100%
+    background: rgba(180,180,255,0.4)

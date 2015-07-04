@@ -23,6 +23,12 @@ Tesseract uses [normalize.css](https://necolas.github.io/normalize.css/) to make
 
 Requires to have node.js, ruby and bundler installed.
 
+### BrowserStack
+
+![BrowserStack](/BrowserStack.png)
+This project uses BrowserStack to test the software on multiple browsers in an easy and automated way.
+Thanks to BrowserStack for supporting this project.
+
 ### Intitial checkout
 
 ```
