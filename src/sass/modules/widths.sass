@@ -1,7 +1,35 @@
-@each $name, $width in $widths
+.fixed-width-minimum
+  min-width: 1px
 
-  .width-#{$name}
-    width: $width
+.fixed-width-extra-small
+  width: 8px
+
+.fixed-width-small
+  width: 24px
+
+.fixed-width-medium
+  width: 72px
+
+.fixed-width-large
+  width: 216px
+
+.fixed-width-extra-large
+  width: 648px
+
+.width-extra-small
+  width: 5%
+
+.width-small
+  width: 15%
+
+.width-medium
+  width: 20%
+
+.width-large
+  width: 50%
+
+.width-extra-large
+  width: 100%
 
 .width-full
   @extend .width-extra-large
