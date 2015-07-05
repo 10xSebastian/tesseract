@@ -23,12 +23,6 @@ Tesseract uses [normalize.css](https://necolas.github.io/normalize.css/) to make
 
 Requires to have node.js, ruby and bundler installed.
 
-### BrowserStack
-
-![BrowserStack](/BrowserStack.png)
-This project uses BrowserStack to test the software on multiple browsers in an easy and automated way.
-Thanks to BrowserStack for supporting this project.
-
 ### Intitial checkout
 
 ```
@@ -71,3 +65,16 @@ grunt dist
 ```
 
 Builds the framework and a compressed version in `/dist` and opens the reference page.
+
+## Credits
+
+### Author
+
+[Sebastian Pape](https://github.com/pape-io) is web-developer at heart and software craftsman focusing on full-stack application development.
+This project was started as part of his thesis in computer science.
+
+### BrowserStack
+
+![BrowserStack](/BrowserStack.png)
+This project uses BrowserStack to test the software on multiple browsers in an easy and automated way.
+Thanks to BrowserStack for supporting this project.
