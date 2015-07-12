@@ -1,0 +1,30 @@
+@each $name, $size in $responsive-spaces
+
+  @each $side in $sides
+
+    .padding-#{$side}-#{$name}
+      padding-#{$side}: $size
+
+  @each $side-combination, $sides in $padding-side-combinations
+    
+    .padding-#{$side-combination}-#{$name}
+
+      @each $side in $sides
+        @extend .padding-#{$side}-#{$name}
+
+@each $name, $size in $fixed-spaces
+
+  @each $side in $sides
+
+    .padding-#{$side}-#{$name}-fixed
+      padding-#{$side}: $size
+
+  @each $side-combination, $sides in $padding-side-combinations
+    
+    .padding-#{$side-combination}-#{$name}-fixed
+
+      @each $side in $sides
+        @extend .padding-#{$side}-#{$name}-fixed
+
+.no-padding
+  padding: 0 !important

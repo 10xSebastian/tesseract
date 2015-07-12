@@ -10,7 +10,7 @@ module.exports = function(grunt) {
       'cssmin:dist',
       'open:dist',
       'phantomcss:screenshots',
-      'copy:dist'
+      'copy:distScreenshots'
     ]);
   });
 };

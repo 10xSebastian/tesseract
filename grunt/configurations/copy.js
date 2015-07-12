@@ -1,5 +1,5 @@
 module.exports = {
-  dist: {
+  distScreenshots: {
     expand: true, 
     cwd: '.tmp/screenshots/',
     src: '{**/,}*.png',

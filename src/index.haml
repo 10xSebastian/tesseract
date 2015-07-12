@@ -5,13 +5,30 @@
     %title Tesseract | A CSS-Framework on Principles ▣
     %link(rel="stylesheet" type="text/css" href="tesseract.css")
     %link(rel="stylesheet" type="text/css" href="tesseract-page.css")
+    %link(rel="stylesheet" type="text/css" href="../fontawesome/font-awesome.css")
     %link{:href => "http://fonts.googleapis.com/css?family=Advent+Pro:400,200", :rel => "stylesheet", :type => "text/css"}
+    %meta{:content => "maximum-scale=1.0,width=device-width,initial-scale=1.0,user-scalable=0", :name => "viewport"}
 
   %body.height-full.no-padding
 
-    .position-fixed.width-full.fixed-height-medium.background-color-white.z-index-top.border-bottom.display-none
+    .tesseract-header.position-fixed.width-full.height-medium-fixed.z-index-top.background-color-white.border-bottom
+      .row.height-full
+        .column.column1of3
+        .column.column1of3.text-align-center
+          .display-inline-block(title="Tesseract" style="position: relative; left: -20px;")
+            %i.icon-tesseract.font-size-extra-large.position-absolute.text-color-grey
+            %i.icon-tesseract-small.font-size-extra-large.position-absolute
+        .column.column1of3.text-align-right.height-full
+          .display-table.width-full.height-full
+            .display-table-row
+              .display-table-cell.vertical-align-middle.padding-right-small(navigation)
+                .button.no-border
+                  .tesseract-font.font-size-medium
+                    %span(name) Borders
+                    %span /
+                    %span(type) Component
 
-    .starfield-background.height-full.width-full.position-absolute.z-index-minus
+    .starfield-background.height-full.width-full.position-absolute.z-index-minus.display
       %canvas.height-full.width-full
 
     .height-full.width-full.position-absolute
@@ -58,1234 +75,763 @@
         .display-table.width-full.height-full
           .display-table-row
             .display-table-cell.vertical-align-middle
-              %h1.font-size-extra-large.text-align-center.text-color-white.tesseract-font.font-weight-extra-small.text-shadow-strong
+              %h1.font-size-extra-large.text-align-center.text-color-white.tesseract-font.font-weight-light.text-shadow-strong
                 Tesseract
-              %h2.font-size-small.text-align-center.text-color-white.tesseract-font.font-weight-extra-medium.text-shadow-strong
+              %h2.font-size-small.text-align-center.text-color-white.tesseract-font.text-shadow-strong
                 A CSS-Framework on Principles
 
     .height-full.width-full
 
-    
+    %section(data-component='border')
+      .padding-horizontal-small.padding-vertical-extra-small.row
+        .column.column1of2.height-medium-fixed
+          .display-table.width-full.height-full
+            .display-table-row
+              .display-table-cell.vertical-align-middle
+                %h3.no-margin.font-size-medium.text-color-white.tesseract-font
+                  Borders
+        .column.column1of2.height-medium-fixed
+          .display-table.width-full.height-full
+            .display-table-row
+              .display-table-cell.vertical-align-middle.text-align-right
+                %button.button.button-black.no-border(expandable)
+                  %i.fa.fa-arrows-alt
+      .background-color-white.padding-all-medium.text-align-center
+        .background-color-black.padding-all-extra-small
+          .border-all-white.border-top-white.border-right-white.border-bottom-white.border-left-white.padding-all-extra-small.border-radius-large
+        .border-all-black.border-top-black.border-right-black.border-bottom-black.border-left-black.padding-all-extra-small.border-radius-large.margin-top-extra-small
+        .border-all-grey.border-top-grey.border-right-grey.border-bottom-grey.border-left-grey.padding-all-extra-small.border-radius-large.margin-top-extra-small
+        .border-all-blue.border-top-blue.border-right-blue.border-bottom-blue.border-left-blue.padding-all-extra-small.border-radius-large.margin-top-extra-small
+        .border-all-red.border-top-red.border-right-red.border-bottom-red.border-left-red.padding-all-extra-small.border-radius-large.margin-top-extra-small
+        .border-all-green.border-top-green.border-right-green.border-bottom-green.border-left-green.padding-all-extra-small.border-radius-large.margin-top-extra-small
+
+    %section(data-component='button')
+      .padding-horizontal-small.padding-vertical-extra-small.row
+        .column.column1of2.height-medium-fixed
+          .display-table.width-full.height-full
+            .display-table-row
+              .display-table-cell.vertical-align-middle
+                %h3.no-margin.font-size-medium.text-color-white.tesseract-font
+                  Buttons
+        .column.column1of2.height-medium-fixed
+          .display-table.width-full.height-full
+            .display-table-row
+              .display-table-cell.vertical-align-middle.text-align-right
+                %button.button.button-black.no-border(expandable)
+                  %i.fa.fa-arrows-alt
+      .background-color-white.padding-all-medium.text-align-center
+        .button.margin-top-extra-small Ok
+        .button.button-green.margin-top-extra-small Save
+        %button.button.button-red.margin-top-extra-small Delete
+        %input.button.button-blue.margin-top-extra-small(type="submit" value="Refresh")
+        .button.button-white.margin-top-extra-small Like
+        .button.button-black.margin-top-extra-small Warp
+        .button.button-grey.margin-top-extra-small Edit
+        .button.margin-top-extra-small
+          %i.icon-tesseract
 
     %section(data-component='clearfix')
-      %h3.font-size-medium.text-color-white.padding-left-small.tesseract-font
-        Clearfix
-      .background-color-white.padding-inset-medium.text-align-center
-        .clearfix
+      .padding-horizontal-small.padding-vertical-extra-small.row
+        .column.column1of2.height-medium-fixed
+          .display-table.width-full.height-full
+            .display-table-row
+              .display-table-cell.vertical-align-middle
+                %h3.no-margin.font-size-medium.text-color-white.tesseract-font
+                  Clearfix
+        .column.column1of2.height-medium-fixed
+          .display-table.width-full.height-full
+            .display-table-row
+              .display-table-cell.vertical-align-middle.text-align-right
+                %button.button.button-black.no-border(expandable)
+                  %i.fa.fa-arrows-alt
+      .background-color-white.padding-all-medium.text-align-center
+        .clearfix.border-all.padding-all-small
+          .column1of3.float-left.border-right.border-top.border-bottom.border-left.padding-all-small
+          .column1of3.float-left.border-right.border-top.border-bottom.padding-all-small
 
-    %section(data-component='columns')
-      %h3.font-size-medium.text-color-white.padding-left-small.tesseract-font
-        Columns
-      .background-color-white.padding-inset-medium.text-align-center
+    %section(data-component='column')
+      .padding-horizontal-small.padding-vertical-extra-small.row
+        .column.column1of2.height-medium-fixed
+          .display-table.width-full.height-full
+            .display-table-row
+              .display-table-cell.vertical-align-middle
+                %h3.no-margin.font-size-medium.text-color-white.tesseract-font
+                  Columns
+        .column.column1of2.height-medium-fixed
+          .display-table.width-full.height-full
+            .display-table-row
+              .display-table-cell.vertical-align-middle.text-align-right
+                %button.button.button-black.no-border(expandable)
+                  %i.fa.fa-arrows-alt
+      .background-color-white.padding-all-medium.text-align-center
         .row
-          .column1of1.column2of2.column3of3.column4of4.column5of5.column6of6.column7of7.column8of8.column9of9.column10of10.column11of11.column12of12.border-all.padding-inset-extra-small
-            %span.font-size-small .column1of1
+          .column1of1.column2of2.column3of3.column4of4.column5of5.column6of6.column7of7.column8of8.column9of9.column10of10.column11of11.column12of12.border-all.padding-all-extra-small
         .row
-          .column.column1of2.column2of4.column3of6.column4of8.column5of10.column6of12.border-left.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column1of2
-          .column.column1of2.column2of4.column3of6.column4of8.column5of10.column6of12.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column1of2
+          .column.column1of2.column2of4.column3of6.column4of8.column5of10.column6of12.border-left.border-right.border-bottom.padding-all-extra-small
+          .column.column1of2.column2of4.column3of6.column4of8.column5of10.column6of12.border-right.border-bottom.padding-all-extra-small
         .row
-          .column.column1of3.column2of6.column4of12.border-left.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column1of3
-          .column.column1of3.column2of6.column4of12.border-left.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column1of3
-          .column.column1of3.column2of6.column4of12.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column1of3
+          .column.column1of3.column2of6.column4of12.border-left.border-bottom.padding-all-extra-small
+          .column.column1of3.column2of6.column4of12.border-left.border-right.border-bottom.padding-all-extra-small
+          .column.column1of3.column2of6.column4of12.border-right.border-bottom.padding-all-extra-small
         .row
-          .column.column1of4.column2of8.column3of12.border-left.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column1of4
-          .column.column1of4.column2of8.column3of12.border-left.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column1of4
-          .column.column1of4.column2of8.column3of12.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column1of4
-          .column.column1of4.column2of8.column3of12.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column1of4
+          .column.column1of4.column2of8.column3of12.border-left.border-bottom.padding-all-extra-small
+          .column.column1of4.column2of8.column3of12.border-left.border-right.border-bottom.padding-all-extra-small
+          .column.column1of4.column2of8.column3of12.border-right.border-bottom.padding-all-extra-small
+          .column.column1of4.column2of8.column3of12.border-right.border-bottom.padding-all-extra-small
         .row
-          .column.column1of5.column2of10.border-left.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column1of5
-          .column.column1of5.column2of10.border-left.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column1of5
-          .column.column1of5.column2of10.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column1of5
-          .column.column1of5.column2of10.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column1of5
-          .column.column1of5.column2of10.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column1of5
+          .column.column1of5.column2of10.border-left.border-bottom.padding-all-extra-small
+          .column.column1of5.column2of10.border-left.border-right.border-bottom.padding-all-extra-small
+          .column.column1of5.column2of10.border-right.border-bottom.padding-all-extra-small
+          .column.column1of5.column2of10.border-right.border-bottom.padding-all-extra-small
+          .column.column1of5.column2of10.border-right.border-bottom.padding-all-extra-small
         .row
-          .column.column1of6.column2of12.border-left.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column1of6
-          .column.column1of6.column2of12.border-left.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column1of6
-          .column.column1of6.column2of12.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column1of6
-          .column.column1of6.column2of12.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column1of6
-          .column.column1of6.column2of12.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column1of6
-          .column.column1of6.column2of12.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column1of6
+          .column.column1of6.column2of12.border-left.border-bottom.padding-all-extra-small
+          .column.column1of6.column2of12.border-left.border-right.border-bottom.padding-all-extra-small
+          .column.column1of6.column2of12.border-right.border-bottom.padding-all-extra-small
+          .column.column1of6.column2of12.border-right.border-bottom.padding-all-extra-small
+          .column.column1of6.column2of12.border-right.border-bottom.padding-all-extra-small
+          .column.column1of6.column2of12.border-right.border-bottom.padding-all-extra-small
         .row
-          .column.column1of7.border-left.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column1of7
-          .column.column1of7.border-left.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column1of7
-          .column.column1of7.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column1of7
-          .column.column1of7.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column1of7
-          .column.column1of7.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column1of7
-          .column.column1of7.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column1of7
-          .column.column1of7.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column1of7
+          .column.column1of7.border-left.border-bottom.padding-all-extra-small
+          .column.column1of7.border-left.border-right.border-bottom.padding-all-extra-small
+          .column.column1of7.border-right.border-bottom.padding-all-extra-small
+          .column.column1of7.border-right.border-bottom.padding-all-extra-small
+          .column.column1of7.border-right.border-bottom.padding-all-extra-small
+          .column.column1of7.border-right.border-bottom.padding-all-extra-small
+          .column.column1of7.border-right.border-bottom.padding-all-extra-small
         .row
-          .column.column1of8.border-left.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column1of8
-          .column.column1of8.border-left.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column1of8
-          .column.column1of8.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column1of8
-          .column.column1of8.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column1of8
-          .column.column1of8.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column1of8
-          .column.column1of8.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column1of8
-          .column.column1of8.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column1of8
-          .column.column1of8.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column1of8
+          .column.column1of8.border-left.border-bottom.padding-all-extra-small
+          .column.column1of8.border-left.border-right.border-bottom.padding-all-extra-small
+          .column.column1of8.border-right.border-bottom.padding-all-extra-small
+          .column.column1of8.border-right.border-bottom.padding-all-extra-small
+          .column.column1of8.border-right.border-bottom.padding-all-extra-small
+          .column.column1of8.border-right.border-bottom.padding-all-extra-small
+          .column.column1of8.border-right.border-bottom.padding-all-extra-small
+          .column.column1of8.border-right.border-bottom.padding-all-extra-small
         .row
-          .column.column1of9.border-left.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column1of9
-          .column.column1of9.border-left.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column1of9
-          .column.column1of9.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column1of9
-          .column.column1of9.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column1of9
-          .column.column1of9.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column1of9
-          .column.column1of9.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column1of9
-          .column.column1of9.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column1of9
-          .column.column1of9.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column1of9
-          .column.column1of9.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column1of9
+          .column.column1of9.border-left.border-bottom.padding-all-extra-small
+          .column.column1of9.border-left.border-right.border-bottom.padding-all-extra-small
+          .column.column1of9.border-right.border-bottom.padding-all-extra-small
+          .column.column1of9.border-right.border-bottom.padding-all-extra-small
+          .column.column1of9.border-right.border-bottom.padding-all-extra-small
+          .column.column1of9.border-right.border-bottom.padding-all-extra-small
+          .column.column1of9.border-right.border-bottom.padding-all-extra-small
+          .column.column1of9.border-right.border-bottom.padding-all-extra-small
+          .column.column1of9.border-right.border-bottom.padding-all-extra-small
         .row
-          .column.column1of10.border-left.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column1of10
-          .column.column1of10.border-left.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column1of10
-          .column.column1of10.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column1of10
-          .column.column1of10.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column1of10
-          .column.column1of10.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column1of10
-          .column.column1of10.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column1of10
-          .column.column1of10.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column1of10
-          .column.column1of10.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column1of10
-          .column.column1of10.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column1of10
-          .column.column1of10.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column1of10
+          .column.column1of10.border-left.border-bottom.padding-all-extra-small
+          .column.column1of10.border-left.border-right.border-bottom.padding-all-extra-small
+          .column.column1of10.border-right.border-bottom.padding-all-extra-small
+          .column.column1of10.border-right.border-bottom.padding-all-extra-small
+          .column.column1of10.border-right.border-bottom.padding-all-extra-small
+          .column.column1of10.border-right.border-bottom.padding-all-extra-small
+          .column.column1of10.border-right.border-bottom.padding-all-extra-small
+          .column.column1of10.border-right.border-bottom.padding-all-extra-small
+          .column.column1of10.border-right.border-bottom.padding-all-extra-small
+          .column.column1of10.border-right.border-bottom.padding-all-extra-small
         .row
-          .column.column1of11.border-left.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column1of11
-          .column.column1of11.border-left.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column1of11
-          .column.column1of11.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column1of11
-          .column.column1of11.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column1of11
-          .column.column1of11.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column1of11
-          .column.column1of11.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column1of11
-          .column.column1of11.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column1of11
-          .column.column1of11.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column1of11
-          .column.column1of11.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column1of11
-          .column.column1of11.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column1of11
-          .column.column1of11.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column1of11
+          .column.column1of11.border-left.border-bottom.padding-all-extra-small
+          .column.column1of11.border-left.border-right.border-bottom.padding-all-extra-small
+          .column.column1of11.border-right.border-bottom.padding-all-extra-small
+          .column.column1of11.border-right.border-bottom.padding-all-extra-small
+          .column.column1of11.border-right.border-bottom.padding-all-extra-small
+          .column.column1of11.border-right.border-bottom.padding-all-extra-small
+          .column.column1of11.border-right.border-bottom.padding-all-extra-small
+          .column.column1of11.border-right.border-bottom.padding-all-extra-small
+          .column.column1of11.border-right.border-bottom.padding-all-extra-small
+          .column.column1of11.border-right.border-bottom.padding-all-extra-small
+          .column.column1of11.border-right.border-bottom.padding-all-extra-small
         .row
-          .column.column1of12.border-left.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column1of12
-          .column.column1of12.border-left.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column1of12
-          .column.column1of12.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column1of12
-          .column.column1of12.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column1of12
-          .column.column1of12.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column1of12
-          .column.column1of12.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column1of12
-          .column.column1of12.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column1of12
-          .column.column1of12.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column1of12
-          .column.column1of12.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column1of12
-          .column.column1of12.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column1of12
-          .column.column1of12.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column1of12
-          .column.column1of12.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column1of12
+          .column.column1of12.border-left.border-bottom.padding-all-extra-small
+          .column.column1of12.border-left.border-right.border-bottom.padding-all-extra-small
+          .column.column1of12.border-right.border-bottom.padding-all-extra-small
+          .column.column1of12.border-right.border-bottom.padding-all-extra-small
+          .column.column1of12.border-right.border-bottom.padding-all-extra-small
+          .column.column1of12.border-right.border-bottom.padding-all-extra-small
+          .column.column1of12.border-right.border-bottom.padding-all-extra-small
+          .column.column1of12.border-right.border-bottom.padding-all-extra-small
+          .column.column1of12.border-right.border-bottom.padding-all-extra-small
+          .column.column1of12.border-right.border-bottom.padding-all-extra-small
+          .column.column1of12.border-right.border-bottom.padding-all-extra-small
+          .column.column1of12.border-right.border-bottom.padding-all-extra-small
         .row
-          .column.column2of3.column4of6.column8of12.border-left.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column2of3
-          .column.column1of3.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column1of3
+          .column.column2of3.column4of6.column8of12.border-left.border-right.border-bottom.padding-all-extra-small
+          .column.column1of3.border-right.border-bottom.padding-all-extra-small
         .row
-          .column.column2of5.border-left.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column2of5
-          .column.column3of5.column6of10.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column3of5
+          .column.column2of5.border-left.border-right.border-bottom.padding-all-extra-small
+          .column.column3of5.column6of10.border-right.border-bottom.padding-all-extra-small
         .row
-          .column.column2of7.border-left.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column2of7
-          .column.column5of7.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column5of7
+          .column.column2of7.border-left.border-right.border-bottom.padding-all-extra-small
+          .column.column5of7.border-right.border-bottom.padding-all-extra-small
         .row
-          .column.column2of9.border-left.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column2of9
-          .column.column7of9.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column7of9
+          .column.column2of9.border-left.border-right.border-bottom.padding-all-extra-small
+          .column.column7of9.border-right.border-bottom.padding-all-extra-small
         .row
-          .column.column2of11.border-left.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column2of11
-          .column.column9of11.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column9of11
+          .column.column2of11.border-left.border-right.border-bottom.padding-all-extra-small
+          .column.column9of11.border-right.border-bottom.padding-all-extra-small
         .row
-          .column.column3of4.column6of8.column9of12.border-left.border-right.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column3of4
-          .column.column1of4.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column1of4  
+          .column.column3of4.column6of8.column9of12.border-left.border-right.border-right.border-bottom.padding-all-extra-small
+          .column.column1of4.border-right.border-bottom.padding-all-extra-small
         .row
-          .column.column3of5.border-left.border-right.border-bottom.border-right.padding-inset-extra-small
-            %span.font-size-small .column3of5
-          .column.column2of5.column4of10.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column2of5
+          .column.column3of5.border-left.border-right.border-bottom.border-right.padding-all-extra-small
+          .column.column2of5.column4of10.border-right.border-bottom.padding-all-extra-small
         .row
-          .column.column3of7.border-left.border-right.border-bottom.border-right.padding-inset-extra-small
-            %span.font-size-small .column3of7
-          .column.column4of7.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column4of7
+          .column.column3of7.border-left.border-right.border-bottom.border-right.padding-all-extra-small
+          .column.column4of7.border-right.border-bottom.padding-all-extra-small
         .row
-          .column.column3of9.border-left.border-right.border-bottom.border-right.padding-inset-extra-small
-            %span.font-size-small .column3of9
-          .column.column6of9.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column6of9
+          .column.column3of9.border-left.border-right.border-bottom.border-right.padding-all-extra-small
+          .column.column6of9.border-right.border-bottom.padding-all-extra-small
         .row
-          .column.column3of11.border-left.border-right.border-bottom.border-right.padding-inset-extra-small
-            %span.font-size-small .column3of11
-          .column.column8of11.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column8of11
+          .column.column3of11.border-left.border-right.border-bottom.border-right.padding-all-extra-small
+          .column.column8of11.border-right.border-bottom.padding-all-extra-small
         .row
-          .column.column4of5.column8of10.border-left.border-bottom.border-right.padding-inset-extra-small
-            %span.font-size-small .column4of5
-          .column.column1of5.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column1of5
+          .column.column4of5.column8of10.border-left.border-bottom.border-right.padding-all-extra-small
+          .column.column1of5.border-right.border-bottom.padding-all-extra-small
         .row
-          .column.column4of7.border-left.border-bottom.border-right.padding-inset-extra-small
-            %span.font-size-small .column4of7
-          .column.column3of7.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column3of7
+          .column.column4of7.border-left.border-bottom.border-right.padding-all-extra-small
+          .column.column3of7.border-right.border-bottom.padding-all-extra-small
         .row
-          .column.column4of9.border-left.border-bottom.border-right.padding-inset-extra-small
-            %span.font-size-small .column4of9
-          .column.column5of9.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column5of9
+          .column.column4of9.border-left.border-bottom.border-right.padding-all-extra-small
+          .column.column5of9.border-right.border-bottom.padding-all-extra-small
         .row
-          .column.column4of11.border-left.border-bottom.border-right.padding-inset-extra-small
-            %span.font-size-small .column4of11
-          .column.column7of11.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column7of11
+          .column.column4of11.border-left.border-bottom.border-right.padding-all-extra-small
+          .column.column7of11.border-right.border-bottom.padding-all-extra-small
         .row
-          .column.column5of6.column10of12.border-left.border-bottom.border-right.padding-inset-extra-small
-            %span.font-size-small .column5of6
-          .column.column1of6.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column1of6
+          .column.column5of6.column10of12.border-left.border-bottom.border-right.padding-all-extra-small
+          .column.column1of6.border-right.border-bottom.padding-all-extra-small
         .row
-          .column.column5of7.border-left.border-bottom.border-right.padding-inset-extra-small
-            %span.font-size-small .column5of7
-          .column.column2of7.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column2of7
+          .column.column5of7.border-left.border-bottom.border-right.padding-all-extra-small
+          .column.column2of7.border-right.border-bottom.padding-all-extra-small
         .row
-          .column.column5of8.border-left.border-bottom.border-right.padding-inset-extra-small
-            %span.font-size-small .column5of8
-          .column.column3of8.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column3of8
+          .column.column5of8.border-left.border-bottom.border-right.padding-all-extra-small
+          .column.column3of8.border-right.border-bottom.padding-all-extra-small
         .row
-          .column.column5of9.border-left.border-bottom.border-right.padding-inset-extra-small
-            %span.font-size-small .column5of9
-          .column.column4of9.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column4of9
+          .column.column5of9.border-left.border-bottom.border-right.padding-all-extra-small
+          .column.column4of9.border-right.border-bottom.padding-all-extra-small
         .row
-          .column.column5of11.border-left.border-bottom.border-right.padding-inset-extra-small
-            %span.font-size-small .column5of11
-          .column.column6of11.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column6of11
+          .column.column5of11.border-left.border-bottom.border-right.padding-all-extra-small
+          .column.column6of11.border-right.border-bottom.padding-all-extra-small
         .row
-          .column.column5of12.border-left.border-bottom.border-right.padding-inset-extra-small
-            %span.font-size-small .column5of12
-          .column.column7of12.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column7of12
+          .column.column5of12.border-left.border-bottom.border-right.padding-all-extra-small
+          .column.column7of12.border-right.border-bottom.padding-all-extra-small
         .row
-          .column.column6of7.border-left.border-bottom.border-right.padding-inset-extra-small
-            %span.font-size-small .column6of7
-          .column.column1of7.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column1of7
+          .column.column6of7.border-left.border-bottom.border-right.padding-all-extra-small
+          .column.column1of7.border-right.border-bottom.padding-all-extra-small
         .row
-          .column.column6of9.border-left.border-bottom.border-right.padding-inset-extra-small
-            %span.font-size-small .column6of9
-          .column.column3of9.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column3of9
+          .column.column6of9.border-left.border-bottom.border-right.padding-all-extra-small
+          .column.column3of9.border-right.border-bottom.padding-all-extra-small
         .row
-          .column.column6of11.border-left.border-bottom.border-right.padding-inset-extra-small
-            %span.font-size-small .column6of11
-          .column.column5of11.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column5of11
+          .column.column6of11.border-left.border-bottom.border-right.padding-all-extra-small
+          .column.column5of11.border-right.border-bottom.padding-all-extra-small
         .row
-          .column.column7of8.border-left.border-bottom.border-right.padding-inset-extra-small
-            %span.font-size-small .column7of8
-          .column.column1of8.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column1of8
+          .column.column7of8.border-left.border-bottom.border-right.padding-all-extra-small
+          .column.column1of8.border-right.border-bottom.padding-all-extra-small
         .row
-          .column.column7of9.border-left.border-bottom.border-right.padding-inset-extra-small
-            %span.font-size-small .column7of9
-          .column.column2of9.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column2of9
+          .column.column7of9.border-left.border-bottom.border-right.padding-all-extra-small
+          .column.column2of9.border-right.border-bottom.padding-all-extra-small
         .row
-          .column.column7of10.border-left.border-bottom.border-right.padding-inset-extra-small
-            %span.font-size-small .column7of10
-          .column.column3of10.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column3of10
+          .column.column7of10.border-left.border-bottom.border-right.padding-all-extra-small
+          .column.column3of10.border-right.border-bottom.padding-all-extra-small
         .row
-          .column.column7of11.border-left.border-bottom.border-right.padding-inset-extra-small
-            %span.font-size-small .column7of11
-          .column.column4of11.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column4of11
+          .column.column7of11.border-left.border-bottom.border-right.padding-all-extra-small
+          .column.column4of11.border-right.border-bottom.padding-all-extra-small
         .row
-          .column.column7of12.border-left.border-bottom.border-right.padding-inset-extra-small
-            %span.font-size-small .column7of12
-          .column.column5of12.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column5of12
+          .column.column7of12.border-left.border-bottom.border-right.padding-all-extra-small
+          .column.column5of12.border-right.border-bottom.padding-all-extra-small
         .row
-          .column.column8of9.border-left.border-bottom.border-right.padding-inset-extra-small
-            %span.font-size-small .column8of9
-          .column.column1of9.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column1of9
+          .column.column8of9.border-left.border-bottom.border-right.padding-all-extra-small
+          .column.column1of9.border-right.border-bottom.padding-all-extra-small
         .row
-          .column.column8of11.border-left.border-bottom.border-right.padding-inset-extra-small
-            %span.font-size-small .column8of11
-          .column.column3of11.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column3of11
+          .column.column8of11.border-left.border-bottom.border-right.padding-all-extra-small
+          .column.column3of11.border-right.border-bottom.padding-all-extra-small
         .row
-          .column.column9of10.border-left.border-bottom.border-right.padding-inset-extra-small
-            %span.font-size-small .column9of10
-          .column.column1of10.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column1of10
+          .column.column9of10.border-left.border-bottom.border-right.padding-all-extra-small
+          .column.column1of10.border-right.border-bottom.padding-all-extra-small
         .row
-          .column.column9of11.border-left.border-bottom.border-right.padding-inset-extra-small
-            %span.font-size-small .column9of11
-          .column.column2of11.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column2of11
+          .column.column9of11.border-left.border-bottom.border-right.padding-all-extra-small
+          .column.column2of11.border-right.border-bottom.padding-all-extra-small
         .row
-          .column.column10of11.border-left.border-bottom.border-right.padding-inset-extra-small
-            %span.font-size-small .column10of11
-          .column.column1of11.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column1of11
+          .column.column10of11.border-left.border-bottom.border-right.padding-all-extra-small
+          .column.column1of11.border-right.border-bottom.padding-all-extra-small
         .row
-          .column.column11of12.border-left.border-bottom.border-right.padding-inset-extra-small
-            %span.font-size-small .column11of12
-          .column.column1of12.border-right.border-bottom.padding-inset-extra-small
-            %span.font-size-small .column1of12
+          .column.column11of12.border-left.border-bottom.border-right.padding-all-extra-small
+          .column.column1of12.border-right.border-bottom.padding-all-extra-small
 
-    %section(data-component='rows')
-      %h3.font-size-medium.text-color-white.padding-left-small.tesseract-font
-        Rows
-      .background-color-white.padding-inset-medium.text-align-center
-        .row.fixed-height-extra-large.margin-bottom-extra-small
-          .column.column1of12.height-full.border-top.border-bottom.border-right.border-left
-            .row1of1.row2of2.row3of3.row4of4.row5of5.row6of6.row7of7.row8of8.row9of9.row10of10.row11of11.row12of12
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row1of1
-          .column.column1of12.height-full.border-bottom.border-right
-            .row.row1of2.row2of4.row3of6.row4of8.row5of10.row6of12.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row1of2
-            .row.row1of2.row2of4.row3of6.row4of8.row5of10.row6of12.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row1of2
-          .column.column1of12.height-full.border-bottom.border-right
-            .row.row1of3.row2of6.row4of12.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row1of3
-            .row.row1of3.row2of6.row4of12.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row1of3
-            .row.row1of3.row2of6.row4of12.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row1of3
-          .column.column1of12.height-full.border-bottom.border-right
-            .row.row1of4.row2of8.row3of12.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row1of4
-            .row.row1of4.row2of8.row3of12.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row1of4
-            .row.row1of4.row2of8.row3of12.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row1of4
-            .row.row1of4.row2of8.row3of12.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row1of4
-          .column.column1of12.height-full.border-bottom.border-right
-            .row.row1of5.row2of10.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row1of5
-            .row.row1of5.row2of10.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row1of5
-            .row.row1of5.row2of10.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row1of5
-            .row.row1of5.row2of10.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row1of5
-            .row.row1of5.row2of10.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row1of5
-          .column.column1of12.height-full.border-bottom.border-right
-            .row.row1of6.row2of12.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row1of6
-            .row.row1of6.row2of12.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row1of6
-            .row.row1of6.row2of12.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row1of6
-            .row.row1of6.row2of12.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row1of6
-            .row.row1of6.row2of12.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row1of6
-            .row.row1of6.row2of12.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row1of6
-          .column.column1of12.height-full.border-bottom.border-right
-            .row.row1of7.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row1of7
-            .row.row1of7.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row1of7
-            .row.row1of7.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row1of7
-            .row.row1of7.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row1of7
-            .row.row1of7.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row1of7
-            .row.row1of7.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row1of7
-            .row.row1of7.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row1of7
-          .column.column1of12.height-full.border-bottom.border-right
-            .row.row1of8.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row1of8
-            .row.row1of8.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row1of8
-            .row.row1of8.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row1of8
-            .row.row1of8.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row1of8
-            .row.row1of8.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row1of8
-            .row.row1of8.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row1of8
-            .row.row1of8.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row1of8
-            .row.row1of8.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row1of8  
-          .column.column1of12.height-full.border-bottom.border-right
-            .row.row1of9.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row1of9
-            .row.row1of9.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row1of9
-            .row.row1of9.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row1of9
-            .row.row1of9.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row1of9
-            .row.row1of9.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row1of9
-            .row.row1of9.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row1of9
-            .row.row1of9.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row1of9
-            .row.row1of9.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row1of9
-            .row.row1of9.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row1of9
-          .column.column1of12.height-full.border-bottom.border-right
-            .row.row1of10.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row1of10
-            .row.row1of10.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row1of10
-            .row.row1of10.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row1of10
-            .row.row1of10.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row1of10
-            .row.row1of10.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row1of10
-            .row.row1of10.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row1of10
-            .row.row1of10.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row1of10
-            .row.row1of10.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row1of10
-            .row.row1of10.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row1of10
-            .row.row1of10.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row1of10
-          .column.column1of12.height-full.border-bottom.border-right
+    %section(data-component='row')
+      .padding-horizontal-small.padding-vertical-extra-small.row
+        .column.column1of2.height-medium-fixed
+          .display-table.width-full.height-full
+            .display-table-row
+              .display-table-cell.vertical-align-middle
+                %h3.no-margin.font-size-medium.text-color-white.tesseract-font
+                  Rows
+        .column.column1of2.height-medium-fixed
+          .display-table.width-full.height-full
+            .display-table-row
+              .display-table-cell.vertical-align-middle.text-align-right
+                %button.button.button-black.no-border(expandable)
+                  %i.fa.fa-arrows-alt
+      .row.background-color-white.padding-all-medium.text-align-center
+        .column.column1of11
+          .row.height-extra-large-fixed.margin-bottom-extra-small.border-left
+            .column.column1of12.height-full.border-top.border-bottom.border-right
+              .row1of1.row2of2.row3of3.row4of4.row5of5.row6of6.row7of7.row8of8.row9of9.row10of10.row11of11.row12of12
+            .column.column1of12.height-full.border-bottom.border-right
+              .row.row1of2.row2of4.row3of6.row4of8.row5of10.row6of12.border-top
+              .row.row1of2.row2of4.row3of6.row4of8.row5of10.row6of12.border-top
+            .column.column1of12.height-full.border-bottom.border-right
+              .row.row1of3.row2of6.row4of12.border-top
+              .row.row1of3.row2of6.row4of12.border-top
+              .row.row1of3.row2of6.row4of12.border-top
+            .column.column1of12.height-full.border-bottom.border-right
+              .row.row1of4.row2of8.row3of12.border-top
+              .row.row1of4.row2of8.row3of12.border-top
+              .row.row1of4.row2of8.row3of12.border-top
+              .row.row1of4.row2of8.row3of12.border-top
+            .column.column1of12.height-full.border-bottom.border-right
+              .row.row1of5.row2of10.border-top
+              .row.row1of5.row2of10.border-top
+              .row.row1of5.row2of10.border-top
+              .row.row1of5.row2of10.border-top
+              .row.row1of5.row2of10.border-top
+            .column.column1of12.height-full.border-bottom.border-right
+              .row.row1of6.row2of12.border-top
+              .row.row1of6.row2of12.border-top
+              .row.row1of6.row2of12.border-top
+              .row.row1of6.row2of12.border-top
+              .row.row1of6.row2of12.border-top
+              .row.row1of6.row2of12.border-top
+            .column.column1of12.height-full.border-bottom.border-right
+              .row.row1of7.border-top
+              .row.row1of7.border-top
+              .row.row1of7.border-top
+              .row.row1of7.border-top
+              .row.row1of7.border-top
+              .row.row1of7.border-top
+              .row.row1of7.border-top
+            .column.column1of12.height-full.border-bottom.border-right
+              .row.row1of8.border-top
+              .row.row1of8.border-top
+              .row.row1of8.border-top
+              .row.row1of8.border-top
+              .row.row1of8.border-top
+              .row.row1of8.border-top
+              .row.row1of8.border-top
+              .row.row1of8.border-top
+            .column.column1of12.height-full.border-bottom.border-right
+              .row.row1of9.border-top
+              .row.row1of9.border-top
+              .row.row1of9.border-top
+              .row.row1of9.border-top
+              .row.row1of9.border-top
+              .row.row1of9.border-top
+              .row.row1of9.border-top
+              .row.row1of9.border-top
+              .row.row1of9.border-top
+            .column.column1of12.height-full.border-bottom.border-right
+              .row.row1of10.border-top
+              .row.row1of10.border-top
+              .row.row1of10.border-top
+              .row.row1of10.border-top
+              .row.row1of10.border-top
+              .row.row1of10.border-top
+              .row.row1of10.border-top
+              .row.row1of10.border-top
+              .row.row1of10.border-top
+              .row.row1of10.border-top
+            .column.column1of12.height-full.border-bottom.border-right
+              .row.row1of11.border-top
+              .row.row1of11.border-top
+              .row.row1of11.border-top
+              .row.row1of11.border-top
+              .row.row1of11.border-top
+              .row.row1of11.border-top
+              .row.row1of11.border-top
+              .row.row1of11.border-top
+              .row.row1of11.border-top
+              .row.row1of11.border-top
+              .row.row1of11.border-top
+            .column.column1of12.height-full.border-bottom.border-right
+              .row.row1of12.border-top
+              .row.row1of12.border-top
+              .row.row1of12.border-top
+              .row.row1of12.border-top
+              .row.row1of12.border-top
+              .row.row1of12.border-top
+              .row.row1of12.border-top
+              .row.row1of12.border-top
+              .row.row1of12.border-top
+              .row.row1of12.border-top
+              .row.row1of12.border-top
+              .row.row1of12.border-top
+        .column.column1of11
+          .row.height-extra-large-fixed.margin-bottom-extra-small
+            .column.column1of5.height-full.border-bottom.border-right
+              .row.row2of3.row4of6.row8of12.border-top
+              .row.row1of3.border-top
+            .column.column1of5.height-full.border-bottom.border-right
+              .row.row2of5.border-top
+              .row.row3of5.row6of10.border-top
+            .column.column1of5.height-full.border-bottom.border-right
+              .row.row2of7.border-top
+              .row.row5of7.border-top
+            .column.column1of5.height-full.border-bottom.border-right
+              .row.row2of9.border-top
+              .row.row7of9.border-top
+            .column.column1of5.height-full.border-bottom.border-right
+              .row.row2of11.border-top
+              .row.row9of11.border-top
+        .column.column1of11
+          .row.height-extra-large-fixed.margin-bottom-extra-small
+            .column.column1of5.height-full.border-bottom.border-right
+              .row.row3of4.row6of8.row9of12.border-top
+              .row.row1of4.border-top
+            .column.column1of5.height-full.border-bottom.border-right
+              .row.row3of5.border-top
+              .row.row2of5.row4of10.border-top
+            .column.column1of5.height-full.border-bottom.border-right
+              .row.row3of7.border-top
+              .row.row4of7.border-top
+            .column.column1of5.height-full.border-bottom.border-right
+              .row.row3of9.border-top
+              .row.row6of9.border-top
+            .column.column1of5.height-full.border-bottom.border-right
+              .row.row3of11.border-top
+              .row.row8of11.border-top
+        .column.column1of11
+          .row.height-extra-large-fixed.margin-bottom-extra-small
+            .column.column1of4.height-full.border-bottom.border-right
+              .row.row4of5.row8of10.border-top
+              .row.row1of5.border-top
+            .column.column1of4.height-full.border-bottom.border-right
+              .row.row4of7.border-top
+              .row.row3of7.border-top
+            .column.column1of4.height-full.border-bottom.border-right
+              .row.row4of9.border-top
+              .row.row5of9.border-top
+            .column.column1of4.height-full.border-bottom.border-right
+              .row.row4of11.border-top
+              .row.row7of11.border-top
+        .column.column1of11
+          .row.height-extra-large-fixed.margin-bottom-extra-small
+            .column.column1of6.height-full.border-bottom.border-right
+              .row.row5of6.row10of12.border-top
+              .row.row1of6.border-top
+            .column.column1of6.height-full.border-bottom.border-right
+              .row.row5of7.border-top
+              .row.row2of7.border-top
+            .column.column1of6.height-full.border-bottom.border-right
+              .row.row5of8.border-top
+              .row.row3of8.border-top
+            .column.column1of6.height-full.border-bottom.border-right
+              .row.row5of9.border-top
+              .row.row4of9.border-top
+            .column.column1of6.height-full.border-bottom.border-right
+              .row.row5of11.border-top
+              .row.row6of11.border-top
+            .column.column1of6.height-full.border-bottom.border-right
+              .row.row5of12.border-top
+              .row.row7of12.border-top
+        .column.column1of11
+          .row.height-extra-large-fixed.margin-bottom-extra-small
+            .column.column1of3.height-full.border-bottom.border-right
+              .row.row6of7.border-top
+              .row.row1of7.border-top
+            .column.column1of3.height-full.border-bottom.border-right
+              .row.row6of9.border-top
+              .row.row3of9.border-top
+            .column.column1of3.height-full.border-bottom.border-right
+              .row.row6of11.border-top
+              .row.row5of11.border-top
+        .column.column1of11
+          .row.height-extra-large-fixed.margin-bottom-extra-small
+            .column.column1of5.height-full.border-bottom.border-right
+              .row.row7of8.border-top
+              .row.row1of8.border-top
+            .column.column1of5.height-full.border-bottom.border-right
+              .row.row7of9.border-top
+              .row.row2of9.border-top
+            .column.column1of5.height-full.border-bottom.border-right
+              .row.row7of10.border-top
+              .row.row3of10.border-top
+            .column.column1of5.height-full.border-bottom.border-right
+              .row.row7of11.border-top
+              .row.row4of11.border-top
+            .column.column1of5.height-full.border-bottom.border-right
+              .row.row7of12.border-top
+              .row.row5of12.border-top
+        .column.column1of11
+          .row.height-extra-large-fixed.margin-bottom-extra-small
+            .column.column1of2.height-full.border-bottom.border-right
+              .row.row8of9.border-top
+              .row.row1of9.border-top
+            .column.column1of2.height-full.border-bottom.border-right
+              .row.row8of11.border-top
+              .row.row3of11.border-top
+        .column.column1of11
+          .row.height-extra-large-fixed.margin-bottom-extra-small
+            .column.column1of2.height-full.border-bottom.border-right
+              .row.row9of10.border-top
+              .row.row1of10.border-top
+            .column.column1of2.height-full.border-bottom.border-right
+              .row.row9of11.border-top
+              .row.row2of11.border-top
+        .column.column1of11
+          .row.height-extra-large-fixed.margin-bottom-extra-small.border-bottom.border-right
+            .row.row10of11.border-top
             .row.row1of11.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row1of11
-            .row.row1of11.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row1of11
-            .row.row1of11.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row1of11
-            .row.row1of11.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row1of11
-            .row.row1of11.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row1of11
-            .row.row1of11.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row1of11
-            .row.row1of11.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row1of11
-            .row.row1of11.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row1of11
-            .row.row1of11.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row1of11
-            .row.row1of11.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row1of11
-            .row.row1of11.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row1of11
-          .column.column1of12.height-full.border-bottom.border-right
+        .column.column1of11
+          .row.height-extra-large-fixed.margin-bottom-extra-small.border-bottom.border-right
+            .row.row11of12.border-top
             .row.row1of12.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row1of12
-            .row.row1of12.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row1of12
-            .row.row1of12.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row1of12
-            .row.row1of12.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row1of12
-            .row.row1of12.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row1of12
-            .row.row1of12.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row1of12
-            .row.row1of12.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row1of12
-            .row.row1of12.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row1of12
-            .row.row1of12.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row1of12
-            .row.row1of12.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row1of12
-            .row.row1of12.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row1of12
-            .row.row1of12.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row1of12
-        .row.fixed-height-extra-large.margin-bottom-extra-small
-          .column.column1of5.height-full.border-bottom.border-right.border-left
-            .row.row2of3.row4of6.row8of12.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row2of3
-            .row.row1of3.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row1of3
-          .column.column1of5.height-full.border-bottom.border-right
-            .row.row2of5.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row2of5
-            .row.row3of5.row6of10.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row3of5
-          .column.column1of5.height-full.border-bottom.border-right
-            .row.row2of7.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row2of7
-            .row.row5of7.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row5of7
-          .column.column1of5.height-full.border-bottom.border-right
-            .row.row2of9.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row2of9
-            .row.row7of9.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row7of9
-          .column.column1of5.height-full.border-bottom.border-right
-            .row.row2of11.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row2of11
-            .row.row9of11.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row9of11
-        .row.fixed-height-extra-large.margin-bottom-extra-small
-          .column.column1of5.height-full.border-bottom.border-right.border-left
-            .row.row3of4.row6of8.row9of12.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row3of4
-            .row.row1of4.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row1of4  
-          .column.column1of5.height-full.border-bottom.border-right
-            .row.row3of5.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row3of5
-            .row.row2of5.row4of10.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row2of5
-          .column.column1of5.height-full.border-bottom.border-right
-            .row.row3of7.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row3of7
-            .row.row4of7.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row4of7
-          .column.column1of5.height-full.border-bottom.border-right
-            .row.row3of9.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row3of9
-            .row.row6of9.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row6of9
-          .column.column1of5.height-full.border-bottom.border-right
-            .row.row3of11.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row3of11
-            .row.row8of11.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row8of11
-        .row.fixed-height-extra-large.margin-bottom-extra-small
-          .column.column1of4.height-full.border-bottom.border-right.border-left
-            .row.row4of5.row8of10.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row4of5
-            .row.row1of5.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row1of5
-          .column.column1of4.height-full.border-bottom.border-right
-            .row.row4of7.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row4of7
-            .row.row3of7.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row3of7
-          .column.column1of4.height-full.border-bottom.border-right
-            .row.row4of9.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row4of9
-            .row.row5of9.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row5of9
-          .column.column1of4.height-full.border-bottom.border-right
-            .row.row4of11.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row4of11
-            .row.row7of11.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row7of11
-        .row.fixed-height-extra-large.margin-bottom-extra-small
-          .column.column1of6.height-full.border-bottom.border-right.border-left
-            .row.row5of6.row10of12.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row5of6
-            .row.row1of6.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row1of6
-          .column.column1of6.height-full.border-bottom.border-right
-            .row.row5of7.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row5of7
-            .row.row2of7.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row2of7
-          .column.column1of6.height-full.border-bottom.border-right
-            .row.row5of8.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row5of8
-            .row.row3of8.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row3of8
-          .column.column1of6.height-full.border-bottom.border-right
-            .row.row5of9.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row5of9
-            .row.row4of9.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row4of9
-          .column.column1of6.height-full.border-bottom.border-right
-            .row.row5of11.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row5of11
-            .row.row6of11.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row6of11
-          .column.column1of6.height-full.border-bottom.border-right
-            .row.row5of12.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row5of12
-            .row.row7of12.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row7of12
-        .row.fixed-height-extra-large.margin-bottom-extra-small
-          .column.column1of3.height-full.border-bottom.border-right.border-left
-            .row.row6of7.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row6of7
-            .row.row1of7.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row1of7
-          .column.column1of3.height-full.border-bottom.border-right
-            .row.row6of9.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row6of9
-            .row.row3of9.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row3of9
-          .column.column1of3.height-full.border-bottom.border-right
-            .row.row6of11.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row6of11
-            .row.row5of11.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row5of11
-        .row.fixed-height-extra-large.margin-bottom-extra-small
-          .column.column1of5.height-full.border-bottom.border-right.border-left
-            .row.row7of8.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row7of8
-            .row.row1of8.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row1of8
-          .column.column1of5.height-full.border-bottom.border-right
-            .row.row7of9.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row7of9
-            .row.row2of9.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row2of9
-          .column.column1of5.height-full.border-bottom.border-right
-            .row.row7of10.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row7of10
-            .row.row3of10.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row3of10
-          .column.column1of5.height-full.border-bottom.border-right
-            .row.row7of11.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row7of11
-            .row.row4of11.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row4of11
-          .column.column1of5.height-full.border-bottom.border-right
-            .row.row7of12.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row7of12
-            .row.row5of12.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row5of12
-        .row.fixed-height-extra-large.margin-bottom-extra-small
-          .column.column1of2.height-full.border-bottom.border-right.border-left
-            .row.row8of9.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row8of9
-            .row.row1of9.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row1of9
-          .column.column1of2.height-full.border-bottom.border-right
-            .row.row8of11.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row8of11
-            .row.row3of11.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row3of11
-        .row.fixed-height-extra-large.margin-bottom-extra-small
-          .column.column1of2.height-full.border-bottom.border-right.border-left
-            .row.row9of10.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row9of10
-            .row.row1of10.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row1of10
-          .column.column1of2.height-full.border-bottom.border-right
-            .row.row9of11.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row9of11
-            .row.row2of11.border-top
-              .display-table.height-full.width-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .row2of11
-        .row.fixed-height-extra-large.margin-bottom-extra-small.border-bottom.border-right.border-left
-          .row.row10of11.border-top
-            .display-table.height-full.width-full
-              .display-table-row
-                .display-table-cell.vertical-align-middle
-                  %span.font-size-small .row10of11
-          .row.row1of11.border-top
-            .display-table.height-full.width-full
-              .display-table-row
-                .display-table-cell.vertical-align-middle
-                  %span.font-size-small .row1of11
-        .row.fixed-height-extra-large.margin-bottom-extra-small.border-bottom.border-right.border-left
-          .row.row11of12.border-top
-            .display-table.height-full.width-full
-              .display-table-row
-                .display-table-cell.vertical-align-middle
-                  %span.font-size-small .row11of12
-          .row.row1of12.border-top
-            .display-table.height-full.width-full
-              .display-table-row
-                .display-table-cell.vertical-align-middle
-                  %span.font-size-small .row1of12
 
     %section(data-component='text-ellipsis')
-      %h3.font-size-medium.text-color-white.padding-left-small.tesseract-font
-        Text Ellipsis
-      .background-color-white.padding-inset-medium.text-align-center
-        .text-ellipsis
-    
+      .padding-horizontal-small.padding-vertical-extra-small.row
+        .column.column1of2.height-medium-fixed
+          .display-table.width-full.height-full
+            .display-table-row
+              .display-table-cell.vertical-align-middle
+                %h3.no-margin.font-size-medium.text-color-white.tesseract-font
+                  Text Ellipsis
+        .column.column1of2.height-medium-fixed
+          .display-table.width-full.height-full
+            .display-table-row
+              .display-table-cell.vertical-align-middle.text-align-right
+                %button.button.button-black.no-border(expandable)
+                  %i.fa.fa-arrows-alt
+      .background-color-white.padding-all-medium.text-align-center
+        .text-ellipsis Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+    %section(data-module='background-color')
+      .padding-horizontal-small.padding-vertical-extra-small.row
+        .column.column1of2.height-medium-fixed
+          .display-table.width-full.height-full
+            .display-table-row
+              .display-table-cell.vertical-align-middle
+                %h3.no-margin.font-size-medium.text-color-white.tesseract-font
+                  Background Colors
+        .column.column1of2.height-medium-fixed
+          .display-table.width-full.height-full
+            .display-table-row
+              .display-table-cell.vertical-align-middle.text-align-right
+                %button.button.button-black.no-border(expandable)
+                  %i.fa.fa-arrows-alt
+      .background-color-white.padding-all-medium
+        .row.background-color-black.padding-all-extra-small.text-align-center.margin-bottom-extra-small
+        .row.background-color-white.padding-all-extra-small.text-align-center.margin-bottom-extra-small.border-all
+        .row.background-color-grey.padding-all-extra-small.text-align-center.margin-bottom-extra-small
+        .row.background-color-green.padding-all-extra-small.text-align-center.margin-bottom-extra-small
+        .row.background-color-red.padding-all-extra-small.text-align-center.margin-bottom-extra-small
+        .row.background-color-blue.padding-all-extra-small.text-align-center.margin-bottom-extra-small
+        .row.background-color-black-intense.padding-all-extra-small.text-align-center.margin-bottom-extra-small
+        .row.background-color-white-intense.padding-all-extra-small.text-align-center.margin-bottom-extra-small
+        .row.background-color-grey-intense.padding-all-extra-small.text-align-center.margin-bottom-extra-small
+        .row.background-color-green-intense.padding-all-extra-small.text-align-center.margin-bottom-extra-small
+        .row.background-color-red-intense.padding-all-extra-small.text-align-center.margin-bottom-extra-small
+        .row.background-color-blue-intense.padding-all-extra-small.text-align-center.margin-bottom-extra-small
+        .row.background-color-white.no-background-color.padding-all-extra-small.text-align-center
+
     %section(data-module='borders')
-      %h3.font-size-medium.text-color-white.padding-left-small.tesseract-font
-        Borders
-      .background-color-white.padding-inset-medium.text-align-center
-        .border-top.padding-inset-small
-          %span.font-size-small .border-top
-        .border-right.padding-inset-small.margin-top-extra-small
-          %span.font-size-small .border-right
-        .border-bottom.padding-inset-small.margin-top-extra-small
-          %span.font-size-small .border-bottom
-        .border-left.padding-inset-small.margin-top-extra-small
-          %span.font-size-small .border-left
-        .border-all.padding-inset-small.margin-top-extra-small
-          %span.font-size-small .border-all
-        .border-all.padding-inset-small.border-radius-extra-small.margin-top-extra-small
-          %span.font-size-small .border-radius-extra-small
-        .border-all.padding-inset-small.border-radius-small.margin-top-extra-small
-          %span.font-size-small .border-radius-small
-        .border-all.padding-inset-small.border-radius-medium.margin-top-extra-small
-          %span.font-size-small .border-radius-medium
-        .border-all.padding-inset-small.border-radius-large.margin-top-extra-small
-          %span.font-size-small .border-radius-large
+      .padding-horizontal-small.padding-vertical-extra-small.row
+        .column.column1of2.height-medium-fixed
+          .display-table.width-full.height-full
+            .display-table-row
+              .display-table-cell.vertical-align-middle
+                %h3.no-margin.font-size-medium.text-color-white.tesseract-font
+                  Borders
+        .column.column1of2.height-medium-fixed
+          .display-table.width-full.height-full
+            .display-table-row
+              .display-table-cell.vertical-align-middle.text-align-right
+                %button.button.button-black.no-border(expandable)
+                  %i.fa.fa-arrows-alt
+      .background-color-white.padding-all-medium.text-align-center
+        .border-top.padding-all-extra-small.margin-top-extra-small
+          .background-color-grey.display-block.padding-all-extra-small.opacity-40
+        .border-right.padding-all-extra-small.margin-top-extra-small
+          .background-color-grey.display-block.padding-all-extra-small.opacity-40
+        .border-bottom.padding-all-extra-small.margin-top-extra-small
+          .background-color-grey.display-block.padding-all-extra-small.opacity-40
+        .border-left.padding-all-extra-small.margin-top-extra-small
+          .background-color-grey.display-block.padding-all-extra-small.opacity-40
+        .border-all.padding-all-extra-small.margin-top-extra-small
+          .background-color-grey.display-block.padding-all-extra-small.opacity-40
+        .no-border.border-all.padding-all-extra-small.margin-top-extra-small
+          .background-color-grey.display-block.padding-all-extra-small.opacity-40
+    
+    %section(data-module='border-color')
+      .padding-horizontal-small.padding-vertical-extra-small.row
+        .column.column1of2.height-medium-fixed
+          .display-table.width-full.height-full
+            .display-table-row
+              .display-table-cell.vertical-align-middle
+                %h3.no-margin.font-size-medium.text-color-white.tesseract-font
+                  Border Colors
+        .column.column1of2.height-medium-fixed
+          .display-table.width-full.height-full
+            .display-table-row
+              .display-table-cell.vertical-align-middle.text-align-right
+                %button.button.button-black.no-border(expandable)
+                  %i.fa.fa-arrows-alt
+      .background-color-white.padding-all-medium.text-align-center
+        .background-color-black.padding-all-extra-small
+          .border-color-white.border-top-color-white.border-right-color-white.border-bottom-color-white.border-all-white.border-left-color-white.padding-all-extra-small
+        .border-color-black.border-top-color-black.border-right-color-black.border-bottom-color-black.border-all-black.border-left-color-black.padding-all-extra-small.margin-top-extra-small
+        .border-color-grey.border-top-color-grey.border-right-color-grey.border-bottom-color-grey.border-left-color-grey.border-all-grey.padding-all-extra-small.margin-top-extra-small
+        .border-color-blue.border-top-color-blue.border-right-color-blue.border-bottom-color-blue.border-left-color-blue.border-all-blue.padding-all-extra-small.margin-top-extra-small
+        .border-color-red.border-top-color-red.border-right-color-red.border-bottom-color-red.border-left-color-red.border-all-red.padding-all-extra-small.margin-top-extra-small
+        .border-color-green.border-top-color-green.border-right-color-green.border-bottom-color-green.border-left-color-green.border-all-green.padding-all-extra-small.margin-top-extra-small
+
+    %section(data-module='border-radius')
+      .padding-horizontal-small.padding-vertical-extra-small.row
+        .column.column1of2.height-medium-fixed
+          .display-table.width-full.height-full
+            .display-table-row
+              .display-table-cell.vertical-align-middle
+                %h3.no-margin.font-size-medium.text-color-white.tesseract-font
+                  Border Radius
+        .column.column1of2.height-medium-fixed
+          .display-table.width-full.height-full
+            .display-table-row
+              .display-table-cell.vertical-align-middle.text-align-right
+                %button.button.button-black.no-border(expandable)
+                  %i.fa.fa-arrows-alt
+      .background-color-white.padding-all-medium.text-align-center
+        .border-radius-extra-small.border-all.padding-all-small.margin-top-extra-small
+        .border-radius-small.border-all.padding-all-small.margin-top-extra-small
+        .border-radius-medium.border-all.padding-all-small.margin-top-extra-small
+        .border-radius-large.border-all.padding-all-small.margin-top-extra-small
         .row.margin-top-extra-small
           .column.column2of5
-          .column.column1of5.text-align-center
-            .border-radius-extra-large.fixed-height-extra-large.border-all.padding-inset-small.display-inline-block
-              .display-table.height-full
-                .display-table-row
-                  .display-table-cell.vertical-align-middle
-                    %span.font-size-small .border-radius-extra-large
+          .column.column1of5
+            .border-radius-extra-large.width-large-fixed.height-large-fixed.border-all.display-inline-block
           .column.column2of5
 
-    %section(data-module='colors')
-      %h3.font-size-medium.text-color-white.padding-left-small.tesseract-font
-        Colors
-      .background-color-white.padding-inset-medium
-        .row.background-color-black.padding-inset-extra-small.text-align-center
-          %span.font-size-small.text-color-white .background-color-black, .text-color-white
-        .row.background-color-white.padding-inset-extra-small.text-align-center
-          %span.font-size-small.text-color-grey .background-color-white, .text-color-grey
-        .row.background-color-grey.padding-inset-extra-small.text-align-center
-          %span.font-size-small.text-color-black .background-color-grey, .text-color-black
+    %section(data-module='border-styles')
+      .padding-horizontal-small.padding-vertical-extra-small.row
+        .column.column1of2.height-medium-fixed
+          .display-table.width-full.height-full
+            .display-table-row
+              .display-table-cell.vertical-align-middle
+                %h3.no-margin.font-size-medium.text-color-white.tesseract-font
+                  Border Styles
+        .column.column1of2.height-medium-fixed
+          .display-table.width-full.height-full
+            .display-table-row
+              .display-table-cell.vertical-align-middle.text-align-right
+                %button.button.button-black.no-border(expandable)
+                  %i.fa.fa-arrows-alt
+      .background-color-white.padding-all-medium
+        .border-top-style-solid.border-right-style-solid.border-bottom-style-solid.border-left-style-solid.padding-all-extra-small
+        .border-top-style-dotted.border-right-style-dotted.border-bottom-style-dotted.border-left-style-dotted.padding-all-extra-small.margin-top-small
+        .border-top-style-dashed.border-right-style-dashed.border-bottom-style-dashed.border-left-style-dashed.padding-all-extra-small.margin-top-small
+
+    %section(data-module='border-width')
+      .padding-horizontal-small.padding-vertical-extra-small.row
+        .column.column1of2.height-medium-fixed
+          .display-table.width-full.height-full
+            .display-table-row
+              .display-table-cell.vertical-align-middle
+                %h3.no-margin.font-size-medium.text-color-white.tesseract-font
+                  Border Width
+        .column.column1of2.height-medium-fixed
+          .display-table.width-full.height-full
+            .display-table-row
+              .display-table-cell.vertical-align-middle.text-align-right
+                %button.button.button-black.no-border(expandable)
+                  %i.fa.fa-arrows-alt
+      .background-color-white.padding-all-medium
+        .border-all-width-extra-small.border-top-width-extra-small.border-right-width-extra-small.border-bottom-width-extra-small.border-left-width-extra-small.padding-all-small.border-radius-large.margin-top-extra-small.border-all
+        .border-all-width-small.border-top-width-small.border-right-width-small.border-bottom-width-small.border-left-width-small.padding-all-small.border-radius-large.margin-top-small.border-all
+        .border-all-width-medium.border-top-width-medium.border-right-width-medium.border-bottom-width-medium.border-left-width-medium.padding-all-small.border-radius-large.margin-top-small.border-all
+        .border-all-width-large.border-top-width-large.border-right-width-large.border-bottom-width-large.border-left-width-large.padding-all-small.border-radius-large.margin-top-small.border-all
+        .border-all-width-extra-large.border-top-width-extra-large.border-right-width-extra-large.border-bottom-width-extra-large.border-left-width-extra-large.padding-all-small.border-radius-large.margin-top-small.border-all
+
+    %section(data-module='cursor')
+      .padding-horizontal-small.padding-vertical-extra-small.row
+        .column.column1of2.height-medium-fixed
+          .display-table.width-full.height-full
+            .display-table-row
+              .display-table-cell.vertical-align-middle
+                %h3.no-margin.font-size-medium.text-color-white.tesseract-font
+                  Cursor
+        .column.column1of2.height-medium-fixed
+          .display-table.width-full.height-full
+            .display-table-row
+              .display-table-cell.vertical-align-middle.text-align-right
+                %button.button.button-black.no-border(expandable)
+                  %i.fa.fa-arrows-alt
+      .background-color-white.padding-all-medium.text-align-center
+        .column.column2of5
+        .column.column1of5
+          .padding-all-small.border-all.cursor-pointer Hover Me
+        .column.column2of5
 
     %section(data-module='display')
-      %h3.font-size-medium.text-color-white.padding-left-small.tesseract-font
-        Display
-      .background-color-white.padding-inset-medium
-        .display-inline-block.border-all.padding-inset-small
-          %span.font-size-small .display-inline-block
-        .display-inline-block.border-all.padding-inset-small
-          %span.font-size-small .display-inline-block
-        .display-inline-block.border-all.padding-inset-small
-          %span.font-size-small .display-inline-block
-
-        .display-block.margin-top-small.border-all.padding-inset-small.text-align-center
-          %span.font-size-small .display-block
-
-        .display-table.margin-top-small.border-all.fixed-height-extra-large.width-full.padding-inset-extra-small
+      .padding-horizontal-small.padding-vertical-extra-small.row
+        .column.column1of2.height-medium-fixed
+          .display-table.width-full.height-full
+            .display-table-row
+              .display-table-cell.vertical-align-middle
+                %h3.no-margin.font-size-medium.text-color-white.tesseract-font
+                  Display
+        .column.column1of2.height-medium-fixed
+          .display-table.width-full.height-full
+            .display-table-row
+              .display-table-cell.vertical-align-middle.text-align-right
+                %button.button.button-black.no-border(expandable)
+                  %i.fa.fa-arrows-alt
+      .background-color-white.padding-all-medium
+        .display-inline-block.border-all.padding-all-small
+        .display-inline-block.border-all.padding-all-small
+        .display-inline-block.border-all.padding-all-small
+        .display-block.margin-top-small.border-all.padding-all-small.text-align-center
+        .display-table.margin-top-small.border-all.height-extra-large-fixed.width-full.padding-all-extra-small
           .display-table-row
             .display-table-cell.vertical-align-middle.border-all.text-align-center
-              %span.font-size-small.padding-inset-small .display-table, .display-table-row, .display-table-cell
+              %span.font-size-small.padding-all-small aligned
+        .row.background-color-grey.padding-all-extra-small.margin-top-small
+          .column.column1of3.padding-all-extra-small
+            .background-color-white.padding-all-small
+          .display-none.column.column1of3.padding-all-extra-small
+            .background-color-white.padding-all-small
+          .column.column1of3.padding-all-extra-small
+            .background-color-white.padding-all-small
 
-    %section(data-module='flow')
-      %h3.font-size-medium.text-color-white.padding-left-small.tesseract-font
-        Float
-      .background-color-white.padding-inset-medium
-        .clear-both
-        .float-left
-        .float-right
+    %section(data-module='float')
+      .padding-horizontal-small.padding-vertical-extra-small.row
+        .column.column1of2.height-medium-fixed
+          .display-table.width-full.height-full
+            .display-table-row
+              .display-table-cell.vertical-align-middle
+                %h3.no-margin.font-size-medium.text-color-white.tesseract-font
+                  Float
+        .column.column1of2.height-medium-fixed
+          .display-table.width-full.height-full
+            .display-table-row
+              .display-table-cell.vertical-align-middle.text-align-right
+                %button.button.button-black.no-border(expandable)
+                  %i.fa.fa-arrows-alt
+      .background-color-white.padding-all-medium
+        .clear-both.clearfix.background-color-grey.padding-all-extra-small
+          .float-left.background-color-white.padding-all-small
+          .float-right.background-color-white.padding-all-small
 
     %section(data-module='fonts')
-      %h3.font-size-medium.text-color-white.padding-left-small.tesseract-font
-        Fonts
-      .background-color-white.padding-inset-medium.text-align-center
+      .padding-horizontal-small.padding-vertical-extra-small.row
+        .column.column1of2.height-medium-fixed
+          .display-table.width-full.height-full
+            .display-table-row
+              .display-table-cell.vertical-align-middle
+                %h3.no-margin.font-size-medium.text-color-white.tesseract-font
+                  Fonts
+        .column.column1of2.height-medium-fixed
+          .display-table.width-full.height-full
+            .display-table-row
+              .display-table-cell.vertical-align-middle.text-align-right
+                %button.button.button-black.no-border(expandable)
+                  %i.fa.fa-arrows-alt
+      .background-color-white.padding-all-medium.text-align-center
         .row.padding-bottom-medium
           .display-inline-block.padding-right-small
             %span.font-size-extra-small .font-size-extra-small
@@ -1298,174 +844,567 @@
           .display-inline-block.padding-right-small.padding-left-small
             %span.font-size-extra-large .font-size-extra-large
         .row
-          .display-inline-block.padding-right-small.padding-left-small
-            %span.font-weight-extra-small .font-weight-extra-small
-          .display-inline-block.padding-right-small.padding-left-small
-            %span.font-weight-small .font-weight-small
-          .display-inline-block.padding-right-small.padding-left-small
-            %span.font-weight-medium .font-weight-medium
-          .display-inline-block.padding-right-small.padding-left-small
-            %span.font-weight-large .font-weight-large
-          .display-inline-block.padding-right-small.padding-left-small
-            %span.font-weight-extra-large .font-weight-extra-large
+          .display-inline-block.padding-right-extra-small.padding-left-small
+            %span.font-weight-light .font-weight-light
+          .display-inline-block.padding-right-extra-small.padding-left-small
+            %span.font-weight-normal .font-weight-normal
+          .display-inline-block.padding-right-extra-small.padding-left-small
+            %span.font-weight-bold .font-weight-bold
+          .display-inline-block.padding-right-extra-small.padding-left-small
+            %span.font-weight-extra-bold .font-weight-extra-bold
+          .display-inline-block.padding-right-extra-small.padding-left-small
+            %span.font-weight-black .font-weight-black
+          .display-inline-block.padding-right-extra-small.padding-left-small
+            %span.font-weight-bolder .font-weight-bolder
+          .display-inline-block.padding-right-extra-small.padding-left-small
+            %span.font-weight-lighter .font-weight-lighter
 
-    %section(data-module='margins')
-      %h3.font-size-medium.text-color-white.padding-left-small.tesseract-font
-        Margins
-      .background-color-white.padding-inset-medium.text-align-center
-        .margin-top-extra-small
-        .margin-right-extra-small
-        .margin-bottom-extra-small
-        .margin-left-extra-small
-        .margin-top-small
-        .margin-right-small
-        .margin-bottom-small
-        .margin-left-small
-        .margin-top-medium
-        .margin-right-medium
-        .margin-bottom-medium
-        .margin-left-medium
-        .margin-top-large
-        .margin-right-large
-        .margin-bottom-large
-        .margin-left-large
-        .margin-top-extra-large
-        .margin-right-extra-large
-        .margin-bottom-extra-large
-        .margin-left-extra-large
-        .margin-vertical-extra-small
-        .margin-horizontal-extra-small
-        .margin-vertical-small
-        .margin-horizontal-small
-        .margin-vertical-medium
-        .margin-horizontal-medium
-        .margin-vertical-large
-        .margin-horizontal-large
-        .margin-vertical-extra-large
-        .margin-horizontal-extra-large     
-        .no-margin
+    %section(data-module='margin')
+      .padding-horizontal-small.padding-vertical-extra-small.row
+        .column.column1of2.height-medium-fixed
+          .display-table.width-full.height-full
+            .display-table-row
+              .display-table-cell.vertical-align-middle
+                %h3.no-margin.font-size-medium.text-color-white.tesseract-font
+                  Margins
+        .column.column1of2.height-medium-fixed
+          .display-table.width-full.height-full
+            .display-table-row
+              .display-table-cell.vertical-align-middle.text-align-right
+                %button.button.button-black.no-border(expandable)
+                  %i.fa.fa-arrows-alt
+      .background-color-white.padding-all-medium.text-align-center
+        .row.border-all
+          .column.column1of4
+            .margin-left-extra-small.background-color-grey.float-left.width-medium.height-medium-fixed
+          .column.column1of4
+            .margin-top-extra-small.background-color-grey.float-left.width-medium.height-medium-fixed
+          .column.column1of4
+            .margin-bottom-extra-small.background-color-grey.float-left.width-medium.height-medium-fixed
+          .column.column1of4
+            .margin-right-extra-small.background-color-grey.float-left.width-medium.height-medium-fixed
+        .row.margin-top-extra-small.border-all
+          .column.column1of4
+            .margin-left-small.background-color-grey.float-left.width-medium.height-medium-fixed
+          .column.column1of4
+            .margin-top-small.background-color-grey.float-left.width-medium.height-medium-fixed
+          .column.column1of4
+            .margin-bottom-small.background-color-grey.float-left.width-medium.height-medium-fixed
+          .column.column1of4
+            .margin-right-small.background-color-grey.float-left.width-medium.height-medium-fixed
+        .row.margin-top-extra-small.border-all
+          .column.column1of4
+            .margin-left-medium.background-color-grey.float-left.width-medium.height-medium-fixed
+          .column.column1of4
+            .margin-top-medium.background-color-grey.float-left.width-medium.height-medium-fixed
+          .column.column1of4
+            .margin-bottom-medium.background-color-grey.float-left.width-medium.height-medium-fixed
+          .column.column1of4
+            .margin-right-medium.background-color-grey.float-left.width-medium.height-medium-fixed
+        .row.margin-top-extra-small.border-all
+          .column.column1of4
+            .margin-left-large.background-color-grey.float-left.width-medium.height-medium-fixed
+          .column.column1of4
+            .margin-top-large.background-color-grey.float-left.width-medium.height-medium-fixed
+          .column.column1of4
+            .margin-bottom-large.background-color-grey.float-left.width-medium.height-medium-fixed
+          .column.column1of4
+            .margin-right-large.background-color-grey.float-left.width-medium.height-medium-fixed
+        .row.margin-top-extra-small.border-all
+          .column.column1of4
+            .margin-left-extra-large.background-color-grey.float-left.width-medium.height-medium-fixed
+          .column.column1of4
+            .margin-top-extra-large.background-color-grey.float-left.width-medium.height-medium-fixed
+          .column.column1of4
+            .margin-bottom-extra-large.background-color-grey.float-left.width-medium.height-medium-fixed
+          .column.column1of4
+            .margin-right-extra-large.background-color-grey.float-left.width-medium.height-medium-fixed
+        .row.margin-top-extra-small.border-all
+          .margin-vertical-extra-small.background-color-grey.float-left.width-full.height-medium-fixed
+          .margin-vertical-small.background-color-grey.float-left.width-full.height-medium-fixed
+          .margin-vertical-medium.background-color-grey.float-left.width-full.height-medium-fixed
+          .margin-vertical-large.background-color-grey.float-left.width-full.height-medium-fixed
+          .margin-vertical-extra-large.background-color-grey.float-left.width-full.height-medium-fixed
+        .row.margin-top-extra-small.border-all
+          .margin-horizontal-extra-small.background-color-grey.float-left.width-medium-fixed.height-medium-fixed.margin-top-extra-small
+          .margin-horizontal-small.background-color-grey.float-left.width-medium-fixed.height-medium-fixed.margin-top-extra-small
+          .margin-horizontal-medium.background-color-grey.float-left.width-medium-fixed.height-medium-fixed.margin-top-extra-small
+          .margin-horizontal-large.background-color-grey.float-left.width-medium-fixed.height-medium-fixed.margin-top-extra-small
+          .margin-horizontal-extra-large.background-color-grey.float-left.width-medium-fixed.height-medium-fixed.margin-top-extra-small
+        .row.margin-top-extra-small.border-all
+          .margin-all-extra-small.background-color-grey.float-left.width-medium-fixed.height-medium-fixed.margin-top-extra-small
+          .margin-all-small.background-color-grey.float-left.width-medium-fixed.height-medium-fixed.margin-top-extra-small
+          .margin-all-medium.background-color-grey.float-left.width-medium-fixed.height-medium-fixed.margin-top-extra-small
+          .margin-all-large.background-color-grey.float-left.width-medium-fixed.height-medium-fixed.margin-top-extra-small
+          .margin-all-extra-large.background-color-grey.float-left.width-medium-fixed.height-medium-fixed.margin-top-extra-small
+        .row.margin-top-extra-small.border-all
+          .column.column1of4
+            .margin-left-extra-small-fixed.background-color-grey.float-left.width-medium.height-medium-fixed
+          .column.column1of4
+            .margin-top-extra-small-fixed.background-color-grey.float-left.width-medium.height-medium-fixed
+          .column.column1of4
+            .margin-bottom-extra-small-fixed.background-color-grey.float-left.width-medium.height-medium-fixed
+          .column.column1of4
+            .margin-right-extra-small-fixed.background-color-grey.float-left.width-medium.height-medium-fixed
+        .row.margin-top-extra-small.border-all
+          .column.column1of4
+            .margin-left-small-fixed.background-color-grey.float-left.width-medium.height-medium-fixed
+          .column.column1of4
+            .margin-top-small-fixed.background-color-grey.float-left.width-medium.height-medium-fixed
+          .column.column1of4
+            .margin-bottom-small-fixed.background-color-grey.float-left.width-medium.height-medium-fixed
+          .column.column1of4
+            .margin-right-small-fixed.background-color-grey.float-left.width-medium.height-medium-fixed
+        .row.margin-top-extra-small.border-all
+          .column.column1of4
+            .margin-left-medium-fixed.background-color-grey.float-left.width-medium.height-medium-fixed
+          .column.column1of4
+            .margin-top-medium-fixed.background-color-grey.float-left.width-medium.height-medium-fixed
+          .column.column1of4
+            .margin-bottom-medium-fixed.background-color-grey.float-left.width-medium.height-medium-fixed
+          .column.column1of4
+            .margin-right-medium-fixed.background-color-grey.float-left.width-medium.height-medium-fixed
+        .row.margin-top-extra-small.border-all
+          .column.column1of4
+            .margin-left-large-fixed.background-color-grey.float-left.width-medium.height-medium-fixed
+          .column.column1of4
+            .margin-top-large-fixed.background-color-grey.float-left.width-medium.height-medium-fixed
+          .column.column1of4
+            .margin-bottom-large-fixed.background-color-grey.float-left.width-medium.height-medium-fixed
+          .column.column1of4
+            .margin-right-large-fixed.background-color-grey.float-left.width-medium.height-medium-fixed
+        .row.margin-top-extra-small.border-all
+          .column.column1of4
+            .margin-left-extra-large-fixed.background-color-grey.float-left.width-medium.height-medium-fixed
+          .column.column1of4
+            .margin-top-extra-large-fixed.background-color-grey.float-left.width-medium.height-medium-fixed
+          .column.column1of4
+            .margin-bottom-extra-large-fixed.background-color-grey.float-left.width-medium.height-medium-fixed
+          .column.column1of4
+            .margin-right-extra-large-fixed.background-color-grey.float-left.width-medium.height-medium-fixed
+        .row.margin-top-extra-small.border-all
+          .margin-vertical-extra-small-fixed.background-color-grey.float-left.width-full.height-medium-fixed
+          .margin-vertical-small-fixed.background-color-grey.float-left.width-full.height-medium-fixed
+          .margin-vertical-medium-fixed.background-color-grey.float-left.width-full.height-medium-fixed
+          .margin-vertical-large-fixed.background-color-grey.float-left.width-full.height-medium-fixed
+          .margin-vertical-extra-large-fixed.background-color-grey.float-left.width-full.height-medium-fixed
+        .row.margin-top-extra-small.border-all
+          .margin-horizontal-extra-small-fixed.background-color-grey.float-left.width-medium.height-medium-fixed.margin-top-extra-small
+          .margin-horizontal-small-fixed.background-color-grey.float-left.width-medium.height-medium-fixed.margin-top-extra-small
+          .margin-horizontal-medium-fixed.background-color-grey.float-left.width-medium.height-medium-fixed.margin-top-extra-small
+          .margin-horizontal-large-fixed.background-color-grey.float-left.width-medium.height-medium-fixed.margin-top-extra-small
+          .margin-horizontal-extra-large-fixed.background-color-grey.float-left.width-medium.height-medium-fixed.margin-top-extra-small
+        .row.margin-top-extra-small.border-all
+          .margin-all-extra-small-fixed.background-color-grey.float-left.width-medium.height-medium-fixed.margin-top-extra-small
+          .margin-all-small-fixed.background-color-grey.float-left.width-medium.height-medium-fixed.margin-top-extra-small
+          .margin-all-medium-fixed.background-color-grey.float-left.width-medium.height-medium-fixed.margin-top-extra-small
+          .margin-all-large-fixed.background-color-grey.float-left.width-medium.height-medium-fixed.margin-top-extra-small
+          .margin-all-extra-large-fixed.background-color-grey.float-left.width-medium.height-medium-fixed.margin-top-extra-small
+        .row.margin-top-extra-small.border-all
+          .no-margin.margin-all-large.background-color-grey.float-left.width-medium.height-medium-fixed
+
+    %section(data-module='opacity')
+      .padding-horizontal-small.padding-vertical-extra-small.row
+        .column.column1of2.height-medium-fixed
+          .display-table.width-full.height-full
+            .display-table-row
+              .display-table-cell.vertical-align-middle
+                %h3.no-margin.font-size-medium.text-color-white.tesseract-font
+                  Opacity
+        .column.column1of2.height-medium-fixed
+          .display-table.width-full.height-full
+            .display-table-row
+              .display-table-cell.vertical-align-middle.text-align-right
+                %button.button.button-black.no-border(expandable)
+                  %i.fa.fa-arrows-alt
+      .background-color-white.padding-all-medium.text-align-center.row
+        .opacity-10.column.column1of10.background-color-black.height-medium-fixed
+        .opacity-20.column.column1of10.background-color-black.height-medium-fixed
+        .opacity-30.column.column1of10.background-color-black.height-medium-fixed
+        .opacity-40.column.column1of10.background-color-black.height-medium-fixed
+        .opacity-50.column.column1of10.background-color-black.height-medium-fixed
+        .opacity-60.column.column1of10.background-color-black.height-medium-fixed
+        .opacity-70.column.column1of10.background-color-black.height-medium-fixed
+        .opacity-80.column.column1of10.background-color-black.height-medium-fixed
+        .opacity-90.column.column1of10.background-color-black.height-medium-fixed
+        .opacity-100.column.column1of10.background-color-black.height-medium-fixed
+
+    %section(data-module='outline')
+      .padding-horizontal-small.padding-vertical-extra-small.row
+        .column.column1of2.height-medium-fixed
+          .display-table.width-full.height-full
+            .display-table-row
+              .display-table-cell.vertical-align-middle
+                %h3.no-margin.font-size-medium.text-color-white.tesseract-font
+                  Outline
+        .column.column1of2.height-medium-fixed
+          .display-table.width-full.height-full
+            .display-table-row
+              .display-table-cell.vertical-align-middle.text-align-right
+                %button.button.button-black.no-border(expandable)
+                  %i.fa.fa-arrows-alt
+      .background-color-white.padding-all-medium.text-align-center
+        %button.no-outline Button
 
     %section(data-module='overflow')
-      %h3.font-size-medium.text-color-white.padding-left-small.tesseract-font
-        Overflow
-      .background-color-white.padding-inset-medium.text-align-center
-        .overflow-hidden
+      .padding-horizontal-small.padding-vertical-extra-small.row
+        .column.column1of2.height-medium-fixed
+          .display-table.width-full.height-full
+            .display-table-row
+              .display-table-cell.vertical-align-middle
+                %h3.no-margin.font-size-medium.text-color-white.tesseract-font
+                  Overflow
+        .column.column1of2.height-medium-fixed
+          .display-table.width-full.height-full
+            .display-table-row
+              .display-table-cell.vertical-align-middle.text-align-right
+                %button.button.button-black.no-border(expandable)
+                  %i.fa.fa-arrows-alt
+      .background-color-white.padding-all-medium.text-align-center
+        .overflow-hidden.border-all
+          .width-full.padding-all-large.margin-left-large.white-space-nowrap Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
 
-    %section(data-module='paddings')
-      %h3.font-size-medium.text-color-white.padding-left-small.tesseract-font
-        Paddings
-      .background-color-white.padding-inset-medium.text-align-center
-        .padding-top-extra-small
-        .padding-right-extra-small
-        .padding-bottom-extra-small
-        .padding-left-extra-small
-        .padding-top-small
-        .padding-right-small
-        .padding-bottom-small
-        .padding-left-small
-        .padding-top-medium
-        .padding-right-medium
-        .padding-bottom-medium
-        .padding-left-medium
-        .padding-top-large
-        .padding-right-large
-        .padding-bottom-large
-        .padding-left-large
-        .padding-top-extra-large
-        .padding-right-extra-large
-        .padding-bottom-extra-large
-        .padding-left-extra-large
-        .padding-vertical-extra-small
-        .padding-horizontal-extra-small
-        .padding-vertical-small
-        .padding-horizontal-small
-        .padding-vertical-medium
-        .padding-horizontal-medium
-        .padding-vertical-large
-        .padding-horizontal-large
-        .padding-vertical-extra-large
-        .padding-horizontal-extra-large
-        .padding-inset-extra-small
-        .padding-inset-small
-        .padding-inset-medium
-        .padding-inset-large
-        .padding-inset-extra-large      
-        .no-padding
+    %section(data-module='padding')
+      .padding-horizontal-small.padding-vertical-extra-small.row
+        .column.column1of2.height-medium-fixed
+          .display-table.width-full.height-full
+            .display-table-row
+              .display-table-cell.vertical-align-middle
+                %h3.no-margin.font-size-medium.text-color-white.tesseract-font
+                  Paddings
+        .column.column1of2.height-medium-fixed
+          .display-table.width-full.height-full
+            .display-table-row
+              .display-table-cell.vertical-align-middle.text-align-right
+                %button.button.button-black.no-border(expandable)
+                  %i.fa.fa-arrows-alt
+      .background-color-white.padding-all-medium.text-align-center.overflow-hidden
+        .padding-top-extra-small.border-all.margin-top-extra-small
+          .height-medium-fixed.widt-full.background-color-grey
+        .padding-right-extra-small.border-all.margin-top-extra-small
+          .height-medium-fixed.widt-full.background-color-grey
+        .padding-bottom-extra-small.border-all.margin-top-extra-small
+          .height-medium-fixed.widt-full.background-color-grey
+        .padding-left-extra-small.border-all.margin-top-extra-small
+          .height-medium-fixed.widt-full.background-color-grey
+        .padding-top-small.border-all.margin-top-extra-small
+          .height-medium-fixed.widt-full.background-color-grey
+        .padding-right-small.border-all.margin-top-extra-small
+          .height-medium-fixed.widt-full.background-color-grey
+        .padding-bottom-small.border-all.margin-top-extra-small
+          .height-medium-fixed.widt-full.background-color-grey
+        .padding-left-small.border-all.margin-top-extra-small
+          .height-medium-fixed.widt-full.background-color-grey
+        .padding-top-medium.border-all.margin-top-extra-small
+          .height-medium-fixed.widt-full.background-color-grey
+        .padding-right-medium.border-all.margin-top-extra-small
+          .height-medium-fixed.widt-full.background-color-grey
+        .padding-bottom-medium.border-all.margin-top-extra-small
+          .height-medium-fixed.widt-full.background-color-grey
+        .padding-left-medium.border-all.margin-top-extra-small
+          .height-medium-fixed.widt-full.background-color-grey
+        .padding-top-large.border-all.margin-top-extra-small
+          .height-medium-fixed.widt-full.background-color-grey
+        .padding-right-large.border-all.margin-top-extra-small
+          .height-medium-fixed.widt-full.background-color-grey
+        .padding-bottom-large.border-all.margin-top-extra-small
+          .height-medium-fixed.widt-full.background-color-grey
+        .padding-left-large.border-all.margin-top-extra-small
+          .height-medium-fixed.widt-full.background-color-grey
+        .padding-top-extra-large.border-all.margin-top-extra-small
+          .height-medium-fixed.widt-full.background-color-grey
+        .padding-right-extra-large.border-all.margin-top-extra-small
+          .height-medium-fixed.widt-full.background-color-grey
+        .padding-bottom-extra-large.border-all.margin-top-extra-small
+          .height-medium-fixed.widt-full.background-color-grey
+        .padding-left-extra-large.border-all.margin-top-extra-small
+          .height-medium-fixed.widt-full.background-color-grey
+        .padding-vertical-extra-small.border-all.margin-top-extra-small
+          .height-medium-fixed.widt-full.background-color-grey
+        .padding-horizontal-extra-small.border-all.margin-top-extra-small
+          .height-medium-fixed.widt-full.background-color-grey
+        .padding-vertical-small.border-all.margin-top-extra-small
+          .height-medium-fixed.widt-full.background-color-grey
+        .padding-horizontal-small.border-all.margin-top-extra-small
+          .height-medium-fixed.widt-full.background-color-grey
+        .padding-vertical-medium.border-all.margin-top-extra-small
+          .height-medium-fixed.widt-full.background-color-grey
+        .padding-horizontal-medium.border-all.margin-top-extra-small
+          .height-medium-fixed.widt-full.background-color-grey
+        .padding-vertical-large.border-all.margin-top-extra-small
+          .height-medium-fixed.widt-full.background-color-grey
+        .padding-horizontal-large.border-all.margin-top-extra-small
+          .height-medium-fixed.widt-full.background-color-grey
+        .padding-vertical-extra-large.border-all.margin-top-extra-small
+          .height-medium-fixed.widt-full.background-color-grey
+        .padding-horizontal-extra-large.border-all.margin-top-extra-small
+          .height-medium-fixed.widt-full.background-color-grey
+        .padding-all-extra-small.border-all.margin-top-extra-small
+          .height-medium-fixed.widt-full.background-color-grey
+        .padding-all-small.border-all.margin-top-extra-small
+          .height-medium-fixed.widt-full.background-color-grey
+        .padding-all-medium.border-all.margin-top-extra-small
+          .height-medium-fixed.widt-full.background-color-grey
+        .padding-all-large.border-all.margin-top-extra-small
+          .height-medium-fixed.widt-full.background-color-grey
+        .padding-all-extra-large.border-all.margin-top-extra-small
+          .height-medium-fixed.widt-full.background-color-grey
+        .padding-top-extra-small-fixed.border-all.margin-top-extra-small
+          .height-medium-fixed.widt-full.background-color-grey
+        .padding-right-extra-small-fixed.border-all.margin-top-extra-small
+          .height-medium-fixed.widt-full.background-color-grey
+        .padding-bottom-extra-small-fixed.border-all.margin-top-extra-small
+          .height-medium-fixed.widt-full.background-color-grey
+        .padding-left-extra-small-fixed.border-all.margin-top-extra-small
+          .height-medium-fixed.widt-full.background-color-grey
+        .padding-top-small-fixed.border-all.margin-top-extra-small
+          .height-medium-fixed.widt-full.background-color-grey
+        .padding-right-small-fixed.border-all.margin-top-extra-small
+          .height-medium-fixed.widt-full.background-color-grey
+        .padding-bottom-small-fixed.border-all.margin-top-extra-small
+          .height-medium-fixed.widt-full.background-color-grey
+        .padding-left-small-fixed.border-all.margin-top-extra-small
+          .height-medium-fixed.widt-full.background-color-grey
+        .padding-top-medium-fixed.border-all.margin-top-extra-small
+          .height-medium-fixed.widt-full.background-color-grey
+        .padding-right-medium-fixed.border-all.margin-top-extra-small
+          .height-medium-fixed.widt-full.background-color-grey
+        .padding-bottom-medium-fixed.border-all.margin-top-extra-small
+          .height-medium-fixed.widt-full.background-color-grey
+        .padding-left-medium-fixed.border-all.margin-top-extra-small
+          .height-medium-fixed.widt-full.background-color-grey
+        .padding-top-large-fixed.border-all.margin-top-extra-small
+          .height-medium-fixed.widt-full.background-color-grey
+        .padding-right-large-fixed.border-all.margin-top-extra-small
+          .height-medium-fixed.widt-full.background-color-grey
+        .padding-bottom-large-fixed.border-all.margin-top-extra-small
+          .height-medium-fixed.widt-full.background-color-grey
+        .padding-left-large-fixed.border-all.margin-top-extra-small
+          .height-medium-fixed.widt-full.background-color-grey
+        .padding-top-extra-large-fixed.border-all.margin-top-extra-small
+          .height-medium-fixed.widt-full.background-color-grey
+        .padding-right-extra-large-fixed.border-all.margin-top-extra-small
+          .height-medium-fixed.widt-full.background-color-grey
+        .padding-bottom-extra-large-fixed.border-all.margin-top-extra-small
+          .height-medium-fixed.widt-full.background-color-grey
+        .padding-left-extra-large-fixed.border-all.margin-top-extra-small
+          .height-medium-fixed.widt-full.background-color-grey
+        .padding-vertical-extra-small-fixed.border-all.margin-top-extra-small
+          .height-medium-fixed.widt-full.background-color-grey
+        .padding-horizontal-extra-small-fixed.border-all.margin-top-extra-small
+          .height-medium-fixed.widt-full.background-color-grey
+        .padding-vertical-small-fixed.border-all.margin-top-extra-small
+          .height-medium-fixed.widt-full.background-color-grey
+        .padding-horizontal-small-fixed.border-all.margin-top-extra-small
+          .height-medium-fixed.widt-full.background-color-grey
+        .padding-vertical-medium-fixed.border-all.margin-top-extra-small
+          .height-medium-fixed.widt-full.background-color-grey
+        .padding-horizontal-medium-fixed.border-all.margin-top-extra-small
+          .height-medium-fixed.widt-full.background-color-grey
+        .padding-vertical-large-fixed.border-all.margin-top-extra-small
+          .height-medium-fixed.widt-full.background-color-grey
+        .padding-horizontal-large-fixed.border-all.margin-top-extra-small
+          .height-medium-fixed.widt-full.background-color-grey
+        .padding-vertical-extra-large-fixed.border-all.margin-top-extra-small
+          .height-medium-fixed.widt-full.background-color-grey
+        .padding-horizontal-extra-large-fixed.border-all.margin-top-extra-small
+          .height-medium-fixed.widt-full.background-color-grey
+        .padding-all-extra-small-fixed.border-all.margin-top-extra-small
+          .height-medium-fixed.widt-full.background-color-grey
+        .padding-all-small-fixed.border-all.margin-top-extra-small
+          .height-medium-fixed.widt-full.background-color-grey
+        .padding-all-medium-fixed.border-all.margin-top-extra-small
+          .height-medium-fixed.widt-full.background-color-grey
+        .padding-all-large-fixed.border-all.margin-top-extra-small
+          .height-medium-fixed.widt-full.background-color-grey
+        .padding-all-extra-large-fixed.border-all.margin-top-extra-small
+          .height-medium-fixed.widt-full.background-color-grey
+        .no-padding.padding-all-large.margin-top-extra-small
+          .height-medium-fixed.widt-full.background-color-grey
 
     %section(data-module='position')
-      %h3.font-size-medium Position
-      .position-relative
-      .position-absolute
+      .padding-horizontal-small.padding-vertical-extra-small.row
+        .column.column1of2.height-medium-fixed
+          .display-table.width-full.height-full
+            .display-table-row
+              .display-table-cell.vertical-align-middle
+                %h3.no-margin.font-size-medium.text-color-white.tesseract-font
+                  Position
+        .column.column1of2.height-medium-fixed
+          .display-table.width-full.height-full
+            .display-table-row
+              .display-table-cell.vertical-align-middle.text-align-right
+                %button.button.button-black.no-border(expandable)
+                  %i.fa.fa-arrows-alt
+      .background-color-white.padding-all-medium.text-align-center.overflow-hidden
+        .position-relative.background-color-grey.padding-all-medium
+          .position-absolute.opacity-30.background-color-white.margin-left-small.padding-all-small.width-large
+          .position-absolute.opacity-30.background-color-white.margin-left-medium.padding-all-small.width-large
+          .position-absolute.opacity-30.background-color-white.margin-left-large.padding-all-small.width-large
 
-    %section(data-module='heights')
-      %h3.font-size-medium Heights
-      .height-extra-small
-      .height-small
-      .height-medium
-      .height-large
-      .height-extra-large.height-full
-      .fixed-height-extra-small
-      .fixed-height-small
-      .fixed-height-medium
-      .fixed-height-large
-      .fixed-height-extra-large
-      .fixed-height-minimum
+    %section(data-module='height')
+      .padding-horizontal-small.padding-vertical-extra-small.row
+        .column.column1of2.height-medium-fixed
+          .display-table.width-full.height-full
+            .display-table-row
+              .display-table-cell.vertical-align-middle
+                %h3.no-margin.font-size-medium.text-color-white.tesseract-font
+                  Heights
+        .column.column1of2.height-medium-fixed
+          .display-table.width-full.height-full
+            .display-table-row
+              .display-table-cell.vertical-align-middle.text-align-right
+                %button.button.button-black.no-border(expandable)
+                  %i.fa.fa-arrows-alt
+      .background-color-white.padding-all-medium.text-align-center.overflow-hidden
+        .height-minimum-fixed.background-color-grey.width-full.margin-top-extra-small
+        .height-extra-small.background-color-grey.width-full
+        .height-small.background-color-grey.width-full.margin-top-extra-small
+        .height-medium.background-color-grey.width-full.margin-top-extra-small
+        .height-large.background-color-grey.width-full.margin-top-extra-small
+        .height-extra-large.height-full.background-color-grey.width-full.margin-top-extra-small
+        .height-extra-small-fixed.background-color-grey.width-full.margin-top-extra-small
+        .height-small-fixed.background-color-grey.width-full.margin-top-extra-small
+        .height-medium-fixed.background-color-grey.width-full.margin-top-extra-small
+        .height-large-fixed.background-color-grey.width-full.margin-top-extra-small
+        .height-extra-large-fixed.background-color-grey.width-full.margin-top-extra-small
+    
+    %section(data-module='overflow')
+      .padding-horizontal-small.padding-vertical-extra-small.row
+        .column.column1of2.height-medium-fixed
+          .display-table.width-full.height-full
+            .display-table-row
+              .display-table-cell.vertical-align-middle
+                %h3.no-margin.font-size-medium.text-color-white.tesseract-font
+                  Text Overflow
+        .column.column1of2.height-medium-fixed
+          .display-table.width-full.height-full
+            .display-table-row
+              .display-table-cell.vertical-align-middle.text-align-right
+                %button.button.button-black.no-border(expandable)
+                  %i.fa.fa-arrows-alt
+      .background-color-white.padding-all-medium.text-align-center
+        .text-align-center
+          .text-overflow-ellipsis.width-medium-fixed.white-space-nowrap.overflow-hidden.display-inline-block
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
 
     %section(data-module='text-align')
-      %h3.font-size-medium Text Align
-      .text-align-center
-      .text-align-left
-      .text-align-right
+      .padding-horizontal-small.padding-vertical-extra-small.row
+        .column.column1of2.height-medium-fixed
+          .display-table.width-full.height-full
+            .display-table-row
+              .display-table-cell.vertical-align-middle
+                %h3.no-margin.font-size-medium.text-color-white.tesseract-font
+                  Text Align
+        .column.column1of2.height-medium-fixed
+          .display-table.width-full.height-full
+            .display-table-row
+              .display-table-cell.vertical-align-middle.text-align-right
+                %button.button.button-black.no-border(expandable)
+                  %i.fa.fa-arrows-alt
+      .background-color-white.padding-all-medium.text-align-center
+        .text-align-center.border-all.padding-all-extra-small
+          Lorem ipsum dolor sit amet
+        .text-align-left.border-all.padding-all-extra-small.margin-top-extra-small
+          Lorem ipsum dolor sit amet
+        .text-align-right.border-all.padding-all-extra-small.margin-top-extra-small
+          Lorem ipsum dolor sit amet
 
-    %section(data-module='overflow')
-      %h3.font-size-medium.text-color-white.padding-left-small.tesseract-font
-        Text Overflow
-      .background-color-white.padding-inset-medium.text-align-center
-        .text-overflow-ellipsis
+    %section(data-module='text-color')
+      .padding-horizontal-small.padding-vertical-extra-small.row
+        .column.column1of2.height-medium-fixed
+          .display-table.width-full.height-full
+            .display-table-row
+              .display-table-cell.vertical-align-middle
+                %h3.no-margin.font-size-medium.text-color-white.tesseract-font
+                  Text Colors
+        .column.column1of2.height-medium-fixed
+          .display-table.width-full.height-full
+            .display-table-row
+              .display-table-cell.vertical-align-middle.text-align-right
+                %button.button.button-black.no-border(expandable)
+                  %i.fa.fa-arrows-alt
+      .background-color-white.padding-all-medium.text-align-center
+        .text-color-black.display-inline-block BLACK
+        .text-color-white.display-inline-block.background-color-black WHITE
+        .text-color-blue.display-inline-block BLUE
+        .text-color-red.display-inline-block RED
+        .text-color-green.display-inline-block GREEN
 
-    %section(data-module='text-shadow')
-      %h3.font-size-medium Text Shadow
-      .text-shadow-strong
-      .text-shadow
+    %section(data-module='user-select')
+      .padding-horizontal-small.padding-vertical-extra-small.row
+        .column.column1of2.height-medium-fixed
+          .display-table.width-full.height-full
+            .display-table-row
+              .display-table-cell.vertical-align-middle
+                %h3.no-margin.font-size-medium.text-color-white.tesseract-font
+                  User Select
+        .column.column1of2.height-medium-fixed
+          .display-table.width-full.height-full
+            .display-table-row
+              .display-table-cell.vertical-align-middle.text-align-right
+                %button.button.button-black.no-border(expandable)
+                  %i.fa.fa-arrows-alt
+      .background-color-white.padding-all-medium.text-align-center
+        .paddin-all-small.user-select-none Try to select this text
 
     %section(data-module='white-space')
-      %h3.font-size-medium.text-color-white.padding-left-small.tesseract-font
-        White Space
-      .background-color-white.padding-inset-medium.text-align-center
-        .white-space-nowrap
+      .padding-horizontal-small.padding-vertical-extra-small.row
+        .column.column1of2.height-medium-fixed
+          .display-table.width-full.height-full
+            .display-table-row
+              .display-table-cell.vertical-align-middle
+                %h3.no-margin.font-size-medium.text-color-white.tesseract-font
+                  White Space
+        .column.column1of2.height-medium-fixed
+          .display-table.width-full.height-full
+            .display-table-row
+              .display-table-cell.vertical-align-middle.text-align-right
+                %button.button.button-black.no-border(expandable)
+                  %i.fa.fa-arrows-alt
+      .background-color-white.padding-all-medium.text-align-center
+        .white-space-nowrap.width-small-fixed.display-inline-block
+          This text does not break even though it should
 
-    %section(data-module='widths')
-      %h3.font-size-medium Widths
-      .width-extra-small
-      .width-small
-      .width-medium
-      .width-large
-      .width-extra-large.width-full
-      .fixed-width-extra-small
-      .fixed-width-small
-      .fixed-width-medium
-      .fixed-width-large
-      .fixed-width-extra-large
-      .fixed-width-minimum
+    %section(data-module='width')
+      .padding-horizontal-small.padding-vertical-extra-small.row
+        .column.column1of2.height-medium-fixed
+          .display-table.width-full.height-full
+            .display-table-row
+              .display-table-cell.vertical-align-middle
+                %h3.no-margin.font-size-medium.text-color-white.tesseract-font
+                  Widths
+        .column.column1of2.height-medium-fixed
+          .display-table.width-full.height-full
+            .display-table-row
+              .display-table-cell.vertical-align-middle.text-align-right
+                %button.button.button-black.no-border(expandable)
+                  %i.fa.fa-arrows-alt
+      .background-color-white.padding-all-medium.text-align-center
+        .width-extra-small.background-color-grey.height-small-fixed.display-inline-block
+        .width-small.background-color-grey.height-small-fixed.display-inline-block
+        .width-medium.background-color-grey.height-small-fixed.display-inline-block
+        .width-large.background-color-grey.height-small-fixed.display-inline-block
+        .margin-top-small
+          .width-extra-large.width-full.background-color-grey.height-small-fixed
+        .margin-top-small
+          .width-minimum-fixed.background-color-grey.height-small-fixed.display-inline-block
+          .width-extra-small-fixed.background-color-grey.height-small-fixed.display-inline-block
+          .width-small-fixed.background-color-grey.height-small-fixed.display-inline-block
+          .width-medium-fixed.background-color-grey.height-small-fixed.display-inline-block
+          .width-large-fixed.background-color-grey.height-small-fixed.display-inline-block
+          .width-extra-large-fixed.background-color-grey.height-small-fixed.display-inline-block
+
+  .top0.position-fixed.height-full.width-full
+    .row.height-full
+      .column.column4of5.height-full
+      .column.column1of5.background-color-white.border-left.height-full
+        NAVIGATION
 
   %script(src="../js/jquery.js")
   %script(src="../js/underscore.js")
   %script(src="../js/starfield.js")
-  :javascript
-    $('.tesseract canvas').each(function(i, el){
-      new StarField(el, '180,180,255').render(333, 3);
-    });
-    new StarField($('.starfield-background canvas')[0], '0,0,0').render(333, 3);
-
-    // Tesseract roll
-    var $outside = $('.tesseract-outside');
-    var $inside = $('.tesseract-inside');
-    $(document).on('scroll', _.throttle(function(){
-      var ratio = $(window).scrollTop()/$(window).height();
-      var outsideRotateX = 220 + (180*ratio);
-      var insideRotateX = 220 - (180*ratio);
-      var valueOutside = 'translateZ(-100px) rotateX(-'+outsideRotateX+'deg) rotateY(45deg)';
-      var valueInside = 'translateZ(-150px) scale(0.5) rotateX(-'+insideRotateX+'deg) rotateY(45deg)';
-      $outside.css({'transform': valueOutside});
-      $inside.css({'transform': valueInside});
-    }, 25));
+  %script(src="../js/tesseract-roll.js")
+  %script(src="../js/tesseract-header.js")
+  %script(src="../js/expandable.js")
+  %script(src="../js/navigation.js")

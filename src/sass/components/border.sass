@@ -1,0 +1,26 @@
+@each $color_name, $color_value in $colors
+
+  @each $side in $sides
+
+    .border-#{$side}-#{$color_name}
+      @extend .border-#{$side}-style-solid
+      @extend .border-#{$side}-width-extra-small
+      @extend .border-#{$side}-color-#{$color_name}
+  
+  .border-all-#{$color_name}
+    @each $side in $sides
+      @extend .border-#{$side}-#{$color_name}
+
+@each $side in $sides
+
+  .border-#{$side}
+    @extend .border-#{$side}-grey
+
+.border-all
+  @extend .border-all-grey
+
+@each $size_name, $size_value in $border-width-sizes
+
+  .border-all-width-#{$size_name}
+    @each $side in $sides
+      @extend .border-#{$side}-width-#{$size_name}

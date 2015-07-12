@@ -1,9 +1,3 @@
-/**
- * The stars in our starfield!
- * Stars coordinate system is relative to the CENTER of the canvas
- * @param  {number} x 
- * @param  {number} y
- */
 var Star = function(x, y, maxSpeed) {
     this.x = x;
     this.y = y;
@@ -12,63 +6,22 @@ var Star = function(x, y, maxSpeed) {
     this.speed = Math.max(Math.random() * maxSpeed, 1);
 };
 
-/**
- * Compute the distance of this star relative to any other point in space.
- * 
- * @param  {int} originX
- * @param  {int} originY
- * 
- * @return {float} The distance of this star to the given origin
- */
 Star.prototype.distanceTo = function(originX, originY) {
     return Math.sqrt(Math.pow(originX - this.x, 2) + Math.pow(originY - this.y, 2));
 };
 
-/**
- * Reinitializes this star's attributes, without re-creating it 
- * 
- * @param  {number} x 
- * @param  {number} y
- * 
- * @return {Star} this star
- */
 Star.prototype.resetPosition = function(x, y, maxSpeed) {
     Star.apply(this, arguments);
     return this;
 };
 
-/**
- * The BigBang factory creates stars (Should be called StarFactory, but that is
- * a WAY LESS COOL NAME! 
- * @type {Object}
- */
 var BigBang = {
-    /**
-     * Returns a random star within a region of the space.
-     * 
-     * @param  {number} minX minimum X coordinate of the region
-     * @param  {number} minY minimum Y coordinate of the region
-     * @param  {number} maxX maximum X coordinate of the region
-     * @param  {number} maxY maximum Y coordinate of the region
-     * 
-     * @return {Star} The random star
-     */
+
     getRandomStar: function(minX, minY, maxX, maxY, maxSpeed) {
         var coords = BigBang.getRandomPosition(minX, minY, maxX, maxY);
         return new Star(coords.x, coords.y, maxSpeed);
     },
 
-    /**
-     * Gets a random (x,y) position within a bounding box
-     * 
-     * 
-     * @param  {number} minX minimum X coordinate of the region
-     * @param  {number} minY minimum Y coordinate of the region
-     * @param  {number} maxX maximum X coordinate of the region
-     * @param  {number} maxY maximum Y coordinate of the region
-     * 
-     * @return {Object} An object with random {x, y} positions
-     */
     getRandomPosition: function(minX, minY, maxX, maxY) {
         return {
             x: Math.floor((Math.random() * maxX) + minX),
@@ -77,12 +30,6 @@ var BigBang = {
     }
 };
 
-/**
- * Constructor function of our starfield. This just prepares the DOM nodes where
- * the scene will be rendered.
- * 
- * @param {string} canvasId The DOM Id of the <div> containing a <canvas> tag
- */
 var StarField = function(canvasElem, color) {
     this.canvasElem = canvasElem;
     this.container = canvasElem.parentElement;
@@ -95,9 +42,6 @@ var StarField = function(canvasElem, color) {
     this.starField = [];
 };
 
-/**
- * Updates the properties for every star for the next frame to be rendered
- */
 StarField.prototype._updateStarField = function() {
     var i, 
         star, 
@@ -129,11 +73,6 @@ StarField.prototype._updateStarField = function() {
     }
 };
 
-/**
- * Renders the whole starfield (background + stars)
- * This method could be made more efficient by just blipping each star,
- * and not redrawing the whole frame
- */
 StarField.prototype._renderStarField = function() {
     var i,
         star;
@@ -154,10 +93,6 @@ StarField.prototype._renderStarField = function() {
     }
 };
 
-/**
- * Function that handles the animation of each frame. Update the starfield
- * positions and re-render
- */
 StarField.prototype._renderFrame = function(elapsedTime) {
     var timeSinceLastFrame = elapsedTime - (this.prevFrameTime || 0);
     
@@ -172,19 +107,12 @@ StarField.prototype._renderFrame = function(elapsedTime) {
     }
 };
 
-/**
- * Makes sure that the canvas size fits the size of its container
- */
 StarField.prototype._adjustCanvasSize = function(width, height) {
     // Set the canvas size to match the container ID (and cache values)
     this.width = this.canvasElem.width = width || this.container.offsetWidth;
     this.height = this.canvasElem.height = height || this.container.offsetHeight;
 };
 
-/**
- * This listener compares the old container size with the new one, and caches
- * the new values.
- */
 StarField.prototype._watchCanvasSize = function(elapsedTime) {
     var timeSinceLastCheck = elapsedTime - (this.prevCheckTime || 0),
         width,
@@ -192,8 +120,6 @@ StarField.prototype._watchCanvasSize = function(elapsedTime) {
 
     window.requestAnimationFrame(this._watchCanvasSize.bind(this));
 
-    // Skip frames unless at least 333ms have passed since the last check
-    // (Cap to ~3fps)
     if (timeSinceLastCheck >= 333 || !this.prevCheckTime) {
         this.prevCheckTime = elapsedTime;
         width = this.container.offsetWidth;
@@ -206,11 +132,6 @@ StarField.prototype._watchCanvasSize = function(elapsedTime) {
     }
 };
 
-/**
- * Initializes the scene by resizing the canvas to the appropiate value, and
- * sets up the main loop.
- * @param {int} numStars Number of stars in our starfield
- */
 StarField.prototype._initScene = function(numStars) {
     var i;
     for (i = 0; i < this.numStars; i++) {
@@ -224,11 +145,6 @@ StarField.prototype._initScene = function(numStars) {
     window.requestAnimationFrame(this._watchCanvasSize.bind(this));
 };
 
-/**
- * Kicks off everything!
- * @param {int} numStars The number of stars to render
- * @param {int} maxStarSpeed Maximum speed of the stars (pixels / frame)
- */
 StarField.prototype.render = function(numStars, maxStarSpeed) {
     this.numStars = numStars || 100;
     this.maxStarSpeed = maxStarSpeed || 3;
@@ -236,10 +152,6 @@ StarField.prototype.render = function(numStars, maxStarSpeed) {
     this._initScene(this.numStars);
 };
 
-/**
- * requestAnimationFrame shim layer with setTimeout fallback
- * @see http://paulirish.com/2011/requestanimationframe-for-smart-animating
- */
 (function() {
     var lastTime = 0;
     var vendors = ['ms', 'moz', 'webkit', 'o'];
@@ -264,3 +176,10 @@ StarField.prototype.render = function(numStars, maxStarSpeed) {
             clearTimeout(id);
         };
 }());
+
+jQuery(function(){
+    $('.tesseract canvas').each(function(i, el){
+      new StarField(el, '180,180,255').render(333, 3);
+    });
+    new StarField($('.starfield-background canvas')[0], '0,0,0').render(333, 3);
+});

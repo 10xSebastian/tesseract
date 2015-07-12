@@ -1,9 +1,13 @@
 @import "compass/css3/box-shadow"
 @import "compass/css3/opacity"
 @import "compass/css3/animation"
+@import "compass/css3/transition"
+@import "compass/css3/transform"
+@import "icons/stylesheets/tesseract-icons"
 
 .starfield-background
-  @include opacity(0.12)
+  @include transform-style(preserve-3d)
+  @include opacity(0.14)
 
 .tesseract-font
   font-family: 'Advent Pro', sans-serif
@@ -19,15 +23,15 @@
 .tesseract-outside
   height: 100%
   position: absolute
-  transform-style: preserve-3d
-  transform: translateZ(-100px) rotateX(-220deg) rotateY(45deg)
+  @include transform-style(preserve-3d)
+  @include transform(translateZ(-100px) rotateX(-220deg) rotateY(45deg))
   width: 100%
 
 .tesseract-inside
   height: 100%
   position: absolute
-  transform-style: preserve-3d
-  transform: translateZ(-150px) scale(0.5) rotateX(-220deg) rotateY(45deg)
+  @include transform-style(preserve-3d)
+  @include transform(translateZ(-150px) scale(0.5) rotateX(-220deg) rotateY(45deg))
   width: 100%
 
 .tesseract-side
@@ -37,6 +41,7 @@
   height: 200px
   position: absolute
   width: 200px
+  @include transform-style(preserve-3d)
 
 .tesseract-inside .tesseract-side
   @include animation(tesseractglow 10s 1)
@@ -51,22 +56,22 @@
   @include opacity(0.3)
 
 .tesseract-front
-  transform: rotateY(0deg) translateZ(100px)
+  @include transform(rotateY(0deg) translateZ(100px))
 
 .tesseract-back
-  transform: rotateX(180deg) translateZ(100px)
+  @include transform(rotateX(180deg) translateZ(100px))
 
 .tesseract-right
-  transform: rotateY(90deg) translateZ(100px)
+  @include transform(rotateY(90deg) translateZ(100px))
 
 .tesseract-left
-  transform: rotateY(-90deg) translateZ(100px)
+  @include transform(rotateY(-90deg) translateZ(100px))
 
 .tesseract-top
-  transform: rotateX(90deg) translateZ(100px)
+  @include transform(rotateX(90deg) translateZ(100px))
 
 .tesseract-bottom
-  transform: rotateX(-90deg) translateZ(100px)
+  @include transform(rotateX(-90deg) translateZ(100px))
 
 @include keyframes(tesseractglow)
   0%
@@ -75,3 +80,11 @@
     background: rgba(255,255,255,1.0)
   100%
     background: rgba(180,180,255,0.4)
+
+.tesseract-header
+  top: -100px
+  @include transition-property(top)
+  @include transition-duration(0.6s)
+
+.tesseract-header-show
+  top: 0px

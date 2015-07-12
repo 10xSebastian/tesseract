@@ -43,9 +43,10 @@ This project uses [PhanomCSS](https://github.com/Huddle/PhantomCSS) and [grunt-p
 For every distribution it creates a screenshot from the reference page (overview) and screenshots from every module and component.
 The screenshots are used to compare visual changes.
 
-### Ensuring CSS Performance
+### CSS Performance
 
 Because the amount of css rules has a big impact on the browsers rendering performance, Tesseract uses [uncss](https://github.com/giakki/uncss) for detecting unused and [csscss](https://github.com/zmoazeni/csscss) for detecting redundant css rules.
+
 
 ### Build processes
 
@@ -65,6 +66,15 @@ grunt dist
 ```
 
 Builds the framework and a compressed version in `/dist` and opens the reference page.
+
+### Custom Icons
+
+Tesseract uses a custom icon font for the reference page generated with [FontCustom](https://github.com/FontCustom/fontcustom/).
+To generate this icon font inside of this project use:
+
+```
+fontcustom compile icons/vectors --templates scss --no-hash
+```
 
 ## Credits
 
