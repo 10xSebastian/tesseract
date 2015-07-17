@@ -1,5 +1,9 @@
-@each $size_name, $size_value in $border-width-sizes
+@each $name, $value in $border-widths
 
   @each $side in $sides
-    .border-#{$side}-width-#{$size_name}
-      border-#{$side}-width: $size_value
+    .border-#{$side}-width-#{$name}
+      border-#{$side}-width: $value
+
+  .border-all-width-#{$name}
+    @each $side in $sides
+      @extend .border-#{$side}-width-#{$name}

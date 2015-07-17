@@ -7,6 +7,7 @@ module.exports = function(grunt) {
       'compass:dist',
       'concat_css',
       'haml:dist',
+      'copy:dist',
       'cssmin:dist',
       'open:dist',
       'phantomcss:screenshots',

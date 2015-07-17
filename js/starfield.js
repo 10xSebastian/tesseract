@@ -178,8 +178,18 @@ StarField.prototype.render = function(numStars, maxStarSpeed) {
 }());
 
 jQuery(function(){
-    $('.tesseract canvas').each(function(i, el){
-      new StarField(el, '180,180,255').render(333, 3);
-    });
-    new StarField($('.starfield-background canvas')[0], '0,0,0').render(333, 3);
+    if(BrowserDetection.match([{name: "Chrome"}, {name: "Firefox"}, {name: "Opera"}, {name: "Safari"}])){    
+        $('.tesseract').removeClass('display-none');
+        $('.tesseract-starfield').each(function(i, el){
+          new StarField(el, '180,180,255').render(333, 3);
+        });
+        $('.tesseract-image').addClass('display-none');
+    }
+
+    if(BrowserDetection.match([{name: "Chrome"}, {name: "Firefox"}, {name: "Opera"}])){
+      new StarField($('.starfield-canvas')[0], '0,0,0').render(333, 3);
+    } else {
+        $('.starfield-image').removeClass('display-none');
+        $('.starfield-canvas').remove();
+    }
 });

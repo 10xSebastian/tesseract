@@ -10,14 +10,16 @@ This css framework is build upon existing software principles and terminology to
 
 ## Principles
 
-## Modules & Components
+## Modules
 With modules, concerns are separated. It's a self-contained unit that in a bigger context can be reused to execute the same action/functionality over and over again.
 Flexibility and reuseablity are the benefits of modules. 
 
+## Components
 A component, by definition, is a unit of composition. It the context of this css-framwork, a component is made up of multiple modules.
 
-## CSS Normalization / CSS Reset
-Tesseract uses [normalize.css](https://necolas.github.io/normalize.css/) to make browsers render all elements more consistently and in line with modern standards. It precisely targets only the styles that need normalizing.
+## CSS Reset vs. CSS Normalization
+Tesseract uses [css-reset](https://github.com/shannonmoeller/reset-css) to remove all default browser css values for elements.
+This follows the principle of seperation of concerns (see [principles](https://github.com/pape-io/tesseract#principles)).
 
 ## Development
 
@@ -33,6 +35,8 @@ cd tesseract
 bundle install
 
 npm install
+
+bower install
 
 grunt
 ```

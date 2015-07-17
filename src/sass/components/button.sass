@@ -10,18 +10,18 @@
   @extend .user-select-none
   @extend .vertical-align-middle
 
-  &:active
-    @extend .button-grey:active
+@each $color, $value in $colors
 
-@each $color_name, $color_value in $colors
+  .button-#{$color}
+    @extend .border-all-#{$color}
+    @extend .background-color-#{$color}-intense
 
-  .button-#{$color_name}
-    @extend .border-all-#{$color_name}
-    @extend .background-color-#{$color_name}-intense
+  .button-#{$color}:active
+    @extend .background-color-#{$color}
 
-  .button-#{$color_name}:active
-    @extend .background-color-#{$color_name}
-
+.button:active
+  @extend .button-grey:active
+  
 .button-black
   @extend .text-color-white
   

@@ -1,36 +1,28 @@
 jQuery(function(){
 
 
-  var $navigation = $('[navigation]');
-  var $navigationName = $navigation.find('[name]');
-  var $navigationType = $navigation.find('[type]');
+  var $navigationToggle = $('[navigation-toggle]');
+  var $navigation = $('.tesseract-navigation');
 
-  $(document).on('scroll', _.throttle(function(){
+  $navigationToggle.on('click', function(){
+      $navigation.toggleClass('tesseract-navigation-show');
+  });
 
-    var sections = [];
-    $('section').each(function(i, el){
-      var $el = $(el);
-      sections.push({
-        top: $el.offset().top, 
-        el: $el, 
-        name: $el.find('h3').text(), 
-        type: ($el.data('module') ? 'Modul' : 'Component') 
+
+  $navigation.find('[data-section]').each(function(i, navigationGroup){
+    var $navigationGroup = $(navigationGroup);
+    $('[data-'+$navigationGroup.data('section')+']').each(function(i, section){
+      var $section = $(section);
+      var name = $section.data($navigationGroup.data('section'));
+      var title = $section.find('h3').text();
+      var $navigationItem = $('<li><div class="tesseract-font button text-ellipsis no-border">'+title+'</div></li>');
+      $navigationItem.on('click', function(){
+        var top = $section.offset().top;
+        $(document).scrollTop(top-50);
+        $navigation.removeClass('tesseract-navigation-show');
       });
+      $navigationGroup.find('ul').append($navigationItem);
     });
-
-    var top = $(document).scrollTop() + $navigation.height();
-    var currentSection;
-    for (i = 0; i < sections.length; i++) { 
-      var section = sections[i];
-      if(section.top > top) {
-        currentSection = sections[i-1];
-        break;
-      }
-    }
-    if (!currentSection) {
-      currentSection = sections[0];
-    }
-    $navigationName.text(currentSection.name);
-    $navigationType.text(currentSection.type);
-  }, 200));
+  });
+  
 });

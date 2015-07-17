@@ -1,30 +1,30 @@
-@each $name, $size in $responsive-spaces
+@each $size, $value in $responsive-spaces
 
   @each $side in $sides
 
-    .margin-#{$side}-#{$name}
-      margin-#{$side}: $size
+    .margin-#{$side}-#{$size}
+      margin-#{$side}: $value
 
-  @each $side-combination, $sides in $margin-side-combinations
+  @each $side-combination, $sides in $side-combinations
     
-    .margin-#{$side-combination}-#{$name}
+    .margin-#{$side-combination}-#{$size}
 
       @each $side in $sides
-        @extend .margin-#{$side}-#{$name}
+        @extend .margin-#{$side}-#{$size}
 
-@each $name, $size in $fixed-spaces
+@each $size, $value in $fixed-spaces
 
   @each $side in $sides
 
-    .margin-#{$side}-#{$name}-fixed
-      margin-#{$side}: $size
+    .margin-#{$side}-#{$size}-fixed
+      margin-#{$side}: $value
 
-  @each $side-combination, $sides in $margin-side-combinations
+  @each $side-combination, $sides in $side-combinations
     
-    .margin-#{$side-combination}-#{$name}-fixed
+    .margin-#{$side-combination}-#{$size}-fixed
 
       @each $side in $sides
-        @extend .margin-#{$side}-#{$name}-fixed
+        @extend .margin-#{$side}-#{$size}-fixed
 
 .no-margin
   margin: 0 !important

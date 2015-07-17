@@ -1,10 +1,10 @@
 module.exports = {
   serve: {
-    src: ['node_modules/normalize-css/normalize.css', '.tmp/tesseract.css'],
+    src: ['bower_components/reset-css/reset.css', '.tmp/tesseract.css'],
     dest: '.tmp/tesseract.css'
   },
   dist: {
-    src: ['node_modules/normalize-css/normalize.css', 'dist/tesseract.css'],
+    src: ['bower_components/reset-css/reset.css', 'dist/tesseract.css'],
     dest: 'dist/tesseract.css'
   },
 };

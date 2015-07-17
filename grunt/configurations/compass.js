@@ -9,7 +9,10 @@ module.exports = {
   dist: {
     options : {
       cssDir: 'dist',
-      specify: 'src/sass/tesseract.sass'
+      specify: [
+        'src/sass/tesseract.sass',
+        'src/sass/tesseract-page.sass'
+      ]
     }
   },
   serve: {
