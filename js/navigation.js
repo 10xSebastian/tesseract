@@ -5,7 +5,7 @@ jQuery(function(){
   var $navigation = $('.tesseract-navigation');
 
   $navigationToggle.on('click', function(){
-      $navigation.toggleClass('tesseract-navigation-show');
+    $navigation.toggleClass('tesseract-navigation-show');
   });
 
 

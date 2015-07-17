@@ -1,14 +1,14 @@
 @font-face {
   font-family: "tesseract-icons";
-  src: url("icons/fonts/tesseract-icons.eot");
-  src: url("icons/fonts/tesseract-icons.eot?#iefix") format("embedded-opentype"), url("icons/fonts/tesseract-icons.woff") format("woff"), url("icons/fonts/tesseract-icons.ttf") format("truetype"), url("icons/fonts/tesseract-icons.svg#tesseract-icons") format("svg");
+  src: url("../icons/fonts/tesseract-icons.eot");
+  src: url("../icons/fonts/tesseract-icons.eot?#iefix") format("embedded-opentype"), url("../icons/fonts/tesseract-icons.woff") format("woff"), url("../icons/fonts/tesseract-icons.ttf") format("truetype"), url("../icons/fonts/tesseract-icons.svg#tesseract-icons") format("svg");
   font-weight: normal;
   font-style: normal;
 }
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
   @font-face {
     font-family: "tesseract-icons";
-    src: url("icons/fonts/tesseract-icons.svg#tesseract-icons") format("svg");
+    src: url("../icons/fonts/tesseract-icons.svg#tesseract-icons") format("svg");
   }
 }
 [data-icon]:before {
@@ -40,12 +40,18 @@
   content: "\f101";
 }
 
-.starfield-background {
+.starfield-image {
+  background: url("../img/starfield.jpg");
+  background-size: cover;
+  background-position: center center;
+}
+
+.starfield-canvas {
   -moz-transform-style: preserve-3d;
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=14);
-  opacity: 0.14;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=18);
+  opacity: 0.18;
 }
 
 .tesseract-font {
@@ -210,6 +216,34 @@
 
 .tesseract-header-show {
   top: 0px;
+}
+
+.tesseract-navigation {
+  right: -100%;
+  -moz-transition-property: right;
+  -o-transition-property: right;
+  -webkit-transition-property: right;
+  transition-property: right;
+  -moz-transition-duration: 0.6s;
+  -o-transition-duration: 0.6s;
+  -webkit-transition-duration: 0.6s;
+  transition-duration: 0.6s;
+}
+
+.tesseract-navigation-show {
+  right: 0;
+}
+
+.tesseract-code {
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+  line-height: 1.3em;
+}
+
+.tesseract-image {
+  height: 304px;
+  position: relative;
+  top: -60px;
+  width: 312px;
 }
 
 /*# sourceMappingURL=tesseract-page.css.map */

@@ -7,6 +7,14 @@
 <link href='../fontawesome/font-awesome.css' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Advent+Pro:400,200' rel='stylesheet' type='text/css'>
 <meta content='maximum-scale=1.0,width=device-width,initial-scale=1.0,user-scalable=0' name='viewport'>
+<script src='../js/jquery.js'></script>
+<script src='../js/underscore.js'></script>
+<script src='../js/starfield.js'></script>
+<script src='../js/tesseract-roll.js'></script>
+<script src='../js/tesseract-header.js'></script>
+<script src='../js/expandable.js'></script>
+<script src='../js/navigation.js'></script>
+<script src='../bower_components/BrowserDetection/browser-detection.js'></script>
 </head>
 <body class='height-full no-padding'>
 <div class='tesseract-header position-fixed width-full height-medium-fixed z-index-top background-color-white border-bottom'>
@@ -21,12 +29,10 @@
 <div class='column column1of3 text-align-right height-full'>
 <div class='display-table width-full height-full'>
 <div class='display-table-row'>
-<div class='display-table-cell vertical-align-middle padding-right-small' navigation>
+<div class='display-table-cell vertical-align-middle padding-right-small width-full' navigation-toggle>
 <div class='button no-border'>
-<div class='tesseract-font font-size-medium'>
-<span name>Borders</span>
-<span>/</span>
-<span type>Component</span>
+<div class='tesseract-font font-size-medium font-weight-light'>
+<i class='fa fa-bars'></i>
 </div>
 </div>
 </div>
@@ -36,7 +42,8 @@
 </div>
 </div>
 <div class='starfield-background height-full width-full position-absolute z-index-minus display'>
-<canvas class='height-full width-full'></canvas>
+<canvas class='starfield-canvas height-full width-full'></canvas>
+<div class='starfield-image height-full width-full display-none'></div>
 </div>
 <div class='height-full width-full position-absolute'>
 <div class='row1of3'></div>
@@ -45,7 +52,9 @@
 <div class='display-table-row'>
 <div class='display-table-cell vertical-align-middle'>
 <div class='text-align-center padding-top-medium'>
-<div class='tesseract display-inline-block'>
+<img class='tesseract-image' src='../img/tesseract.png'>
+<div class='tesseract-container display-inline-block'>
+<div class='tesseract display-inline-block display-none'>
 <div class='tesseract-inside'>
 <div class='tesseract-side tesseract-front'></div>
 <div class='tesseract-side tesseract-back'></div>
@@ -55,7 +64,7 @@
 <div class='tesseract-side tesseract-bottom'></div>
 </div>
 </div>
-<div class='tesseract display-inline-block'>
+<div class='tesseract display-inline-block display-none'>
 <div class='tesseract-outside'>
 <div class='tesseract-side tesseract-blur tesseract-front'></div>
 <div class='tesseract-side tesseract-blur tesseract-back'></div>
@@ -65,7 +74,7 @@
 <div class='tesseract-side tesseract-blur tesseract-bottom'></div>
 </div>
 </div>
-<div class='tesseract display-inline-block'>
+<div class='tesseract display-inline-block display-none'>
 <div class='tesseract-outside'>
 <div class='tesseract-side tesseract-front'>
 <canvas class='tesseract-starfield'></canvas>
@@ -92,6 +101,7 @@
 </div>
 </div>
 </div>
+</div>
 <div class='row1of3'></div>
 </div>
 <div class='height-full width-full position-absolute'>
@@ -102,7 +112,7 @@
 <h1 class='font-size-extra-large text-align-center text-color-white tesseract-font font-weight-light text-shadow-strong'>
 Tesseract
 </h1>
-<h2 class='font-size-small text-align-center text-color-white tesseract-font text-shadow-strong'>
+<h2 class='font-size-small text-align-center text-color-white tesseract-font padding-vertical-extra-small text-shadow-strong'>
 A CSS-Framework on Principles
 </h2>
 </div>
@@ -111,14 +121,1706 @@ A CSS-Framework on Principles
 </div>
 </div>
 <div class='height-full width-full'></div>
-<section data-component='border'>
+<section class='margin-top-small'>
+<h2 class='font-size-extra-large text-align-center text-color-white tesseract-font font-weight-light'>
+Principles
+</h2>
+<p class='font-size-small text-align-center text-color-white tesseract-font padding-top-extra-small padding-horizontal-small'>
+In software development, principles are used to make complex things managable
+</p>
+<section class='padding-top-medium' data-principle='Single responsibility'>
+<div class='padding-horizontal-small padding-vertical-extra-small row'>
+<h3 class='font-size-medium text-color-white tesseract-font'>
+Single responsibility
+</h3>
+</div>
+<p class='font-size-small text-color-white tesseract-font padding-horizontal-small padding-bottom-extra-small'>
+A class should have responsibility over only a single part of your system
+</p>
+<div class='row padding-horizontal-small padding-vertical-extra-small'>
+<div class='column column1of2'>
+<div class='row background-color-white padding-all-small border-right'>
+<pre class='tesseract-code overflow-scroll'>.padding-all-medium {
+  padding: 15px;
+}
+
+.margin-bottom-large {
+  margin-bottom: 20px;
+}
+
+.border-all {
+  border: 1px solid transparent;
+}
+
+.border-radius-small {
+  border-radius: 4px;
+}</pre>
+</div>
+<div class='row'>
+<p class='font-size-small text-color-green tesseract-font padding-all-extra-small'>
+<i class='fa fa-check'></i>
+Single responsibility
+</p>
+</div>
+</div>
+<div class='column column1of2'>
+<div class='row background-color-white padding-all-small'>
+<pre class='tesseract-code overflow-scroll'>.alert {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}</pre>
+</div>
+<div class='row'>
+<p class='font-size-small text-color-red tesseract-font padding-all-extra-small text-align-right'>
+<i class='fa fa-times'></i>
+Responsible for multiple things
+</p>
+</div>
+</div>
+</div>
+</section>
+<section class='padding-top-medium' data-principle='Separation of concerns'>
+<div class='padding-horizontal-small padding-vertical-extra-small row'>
+<h3 class='font-size-medium text-color-white tesseract-font'>
+Separation of concerns
+</h3>
+</div>
+<p class='font-size-small text-color-white tesseract-font padding-horizontal-small padding-bottom-extra-small'>
+Do not mix concerns by styling native html elements that you may want to use just for their semantic reason
+</p>
+<div class='row padding-horizontal-small padding-vertical-extra-small'>
+<div class='column column1of2'>
+<div class='row background-color-white padding-all-small border-right'>
+<pre class='tesseract-code overflow-scroll'>&lt;h1 class="headline-large">Thats my Seo optimized title&lt;/h1&gt;
+&lt;h3 class="headline-large">Thats another realy big text, visually&lt;/h3&gt;
+
+.headline-extra-large {
+  @extend .font-size-large
+  @extend .font-weight-bold
+  @extend .margin-bottom-small
+}</pre>
+</div>
+<div class='row'>
+<p class='font-size-small text-color-green tesseract-font padding-all-extra-small'>
+<i class='fa fa-check'></i>
+Concerns seperated
+</p>
+</div>
+</div>
+<div class='column column1of2'>
+<div class='row background-color-white padding-all-small'>
+<pre class='tesseract-code overflow-scroll'>&lt;h1>Thats my Seo optimized title&lt;/h1&gt;
+&lt;h1>Text that should look like h1&lt;/h1&gt;
+
+h1 {
+  font-size: 6em;
+  font-weight: bold;
+  margin-bottom: 16px;
+}</pre>
+</div>
+<div class='row'>
+<p class='font-size-small text-color-red tesseract-font padding-all-extra-small text-align-right'>
+<i class='fa fa-times'></i>
+Concerns not seperated
+</p>
+</div>
+</div>
+</div>
+</section>
+<section class='padding-top-medium' data-principle='Conceptual integrity'>
+<div class='padding-horizontal-small padding-vertical-extra-small row'>
+<h3 class='font-size-medium text-color-white tesseract-font'>
+Conceptual integrity
+</h3>
+</div>
+<p class='font-size-small text-color-white tesseract-font padding-horizontal-small padding-bottom-extra-small'>
+Stick to a single, simple set of design principles and stay consistent
+</p>
+<div class='row padding-horizontal-small padding-vertical-extra-small'>
+<div class='column column1of2'>
+<div class='row background-color-white padding-all-small border-right'>
+<pre class='tesseract-code overflow-scroll'>.font-size-small {
+  font-size: 100%;
+}
+
+.font-size-medium {
+  font-size: 110%;
+}
+
+.padding-left-large {
+  padding-left: 10%;
+}</pre>
+</div>
+<div class='row'>
+<p class='font-size-small text-color-green tesseract-font padding-all-extra-small'>
+<i class='fa fa-check'></i>
+Consistent
+</p>
+</div>
+</div>
+<div class='column column1of2'>
+<div class='row background-color-white padding-all-small'>
+<pre class='tesseract-code overflow-scroll'>.font-size-small {
+  font-size: 100%;
+}
+
+.font-size-medium {
+  font-size: 4em;
+}
+
+.padding-left-large {
+  padding-left: 80px;
+}</pre>
+</div>
+<div class='row'>
+<p class='font-size-small text-color-red tesseract-font padding-all-extra-small text-align-right'>
+<i class='fa fa-times'></i>
+Inconsistent
+</p>
+</div>
+</div>
+</div>
+</section>
+<section class='padding-top-medium' data-principle='Economic'>
+<div class='padding-horizontal-small padding-vertical-extra-small row'>
+<h3 class='font-size-medium text-color-white tesseract-font'>
+Economic
+</h3>
+</div>
+<p class='font-size-small text-color-white tesseract-font padding-horizontal-small padding-bottom-extra-small'>
+Prevent unnecessary complexity. Focus on what is really needed and limit yourself
+</p>
+<div class='row padding-horizontal-small padding-vertical-extra-small'>
+<div class='column column1of2'>
+<div class='row background-color-white padding-all-small border-right'>
+<pre class='tesseract-code overflow-scroll'>.font-size-small {
+  font-size: 100%;
+}
+
+.font-size-medium {
+  font-size: 110%;
+}
+
+.padding-left-large {
+  font-size: 140%;
+}</pre>
+</div>
+<div class='row'>
+<p class='font-size-small text-color-green tesseract-font padding-all-extra-small'>
+<i class='fa fa-check'></i>
+Limited complexity
+</p>
+</div>
+</div>
+<div class='column column1of2'>
+<div class='row background-color-white padding-all-small'>
+<pre class='tesseract-code overflow-scroll'>.font-size-xxs {
+  font-size: 70%;
+}
+
+.font-size-xs {
+  font-size: 90%;
+}
+
+.font-size-s {
+  font-size: 100%;
+}
+
+.font-size-m {
+  font-size: 110%;
+}
+
+.font-size-l {
+  font-size: 140%;
+}
+
+.font-size-xl {
+  font-size: 160%;
+}
+
+.font-size-xxl {
+  font-size: 200%;
+}</pre>
+</div>
+<div class='row'>
+<p class='font-size-small text-color-red tesseract-font padding-all-extra-small text-align-right'>
+<i class='fa fa-times'></i>
+Unfocused, useless complexity
+</p>
+</div>
+</div>
+</div>
+</section>
+<section class='padding-top-medium' data-principle='Visibility &amp; symmetry'>
+<div class='padding-horizontal-small padding-vertical-extra-small row'>
+<h3 class='font-size-medium text-color-white tesseract-font'>
+Visibility & symmetry
+</h3>
+</div>
+<p class='font-size-small text-color-white tesseract-font padding-horizontal-small padding-bottom-extra-small'>
+Make classnames predictable by keep a consistent and comprehensible way of terminology
+</p>
+<div class='row padding-horizontal-small padding-vertical-extra-small'>
+<div class='column column1of2'>
+<div class='row background-color-white padding-all-small border-right'>
+<pre class='tesseract-code overflow-scroll'>.font-size-small {
+  font-size: 100%;
+}
+
+.margin-top-medium {
+  margin-top: 5%;
+}
+
+.padding-bottom-large {
+  padding-bottom: 10%;
+}</pre>
+</div>
+<div class='row'>
+<p class='font-size-small text-color-green tesseract-font padding-all-extra-small'>
+<i class='fa fa-check'></i>
+Comprehensible, predictable wording
+</p>
+</div>
+</div>
+<div class='column column1of2'>
+<div class='row background-color-white padding-all-small'>
+<pre class='tesseract-code overflow-scroll'>.fsS {
+  font-size: 100%;
+}
+
+.mt-M {
+  margin-top: 5%;
+}
+
+.pbL {
+  padding-bottom: 10%;
+}</pre>
+</div>
+<div class='row'>
+<p class='font-size-small text-color-red tesseract-font padding-all-extra-small text-align-right'>
+<i class='fa fa-times'></i>
+Incomprehensible wording
+</p>
+</div>
+</div>
+</div>
+</section>
+<section class='padding-top-medium' data-principle='Self-organized'>
+<div class='padding-horizontal-small padding-vertical-extra-small row'>
+<h3 class='font-size-medium text-color-white tesseract-font'>
+Self-organized
+</h3>
+</div>
+<p class='font-size-small text-color-white tesseract-font padding-horizontal-small padding-bottom-extra-small'>
+Scaleable, efficent and economical system with self-organized, decentralized components
+</p>
+<div class='row padding-horizontal-small padding-vertical-extra-small'>
+<div class='column column1of2'>
+<div class='row background-color-white padding-all-small border-right'>
+<pre class='tesseract-code overflow-scroll'>.table {
+  display: table;
+}
+
+.table-cell {
+  display: table-row;
+}
+
+.table-row {
+  display: table-cell;
+}</pre>
+</div>
+<div class='row'>
+<p class='font-size-small text-color-green tesseract-font padding-all-extra-small'>
+<i class='fa fa-check'></i>
+Self-organized
+</p>
+</div>
+</div>
+<div class='column column1of2'>
+<div class='row background-color-white padding-all-small'>
+<pre class='tesseract-code overflow-scroll'>.table {
+  display: table;
+}
+
+.table .table-row {
+  display: table-row;
+}
+
+.table .table-row .table-cell {
+  display: table-cell;
+}</pre>
+</div>
+<div class='row'>
+<p class='font-size-small text-color-red tesseract-font padding-all-extra-small text-align-right'>
+<i class='fa fa-times'></i>
+Dependent, not reusable
+</p>
+</div>
+</div>
+</div>
+</section>
+<section class='padding-top-medium' data-principle='Abstraction, Structuring, Hierarchising, Modularity'>
+<div class='padding-horizontal-small padding-vertical-extra-small row'>
+<h3 class='font-size-medium text-color-white tesseract-font'>
+Abstraction, Structuring, Hierarchising, Modularity
+</h3>
+</div>
+<p class='font-size-small text-color-white tesseract-font padding-horizontal-small padding-bottom-extra-small'>
+Abstract, structure, hierarchise repeating patterns to make them reusable/modular
+</p>
+<div class='row padding-horizontal-small padding-vertical-extra-small'>
+<div class='column column1of2'>
+<div class='row background-color-white padding-all-small border-right'>
+<pre class='tesseract-code overflow-scroll'>.border-top {
+  border-top: 1px solid grey;
+}
+.border-right {
+  border-right: 1px solid grey;
+}
+.border-bottom {
+  border-bottom: 1px solid grey;
+}
+.border-left {
+  border-left: 1px solid grey;
+}
+.border-all {
+  @extend .border-top;
+  @extend .border-right;
+  @extend .border-bottom;
+  @extend .border-left;
+}</pre>
+</div>
+<div class='row'>
+<p class='font-size-small text-color-green tesseract-font padding-all-extra-small'>
+<i class='fa fa-check'></i>
+Hierarchised, abstracted, modularized
+</p>
+</div>
+</div>
+<div class='column column1of2'>
+<div class='row background-color-white padding-all-small'>
+<pre class='tesseract-code overflow-scroll'>.border-top {
+  border-top: 1px solid grey;
+}
+.border-right {
+  border-right: 1px solid grey;
+}
+.border-bottom {
+  border-bottom: 1px solid grey;
+}
+.border-left {
+  border-left: 1px solid grey;
+}
+.border-all {
+  border-top: 1px solid grey;
+  border-right: 1px solid grey;
+  border-bottom: 1px solid grey;
+  border-left: 1px solid grey;
+}</pre>
+</div>
+<div class='row'>
+<p class='font-size-small text-color-red tesseract-font padding-all-extra-small text-align-right'>
+<i class='fa fa-times'></i>
+Repeated, redundant
+</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section class='margin-top-medium'>
+<h2 class='font-size-extra-large text-align-center text-color-white tesseract-font font-weight-light'>
+Modules
+</h2>
+<p class='font-size-small text-align-center text-color-white tesseract-font padding-top-extra-small padding-horizontal-small'>
+Smallest unit: enclosed and self-organized
+</p>
+<section class='overflow-scroll' data-module='background-color'>
 <div class='padding-horizontal-small padding-vertical-extra-small row'>
 <div class='column column1of2 height-medium-fixed'>
 <div class='display-table width-full height-full'>
 <div class='display-table-row'>
 <div class='display-table-cell vertical-align-middle'>
-<h3 class='no-margin font-size-medium text-color-white tesseract-font'>
-Borders
+<h3 class='font-size-medium text-color-white tesseract-font'>
+Background Color
+</h3>
+</div>
+</div>
+</div>
+</div>
+<div class='column column1of2 height-medium-fixed'>
+<div class='display-table width-full height-full'>
+<div class='display-table-row'>
+<div class='display-table-cell vertical-align-middle text-align-right'>
+<button class='button button-black no-border' expandable>
+<i class='fa fa-arrows-alt'></i>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='background-color-white padding-all-medium'>
+<div class='row background-color-black padding-all-small text-align-center margin-bottom-extra-small'></div>
+<div class='row background-color-white padding-all-small text-align-center margin-bottom-extra-small border-all'></div>
+<div class='row background-color-grey padding-all-small text-align-center margin-bottom-extra-small'></div>
+<div class='row background-color-green padding-all-small text-align-center margin-bottom-extra-small'></div>
+<div class='row background-color-red padding-all-small text-align-center margin-bottom-extra-small'></div>
+<div class='row background-color-blue padding-all-small text-align-center margin-bottom-extra-small'></div>
+<div class='row background-color-black-intense padding-all-small text-align-center margin-bottom-extra-small'></div>
+<div class='row background-color-white-intense padding-all-small text-align-center margin-bottom-extra-small'></div>
+<div class='row background-color-grey-intense padding-all-small text-align-center margin-bottom-extra-small'></div>
+<div class='row background-color-green-intense padding-all-small text-align-center margin-bottom-extra-small'></div>
+<div class='row background-color-red-intense padding-all-small text-align-center margin-bottom-extra-small'></div>
+<div class='row background-color-blue-intense padding-all-small text-align-center margin-bottom-extra-small'></div>
+<div class='row background-color-white no-background-color padding-all-small text-align-center'></div>
+</div>
+</section>
+<section class='overflow-scroll' data-module='borders'>
+<div class='padding-horizontal-small padding-vertical-extra-small row'>
+<div class='column column1of2 height-medium-fixed'>
+<div class='display-table width-full height-full'>
+<div class='display-table-row'>
+<div class='display-table-cell vertical-align-middle'>
+<h3 class='font-size-medium text-color-white tesseract-font'>
+Border
+</h3>
+</div>
+</div>
+</div>
+</div>
+<div class='column column1of2 height-medium-fixed'>
+<div class='display-table width-full height-full'>
+<div class='display-table-row'>
+<div class='display-table-cell vertical-align-middle text-align-right'>
+<button class='button button-black no-border' expandable>
+<i class='fa fa-arrows-alt'></i>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='background-color-white padding-all-medium text-align-center'>
+<div class='border-top padding-all-extra-small margin-top-extra-small'>
+<div class='background-color-grey display-block padding-all-small opacity-40'></div>
+</div>
+<div class='border-right padding-all-small margin-top-extra-small'>
+<div class='background-color-grey display-block padding-all-small opacity-40'></div>
+</div>
+<div class='border-bottom padding-all-small margin-top-extra-small'>
+<div class='background-color-grey display-block padding-all-small opacity-40'></div>
+</div>
+<div class='border-left padding-all-small margin-top-extra-small'>
+<div class='background-color-grey display-block padding-all-small opacity-40'></div>
+</div>
+<div class='border-all padding-all-small margin-top-extra-small'>
+<div class='background-color-grey display-block padding-all-small opacity-40'></div>
+</div>
+<div class='no-border border-all padding-all-small margin-top-extra-small'>
+<div class='background-color-grey display-block padding-all-small opacity-40'></div>
+</div>
+</div>
+</section>
+<section class='overflow-scroll' data-module='border-color'>
+<div class='padding-horizontal-small padding-vertical-extra-small row'>
+<div class='column column1of2 height-medium-fixed'>
+<div class='display-table width-full height-full'>
+<div class='display-table-row'>
+<div class='display-table-cell vertical-align-middle'>
+<h3 class='font-size-medium text-color-white tesseract-font'>
+Border Color
+</h3>
+</div>
+</div>
+</div>
+</div>
+<div class='column column1of2 height-medium-fixed'>
+<div class='display-table width-full height-full'>
+<div class='display-table-row'>
+<div class='display-table-cell vertical-align-middle text-align-right'>
+<button class='button button-black no-border' expandable>
+<i class='fa fa-arrows-alt'></i>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='background-color-white padding-all-medium text-align-center'>
+<div class='background-color-black padding-all-small'>
+<div class='border-color-white border-top-color-white border-right-color-white border-bottom-color-white border-all-white border-left-color-white padding-all-small'></div>
+</div>
+<div class='border-color-black border-top-color-black border-right-color-black border-bottom-color-black border-all-black border-left-color-black padding-all-small margin-top-extra-small'></div>
+<div class='border-color-grey border-top-color-grey border-right-color-grey border-bottom-color-grey border-left-color-grey border-all-grey padding-all-small margin-top-extra-small'></div>
+<div class='border-color-blue border-top-color-blue border-right-color-blue border-bottom-color-blue border-left-color-blue border-all-blue padding-all-small margin-top-extra-small'></div>
+<div class='border-color-red border-top-color-red border-right-color-red border-bottom-color-red border-left-color-red border-all-red padding-all-small margin-top-extra-small'></div>
+<div class='border-color-green border-top-color-green border-right-color-green border-bottom-color-green border-left-color-green border-all-green padding-all-small margin-top-extra-small'></div>
+</div>
+</section>
+<section class='overflow-scroll' data-module='border-radius'>
+<div class='padding-horizontal-small padding-vertical-extra-small row'>
+<div class='column column1of2 height-medium-fixed'>
+<div class='display-table width-full height-full'>
+<div class='display-table-row'>
+<div class='display-table-cell vertical-align-middle'>
+<h3 class='font-size-medium text-color-white tesseract-font'>
+Border Radius
+</h3>
+</div>
+</div>
+</div>
+</div>
+<div class='column column1of2 height-medium-fixed'>
+<div class='display-table width-full height-full'>
+<div class='display-table-row'>
+<div class='display-table-cell vertical-align-middle text-align-right'>
+<button class='button button-black no-border' expandable>
+<i class='fa fa-arrows-alt'></i>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='background-color-white padding-all-medium text-align-center'>
+<div class='border-radius-extra-small border-all padding-all-small margin-top-extra-small'></div>
+<div class='border-radius-small border-all padding-all-small margin-top-extra-small'></div>
+<div class='border-radius-medium border-all padding-all-small margin-top-extra-small'></div>
+<div class='border-radius-large border-all padding-all-small margin-top-extra-small'></div>
+<div class='row margin-top-extra-small text-align-center'>
+<div class='border-radius-extra-large width-large-fixed height-large-fixed border-all display-inline-block'></div>
+</div>
+</div>
+</section>
+<section class='overflow-scroll' data-module='border-styles'>
+<div class='padding-horizontal-small padding-vertical-extra-small row'>
+<div class='column column1of2 height-medium-fixed'>
+<div class='display-table width-full height-full'>
+<div class='display-table-row'>
+<div class='display-table-cell vertical-align-middle'>
+<h3 class='font-size-medium text-color-white tesseract-font'>
+Border Style
+</h3>
+</div>
+</div>
+</div>
+</div>
+<div class='column column1of2 height-medium-fixed'>
+<div class='display-table width-full height-full'>
+<div class='display-table-row'>
+<div class='display-table-cell vertical-align-middle text-align-right'>
+<button class='button button-black no-border' expandable>
+<i class='fa fa-arrows-alt'></i>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='background-color-white padding-all-medium'>
+<div class='border-top-style-solid border-right-style-solid border-bottom-style-solid border-left-style-solid padding-all-small'></div>
+<div class='border-top-style-dotted border-right-style-dotted border-bottom-style-dotted border-left-style-dotted padding-all-small margin-top-small'></div>
+<div class='border-top-style-dashed border-right-style-dashed border-bottom-style-dashed border-left-style-dashed padding-all-small margin-top-small'></div>
+</div>
+</section>
+<section class='overflow-scroll' data-module='border-width'>
+<div class='padding-horizontal-small padding-vertical-extra-small row'>
+<div class='column column1of2 height-medium-fixed'>
+<div class='display-table width-full height-full'>
+<div class='display-table-row'>
+<div class='display-table-cell vertical-align-middle'>
+<h3 class='font-size-medium text-color-white tesseract-font'>
+Border Width
+</h3>
+</div>
+</div>
+</div>
+</div>
+<div class='column column1of2 height-medium-fixed'>
+<div class='display-table width-full height-full'>
+<div class='display-table-row'>
+<div class='display-table-cell vertical-align-middle text-align-right'>
+<button class='button button-black no-border' expandable>
+<i class='fa fa-arrows-alt'></i>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='background-color-white padding-all-medium'>
+<div class='border-all-width-extra-small border-top-width-extra-small border-right-width-extra-small border-bottom-width-extra-small border-left-width-extra-small padding-all-small border-radius-large margin-top-extra-small border-all'></div>
+<div class='border-all-width-small border-top-width-small border-right-width-small border-bottom-width-small border-left-width-small padding-all-small border-radius-large margin-top-small border-all'></div>
+<div class='border-all-width-medium border-top-width-medium border-right-width-medium border-bottom-width-medium border-left-width-medium padding-all-small border-radius-large margin-top-small border-all'></div>
+<div class='border-all-width-large border-top-width-large border-right-width-large border-bottom-width-large border-left-width-large padding-all-small border-radius-large margin-top-small border-all'></div>
+<div class='border-all-width-extra-large border-top-width-extra-large border-right-width-extra-large border-bottom-width-extra-large border-left-width-extra-large padding-all-small border-radius-large margin-top-small border-all'></div>
+</div>
+</section>
+<section class='overflow-scroll' data-module='cursor'>
+<div class='padding-horizontal-small padding-vertical-extra-small'>
+<div class='column column1of2 height-medium-fixed'>
+<div class='display-table width-full height-full'>
+<div class='display-table-row'>
+<div class='display-table-cell vertical-align-middle'>
+<h3 class='font-size-medium text-color-white tesseract-font'>
+Cursor
+</h3>
+</div>
+</div>
+</div>
+</div>
+<div class='column column1of2 height-medium-fixed'>
+<div class='display-table width-full height-full'>
+<div class='display-table-row'>
+<div class='display-table-cell vertical-align-middle text-align-right'>
+<button class='button button-black no-border' expandable>
+<i class='fa fa-arrows-alt'></i>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='row background-color-white padding-all-medium text-align-center'>
+<div class='column column2of5'></div>
+<div class='column column1of5'>
+<div class='padding-all-small border-all cursor-pointer'>Hover Me</div>
+</div>
+<div class='column column2of5'></div>
+</div>
+</section>
+<section class='overflow-scroll' data-module='display'>
+<div class='padding-horizontal-small padding-vertical-extra-small row'>
+<div class='column column1of2 height-medium-fixed'>
+<div class='display-table width-full height-full'>
+<div class='display-table-row'>
+<div class='display-table-cell vertical-align-middle'>
+<h3 class='font-size-medium text-color-white tesseract-font'>
+Display
+</h3>
+</div>
+</div>
+</div>
+</div>
+<div class='column column1of2 height-medium-fixed'>
+<div class='display-table width-full height-full'>
+<div class='display-table-row'>
+<div class='display-table-cell vertical-align-middle text-align-right'>
+<button class='button button-black no-border' expandable>
+<i class='fa fa-arrows-alt'></i>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='background-color-white padding-all-medium'>
+<div class='display-inline-block border-all padding-all-small'></div>
+<div class='display-inline-block border-all padding-all-small'></div>
+<div class='display-inline-block border-all padding-all-small'></div>
+<div class='display-block margin-top-small border-all padding-all-small text-align-center'></div>
+<div class='display-table margin-top-small border-all height-extra-large-fixed width-full padding-all-extra-small'>
+<div class='display-table-row'>
+<div class='display-table-cell vertical-align-middle border-all text-align-center'>
+<span class='font-size-small padding-all-small'>aligned</span>
+</div>
+</div>
+</div>
+<div class='row background-color-grey padding-all-extra-small margin-top-small'>
+<div class='column column1of3 padding-all-extra-small'>
+<div class='background-color-white padding-all-small'></div>
+</div>
+<div class='display-none column column1of3 padding-all-extra-small'>
+<div class='background-color-white padding-all-small'></div>
+</div>
+<div class='column column1of3 padding-all-extra-small'>
+<div class='background-color-white padding-all-small'></div>
+</div>
+</div>
+</div>
+</section>
+<section class='overflow-scroll' data-module='float'>
+<div class='padding-horizontal-small padding-vertical-extra-small row'>
+<div class='column column1of2 height-medium-fixed'>
+<div class='display-table width-full height-full'>
+<div class='display-table-row'>
+<div class='display-table-cell vertical-align-middle'>
+<h3 class='font-size-medium text-color-white tesseract-font'>
+Float
+</h3>
+</div>
+</div>
+</div>
+</div>
+<div class='column column1of2 height-medium-fixed'>
+<div class='display-table width-full height-full'>
+<div class='display-table-row'>
+<div class='display-table-cell vertical-align-middle text-align-right'>
+<button class='button button-black no-border' expandable>
+<i class='fa fa-arrows-alt'></i>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='background-color-white padding-all-medium'>
+<div class='clear-both clearfix background-color-grey padding-all-extra-small'>
+<div class='float-left background-color-white padding-all-small'></div>
+<div class='float-right background-color-white padding-all-small'></div>
+</div>
+</div>
+</section>
+<section class='overflow-scroll' data-module='fonts'>
+<div class='padding-horizontal-small padding-vertical-extra-small row'>
+<div class='column column1of2 height-medium-fixed'>
+<div class='display-table width-full height-full'>
+<div class='display-table-row'>
+<div class='display-table-cell vertical-align-middle'>
+<h3 class='font-size-medium text-color-white tesseract-font'>
+Fonts
+</h3>
+</div>
+</div>
+</div>
+</div>
+<div class='column column1of2 height-medium-fixed'>
+<div class='display-table width-full height-full'>
+<div class='display-table-row'>
+<div class='display-table-cell vertical-align-middle text-align-right'>
+<button class='button button-black no-border' expandable>
+<i class='fa fa-arrows-alt'></i>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='background-color-white padding-all-medium text-align-center'>
+<div class='row padding-bottom-medium'>
+<div class='display-inline-block padding-right-small'>
+<span class='font-size-extra-small'>.font-size-extra-small</span>
+</div>
+<div class='display-inline-block padding-right-small padding-left-small'>
+<span class='font-size-small'>.font-size-small</span>
+</div>
+<div class='display-inline-block padding-right-small padding-left-small'>
+<span class='font-size-medium'>.font-size-medium</span>
+</div>
+<div class='display-inline-block padding-right-small padding-left-small'>
+<span class='font-size-large'>.font-size-large</span>
+</div>
+<div class='display-inline-block padding-right-small padding-left-small'>
+<span class='font-size-extra-large'>.font-size-extra-large</span>
+</div>
+</div>
+<div class='row'>
+<div class='display-inline-block padding-right-extra-small padding-left-small'>
+<span class='font-weight-light'>.font-weight-light</span>
+</div>
+<div class='display-inline-block padding-right-extra-small padding-left-small'>
+<span class='font-weight-normal'>.font-weight-normal</span>
+</div>
+<div class='display-inline-block padding-right-extra-small padding-left-small'>
+<span class='font-weight-bold'>.font-weight-bold</span>
+</div>
+<div class='display-inline-block padding-right-extra-small padding-left-small'>
+<span class='font-weight-extra-bold'>.font-weight-extra-bold</span>
+</div>
+<div class='display-inline-block padding-right-extra-small padding-left-small'>
+<span class='font-weight-black'>.font-weight-black</span>
+</div>
+<div class='display-inline-block padding-right-extra-small padding-left-small'>
+<span class='font-weight-bolder'>.font-weight-bolder</span>
+</div>
+<div class='display-inline-block padding-right-extra-small padding-left-small'>
+<span class='font-weight-lighter'>.font-weight-lighter</span>
+</div>
+</div>
+</div>
+</section>
+<section class='overflow-scroll' data-module='margin'>
+<div class='padding-horizontal-small padding-vertical-extra-small row'>
+<div class='column column1of2 height-medium-fixed'>
+<div class='display-table width-full height-full'>
+<div class='display-table-row'>
+<div class='display-table-cell vertical-align-middle'>
+<h3 class='font-size-medium text-color-white tesseract-font'>
+Margin
+</h3>
+</div>
+</div>
+</div>
+</div>
+<div class='column column1of2 height-medium-fixed'>
+<div class='display-table width-full height-full'>
+<div class='display-table-row'>
+<div class='display-table-cell vertical-align-middle text-align-right'>
+<button class='button button-black no-border' expandable>
+<i class='fa fa-arrows-alt'></i>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='background-color-white padding-all-medium text-align-center'>
+<div class='row border-all'>
+<div class='column column1of4'>
+<div class='margin-left-extra-small background-color-grey float-left width-medium height-medium-fixed'></div>
+</div>
+<div class='column column1of4'>
+<div class='margin-top-extra-small background-color-grey float-left width-medium height-medium-fixed'></div>
+</div>
+<div class='column column1of4'>
+<div class='margin-bottom-extra-small background-color-grey float-left width-medium height-medium-fixed'></div>
+</div>
+<div class='column column1of4'>
+<div class='margin-right-extra-small background-color-grey float-left width-medium height-medium-fixed'></div>
+</div>
+</div>
+<div class='row margin-top-extra-small border-all'>
+<div class='column column1of4'>
+<div class='margin-left-small background-color-grey float-left width-medium height-medium-fixed'></div>
+</div>
+<div class='column column1of4'>
+<div class='margin-top-small background-color-grey float-left width-medium height-medium-fixed'></div>
+</div>
+<div class='column column1of4'>
+<div class='margin-bottom-small background-color-grey float-left width-medium height-medium-fixed'></div>
+</div>
+<div class='column column1of4'>
+<div class='margin-right-small background-color-grey float-left width-medium height-medium-fixed'></div>
+</div>
+</div>
+<div class='row margin-top-extra-small border-all'>
+<div class='column column1of4'>
+<div class='margin-left-medium background-color-grey float-left width-medium height-medium-fixed'></div>
+</div>
+<div class='column column1of4'>
+<div class='margin-top-medium background-color-grey float-left width-medium height-medium-fixed'></div>
+</div>
+<div class='column column1of4'>
+<div class='margin-bottom-medium background-color-grey float-left width-medium height-medium-fixed'></div>
+</div>
+<div class='column column1of4'>
+<div class='margin-right-medium background-color-grey float-left width-medium height-medium-fixed'></div>
+</div>
+</div>
+<div class='row margin-top-extra-small border-all'>
+<div class='column column1of4'>
+<div class='margin-left-large background-color-grey float-left width-medium height-medium-fixed'></div>
+</div>
+<div class='column column1of4'>
+<div class='margin-top-large background-color-grey float-left width-medium height-medium-fixed'></div>
+</div>
+<div class='column column1of4'>
+<div class='margin-bottom-large background-color-grey float-left width-medium height-medium-fixed'></div>
+</div>
+<div class='column column1of4'>
+<div class='margin-right-large background-color-grey float-left width-medium height-medium-fixed'></div>
+</div>
+</div>
+<div class='row margin-top-extra-small border-all'>
+<div class='column column1of4'>
+<div class='margin-left-extra-large background-color-grey float-left width-medium height-medium-fixed'></div>
+</div>
+<div class='column column1of4'>
+<div class='margin-top-extra-large background-color-grey float-left width-medium height-medium-fixed'></div>
+</div>
+<div class='column column1of4'>
+<div class='margin-bottom-extra-large background-color-grey float-left width-medium height-medium-fixed'></div>
+</div>
+<div class='column column1of4'>
+<div class='margin-right-extra-large background-color-grey float-left width-medium height-medium-fixed'></div>
+</div>
+</div>
+<div class='row margin-top-extra-small border-all'>
+<div class='margin-vertical-extra-small background-color-grey float-left width-full height-medium-fixed'></div>
+<div class='margin-vertical-small background-color-grey float-left width-full height-medium-fixed'></div>
+<div class='margin-vertical-medium background-color-grey float-left width-full height-medium-fixed'></div>
+<div class='margin-vertical-large background-color-grey float-left width-full height-medium-fixed'></div>
+<div class='margin-vertical-extra-large background-color-grey float-left width-full height-medium-fixed'></div>
+</div>
+<div class='row margin-top-extra-small border-all'>
+<div class='margin-horizontal-extra-small background-color-grey float-left width-medium-fixed height-medium-fixed margin-top-extra-small'></div>
+<div class='margin-horizontal-small background-color-grey float-left width-medium-fixed height-medium-fixed margin-top-extra-small'></div>
+<div class='margin-horizontal-medium background-color-grey float-left width-medium-fixed height-medium-fixed margin-top-extra-small'></div>
+<div class='margin-horizontal-large background-color-grey float-left width-medium-fixed height-medium-fixed margin-top-extra-small'></div>
+<div class='margin-horizontal-extra-large background-color-grey float-left width-medium-fixed height-medium-fixed margin-top-extra-small'></div>
+</div>
+<div class='row margin-top-extra-small border-all'>
+<div class='margin-all-extra-small background-color-grey float-left width-medium-fixed height-medium-fixed margin-top-extra-small'></div>
+<div class='margin-all-small background-color-grey float-left width-medium-fixed height-medium-fixed margin-top-extra-small'></div>
+<div class='margin-all-medium background-color-grey float-left width-medium-fixed height-medium-fixed margin-top-extra-small'></div>
+<div class='margin-all-large background-color-grey float-left width-medium-fixed height-medium-fixed margin-top-extra-small'></div>
+<div class='margin-all-extra-large background-color-grey float-left width-medium-fixed height-medium-fixed margin-top-extra-small'></div>
+</div>
+<div class='row margin-top-extra-small border-all'>
+<div class='column column1of4'>
+<div class='margin-left-extra-small-fixed background-color-grey float-left width-medium height-medium-fixed'></div>
+</div>
+<div class='column column1of4'>
+<div class='margin-top-extra-small-fixed background-color-grey float-left width-medium height-medium-fixed'></div>
+</div>
+<div class='column column1of4'>
+<div class='margin-bottom-extra-small-fixed background-color-grey float-left width-medium height-medium-fixed'></div>
+</div>
+<div class='column column1of4'>
+<div class='margin-right-extra-small-fixed background-color-grey float-left width-medium height-medium-fixed'></div>
+</div>
+</div>
+<div class='row margin-top-extra-small border-all'>
+<div class='column column1of4'>
+<div class='margin-left-small-fixed background-color-grey float-left width-medium height-medium-fixed'></div>
+</div>
+<div class='column column1of4'>
+<div class='margin-top-small-fixed background-color-grey float-left width-medium height-medium-fixed'></div>
+</div>
+<div class='column column1of4'>
+<div class='margin-bottom-small-fixed background-color-grey float-left width-medium height-medium-fixed'></div>
+</div>
+<div class='column column1of4'>
+<div class='margin-right-small-fixed background-color-grey float-left width-medium height-medium-fixed'></div>
+</div>
+</div>
+<div class='row margin-top-extra-small border-all'>
+<div class='column column1of4'>
+<div class='margin-left-medium-fixed background-color-grey float-left width-medium height-medium-fixed'></div>
+</div>
+<div class='column column1of4'>
+<div class='margin-top-medium-fixed background-color-grey float-left width-medium height-medium-fixed'></div>
+</div>
+<div class='column column1of4'>
+<div class='margin-bottom-medium-fixed background-color-grey float-left width-medium height-medium-fixed'></div>
+</div>
+<div class='column column1of4'>
+<div class='margin-right-medium-fixed background-color-grey float-left width-medium height-medium-fixed'></div>
+</div>
+</div>
+<div class='row margin-top-extra-small border-all'>
+<div class='column column1of4'>
+<div class='margin-left-large-fixed background-color-grey float-left width-medium height-medium-fixed'></div>
+</div>
+<div class='column column1of4'>
+<div class='margin-top-large-fixed background-color-grey float-left width-medium height-medium-fixed'></div>
+</div>
+<div class='column column1of4'>
+<div class='margin-bottom-large-fixed background-color-grey float-left width-medium height-medium-fixed'></div>
+</div>
+<div class='column column1of4'>
+<div class='margin-right-large-fixed background-color-grey float-left width-medium height-medium-fixed'></div>
+</div>
+</div>
+<div class='row margin-top-extra-small border-all'>
+<div class='column column1of4'>
+<div class='margin-left-extra-large-fixed background-color-grey float-left width-medium height-medium-fixed'></div>
+</div>
+<div class='column column1of4'>
+<div class='margin-top-extra-large-fixed background-color-grey float-left width-medium height-medium-fixed'></div>
+</div>
+<div class='column column1of4'>
+<div class='margin-bottom-extra-large-fixed background-color-grey float-left width-medium height-medium-fixed'></div>
+</div>
+<div class='column column1of4'>
+<div class='margin-right-extra-large-fixed background-color-grey float-left width-medium height-medium-fixed'></div>
+</div>
+</div>
+<div class='row margin-top-extra-small border-all'>
+<div class='margin-vertical-extra-small-fixed background-color-grey float-left width-full height-medium-fixed'></div>
+<div class='margin-vertical-small-fixed background-color-grey float-left width-full height-medium-fixed'></div>
+<div class='margin-vertical-medium-fixed background-color-grey float-left width-full height-medium-fixed'></div>
+<div class='margin-vertical-large-fixed background-color-grey float-left width-full height-medium-fixed'></div>
+<div class='margin-vertical-extra-large-fixed background-color-grey float-left width-full height-medium-fixed'></div>
+</div>
+<div class='row margin-top-extra-small border-all'>
+<div class='margin-horizontal-extra-small-fixed background-color-grey float-left width-medium height-medium-fixed margin-top-extra-small'></div>
+<div class='margin-horizontal-small-fixed background-color-grey float-left width-medium height-medium-fixed margin-top-extra-small'></div>
+<div class='margin-horizontal-medium-fixed background-color-grey float-left width-medium height-medium-fixed margin-top-extra-small'></div>
+<div class='margin-horizontal-large-fixed background-color-grey float-left width-medium height-medium-fixed margin-top-extra-small'></div>
+<div class='margin-horizontal-extra-large-fixed background-color-grey float-left width-medium height-medium-fixed margin-top-extra-small'></div>
+</div>
+<div class='row margin-top-extra-small border-all'>
+<div class='margin-all-extra-small-fixed background-color-grey float-left width-medium height-medium-fixed margin-top-extra-small'></div>
+<div class='margin-all-small-fixed background-color-grey float-left width-medium height-medium-fixed margin-top-extra-small'></div>
+<div class='margin-all-medium-fixed background-color-grey float-left width-medium height-medium-fixed margin-top-extra-small'></div>
+<div class='margin-all-large-fixed background-color-grey float-left width-medium height-medium-fixed margin-top-extra-small'></div>
+<div class='margin-all-extra-large-fixed background-color-grey float-left width-medium height-medium-fixed margin-top-extra-small'></div>
+</div>
+<div class='row margin-top-extra-small border-all'>
+<div class='no-margin margin-all-large background-color-grey float-left width-medium height-medium-fixed'></div>
+</div>
+</div>
+</section>
+<section class='overflow-scroll' data-module='opacity'>
+<div class='padding-horizontal-small padding-vertical-extra-small row'>
+<div class='column column1of2 height-medium-fixed'>
+<div class='display-table width-full height-full'>
+<div class='display-table-row'>
+<div class='display-table-cell vertical-align-middle'>
+<h3 class='font-size-medium text-color-white tesseract-font'>
+Opacity
+</h3>
+</div>
+</div>
+</div>
+</div>
+<div class='column column1of2 height-medium-fixed'>
+<div class='display-table width-full height-full'>
+<div class='display-table-row'>
+<div class='display-table-cell vertical-align-middle text-align-right'>
+<button class='button button-black no-border' expandable>
+<i class='fa fa-arrows-alt'></i>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='background-color-white padding-all-medium text-align-center row'>
+<div class='opacity-10 column column1of10 background-color-black height-medium-fixed'></div>
+<div class='opacity-20 column column1of10 background-color-black height-medium-fixed'></div>
+<div class='opacity-30 column column1of10 background-color-black height-medium-fixed'></div>
+<div class='opacity-40 column column1of10 background-color-black height-medium-fixed'></div>
+<div class='opacity-50 column column1of10 background-color-black height-medium-fixed'></div>
+<div class='opacity-60 column column1of10 background-color-black height-medium-fixed'></div>
+<div class='opacity-70 column column1of10 background-color-black height-medium-fixed'></div>
+<div class='opacity-80 column column1of10 background-color-black height-medium-fixed'></div>
+<div class='opacity-90 column column1of10 background-color-black height-medium-fixed'></div>
+<div class='opacity-100 column column1of10 background-color-black height-medium-fixed'></div>
+</div>
+</section>
+<section class='overflow-scroll' data-module='outline'>
+<div class='padding-horizontal-small padding-vertical-extra-small row'>
+<div class='column column1of2 height-medium-fixed'>
+<div class='display-table width-full height-full'>
+<div class='display-table-row'>
+<div class='display-table-cell vertical-align-middle'>
+<h3 class='font-size-medium text-color-white tesseract-font'>
+Outline
+</h3>
+</div>
+</div>
+</div>
+</div>
+<div class='column column1of2 height-medium-fixed'>
+<div class='display-table width-full height-full'>
+<div class='display-table-row'>
+<div class='display-table-cell vertical-align-middle text-align-right'>
+<button class='button button-black no-border' expandable>
+<i class='fa fa-arrows-alt'></i>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='background-color-white padding-all-medium text-align-center'>
+<button class='no-outline'>Button</button>
+</div>
+</section>
+<section class='overflow-scroll' data-module='overflow'>
+<div class='padding-horizontal-small padding-vertical-extra-small row'>
+<div class='column column1of2 height-medium-fixed'>
+<div class='display-table width-full height-full'>
+<div class='display-table-row'>
+<div class='display-table-cell vertical-align-middle'>
+<h3 class='font-size-medium text-color-white tesseract-font'>
+Overflow
+</h3>
+</div>
+</div>
+</div>
+</div>
+<div class='column column1of2 height-medium-fixed'>
+<div class='display-table width-full height-full'>
+<div class='display-table-row'>
+<div class='display-table-cell vertical-align-middle text-align-right'>
+<button class='button button-black no-border' expandable>
+<i class='fa fa-arrows-alt'></i>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='background-color-white padding-all-medium text-align-center'>
+<div class='overflow-hidden border-all'>
+<div class='width-full padding-all-large margin-left-large white-space-nowrap'>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</div>
+</div>
+<div class='overflow-scroll border-all'>
+<div class='width-full padding-all-large margin-left-large white-space-nowrap'>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</div>
+</div>
+</div>
+</section>
+<section class='overflow-scroll' data-module='padding'>
+<div class='padding-horizontal-small padding-vertical-extra-small row'>
+<div class='column column1of2 height-medium-fixed'>
+<div class='display-table width-full height-full'>
+<div class='display-table-row'>
+<div class='display-table-cell vertical-align-middle'>
+<h3 class='font-size-medium text-color-white tesseract-font'>
+Padding
+</h3>
+</div>
+</div>
+</div>
+</div>
+<div class='column column1of2 height-medium-fixed'>
+<div class='display-table width-full height-full'>
+<div class='display-table-row'>
+<div class='display-table-cell vertical-align-middle text-align-right'>
+<button class='button button-black no-border' expandable>
+<i class='fa fa-arrows-alt'></i>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='background-color-white padding-all-medium text-align-center overflow-hidden'>
+<div class='padding-top-extra-small border-all margin-top-extra-small'>
+<div class='height-medium-fixed widt-full background-color-grey'></div>
+</div>
+<div class='padding-right-extra-small border-all margin-top-extra-small'>
+<div class='height-medium-fixed widt-full background-color-grey'></div>
+</div>
+<div class='padding-bottom-extra-small border-all margin-top-extra-small'>
+<div class='height-medium-fixed widt-full background-color-grey'></div>
+</div>
+<div class='padding-left-extra-small border-all margin-top-extra-small'>
+<div class='height-medium-fixed widt-full background-color-grey'></div>
+</div>
+<div class='padding-top-small border-all margin-top-extra-small'>
+<div class='height-medium-fixed widt-full background-color-grey'></div>
+</div>
+<div class='padding-right-small border-all margin-top-extra-small'>
+<div class='height-medium-fixed widt-full background-color-grey'></div>
+</div>
+<div class='padding-bottom-small border-all margin-top-extra-small'>
+<div class='height-medium-fixed widt-full background-color-grey'></div>
+</div>
+<div class='padding-left-small border-all margin-top-extra-small'>
+<div class='height-medium-fixed widt-full background-color-grey'></div>
+</div>
+<div class='padding-top-medium border-all margin-top-extra-small'>
+<div class='height-medium-fixed widt-full background-color-grey'></div>
+</div>
+<div class='padding-right-medium border-all margin-top-extra-small'>
+<div class='height-medium-fixed widt-full background-color-grey'></div>
+</div>
+<div class='padding-bottom-medium border-all margin-top-extra-small'>
+<div class='height-medium-fixed widt-full background-color-grey'></div>
+</div>
+<div class='padding-left-medium border-all margin-top-extra-small'>
+<div class='height-medium-fixed widt-full background-color-grey'></div>
+</div>
+<div class='padding-top-large border-all margin-top-extra-small'>
+<div class='height-medium-fixed widt-full background-color-grey'></div>
+</div>
+<div class='padding-right-large border-all margin-top-extra-small'>
+<div class='height-medium-fixed widt-full background-color-grey'></div>
+</div>
+<div class='padding-bottom-large border-all margin-top-extra-small'>
+<div class='height-medium-fixed widt-full background-color-grey'></div>
+</div>
+<div class='padding-left-large border-all margin-top-extra-small'>
+<div class='height-medium-fixed widt-full background-color-grey'></div>
+</div>
+<div class='padding-top-extra-large border-all margin-top-extra-small'>
+<div class='height-medium-fixed widt-full background-color-grey'></div>
+</div>
+<div class='padding-right-extra-large border-all margin-top-extra-small'>
+<div class='height-medium-fixed widt-full background-color-grey'></div>
+</div>
+<div class='padding-bottom-extra-large border-all margin-top-extra-small'>
+<div class='height-medium-fixed widt-full background-color-grey'></div>
+</div>
+<div class='padding-left-extra-large border-all margin-top-extra-small'>
+<div class='height-medium-fixed widt-full background-color-grey'></div>
+</div>
+<div class='padding-vertical-extra-small border-all margin-top-extra-small'>
+<div class='height-medium-fixed widt-full background-color-grey'></div>
+</div>
+<div class='padding-horizontal-extra-small border-all margin-top-extra-small'>
+<div class='height-medium-fixed widt-full background-color-grey'></div>
+</div>
+<div class='padding-vertical-small border-all margin-top-extra-small'>
+<div class='height-medium-fixed widt-full background-color-grey'></div>
+</div>
+<div class='padding-horizontal-small border-all margin-top-extra-small'>
+<div class='height-medium-fixed widt-full background-color-grey'></div>
+</div>
+<div class='padding-vertical-medium border-all margin-top-extra-small'>
+<div class='height-medium-fixed widt-full background-color-grey'></div>
+</div>
+<div class='padding-horizontal-medium border-all margin-top-extra-small'>
+<div class='height-medium-fixed widt-full background-color-grey'></div>
+</div>
+<div class='padding-vertical-large border-all margin-top-extra-small'>
+<div class='height-medium-fixed widt-full background-color-grey'></div>
+</div>
+<div class='padding-horizontal-large border-all margin-top-extra-small'>
+<div class='height-medium-fixed widt-full background-color-grey'></div>
+</div>
+<div class='padding-vertical-extra-large border-all margin-top-extra-small'>
+<div class='height-medium-fixed widt-full background-color-grey'></div>
+</div>
+<div class='padding-horizontal-extra-large border-all margin-top-extra-small'>
+<div class='height-medium-fixed widt-full background-color-grey'></div>
+</div>
+<div class='padding-all-extra-small border-all margin-top-extra-small'>
+<div class='height-medium-fixed widt-full background-color-grey'></div>
+</div>
+<div class='padding-all-small border-all margin-top-extra-small'>
+<div class='height-medium-fixed widt-full background-color-grey'></div>
+</div>
+<div class='padding-all-medium border-all margin-top-extra-small'>
+<div class='height-medium-fixed widt-full background-color-grey'></div>
+</div>
+<div class='padding-all-large border-all margin-top-extra-small'>
+<div class='height-medium-fixed widt-full background-color-grey'></div>
+</div>
+<div class='padding-all-extra-large border-all margin-top-extra-small'>
+<div class='height-medium-fixed widt-full background-color-grey'></div>
+</div>
+<div class='padding-top-extra-small-fixed border-all margin-top-extra-small'>
+<div class='height-medium-fixed widt-full background-color-grey'></div>
+</div>
+<div class='padding-right-extra-small-fixed border-all margin-top-extra-small'>
+<div class='height-medium-fixed widt-full background-color-grey'></div>
+</div>
+<div class='padding-bottom-extra-small-fixed border-all margin-top-extra-small'>
+<div class='height-medium-fixed widt-full background-color-grey'></div>
+</div>
+<div class='padding-left-extra-small-fixed border-all margin-top-extra-small'>
+<div class='height-medium-fixed widt-full background-color-grey'></div>
+</div>
+<div class='padding-top-small-fixed border-all margin-top-extra-small'>
+<div class='height-medium-fixed widt-full background-color-grey'></div>
+</div>
+<div class='padding-right-small-fixed border-all margin-top-extra-small'>
+<div class='height-medium-fixed widt-full background-color-grey'></div>
+</div>
+<div class='padding-bottom-small-fixed border-all margin-top-extra-small'>
+<div class='height-medium-fixed widt-full background-color-grey'></div>
+</div>
+<div class='padding-left-small-fixed border-all margin-top-extra-small'>
+<div class='height-medium-fixed widt-full background-color-grey'></div>
+</div>
+<div class='padding-top-medium-fixed border-all margin-top-extra-small'>
+<div class='height-medium-fixed widt-full background-color-grey'></div>
+</div>
+<div class='padding-right-medium-fixed border-all margin-top-extra-small'>
+<div class='height-medium-fixed widt-full background-color-grey'></div>
+</div>
+<div class='padding-bottom-medium-fixed border-all margin-top-extra-small'>
+<div class='height-medium-fixed widt-full background-color-grey'></div>
+</div>
+<div class='padding-left-medium-fixed border-all margin-top-extra-small'>
+<div class='height-medium-fixed widt-full background-color-grey'></div>
+</div>
+<div class='padding-top-large-fixed border-all margin-top-extra-small'>
+<div class='height-medium-fixed widt-full background-color-grey'></div>
+</div>
+<div class='padding-right-large-fixed border-all margin-top-extra-small'>
+<div class='height-medium-fixed widt-full background-color-grey'></div>
+</div>
+<div class='padding-bottom-large-fixed border-all margin-top-extra-small'>
+<div class='height-medium-fixed widt-full background-color-grey'></div>
+</div>
+<div class='padding-left-large-fixed border-all margin-top-extra-small'>
+<div class='height-medium-fixed widt-full background-color-grey'></div>
+</div>
+<div class='padding-top-extra-large-fixed border-all margin-top-extra-small'>
+<div class='height-medium-fixed widt-full background-color-grey'></div>
+</div>
+<div class='padding-right-extra-large-fixed border-all margin-top-extra-small'>
+<div class='height-medium-fixed widt-full background-color-grey'></div>
+</div>
+<div class='padding-bottom-extra-large-fixed border-all margin-top-extra-small'>
+<div class='height-medium-fixed widt-full background-color-grey'></div>
+</div>
+<div class='padding-left-extra-large-fixed border-all margin-top-extra-small'>
+<div class='height-medium-fixed widt-full background-color-grey'></div>
+</div>
+<div class='padding-vertical-extra-small-fixed border-all margin-top-extra-small'>
+<div class='height-medium-fixed widt-full background-color-grey'></div>
+</div>
+<div class='padding-horizontal-extra-small-fixed border-all margin-top-extra-small'>
+<div class='height-medium-fixed widt-full background-color-grey'></div>
+</div>
+<div class='padding-vertical-small-fixed border-all margin-top-extra-small'>
+<div class='height-medium-fixed widt-full background-color-grey'></div>
+</div>
+<div class='padding-horizontal-small-fixed border-all margin-top-extra-small'>
+<div class='height-medium-fixed widt-full background-color-grey'></div>
+</div>
+<div class='padding-vertical-medium-fixed border-all margin-top-extra-small'>
+<div class='height-medium-fixed widt-full background-color-grey'></div>
+</div>
+<div class='padding-horizontal-medium-fixed border-all margin-top-extra-small'>
+<div class='height-medium-fixed widt-full background-color-grey'></div>
+</div>
+<div class='padding-vertical-large-fixed border-all margin-top-extra-small'>
+<div class='height-medium-fixed widt-full background-color-grey'></div>
+</div>
+<div class='padding-horizontal-large-fixed border-all margin-top-extra-small'>
+<div class='height-medium-fixed widt-full background-color-grey'></div>
+</div>
+<div class='padding-vertical-extra-large-fixed border-all margin-top-extra-small'>
+<div class='height-medium-fixed widt-full background-color-grey'></div>
+</div>
+<div class='padding-horizontal-extra-large-fixed border-all margin-top-extra-small'>
+<div class='height-medium-fixed widt-full background-color-grey'></div>
+</div>
+<div class='padding-all-extra-small-fixed border-all margin-top-extra-small'>
+<div class='height-medium-fixed widt-full background-color-grey'></div>
+</div>
+<div class='padding-all-small-fixed border-all margin-top-extra-small'>
+<div class='height-medium-fixed widt-full background-color-grey'></div>
+</div>
+<div class='padding-all-medium-fixed border-all margin-top-extra-small'>
+<div class='height-medium-fixed widt-full background-color-grey'></div>
+</div>
+<div class='padding-all-large-fixed border-all margin-top-extra-small'>
+<div class='height-medium-fixed widt-full background-color-grey'></div>
+</div>
+<div class='padding-all-extra-large-fixed border-all margin-top-extra-small'>
+<div class='height-medium-fixed widt-full background-color-grey'></div>
+</div>
+<div class='no-padding padding-all-large margin-top-extra-small'>
+<div class='height-medium-fixed widt-full background-color-grey'></div>
+</div>
+</div>
+</section>
+<section class='overflow-scroll' data-module='position'>
+<div class='padding-horizontal-small padding-vertical-extra-small row'>
+<div class='column column1of2 height-medium-fixed'>
+<div class='display-table width-full height-full'>
+<div class='display-table-row'>
+<div class='display-table-cell vertical-align-middle'>
+<h3 class='font-size-medium text-color-white tesseract-font'>
+Position
+</h3>
+</div>
+</div>
+</div>
+</div>
+<div class='column column1of2 height-medium-fixed'>
+<div class='display-table width-full height-full'>
+<div class='display-table-row'>
+<div class='display-table-cell vertical-align-middle text-align-right'>
+<button class='button button-black no-border' expandable>
+<i class='fa fa-arrows-alt'></i>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='background-color-white padding-all-medium text-align-center overflow-hidden'>
+<div class='position-relative background-color-grey padding-all-medium'>
+<div class='position-absolute opacity-30 background-color-white margin-left-small padding-all-small width-large'></div>
+<div class='position-absolute opacity-30 background-color-white margin-left-medium padding-all-small width-large'></div>
+<div class='position-absolute opacity-30 background-color-white margin-left-large padding-all-small width-large'></div>
+</div>
+</div>
+</section>
+<section class='overflow-scroll' data-module='height'>
+<div class='padding-horizontal-small padding-vertical-extra-small row'>
+<div class='column column1of2 height-medium-fixed'>
+<div class='display-table width-full height-full'>
+<div class='display-table-row'>
+<div class='display-table-cell vertical-align-middle'>
+<h3 class='font-size-medium text-color-white tesseract-font'>
+Height
+</h3>
+</div>
+</div>
+</div>
+</div>
+<div class='column column1of2 height-medium-fixed'>
+<div class='display-table width-full height-full'>
+<div class='display-table-row'>
+<div class='display-table-cell vertical-align-middle text-align-right'>
+<button class='button button-black no-border' expandable>
+<i class='fa fa-arrows-alt'></i>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='background-color-white padding-all-medium text-align-center overflow-hidden'>
+<div class='height-minimum-fixed background-color-grey width-full margin-top-extra-small'></div>
+<div class='height-extra-small background-color-grey width-full'></div>
+<div class='height-small background-color-grey width-full margin-top-extra-small'></div>
+<div class='height-medium background-color-grey width-full margin-top-extra-small'></div>
+<div class='height-large background-color-grey width-full margin-top-extra-small'></div>
+<div class='height-extra-large height-full background-color-grey width-full margin-top-extra-small'></div>
+<div class='height-extra-small-fixed background-color-grey width-full margin-top-extra-small'></div>
+<div class='height-small-fixed background-color-grey width-full margin-top-extra-small'></div>
+<div class='height-medium-fixed background-color-grey width-full margin-top-extra-small'></div>
+<div class='height-large-fixed background-color-grey width-full margin-top-extra-small'></div>
+<div class='height-extra-large-fixed background-color-grey width-full margin-top-extra-small'></div>
+</div>
+</section>
+<section class='overflow-scroll' data-module='overflow'>
+<div class='padding-horizontal-small padding-vertical-extra-small row'>
+<div class='column column1of2 height-medium-fixed'>
+<div class='display-table width-full height-full'>
+<div class='display-table-row'>
+<div class='display-table-cell vertical-align-middle'>
+<h3 class='font-size-medium text-color-white tesseract-font'>
+Text Overflow
+</h3>
+</div>
+</div>
+</div>
+</div>
+<div class='column column1of2 height-medium-fixed'>
+<div class='display-table width-full height-full'>
+<div class='display-table-row'>
+<div class='display-table-cell vertical-align-middle text-align-right'>
+<button class='button button-black no-border' expandable>
+<i class='fa fa-arrows-alt'></i>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='background-color-white padding-all-medium text-align-center'>
+<div class='text-align-center'>
+<div class='text-overflow-ellipsis width-medium-fixed white-space-nowrap overflow-hidden display-inline-block'>
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+</div>
+</div>
+</div>
+</section>
+<section class='overflow-scroll' data-module='text-align'>
+<div class='padding-horizontal-small padding-vertical-extra-small row'>
+<div class='column column1of2 height-medium-fixed'>
+<div class='display-table width-full height-full'>
+<div class='display-table-row'>
+<div class='display-table-cell vertical-align-middle'>
+<h3 class='font-size-medium text-color-white tesseract-font'>
+Text Align
+</h3>
+</div>
+</div>
+</div>
+</div>
+<div class='column column1of2 height-medium-fixed'>
+<div class='display-table width-full height-full'>
+<div class='display-table-row'>
+<div class='display-table-cell vertical-align-middle text-align-right'>
+<button class='button button-black no-border' expandable>
+<i class='fa fa-arrows-alt'></i>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='background-color-white padding-all-medium text-align-center'>
+<div class='text-align-center border-all padding-all-extra-small'>
+Lorem ipsum dolor sit amet
+</div>
+<div class='text-align-left border-all padding-all-extra-small margin-top-extra-small'>
+Lorem ipsum dolor sit amet
+</div>
+<div class='text-align-right border-all padding-all-extra-small margin-top-extra-small'>
+Lorem ipsum dolor sit amet
+</div>
+</div>
+</section>
+<section class='overflow-scroll' data-module='text-color'>
+<div class='padding-horizontal-small padding-vertical-extra-small row'>
+<div class='column column1of2 height-medium-fixed'>
+<div class='display-table width-full height-full'>
+<div class='display-table-row'>
+<div class='display-table-cell vertical-align-middle'>
+<h3 class='font-size-medium text-color-white tesseract-font'>
+Text Color
+</h3>
+</div>
+</div>
+</div>
+</div>
+<div class='column column1of2 height-medium-fixed'>
+<div class='display-table width-full height-full'>
+<div class='display-table-row'>
+<div class='display-table-cell vertical-align-middle text-align-right'>
+<button class='button button-black no-border' expandable>
+<i class='fa fa-arrows-alt'></i>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='background-color-white padding-all-medium text-align-center'>
+<div class='text-color-black display-inline-block'>BLACK</div>
+<div class='text-color-white display-inline-block background-color-black'>WHITE</div>
+<div class='text-color-blue display-inline-block'>BLUE</div>
+<div class='text-color-red display-inline-block'>RED</div>
+<div class='text-color-green display-inline-block'>GREEN</div>
+</div>
+</section>
+<section class='overflow-scroll' data-module='text-shadow'>
+<div class='padding-horizontal-small padding-vertical-extra-small row'>
+<div class='column column1of2 height-medium-fixed'>
+<div class='display-table width-full height-full'>
+<div class='display-table-row'>
+<div class='display-table-cell vertical-align-middle'>
+<h3 class='font-size-medium text-color-white tesseract-font'>
+Text Shadow
+</h3>
+</div>
+</div>
+</div>
+</div>
+<div class='column column1of2 height-medium-fixed'>
+<div class='display-table width-full height-full'>
+<div class='display-table-row'>
+<div class='display-table-cell vertical-align-middle text-align-right'>
+<button class='button button-black no-border' expandable>
+<i class='fa fa-arrows-alt'></i>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='background-color-white padding-all-medium text-align-center'>
+<div class='text-shadow font-size-large display-inline-block margin-all-extra-small'>Text</div>
+<div class='text-shadow-strong font-size-large display-inline-block margin-all-extra-small'>Text</div>
+</div>
+</section>
+<section class='overflow-scroll' data-module='user-select'>
+<div class='padding-horizontal-small padding-vertical-extra-small row'>
+<div class='column column1of2 height-medium-fixed'>
+<div class='display-table width-full height-full'>
+<div class='display-table-row'>
+<div class='display-table-cell vertical-align-middle'>
+<h3 class='font-size-medium text-color-white tesseract-font'>
+User Select
+</h3>
+</div>
+</div>
+</div>
+</div>
+<div class='column column1of2 height-medium-fixed'>
+<div class='display-table width-full height-full'>
+<div class='display-table-row'>
+<div class='display-table-cell vertical-align-middle text-align-right'>
+<button class='button button-black no-border' expandable>
+<i class='fa fa-arrows-alt'></i>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='background-color-white padding-all-medium text-align-center'>
+<div class='paddin-all-small user-select-none'>Try to select this text</div>
+</div>
+</section>
+<section class='overflow-scroll' data-module='white-space'>
+<div class='padding-horizontal-small padding-vertical-extra-small row'>
+<div class='column column1of2 height-medium-fixed'>
+<div class='display-table width-full height-full'>
+<div class='display-table-row'>
+<div class='display-table-cell vertical-align-middle'>
+<h3 class='font-size-medium text-color-white tesseract-font'>
+White Space
+</h3>
+</div>
+</div>
+</div>
+</div>
+<div class='column column1of2 height-medium-fixed'>
+<div class='display-table width-full height-full'>
+<div class='display-table-row'>
+<div class='display-table-cell vertical-align-middle text-align-right'>
+<button class='button button-black no-border' expandable>
+<i class='fa fa-arrows-alt'></i>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='background-color-white padding-all-medium text-align-center'>
+<div class='white-space-nowrap width-small-fixed display-inline-block'>
+This text does not break even though it should
+</div>
+</div>
+</section>
+<section class='overflow-scroll' data-module='width'>
+<div class='padding-horizontal-small padding-vertical-extra-small row'>
+<div class='column column1of2 height-medium-fixed'>
+<div class='display-table width-full height-full'>
+<div class='display-table-row'>
+<div class='display-table-cell vertical-align-middle'>
+<h3 class='font-size-medium text-color-white tesseract-font'>
+Width
+</h3>
+</div>
+</div>
+</div>
+</div>
+<div class='column column1of2 height-medium-fixed'>
+<div class='display-table width-full height-full'>
+<div class='display-table-row'>
+<div class='display-table-cell vertical-align-middle text-align-right'>
+<button class='button button-black no-border' expandable>
+<i class='fa fa-arrows-alt'></i>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='background-color-white padding-all-medium text-align-center'>
+<div class='width-extra-small background-color-grey height-small-fixed display-inline-block'></div>
+<div class='width-small background-color-grey height-small-fixed display-inline-block'></div>
+<div class='width-medium background-color-grey height-small-fixed display-inline-block'></div>
+<div class='width-large background-color-grey height-small-fixed display-inline-block'></div>
+<div class='margin-top-small'>
+<div class='width-extra-large width-full background-color-grey height-small-fixed'></div>
+</div>
+<div class='margin-top-small'>
+<div class='width-minimum-fixed background-color-grey height-small-fixed display-inline-block'></div>
+<div class='width-extra-small-fixed background-color-grey height-small-fixed display-inline-block'></div>
+<div class='width-small-fixed background-color-grey height-small-fixed display-inline-block'></div>
+<div class='width-medium-fixed background-color-grey height-small-fixed display-inline-block'></div>
+<div class='width-large-fixed background-color-grey height-small-fixed display-inline-block'></div>
+<div class='width-extra-large-fixed background-color-grey height-small-fixed display-inline-block'></div>
+</div>
+</div>
+</section>
+</section>
+<section class='margin-top-medium'>
+<h2 class='font-size-extra-large text-align-center text-color-white tesseract-font font-weight-light'>
+Components
+</h2>
+<p class='font-size-small text-align-center text-color-white tesseract-font padding-top-extra-small padding-horizontal-small'>
+Reusable elements, based on one or multiple modules
+</p>
+<section class='overflow-scroll' data-component='border'>
+<div class='padding-horizontal-small padding-vertical-extra-small row'>
+<div class='column column1of2 height-medium-fixed'>
+<div class='display-table width-full height-full'>
+<div class='display-table-row'>
+<div class='display-table-cell vertical-align-middle'>
+<h3 class='font-size-medium text-color-white tesseract-font'>
+Border
 </h3>
 </div>
 </div>
@@ -138,23 +1840,23 @@ Borders
 </div>
 <div class='background-color-white padding-all-medium text-align-center'>
 <div class='background-color-black padding-all-extra-small'>
-<div class='border-all-white border-top-white border-right-white border-bottom-white border-left-white padding-all-extra-small border-radius-large'></div>
+<div class='border-all-white border-top-white border-right-white border-bottom-white border-left-white padding-all-small border-radius-large'></div>
 </div>
-<div class='border-all-black border-top-black border-right-black border-bottom-black border-left-black padding-all-extra-small border-radius-large margin-top-extra-small'></div>
-<div class='border-all-grey border-top-grey border-right-grey border-bottom-grey border-left-grey padding-all-extra-small border-radius-large margin-top-extra-small'></div>
-<div class='border-all-blue border-top-blue border-right-blue border-bottom-blue border-left-blue padding-all-extra-small border-radius-large margin-top-extra-small'></div>
-<div class='border-all-red border-top-red border-right-red border-bottom-red border-left-red padding-all-extra-small border-radius-large margin-top-extra-small'></div>
-<div class='border-all-green border-top-green border-right-green border-bottom-green border-left-green padding-all-extra-small border-radius-large margin-top-extra-small'></div>
+<div class='border-all-black border-top-black border-right-black border-bottom-black border-left-black padding-all-small border-radius-large margin-top-extra-small'></div>
+<div class='border-all-grey border-top-grey border-right-grey border-bottom-grey border-left-grey padding-all-small border-radius-large margin-top-extra-small'></div>
+<div class='border-all-blue border-top-blue border-right-blue border-bottom-blue border-left-blue padding-all-small border-radius-large margin-top-extra-small'></div>
+<div class='border-all-red border-top-red border-right-red border-bottom-red border-left-red padding-all-small border-radius-large margin-top-extra-small'></div>
+<div class='border-all-green border-top-green border-right-green border-bottom-green border-left-green padding-all-small border-radius-large margin-top-extra-small'></div>
 </div>
 </section>
-<section data-component='button'>
+<section class='overflow-scroll' data-component='button'>
 <div class='padding-horizontal-small padding-vertical-extra-small row'>
 <div class='column column1of2 height-medium-fixed'>
 <div class='display-table width-full height-full'>
 <div class='display-table-row'>
 <div class='display-table-cell vertical-align-middle'>
-<h3 class='no-margin font-size-medium text-color-white tesseract-font'>
-Buttons
+<h3 class='font-size-medium text-color-white tesseract-font'>
+Button
 </h3>
 </div>
 </div>
@@ -185,13 +1887,13 @@ Buttons
 </div>
 </div>
 </section>
-<section data-component='clearfix'>
+<section class='overflow-scroll' data-component='clearfix'>
 <div class='padding-horizontal-small padding-vertical-extra-small row'>
 <div class='column column1of2 height-medium-fixed'>
 <div class='display-table width-full height-full'>
 <div class='display-table-row'>
 <div class='display-table-cell vertical-align-middle'>
-<h3 class='no-margin font-size-medium text-color-white tesseract-font'>
+<h3 class='font-size-medium text-color-white tesseract-font'>
 Clearfix
 </h3>
 </div>
@@ -217,14 +1919,14 @@ Clearfix
 </div>
 </div>
 </section>
-<section data-component='column'>
+<section class='overflow-scroll' data-component='column'>
 <div class='padding-horizontal-small padding-vertical-extra-small row'>
 <div class='column column1of2 height-medium-fixed'>
 <div class='display-table width-full height-full'>
 <div class='display-table-row'>
 <div class='display-table-cell vertical-align-middle'>
-<h3 class='no-margin font-size-medium text-color-white tesseract-font'>
-Columns
+<h3 class='font-size-medium text-color-white tesseract-font'>
+Column
 </h3>
 </div>
 </div>
@@ -483,14 +2185,14 @@ Columns
 </div>
 </div>
 </section>
-<section data-component='row'>
+<section class='overflow-scroll' data-component='row'>
 <div class='padding-horizontal-small padding-vertical-extra-small row'>
 <div class='column column1of2 height-medium-fixed'>
 <div class='display-table width-full height-full'>
 <div class='display-table-row'>
 <div class='display-table-cell vertical-align-middle'>
-<h3 class='no-margin font-size-medium text-color-white tesseract-font'>
-Rows
+<h3 class='font-size-medium text-color-white tesseract-font'>
+Row
 </h3>
 </div>
 </div>
@@ -789,13 +2491,13 @@ Rows
 </div>
 </div>
 </section>
-<section data-component='text-ellipsis'>
+<section class='overflow-scroll' data-component='text-ellipsis'>
 <div class='padding-horizontal-small padding-vertical-extra-small row'>
 <div class='column column1of2 height-medium-fixed'>
 <div class='display-table width-full height-full'>
 <div class='display-table-row'>
 <div class='display-table-cell vertical-align-middle'>
-<h3 class='no-margin font-size-medium text-color-white tesseract-font'>
+<h3 class='font-size-medium text-color-white tesseract-font'>
 Text Ellipsis
 </h3>
 </div>
@@ -818,1259 +2520,32 @@ Text Ellipsis
 <div class='text-ellipsis'>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</div>
 </div>
 </section>
-<section data-module='background-color'>
-<div class='padding-horizontal-small padding-vertical-extra-small row'>
-<div class='column column1of2 height-medium-fixed'>
-<div class='display-table width-full height-full'>
-<div class='display-table-row'>
-<div class='display-table-cell vertical-align-middle'>
-<h3 class='no-margin font-size-medium text-color-white tesseract-font'>
-Background Colors
-</h3>
-</div>
-</div>
-</div>
-</div>
-<div class='column column1of2 height-medium-fixed'>
-<div class='display-table width-full height-full'>
-<div class='display-table-row'>
-<div class='display-table-cell vertical-align-middle text-align-right'>
-<button class='button button-black no-border' expandable>
-<i class='fa fa-arrows-alt'></i>
-</button>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class='background-color-white padding-all-medium'>
-<div class='row background-color-black padding-all-extra-small text-align-center margin-bottom-extra-small'></div>
-<div class='row background-color-white padding-all-extra-small text-align-center margin-bottom-extra-small border-all'></div>
-<div class='row background-color-grey padding-all-extra-small text-align-center margin-bottom-extra-small'></div>
-<div class='row background-color-green padding-all-extra-small text-align-center margin-bottom-extra-small'></div>
-<div class='row background-color-red padding-all-extra-small text-align-center margin-bottom-extra-small'></div>
-<div class='row background-color-blue padding-all-extra-small text-align-center margin-bottom-extra-small'></div>
-<div class='row background-color-black-intense padding-all-extra-small text-align-center margin-bottom-extra-small'></div>
-<div class='row background-color-white-intense padding-all-extra-small text-align-center margin-bottom-extra-small'></div>
-<div class='row background-color-grey-intense padding-all-extra-small text-align-center margin-bottom-extra-small'></div>
-<div class='row background-color-green-intense padding-all-extra-small text-align-center margin-bottom-extra-small'></div>
-<div class='row background-color-red-intense padding-all-extra-small text-align-center margin-bottom-extra-small'></div>
-<div class='row background-color-blue-intense padding-all-extra-small text-align-center margin-bottom-extra-small'></div>
-<div class='row background-color-white no-background-color padding-all-extra-small text-align-center'></div>
-</div>
-</section>
-<section data-module='borders'>
-<div class='padding-horizontal-small padding-vertical-extra-small row'>
-<div class='column column1of2 height-medium-fixed'>
-<div class='display-table width-full height-full'>
-<div class='display-table-row'>
-<div class='display-table-cell vertical-align-middle'>
-<h3 class='no-margin font-size-medium text-color-white tesseract-font'>
-Borders
-</h3>
-</div>
-</div>
-</div>
-</div>
-<div class='column column1of2 height-medium-fixed'>
-<div class='display-table width-full height-full'>
-<div class='display-table-row'>
-<div class='display-table-cell vertical-align-middle text-align-right'>
-<button class='button button-black no-border' expandable>
-<i class='fa fa-arrows-alt'></i>
-</button>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class='background-color-white padding-all-medium text-align-center'>
-<div class='border-top padding-all-extra-small margin-top-extra-small'>
-<div class='background-color-grey display-block padding-all-extra-small opacity-40'></div>
-</div>
-<div class='border-right padding-all-extra-small margin-top-extra-small'>
-<div class='background-color-grey display-block padding-all-extra-small opacity-40'></div>
-</div>
-<div class='border-bottom padding-all-extra-small margin-top-extra-small'>
-<div class='background-color-grey display-block padding-all-extra-small opacity-40'></div>
-</div>
-<div class='border-left padding-all-extra-small margin-top-extra-small'>
-<div class='background-color-grey display-block padding-all-extra-small opacity-40'></div>
-</div>
-<div class='border-all padding-all-extra-small margin-top-extra-small'>
-<div class='background-color-grey display-block padding-all-extra-small opacity-40'></div>
-</div>
-<div class='no-border border-all padding-all-extra-small margin-top-extra-small'>
-<div class='background-color-grey display-block padding-all-extra-small opacity-40'></div>
-</div>
-</div>
-</section>
-<section data-module='border-color'>
-<div class='padding-horizontal-small padding-vertical-extra-small row'>
-<div class='column column1of2 height-medium-fixed'>
-<div class='display-table width-full height-full'>
-<div class='display-table-row'>
-<div class='display-table-cell vertical-align-middle'>
-<h3 class='no-margin font-size-medium text-color-white tesseract-font'>
-Border Colors
-</h3>
-</div>
-</div>
-</div>
-</div>
-<div class='column column1of2 height-medium-fixed'>
-<div class='display-table width-full height-full'>
-<div class='display-table-row'>
-<div class='display-table-cell vertical-align-middle text-align-right'>
-<button class='button button-black no-border' expandable>
-<i class='fa fa-arrows-alt'></i>
-</button>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class='background-color-white padding-all-medium text-align-center'>
-<div class='background-color-black padding-all-extra-small'>
-<div class='border-color-white border-top-color-white border-right-color-white border-bottom-color-white border-all-white border-left-color-white padding-all-extra-small'></div>
-</div>
-<div class='border-color-black border-top-color-black border-right-color-black border-bottom-color-black border-all-black border-left-color-black padding-all-extra-small margin-top-extra-small'></div>
-<div class='border-color-grey border-top-color-grey border-right-color-grey border-bottom-color-grey border-left-color-grey border-all-grey padding-all-extra-small margin-top-extra-small'></div>
-<div class='border-color-blue border-top-color-blue border-right-color-blue border-bottom-color-blue border-left-color-blue border-all-blue padding-all-extra-small margin-top-extra-small'></div>
-<div class='border-color-red border-top-color-red border-right-color-red border-bottom-color-red border-left-color-red border-all-red padding-all-extra-small margin-top-extra-small'></div>
-<div class='border-color-green border-top-color-green border-right-color-green border-bottom-color-green border-left-color-green border-all-green padding-all-extra-small margin-top-extra-small'></div>
-</div>
-</section>
-<section data-module='border-radius'>
-<div class='padding-horizontal-small padding-vertical-extra-small row'>
-<div class='column column1of2 height-medium-fixed'>
-<div class='display-table width-full height-full'>
-<div class='display-table-row'>
-<div class='display-table-cell vertical-align-middle'>
-<h3 class='no-margin font-size-medium text-color-white tesseract-font'>
-Border Radius
-</h3>
-</div>
-</div>
-</div>
-</div>
-<div class='column column1of2 height-medium-fixed'>
-<div class='display-table width-full height-full'>
-<div class='display-table-row'>
-<div class='display-table-cell vertical-align-middle text-align-right'>
-<button class='button button-black no-border' expandable>
-<i class='fa fa-arrows-alt'></i>
-</button>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class='background-color-white padding-all-medium text-align-center'>
-<div class='border-radius-extra-small border-all padding-all-small margin-top-extra-small'></div>
-<div class='border-radius-small border-all padding-all-small margin-top-extra-small'></div>
-<div class='border-radius-medium border-all padding-all-small margin-top-extra-small'></div>
-<div class='border-radius-large border-all padding-all-small margin-top-extra-small'></div>
-<div class='row margin-top-extra-small'>
-<div class='column column2of5'></div>
-<div class='column column1of5'>
-<div class='border-radius-extra-large width-large-fixed height-large-fixed border-all display-inline-block'></div>
-</div>
-<div class='column column2of5'></div>
-</div>
-</div>
-</section>
-<section data-module='border-styles'>
-<div class='padding-horizontal-small padding-vertical-extra-small row'>
-<div class='column column1of2 height-medium-fixed'>
-<div class='display-table width-full height-full'>
-<div class='display-table-row'>
-<div class='display-table-cell vertical-align-middle'>
-<h3 class='no-margin font-size-medium text-color-white tesseract-font'>
-Border Styles
-</h3>
-</div>
-</div>
-</div>
-</div>
-<div class='column column1of2 height-medium-fixed'>
-<div class='display-table width-full height-full'>
-<div class='display-table-row'>
-<div class='display-table-cell vertical-align-middle text-align-right'>
-<button class='button button-black no-border' expandable>
-<i class='fa fa-arrows-alt'></i>
-</button>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class='background-color-white padding-all-medium'>
-<div class='border-top-style-solid border-right-style-solid border-bottom-style-solid border-left-style-solid padding-all-extra-small'></div>
-<div class='border-top-style-dotted border-right-style-dotted border-bottom-style-dotted border-left-style-dotted padding-all-extra-small margin-top-small'></div>
-<div class='border-top-style-dashed border-right-style-dashed border-bottom-style-dashed border-left-style-dashed padding-all-extra-small margin-top-small'></div>
-</div>
-</section>
-<section data-module='border-width'>
-<div class='padding-horizontal-small padding-vertical-extra-small row'>
-<div class='column column1of2 height-medium-fixed'>
-<div class='display-table width-full height-full'>
-<div class='display-table-row'>
-<div class='display-table-cell vertical-align-middle'>
-<h3 class='no-margin font-size-medium text-color-white tesseract-font'>
-Border Width
-</h3>
-</div>
-</div>
-</div>
-</div>
-<div class='column column1of2 height-medium-fixed'>
-<div class='display-table width-full height-full'>
-<div class='display-table-row'>
-<div class='display-table-cell vertical-align-middle text-align-right'>
-<button class='button button-black no-border' expandable>
-<i class='fa fa-arrows-alt'></i>
-</button>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class='background-color-white padding-all-medium'>
-<div class='border-all-width-extra-small border-top-width-extra-small border-right-width-extra-small border-bottom-width-extra-small border-left-width-extra-small padding-all-small border-radius-large margin-top-extra-small border-all'></div>
-<div class='border-all-width-small border-top-width-small border-right-width-small border-bottom-width-small border-left-width-small padding-all-small border-radius-large margin-top-small border-all'></div>
-<div class='border-all-width-medium border-top-width-medium border-right-width-medium border-bottom-width-medium border-left-width-medium padding-all-small border-radius-large margin-top-small border-all'></div>
-<div class='border-all-width-large border-top-width-large border-right-width-large border-bottom-width-large border-left-width-large padding-all-small border-radius-large margin-top-small border-all'></div>
-<div class='border-all-width-extra-large border-top-width-extra-large border-right-width-extra-large border-bottom-width-extra-large border-left-width-extra-large padding-all-small border-radius-large margin-top-small border-all'></div>
-</div>
-</section>
-<section data-module='cursor'>
-<div class='padding-horizontal-small padding-vertical-extra-small row'>
-<div class='column column1of2 height-medium-fixed'>
-<div class='display-table width-full height-full'>
-<div class='display-table-row'>
-<div class='display-table-cell vertical-align-middle'>
-<h3 class='no-margin font-size-medium text-color-white tesseract-font'>
-Cursor
-</h3>
-</div>
-</div>
-</div>
-</div>
-<div class='column column1of2 height-medium-fixed'>
-<div class='display-table width-full height-full'>
-<div class='display-table-row'>
-<div class='display-table-cell vertical-align-middle text-align-right'>
-<button class='button button-black no-border' expandable>
-<i class='fa fa-arrows-alt'></i>
-</button>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class='background-color-white padding-all-medium text-align-center'>
-<div class='column column2of5'></div>
-<div class='column column1of5'>
-<div class='padding-all-small border-all cursor-pointer'>Hover Me</div>
-</div>
-<div class='column column2of5'></div>
-</div>
-</section>
-<section data-module='display'>
-<div class='padding-horizontal-small padding-vertical-extra-small row'>
-<div class='column column1of2 height-medium-fixed'>
-<div class='display-table width-full height-full'>
-<div class='display-table-row'>
-<div class='display-table-cell vertical-align-middle'>
-<h3 class='no-margin font-size-medium text-color-white tesseract-font'>
-Display
-</h3>
-</div>
-</div>
-</div>
-</div>
-<div class='column column1of2 height-medium-fixed'>
-<div class='display-table width-full height-full'>
-<div class='display-table-row'>
-<div class='display-table-cell vertical-align-middle text-align-right'>
-<button class='button button-black no-border' expandable>
-<i class='fa fa-arrows-alt'></i>
-</button>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class='background-color-white padding-all-medium'>
-<div class='display-inline-block border-all padding-all-small'></div>
-<div class='display-inline-block border-all padding-all-small'></div>
-<div class='display-inline-block border-all padding-all-small'></div>
-<div class='display-block margin-top-small border-all padding-all-small text-align-center'></div>
-<div class='display-table margin-top-small border-all height-extra-large-fixed width-full padding-all-extra-small'>
-<div class='display-table-row'>
-<div class='display-table-cell vertical-align-middle border-all text-align-center'>
-<span class='font-size-small padding-all-small'>aligned</span>
-</div>
-</div>
-</div>
-<div class='row background-color-grey padding-all-extra-small margin-top-small'>
-<div class='column column1of3 padding-all-extra-small'>
-<div class='background-color-white padding-all-small'></div>
-</div>
-<div class='display-none column column1of3 padding-all-extra-small'>
-<div class='background-color-white padding-all-small'></div>
-</div>
-<div class='column column1of3 padding-all-extra-small'>
-<div class='background-color-white padding-all-small'></div>
-</div>
-</div>
-</div>
-</section>
-<section data-module='float'>
-<div class='padding-horizontal-small padding-vertical-extra-small row'>
-<div class='column column1of2 height-medium-fixed'>
-<div class='display-table width-full height-full'>
-<div class='display-table-row'>
-<div class='display-table-cell vertical-align-middle'>
-<h3 class='no-margin font-size-medium text-color-white tesseract-font'>
-Float
-</h3>
-</div>
-</div>
-</div>
-</div>
-<div class='column column1of2 height-medium-fixed'>
-<div class='display-table width-full height-full'>
-<div class='display-table-row'>
-<div class='display-table-cell vertical-align-middle text-align-right'>
-<button class='button button-black no-border' expandable>
-<i class='fa fa-arrows-alt'></i>
-</button>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class='background-color-white padding-all-medium'>
-<div class='clear-both clearfix background-color-grey padding-all-extra-small'>
-<div class='float-left background-color-white padding-all-small'></div>
-<div class='float-right background-color-white padding-all-small'></div>
-</div>
-</div>
-</section>
-<section data-module='fonts'>
-<div class='padding-horizontal-small padding-vertical-extra-small row'>
-<div class='column column1of2 height-medium-fixed'>
-<div class='display-table width-full height-full'>
-<div class='display-table-row'>
-<div class='display-table-cell vertical-align-middle'>
-<h3 class='no-margin font-size-medium text-color-white tesseract-font'>
-Fonts
-</h3>
-</div>
-</div>
-</div>
-</div>
-<div class='column column1of2 height-medium-fixed'>
-<div class='display-table width-full height-full'>
-<div class='display-table-row'>
-<div class='display-table-cell vertical-align-middle text-align-right'>
-<button class='button button-black no-border' expandable>
-<i class='fa fa-arrows-alt'></i>
-</button>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class='background-color-white padding-all-medium text-align-center'>
-<div class='row padding-bottom-medium'>
-<div class='display-inline-block padding-right-small'>
-<span class='font-size-extra-small'>.font-size-extra-small</span>
-</div>
-<div class='display-inline-block padding-right-small padding-left-small'>
-<span class='font-size-small'>.font-size-small</span>
-</div>
-<div class='display-inline-block padding-right-small padding-left-small'>
-<span class='font-size-medium'>.font-size-medium</span>
-</div>
-<div class='display-inline-block padding-right-small padding-left-small'>
-<span class='font-size-large'>.font-size-large</span>
-</div>
-<div class='display-inline-block padding-right-small padding-left-small'>
-<span class='font-size-extra-large'>.font-size-extra-large</span>
-</div>
-</div>
-<div class='row'>
-<div class='display-inline-block padding-right-extra-small padding-left-small'>
-<span class='font-weight-light'>.font-weight-light</span>
-</div>
-<div class='display-inline-block padding-right-extra-small padding-left-small'>
-<span class='font-weight-normal'>.font-weight-normal</span>
-</div>
-<div class='display-inline-block padding-right-extra-small padding-left-small'>
-<span class='font-weight-bold'>.font-weight-bold</span>
-</div>
-<div class='display-inline-block padding-right-extra-small padding-left-small'>
-<span class='font-weight-extra-bold'>.font-weight-extra-bold</span>
-</div>
-<div class='display-inline-block padding-right-extra-small padding-left-small'>
-<span class='font-weight-black'>.font-weight-black</span>
-</div>
-<div class='display-inline-block padding-right-extra-small padding-left-small'>
-<span class='font-weight-bolder'>.font-weight-bolder</span>
-</div>
-<div class='display-inline-block padding-right-extra-small padding-left-small'>
-<span class='font-weight-lighter'>.font-weight-lighter</span>
-</div>
-</div>
-</div>
-</section>
-<section data-module='margin'>
-<div class='padding-horizontal-small padding-vertical-extra-small row'>
-<div class='column column1of2 height-medium-fixed'>
-<div class='display-table width-full height-full'>
-<div class='display-table-row'>
-<div class='display-table-cell vertical-align-middle'>
-<h3 class='no-margin font-size-medium text-color-white tesseract-font'>
-Margins
-</h3>
-</div>
-</div>
-</div>
-</div>
-<div class='column column1of2 height-medium-fixed'>
-<div class='display-table width-full height-full'>
-<div class='display-table-row'>
-<div class='display-table-cell vertical-align-middle text-align-right'>
-<button class='button button-black no-border' expandable>
-<i class='fa fa-arrows-alt'></i>
-</button>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class='background-color-white padding-all-medium text-align-center'>
-<div class='row border-all'>
-<div class='column column1of4'>
-<div class='margin-left-extra-small background-color-grey float-left width-medium height-medium-fixed'></div>
-</div>
-<div class='column column1of4'>
-<div class='margin-top-extra-small background-color-grey float-left width-medium height-medium-fixed'></div>
-</div>
-<div class='column column1of4'>
-<div class='margin-bottom-extra-small background-color-grey float-left width-medium height-medium-fixed'></div>
-</div>
-<div class='column column1of4'>
-<div class='margin-right-extra-small background-color-grey float-left width-medium height-medium-fixed'></div>
-</div>
-</div>
-<div class='row margin-top-extra-small border-all'>
-<div class='column column1of4'>
-<div class='margin-left-small background-color-grey float-left width-medium height-medium-fixed'></div>
-</div>
-<div class='column column1of4'>
-<div class='margin-top-small background-color-grey float-left width-medium height-medium-fixed'></div>
-</div>
-<div class='column column1of4'>
-<div class='margin-bottom-small background-color-grey float-left width-medium height-medium-fixed'></div>
-</div>
-<div class='column column1of4'>
-<div class='margin-right-small background-color-grey float-left width-medium height-medium-fixed'></div>
-</div>
-</div>
-<div class='row margin-top-extra-small border-all'>
-<div class='column column1of4'>
-<div class='margin-left-medium background-color-grey float-left width-medium height-medium-fixed'></div>
-</div>
-<div class='column column1of4'>
-<div class='margin-top-medium background-color-grey float-left width-medium height-medium-fixed'></div>
-</div>
-<div class='column column1of4'>
-<div class='margin-bottom-medium background-color-grey float-left width-medium height-medium-fixed'></div>
-</div>
-<div class='column column1of4'>
-<div class='margin-right-medium background-color-grey float-left width-medium height-medium-fixed'></div>
-</div>
-</div>
-<div class='row margin-top-extra-small border-all'>
-<div class='column column1of4'>
-<div class='margin-left-large background-color-grey float-left width-medium height-medium-fixed'></div>
-</div>
-<div class='column column1of4'>
-<div class='margin-top-large background-color-grey float-left width-medium height-medium-fixed'></div>
-</div>
-<div class='column column1of4'>
-<div class='margin-bottom-large background-color-grey float-left width-medium height-medium-fixed'></div>
-</div>
-<div class='column column1of4'>
-<div class='margin-right-large background-color-grey float-left width-medium height-medium-fixed'></div>
-</div>
-</div>
-<div class='row margin-top-extra-small border-all'>
-<div class='column column1of4'>
-<div class='margin-left-extra-large background-color-grey float-left width-medium height-medium-fixed'></div>
-</div>
-<div class='column column1of4'>
-<div class='margin-top-extra-large background-color-grey float-left width-medium height-medium-fixed'></div>
-</div>
-<div class='column column1of4'>
-<div class='margin-bottom-extra-large background-color-grey float-left width-medium height-medium-fixed'></div>
-</div>
-<div class='column column1of4'>
-<div class='margin-right-extra-large background-color-grey float-left width-medium height-medium-fixed'></div>
-</div>
-</div>
-<div class='row margin-top-extra-small border-all'>
-<div class='margin-vertical-extra-small background-color-grey float-left width-full height-medium-fixed'></div>
-<div class='margin-vertical-small background-color-grey float-left width-full height-medium-fixed'></div>
-<div class='margin-vertical-medium background-color-grey float-left width-full height-medium-fixed'></div>
-<div class='margin-vertical-large background-color-grey float-left width-full height-medium-fixed'></div>
-<div class='margin-vertical-extra-large background-color-grey float-left width-full height-medium-fixed'></div>
-</div>
-<div class='row margin-top-extra-small border-all'>
-<div class='margin-horizontal-extra-small background-color-grey float-left width-medium-fixed height-medium-fixed margin-top-extra-small'></div>
-<div class='margin-horizontal-small background-color-grey float-left width-medium-fixed height-medium-fixed margin-top-extra-small'></div>
-<div class='margin-horizontal-medium background-color-grey float-left width-medium-fixed height-medium-fixed margin-top-extra-small'></div>
-<div class='margin-horizontal-large background-color-grey float-left width-medium-fixed height-medium-fixed margin-top-extra-small'></div>
-<div class='margin-horizontal-extra-large background-color-grey float-left width-medium-fixed height-medium-fixed margin-top-extra-small'></div>
-</div>
-<div class='row margin-top-extra-small border-all'>
-<div class='margin-all-extra-small background-color-grey float-left width-medium-fixed height-medium-fixed margin-top-extra-small'></div>
-<div class='margin-all-small background-color-grey float-left width-medium-fixed height-medium-fixed margin-top-extra-small'></div>
-<div class='margin-all-medium background-color-grey float-left width-medium-fixed height-medium-fixed margin-top-extra-small'></div>
-<div class='margin-all-large background-color-grey float-left width-medium-fixed height-medium-fixed margin-top-extra-small'></div>
-<div class='margin-all-extra-large background-color-grey float-left width-medium-fixed height-medium-fixed margin-top-extra-small'></div>
-</div>
-<div class='row margin-top-extra-small border-all'>
-<div class='column column1of4'>
-<div class='margin-left-extra-small-fixed background-color-grey float-left width-medium height-medium-fixed'></div>
-</div>
-<div class='column column1of4'>
-<div class='margin-top-extra-small-fixed background-color-grey float-left width-medium height-medium-fixed'></div>
-</div>
-<div class='column column1of4'>
-<div class='margin-bottom-extra-small-fixed background-color-grey float-left width-medium height-medium-fixed'></div>
-</div>
-<div class='column column1of4'>
-<div class='margin-right-extra-small-fixed background-color-grey float-left width-medium height-medium-fixed'></div>
-</div>
-</div>
-<div class='row margin-top-extra-small border-all'>
-<div class='column column1of4'>
-<div class='margin-left-small-fixed background-color-grey float-left width-medium height-medium-fixed'></div>
-</div>
-<div class='column column1of4'>
-<div class='margin-top-small-fixed background-color-grey float-left width-medium height-medium-fixed'></div>
-</div>
-<div class='column column1of4'>
-<div class='margin-bottom-small-fixed background-color-grey float-left width-medium height-medium-fixed'></div>
-</div>
-<div class='column column1of4'>
-<div class='margin-right-small-fixed background-color-grey float-left width-medium height-medium-fixed'></div>
-</div>
-</div>
-<div class='row margin-top-extra-small border-all'>
-<div class='column column1of4'>
-<div class='margin-left-medium-fixed background-color-grey float-left width-medium height-medium-fixed'></div>
-</div>
-<div class='column column1of4'>
-<div class='margin-top-medium-fixed background-color-grey float-left width-medium height-medium-fixed'></div>
-</div>
-<div class='column column1of4'>
-<div class='margin-bottom-medium-fixed background-color-grey float-left width-medium height-medium-fixed'></div>
-</div>
-<div class='column column1of4'>
-<div class='margin-right-medium-fixed background-color-grey float-left width-medium height-medium-fixed'></div>
-</div>
-</div>
-<div class='row margin-top-extra-small border-all'>
-<div class='column column1of4'>
-<div class='margin-left-large-fixed background-color-grey float-left width-medium height-medium-fixed'></div>
-</div>
-<div class='column column1of4'>
-<div class='margin-top-large-fixed background-color-grey float-left width-medium height-medium-fixed'></div>
-</div>
-<div class='column column1of4'>
-<div class='margin-bottom-large-fixed background-color-grey float-left width-medium height-medium-fixed'></div>
-</div>
-<div class='column column1of4'>
-<div class='margin-right-large-fixed background-color-grey float-left width-medium height-medium-fixed'></div>
-</div>
-</div>
-<div class='row margin-top-extra-small border-all'>
-<div class='column column1of4'>
-<div class='margin-left-extra-large-fixed background-color-grey float-left width-medium height-medium-fixed'></div>
-</div>
-<div class='column column1of4'>
-<div class='margin-top-extra-large-fixed background-color-grey float-left width-medium height-medium-fixed'></div>
-</div>
-<div class='column column1of4'>
-<div class='margin-bottom-extra-large-fixed background-color-grey float-left width-medium height-medium-fixed'></div>
-</div>
-<div class='column column1of4'>
-<div class='margin-right-extra-large-fixed background-color-grey float-left width-medium height-medium-fixed'></div>
-</div>
-</div>
-<div class='row margin-top-extra-small border-all'>
-<div class='margin-vertical-extra-small-fixed background-color-grey float-left width-full height-medium-fixed'></div>
-<div class='margin-vertical-small-fixed background-color-grey float-left width-full height-medium-fixed'></div>
-<div class='margin-vertical-medium-fixed background-color-grey float-left width-full height-medium-fixed'></div>
-<div class='margin-vertical-large-fixed background-color-grey float-left width-full height-medium-fixed'></div>
-<div class='margin-vertical-extra-large-fixed background-color-grey float-left width-full height-medium-fixed'></div>
-</div>
-<div class='row margin-top-extra-small border-all'>
-<div class='margin-horizontal-extra-small-fixed background-color-grey float-left width-medium height-medium-fixed margin-top-extra-small'></div>
-<div class='margin-horizontal-small-fixed background-color-grey float-left width-medium height-medium-fixed margin-top-extra-small'></div>
-<div class='margin-horizontal-medium-fixed background-color-grey float-left width-medium height-medium-fixed margin-top-extra-small'></div>
-<div class='margin-horizontal-large-fixed background-color-grey float-left width-medium height-medium-fixed margin-top-extra-small'></div>
-<div class='margin-horizontal-extra-large-fixed background-color-grey float-left width-medium height-medium-fixed margin-top-extra-small'></div>
-</div>
-<div class='row margin-top-extra-small border-all'>
-<div class='margin-all-extra-small-fixed background-color-grey float-left width-medium height-medium-fixed margin-top-extra-small'></div>
-<div class='margin-all-small-fixed background-color-grey float-left width-medium height-medium-fixed margin-top-extra-small'></div>
-<div class='margin-all-medium-fixed background-color-grey float-left width-medium height-medium-fixed margin-top-extra-small'></div>
-<div class='margin-all-large-fixed background-color-grey float-left width-medium height-medium-fixed margin-top-extra-small'></div>
-<div class='margin-all-extra-large-fixed background-color-grey float-left width-medium height-medium-fixed margin-top-extra-small'></div>
-</div>
-<div class='row margin-top-extra-small border-all'>
-<div class='no-margin margin-all-large background-color-grey float-left width-medium height-medium-fixed'></div>
-</div>
-</div>
-</section>
-<section data-module='opacity'>
-<div class='padding-horizontal-small padding-vertical-extra-small row'>
-<div class='column column1of2 height-medium-fixed'>
-<div class='display-table width-full height-full'>
-<div class='display-table-row'>
-<div class='display-table-cell vertical-align-middle'>
-<h3 class='no-margin font-size-medium text-color-white tesseract-font'>
-Opacity
-</h3>
-</div>
-</div>
-</div>
-</div>
-<div class='column column1of2 height-medium-fixed'>
-<div class='display-table width-full height-full'>
-<div class='display-table-row'>
-<div class='display-table-cell vertical-align-middle text-align-right'>
-<button class='button button-black no-border' expandable>
-<i class='fa fa-arrows-alt'></i>
-</button>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class='background-color-white padding-all-medium text-align-center row'>
-<div class='opacity-10 column column1of10 background-color-black height-medium-fixed'></div>
-<div class='opacity-20 column column1of10 background-color-black height-medium-fixed'></div>
-<div class='opacity-30 column column1of10 background-color-black height-medium-fixed'></div>
-<div class='opacity-40 column column1of10 background-color-black height-medium-fixed'></div>
-<div class='opacity-50 column column1of10 background-color-black height-medium-fixed'></div>
-<div class='opacity-60 column column1of10 background-color-black height-medium-fixed'></div>
-<div class='opacity-70 column column1of10 background-color-black height-medium-fixed'></div>
-<div class='opacity-80 column column1of10 background-color-black height-medium-fixed'></div>
-<div class='opacity-90 column column1of10 background-color-black height-medium-fixed'></div>
-<div class='opacity-100 column column1of10 background-color-black height-medium-fixed'></div>
-</div>
-</section>
-<section data-module='outline'>
-<div class='padding-horizontal-small padding-vertical-extra-small row'>
-<div class='column column1of2 height-medium-fixed'>
-<div class='display-table width-full height-full'>
-<div class='display-table-row'>
-<div class='display-table-cell vertical-align-middle'>
-<h3 class='no-margin font-size-medium text-color-white tesseract-font'>
-Outline
-</h3>
-</div>
-</div>
-</div>
-</div>
-<div class='column column1of2 height-medium-fixed'>
-<div class='display-table width-full height-full'>
-<div class='display-table-row'>
-<div class='display-table-cell vertical-align-middle text-align-right'>
-<button class='button button-black no-border' expandable>
-<i class='fa fa-arrows-alt'></i>
-</button>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class='background-color-white padding-all-medium text-align-center'>
-<button class='no-outline'>Button</button>
-</div>
-</section>
-<section data-module='overflow'>
-<div class='padding-horizontal-small padding-vertical-extra-small row'>
-<div class='column column1of2 height-medium-fixed'>
-<div class='display-table width-full height-full'>
-<div class='display-table-row'>
-<div class='display-table-cell vertical-align-middle'>
-<h3 class='no-margin font-size-medium text-color-white tesseract-font'>
-Overflow
-</h3>
-</div>
-</div>
-</div>
-</div>
-<div class='column column1of2 height-medium-fixed'>
-<div class='display-table width-full height-full'>
-<div class='display-table-row'>
-<div class='display-table-cell vertical-align-middle text-align-right'>
-<button class='button button-black no-border' expandable>
-<i class='fa fa-arrows-alt'></i>
-</button>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class='background-color-white padding-all-medium text-align-center'>
-<div class='overflow-hidden border-all'>
-<div class='width-full padding-all-large margin-left-large white-space-nowrap'>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</div>
-</div>
-</div>
-</section>
-<section data-module='padding'>
-<div class='padding-horizontal-small padding-vertical-extra-small row'>
-<div class='column column1of2 height-medium-fixed'>
-<div class='display-table width-full height-full'>
-<div class='display-table-row'>
-<div class='display-table-cell vertical-align-middle'>
-<h3 class='no-margin font-size-medium text-color-white tesseract-font'>
-Paddings
-</h3>
-</div>
-</div>
-</div>
-</div>
-<div class='column column1of2 height-medium-fixed'>
-<div class='display-table width-full height-full'>
-<div class='display-table-row'>
-<div class='display-table-cell vertical-align-middle text-align-right'>
-<button class='button button-black no-border' expandable>
-<i class='fa fa-arrows-alt'></i>
-</button>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class='background-color-white padding-all-medium text-align-center overflow-hidden'>
-<div class='padding-top-extra-small border-all margin-top-extra-small'>
-<div class='height-medium-fixed widt-full background-color-grey'></div>
-</div>
-<div class='padding-right-extra-small border-all margin-top-extra-small'>
-<div class='height-medium-fixed widt-full background-color-grey'></div>
-</div>
-<div class='padding-bottom-extra-small border-all margin-top-extra-small'>
-<div class='height-medium-fixed widt-full background-color-grey'></div>
-</div>
-<div class='padding-left-extra-small border-all margin-top-extra-small'>
-<div class='height-medium-fixed widt-full background-color-grey'></div>
-</div>
-<div class='padding-top-small border-all margin-top-extra-small'>
-<div class='height-medium-fixed widt-full background-color-grey'></div>
-</div>
-<div class='padding-right-small border-all margin-top-extra-small'>
-<div class='height-medium-fixed widt-full background-color-grey'></div>
-</div>
-<div class='padding-bottom-small border-all margin-top-extra-small'>
-<div class='height-medium-fixed widt-full background-color-grey'></div>
-</div>
-<div class='padding-left-small border-all margin-top-extra-small'>
-<div class='height-medium-fixed widt-full background-color-grey'></div>
-</div>
-<div class='padding-top-medium border-all margin-top-extra-small'>
-<div class='height-medium-fixed widt-full background-color-grey'></div>
-</div>
-<div class='padding-right-medium border-all margin-top-extra-small'>
-<div class='height-medium-fixed widt-full background-color-grey'></div>
-</div>
-<div class='padding-bottom-medium border-all margin-top-extra-small'>
-<div class='height-medium-fixed widt-full background-color-grey'></div>
-</div>
-<div class='padding-left-medium border-all margin-top-extra-small'>
-<div class='height-medium-fixed widt-full background-color-grey'></div>
-</div>
-<div class='padding-top-large border-all margin-top-extra-small'>
-<div class='height-medium-fixed widt-full background-color-grey'></div>
-</div>
-<div class='padding-right-large border-all margin-top-extra-small'>
-<div class='height-medium-fixed widt-full background-color-grey'></div>
-</div>
-<div class='padding-bottom-large border-all margin-top-extra-small'>
-<div class='height-medium-fixed widt-full background-color-grey'></div>
-</div>
-<div class='padding-left-large border-all margin-top-extra-small'>
-<div class='height-medium-fixed widt-full background-color-grey'></div>
-</div>
-<div class='padding-top-extra-large border-all margin-top-extra-small'>
-<div class='height-medium-fixed widt-full background-color-grey'></div>
-</div>
-<div class='padding-right-extra-large border-all margin-top-extra-small'>
-<div class='height-medium-fixed widt-full background-color-grey'></div>
-</div>
-<div class='padding-bottom-extra-large border-all margin-top-extra-small'>
-<div class='height-medium-fixed widt-full background-color-grey'></div>
-</div>
-<div class='padding-left-extra-large border-all margin-top-extra-small'>
-<div class='height-medium-fixed widt-full background-color-grey'></div>
-</div>
-<div class='padding-vertical-extra-small border-all margin-top-extra-small'>
-<div class='height-medium-fixed widt-full background-color-grey'></div>
-</div>
-<div class='padding-horizontal-extra-small border-all margin-top-extra-small'>
-<div class='height-medium-fixed widt-full background-color-grey'></div>
-</div>
-<div class='padding-vertical-small border-all margin-top-extra-small'>
-<div class='height-medium-fixed widt-full background-color-grey'></div>
-</div>
-<div class='padding-horizontal-small border-all margin-top-extra-small'>
-<div class='height-medium-fixed widt-full background-color-grey'></div>
-</div>
-<div class='padding-vertical-medium border-all margin-top-extra-small'>
-<div class='height-medium-fixed widt-full background-color-grey'></div>
-</div>
-<div class='padding-horizontal-medium border-all margin-top-extra-small'>
-<div class='height-medium-fixed widt-full background-color-grey'></div>
-</div>
-<div class='padding-vertical-large border-all margin-top-extra-small'>
-<div class='height-medium-fixed widt-full background-color-grey'></div>
-</div>
-<div class='padding-horizontal-large border-all margin-top-extra-small'>
-<div class='height-medium-fixed widt-full background-color-grey'></div>
-</div>
-<div class='padding-vertical-extra-large border-all margin-top-extra-small'>
-<div class='height-medium-fixed widt-full background-color-grey'></div>
-</div>
-<div class='padding-horizontal-extra-large border-all margin-top-extra-small'>
-<div class='height-medium-fixed widt-full background-color-grey'></div>
-</div>
-<div class='padding-all-extra-small border-all margin-top-extra-small'>
-<div class='height-medium-fixed widt-full background-color-grey'></div>
-</div>
-<div class='padding-all-small border-all margin-top-extra-small'>
-<div class='height-medium-fixed widt-full background-color-grey'></div>
-</div>
-<div class='padding-all-medium border-all margin-top-extra-small'>
-<div class='height-medium-fixed widt-full background-color-grey'></div>
-</div>
-<div class='padding-all-large border-all margin-top-extra-small'>
-<div class='height-medium-fixed widt-full background-color-grey'></div>
-</div>
-<div class='padding-all-extra-large border-all margin-top-extra-small'>
-<div class='height-medium-fixed widt-full background-color-grey'></div>
-</div>
-<div class='padding-top-extra-small-fixed border-all margin-top-extra-small'>
-<div class='height-medium-fixed widt-full background-color-grey'></div>
-</div>
-<div class='padding-right-extra-small-fixed border-all margin-top-extra-small'>
-<div class='height-medium-fixed widt-full background-color-grey'></div>
-</div>
-<div class='padding-bottom-extra-small-fixed border-all margin-top-extra-small'>
-<div class='height-medium-fixed widt-full background-color-grey'></div>
-</div>
-<div class='padding-left-extra-small-fixed border-all margin-top-extra-small'>
-<div class='height-medium-fixed widt-full background-color-grey'></div>
-</div>
-<div class='padding-top-small-fixed border-all margin-top-extra-small'>
-<div class='height-medium-fixed widt-full background-color-grey'></div>
-</div>
-<div class='padding-right-small-fixed border-all margin-top-extra-small'>
-<div class='height-medium-fixed widt-full background-color-grey'></div>
-</div>
-<div class='padding-bottom-small-fixed border-all margin-top-extra-small'>
-<div class='height-medium-fixed widt-full background-color-grey'></div>
-</div>
-<div class='padding-left-small-fixed border-all margin-top-extra-small'>
-<div class='height-medium-fixed widt-full background-color-grey'></div>
-</div>
-<div class='padding-top-medium-fixed border-all margin-top-extra-small'>
-<div class='height-medium-fixed widt-full background-color-grey'></div>
-</div>
-<div class='padding-right-medium-fixed border-all margin-top-extra-small'>
-<div class='height-medium-fixed widt-full background-color-grey'></div>
-</div>
-<div class='padding-bottom-medium-fixed border-all margin-top-extra-small'>
-<div class='height-medium-fixed widt-full background-color-grey'></div>
-</div>
-<div class='padding-left-medium-fixed border-all margin-top-extra-small'>
-<div class='height-medium-fixed widt-full background-color-grey'></div>
-</div>
-<div class='padding-top-large-fixed border-all margin-top-extra-small'>
-<div class='height-medium-fixed widt-full background-color-grey'></div>
-</div>
-<div class='padding-right-large-fixed border-all margin-top-extra-small'>
-<div class='height-medium-fixed widt-full background-color-grey'></div>
-</div>
-<div class='padding-bottom-large-fixed border-all margin-top-extra-small'>
-<div class='height-medium-fixed widt-full background-color-grey'></div>
-</div>
-<div class='padding-left-large-fixed border-all margin-top-extra-small'>
-<div class='height-medium-fixed widt-full background-color-grey'></div>
-</div>
-<div class='padding-top-extra-large-fixed border-all margin-top-extra-small'>
-<div class='height-medium-fixed widt-full background-color-grey'></div>
-</div>
-<div class='padding-right-extra-large-fixed border-all margin-top-extra-small'>
-<div class='height-medium-fixed widt-full background-color-grey'></div>
-</div>
-<div class='padding-bottom-extra-large-fixed border-all margin-top-extra-small'>
-<div class='height-medium-fixed widt-full background-color-grey'></div>
-</div>
-<div class='padding-left-extra-large-fixed border-all margin-top-extra-small'>
-<div class='height-medium-fixed widt-full background-color-grey'></div>
-</div>
-<div class='padding-vertical-extra-small-fixed border-all margin-top-extra-small'>
-<div class='height-medium-fixed widt-full background-color-grey'></div>
-</div>
-<div class='padding-horizontal-extra-small-fixed border-all margin-top-extra-small'>
-<div class='height-medium-fixed widt-full background-color-grey'></div>
-</div>
-<div class='padding-vertical-small-fixed border-all margin-top-extra-small'>
-<div class='height-medium-fixed widt-full background-color-grey'></div>
-</div>
-<div class='padding-horizontal-small-fixed border-all margin-top-extra-small'>
-<div class='height-medium-fixed widt-full background-color-grey'></div>
-</div>
-<div class='padding-vertical-medium-fixed border-all margin-top-extra-small'>
-<div class='height-medium-fixed widt-full background-color-grey'></div>
-</div>
-<div class='padding-horizontal-medium-fixed border-all margin-top-extra-small'>
-<div class='height-medium-fixed widt-full background-color-grey'></div>
-</div>
-<div class='padding-vertical-large-fixed border-all margin-top-extra-small'>
-<div class='height-medium-fixed widt-full background-color-grey'></div>
-</div>
-<div class='padding-horizontal-large-fixed border-all margin-top-extra-small'>
-<div class='height-medium-fixed widt-full background-color-grey'></div>
-</div>
-<div class='padding-vertical-extra-large-fixed border-all margin-top-extra-small'>
-<div class='height-medium-fixed widt-full background-color-grey'></div>
-</div>
-<div class='padding-horizontal-extra-large-fixed border-all margin-top-extra-small'>
-<div class='height-medium-fixed widt-full background-color-grey'></div>
-</div>
-<div class='padding-all-extra-small-fixed border-all margin-top-extra-small'>
-<div class='height-medium-fixed widt-full background-color-grey'></div>
-</div>
-<div class='padding-all-small-fixed border-all margin-top-extra-small'>
-<div class='height-medium-fixed widt-full background-color-grey'></div>
-</div>
-<div class='padding-all-medium-fixed border-all margin-top-extra-small'>
-<div class='height-medium-fixed widt-full background-color-grey'></div>
-</div>
-<div class='padding-all-large-fixed border-all margin-top-extra-small'>
-<div class='height-medium-fixed widt-full background-color-grey'></div>
-</div>
-<div class='padding-all-extra-large-fixed border-all margin-top-extra-small'>
-<div class='height-medium-fixed widt-full background-color-grey'></div>
-</div>
-<div class='no-padding padding-all-large margin-top-extra-small'>
-<div class='height-medium-fixed widt-full background-color-grey'></div>
-</div>
-</div>
-</section>
-<section data-module='position'>
-<div class='padding-horizontal-small padding-vertical-extra-small row'>
-<div class='column column1of2 height-medium-fixed'>
-<div class='display-table width-full height-full'>
-<div class='display-table-row'>
-<div class='display-table-cell vertical-align-middle'>
-<h3 class='no-margin font-size-medium text-color-white tesseract-font'>
-Position
-</h3>
-</div>
-</div>
-</div>
-</div>
-<div class='column column1of2 height-medium-fixed'>
-<div class='display-table width-full height-full'>
-<div class='display-table-row'>
-<div class='display-table-cell vertical-align-middle text-align-right'>
-<button class='button button-black no-border' expandable>
-<i class='fa fa-arrows-alt'></i>
-</button>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class='background-color-white padding-all-medium text-align-center overflow-hidden'>
-<div class='position-relative background-color-grey padding-all-medium'>
-<div class='position-absolute opacity-30 background-color-white margin-left-small padding-all-small width-large'></div>
-<div class='position-absolute opacity-30 background-color-white margin-left-medium padding-all-small width-large'></div>
-<div class='position-absolute opacity-30 background-color-white margin-left-large padding-all-small width-large'></div>
-</div>
-</div>
-</section>
-<section data-module='height'>
-<div class='padding-horizontal-small padding-vertical-extra-small row'>
-<div class='column column1of2 height-medium-fixed'>
-<div class='display-table width-full height-full'>
-<div class='display-table-row'>
-<div class='display-table-cell vertical-align-middle'>
-<h3 class='no-margin font-size-medium text-color-white tesseract-font'>
-Heights
-</h3>
-</div>
-</div>
-</div>
-</div>
-<div class='column column1of2 height-medium-fixed'>
-<div class='display-table width-full height-full'>
-<div class='display-table-row'>
-<div class='display-table-cell vertical-align-middle text-align-right'>
-<button class='button button-black no-border' expandable>
-<i class='fa fa-arrows-alt'></i>
-</button>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class='background-color-white padding-all-medium text-align-center overflow-hidden'>
-<div class='height-minimum-fixed background-color-grey width-full margin-top-extra-small'></div>
-<div class='height-extra-small background-color-grey width-full'></div>
-<div class='height-small background-color-grey width-full margin-top-extra-small'></div>
-<div class='height-medium background-color-grey width-full margin-top-extra-small'></div>
-<div class='height-large background-color-grey width-full margin-top-extra-small'></div>
-<div class='height-extra-large height-full background-color-grey width-full margin-top-extra-small'></div>
-<div class='height-extra-small-fixed background-color-grey width-full margin-top-extra-small'></div>
-<div class='height-small-fixed background-color-grey width-full margin-top-extra-small'></div>
-<div class='height-medium-fixed background-color-grey width-full margin-top-extra-small'></div>
-<div class='height-large-fixed background-color-grey width-full margin-top-extra-small'></div>
-<div class='height-extra-large-fixed background-color-grey width-full margin-top-extra-small'></div>
-</div>
-</section>
-<section data-module='overflow'>
-<div class='padding-horizontal-small padding-vertical-extra-small row'>
-<div class='column column1of2 height-medium-fixed'>
-<div class='display-table width-full height-full'>
-<div class='display-table-row'>
-<div class='display-table-cell vertical-align-middle'>
-<h3 class='no-margin font-size-medium text-color-white tesseract-font'>
-Text Overflow
-</h3>
-</div>
-</div>
-</div>
-</div>
-<div class='column column1of2 height-medium-fixed'>
-<div class='display-table width-full height-full'>
-<div class='display-table-row'>
-<div class='display-table-cell vertical-align-middle text-align-right'>
-<button class='button button-black no-border' expandable>
-<i class='fa fa-arrows-alt'></i>
-</button>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class='background-color-white padding-all-medium text-align-center'>
-<div class='text-align-center'>
-<div class='text-overflow-ellipsis width-medium-fixed white-space-nowrap overflow-hidden display-inline-block'>
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-</div>
-</div>
-</div>
-</section>
-<section data-module='text-align'>
-<div class='padding-horizontal-small padding-vertical-extra-small row'>
-<div class='column column1of2 height-medium-fixed'>
-<div class='display-table width-full height-full'>
-<div class='display-table-row'>
-<div class='display-table-cell vertical-align-middle'>
-<h3 class='no-margin font-size-medium text-color-white tesseract-font'>
-Text Align
-</h3>
-</div>
-</div>
-</div>
-</div>
-<div class='column column1of2 height-medium-fixed'>
-<div class='display-table width-full height-full'>
-<div class='display-table-row'>
-<div class='display-table-cell vertical-align-middle text-align-right'>
-<button class='button button-black no-border' expandable>
-<i class='fa fa-arrows-alt'></i>
-</button>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class='background-color-white padding-all-medium text-align-center'>
-<div class='text-align-center border-all padding-all-extra-small'>
-Lorem ipsum dolor sit amet
-</div>
-<div class='text-align-left border-all padding-all-extra-small margin-top-extra-small'>
-Lorem ipsum dolor sit amet
-</div>
-<div class='text-align-right border-all padding-all-extra-small margin-top-extra-small'>
-Lorem ipsum dolor sit amet
-</div>
-</div>
-</section>
-<section data-module='text-color'>
-<div class='padding-horizontal-small padding-vertical-extra-small row'>
-<div class='column column1of2 height-medium-fixed'>
-<div class='display-table width-full height-full'>
-<div class='display-table-row'>
-<div class='display-table-cell vertical-align-middle'>
-<h3 class='no-margin font-size-medium text-color-white tesseract-font'>
-Text Colors
-</h3>
-</div>
-</div>
-</div>
-</div>
-<div class='column column1of2 height-medium-fixed'>
-<div class='display-table width-full height-full'>
-<div class='display-table-row'>
-<div class='display-table-cell vertical-align-middle text-align-right'>
-<button class='button button-black no-border' expandable>
-<i class='fa fa-arrows-alt'></i>
-</button>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class='background-color-white padding-all-medium text-align-center'>
-<div class='text-color-black display-inline-block'>BLACK</div>
-<div class='text-color-white display-inline-block background-color-black'>WHITE</div>
-<div class='text-color-blue display-inline-block'>BLUE</div>
-<div class='text-color-red display-inline-block'>RED</div>
-<div class='text-color-green display-inline-block'>GREEN</div>
-</div>
-</section>
-<section data-module='user-select'>
-<div class='padding-horizontal-small padding-vertical-extra-small row'>
-<div class='column column1of2 height-medium-fixed'>
-<div class='display-table width-full height-full'>
-<div class='display-table-row'>
-<div class='display-table-cell vertical-align-middle'>
-<h3 class='no-margin font-size-medium text-color-white tesseract-font'>
-User Select
-</h3>
-</div>
-</div>
-</div>
-</div>
-<div class='column column1of2 height-medium-fixed'>
-<div class='display-table width-full height-full'>
-<div class='display-table-row'>
-<div class='display-table-cell vertical-align-middle text-align-right'>
-<button class='button button-black no-border' expandable>
-<i class='fa fa-arrows-alt'></i>
-</button>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class='background-color-white padding-all-medium text-align-center'>
-<div class='paddin-all-small user-select-none'>Try to select this text</div>
-</div>
-</section>
-<section data-module='white-space'>
-<div class='padding-horizontal-small padding-vertical-extra-small row'>
-<div class='column column1of2 height-medium-fixed'>
-<div class='display-table width-full height-full'>
-<div class='display-table-row'>
-<div class='display-table-cell vertical-align-middle'>
-<h3 class='no-margin font-size-medium text-color-white tesseract-font'>
-White Space
-</h3>
-</div>
-</div>
-</div>
-</div>
-<div class='column column1of2 height-medium-fixed'>
-<div class='display-table width-full height-full'>
-<div class='display-table-row'>
-<div class='display-table-cell vertical-align-middle text-align-right'>
-<button class='button button-black no-border' expandable>
-<i class='fa fa-arrows-alt'></i>
-</button>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class='background-color-white padding-all-medium text-align-center'>
-<div class='white-space-nowrap width-small-fixed display-inline-block'>
-This text does not break even though it should
-</div>
-</div>
-</section>
-<section data-module='width'>
-<div class='padding-horizontal-small padding-vertical-extra-small row'>
-<div class='column column1of2 height-medium-fixed'>
-<div class='display-table width-full height-full'>
-<div class='display-table-row'>
-<div class='display-table-cell vertical-align-middle'>
-<h3 class='no-margin font-size-medium text-color-white tesseract-font'>
-Widths
-</h3>
-</div>
-</div>
-</div>
-</div>
-<div class='column column1of2 height-medium-fixed'>
-<div class='display-table width-full height-full'>
-<div class='display-table-row'>
-<div class='display-table-cell vertical-align-middle text-align-right'>
-<button class='button button-black no-border' expandable>
-<i class='fa fa-arrows-alt'></i>
-</button>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class='background-color-white padding-all-medium text-align-center'>
-<div class='width-extra-small background-color-grey height-small-fixed display-inline-block'></div>
-<div class='width-small background-color-grey height-small-fixed display-inline-block'></div>
-<div class='width-medium background-color-grey height-small-fixed display-inline-block'></div>
-<div class='width-large background-color-grey height-small-fixed display-inline-block'></div>
-<div class='margin-top-small'>
-<div class='width-extra-large width-full background-color-grey height-small-fixed'></div>
-</div>
-<div class='margin-top-small'>
-<div class='width-minimum-fixed background-color-grey height-small-fixed display-inline-block'></div>
-<div class='width-extra-small-fixed background-color-grey height-small-fixed display-inline-block'></div>
-<div class='width-small-fixed background-color-grey height-small-fixed display-inline-block'></div>
-<div class='width-medium-fixed background-color-grey height-small-fixed display-inline-block'></div>
-<div class='width-large-fixed background-color-grey height-small-fixed display-inline-block'></div>
-<div class='width-extra-large-fixed background-color-grey height-small-fixed display-inline-block'></div>
-</div>
-</div>
 </section>
 </body>
-<div class='top0 position-fixed height-full width-full'>
+<div class='tesseract-navigation top0 position-fixed height-full width-full'>
 <div class='row height-full'>
-<div class='column column4of5 height-full'></div>
-<div class='column column1of5 background-color-white border-left height-full'>
-NAVIGATION
+<div class='column column1of3 height-full'></div>
+<div class='column column2of3 background-color-white border-left height-full'>
+<div class='row padding-top-medium-fixed overflow-scroll height-full'>
+<div class='column column1of5'></div>
+<div class='column column4of5 text-align-rirght padding-vertical-small-fixed'>
+<ul class='width-full'>
+<li class='width-full text-ellipsis padding-bottom-small' data-section='principle'>
+<div class='tesseract-font font-size-medium padding-bottom-extra-small-fixed'>Principles</div>
+<ul class='width-full'></ul>
+</li>
+<li class='width-full text-ellipsis padding-bottom-small' data-section='module'>
+<div class='tesseract-font font-size-medium padding-bottom-extra-small-fixed'>Modules</div>
+<ul class='width-ful'></ul>
+</li>
+<li class='width-full text-ellipsis padding-bottom-small' data-section='component'>
+<div class='tesseract-font font-size-medium padding-bottom-extra-small-fixed'>Components</div>
+<ul class='width-ful'></ul>
+</li>
+</ul>
 </div>
 </div>
 </div>
-<script src='../js/jquery.js'></script>
-<script src='../js/underscore.js'></script>
-<script src='../js/starfield.js'></script>
-<script src='../js/tesseract-roll.js'></script>
-<script src='../js/tesseract-header.js'></script>
-<script src='../js/expandable.js'></script>
-<script src='../js/navigation.js'></script>
+</div>
+</div>
 </html>
