@@ -4,6 +4,7 @@ module.exports = function(grunt) {
 
     grunt.task.run([
       'clean:dist',
+      'copy:dist',
       'compass:dist',
       'concat_css',
       'haml:dist',

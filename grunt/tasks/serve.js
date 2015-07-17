@@ -4,6 +4,7 @@ module.exports = function(grunt) {
 
     grunt.task.run([
       'clean:serve',
+      'copy:serve',
       'compass:serve',
       'haml:serve',
       'uncss:serve',

@@ -6,6 +6,7 @@ module.exports = {
     files: 'src/sass/{**/,}*.sass',
     tasks: [
       'clean:serve',
+      'copy:serve',
       'haml:serve', 
       'compass:serve', 
       'uncss:serve', 
@@ -18,6 +19,7 @@ module.exports = {
     files: 'src/index.haml',
     tasks: [
       'clean:serve',
+      'copy:serve',
       'haml:serve', 
       'compass:serve', 
       'uncss:serve', 
