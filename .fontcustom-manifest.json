@@ -40,7 +40,7 @@
       "fonts": "icons/fonts",
       "preview": "icons/preview"
     },
-    "preprocessor_path": "../icons/fonts",
+    "preprocessor_path": "icons/fonts",
     "quiet": false,
     "templates": [
       "scss"

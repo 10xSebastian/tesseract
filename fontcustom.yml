@@ -73,7 +73,7 @@ output:
 #- preview
 #- my-custom-template.yml
 
-preprocessor_path: '../icons/fonts'
+preprocessor_path: 'icons/fonts'
 
 
 # -----------------------------------------------------------------------------
