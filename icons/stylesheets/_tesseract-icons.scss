@@ -4,11 +4,11 @@
 
 @font-face {
   font-family: "tesseract-icons";
-  src: url("../icons/fonts/tesseract-icons.eot");
-  src: url("../icons/fonts/tesseract-icons.eot?#iefix") format("embedded-opentype"),
-       url("../icons/fonts/tesseract-icons.woff") format("woff"),
-       url("../icons/fonts/tesseract-icons.ttf") format("truetype"),
-       url("../icons/fonts/tesseract-icons.svg#tesseract-icons") format("svg");
+  src: url("icons/fonts/tesseract-icons.eot");
+  src: url("icons/fonts/tesseract-icons.eot?#iefix") format("embedded-opentype"),
+       url("icons/fonts/tesseract-icons.woff") format("woff"),
+       url("icons/fonts/tesseract-icons.ttf") format("truetype"),
+       url("icons/fonts/tesseract-icons.svg#tesseract-icons") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -16,7 +16,7 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: "tesseract-icons";
-    src: url("../icons/fonts/tesseract-icons.svg#tesseract-icons") format("svg");
+    src: url("icons/fonts/tesseract-icons.svg#tesseract-icons") format("svg");
   }
 }
 
