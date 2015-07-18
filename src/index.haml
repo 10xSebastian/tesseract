@@ -1316,7 +1316,7 @@
           .button.button-black.margin-top-extra-small Warp
           .button.button-grey.margin-top-extra-small Edit
           .button.margin-top-extra-small
-            %i.icon-tesseract
+            %i.icon-tesseracts
 
       %section.overflow-scroll(data-component='clearfix')
         .padding-horizontal-small.padding-vertical-extra-small.row
@@ -1544,6 +1544,57 @@
           .row
             .column.column11of12.border-left.border-bottom.border-right.padding-all-extra-small
             .column.column1of12.border-right.border-bottom.padding-all-extra-small
+
+      %section.overflow-scroll(data-component='form-elements')
+        .padding-horizontal-small.padding-vertical-extra-small.row
+          .column.column1of2.height-medium-fixed
+            .display-table.width-full.height-full
+              .display-table-row
+                .display-table-cell.vertical-align-middle
+                  %h3.font-size-medium.text-color-white.tesseract-font
+                    Form Elements
+          .column.column1of2.height-medium-fixed
+            .display-table.width-full.height-full
+              .display-table-row
+                .display-table-cell.vertical-align-middle.text-align-right
+                  %button.button.button-black.no-border(expandable)
+                    %i.fa.fa-arrows-alt
+        .background-color-white.padding-all-medium.text-align-center
+          .row.padding-all-extra-small
+            %input.textfield(type="text" placeholder="John Doe")
+          .row.padding-all-extra-small
+            %input.textfield(type="password" placeholder="Secure Password")
+          .row.padding-all-extra-small.text-align-center.padding-vertical-small
+            .display-inline-block
+              .display-table.width-large-fixed
+                .display-table-row
+                  %label.row.width-full
+                    .column.column1of3.display-table-cell.vertical-align-middle.padding-horizontal-small
+                      %input(type="checkbox")
+                    .column.column2of3.display-table-cell.vertical-align-middle.font-weight-bold.white-space-nowrap.text-align-left
+                      Check me
+          .row.padding-all-extra-small.text-align-center.padding-vertical-small
+            .display-inline-block
+              .display-table.width-large-fixed
+                .display-table-row
+                  %label.row.width-full
+                    .column.column1of3.display-table-cell.vertical-align-middle.padding-horizontal-small
+                      %input(type="radio" name="radio")
+                    .column.column2of3.display-table-cell.vertical-align-middle.font-weight-bold.white-space-nowrap.text-align-left
+                      Check either me
+                .display-table-row
+                  %label.row.width-full
+                    .column.column1of3.display-table-cell.vertical-align-middle.padding-horizontal-small
+                      %input(type="radio" name="radio")
+                    .column.column2of3.display-table-cell.vertical-align-middle.font-weight-bold.white-space-nowrap.text-align-left
+                      or me
+          .row.padding-all-extra-small
+            %textarea.textarea(placeholder="What are you doing")
+          .row.padding-all-extra-small.padding-top-small
+            %select.select
+              %option Choice 1
+              %option Choice 2
+              %option Choice 3
 
       %section.overflow-scroll(data-component='row')
         .padding-horizontal-small.padding-vertical-extra-small.row
