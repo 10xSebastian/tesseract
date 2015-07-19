@@ -23,6 +23,11 @@ module.exports = {
         cwd: 'bower_components/BrowserDetection/',
         src: 'browser-detection.js',
         dest: '.tmp/js'
+      },{
+        expand: true,
+        cwd: 'icons/',
+        src: 'favicon.ico',
+        dest: '.tmp'
       }
     ]
   },
@@ -50,6 +55,11 @@ module.exports = {
         cwd: 'bower_components/BrowserDetection/',
         src: 'browser-detection.js',
         dest: 'dist/js'
+      },{
+        expand: true,
+        cwd: 'icons/',
+        src: 'favicon.ico',
+        dest: 'dist'
       }
     ]
   }
