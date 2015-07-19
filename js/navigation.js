@@ -8,7 +8,6 @@ jQuery(function(){
     $navigation.toggleClass('tesseract-navigation-show');
   });
 
-
   $navigation.find('[data-section]').each(function(i, navigationGroup){
     var $navigationGroup = $(navigationGroup);
     $('[data-'+$navigationGroup.data('section')+']').each(function(i, section){
@@ -18,7 +17,7 @@ jQuery(function(){
       var $navigationItem = $('<li><div class="tesseract-font button text-ellipsis no-border">'+title+'</div></li>');
       $navigationItem.on('click', function(){
         var top = $section.offset().top;
-        $(document).scrollTop(top-50);
+        $(document).scrollTop(top-70);
         $navigation.removeClass('tesseract-navigation-show');
       });
       $navigationGroup.find('ul').append($navigationItem);
