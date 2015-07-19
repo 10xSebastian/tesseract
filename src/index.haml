@@ -19,20 +19,21 @@
 
   %body.height-full.no-padding
 
-    .tesseract-header.position-fixed.width-full.height-medium-fixed.z-index-top.background-color-white.border-bottom
-      .row.height-full
-        .column.column1of3
-        .column.column1of3.text-align-center
-          .display-inline-block(title="Tesseract" style="position: relative; left: -20px;")
-            %i.icon-tesseract.font-size-extra-large.position-absolute.text-color-grey
-            %i.icon-tesseract-small.font-size-extra-large.position-absolute
-        .column.column1of3.text-align-right.height-full
-          .display-table.width-full.height-full
-            .display-table-row
-              .display-table-cell.vertical-align-middle.padding-right-small.width-full(navigation-toggle)
-                .button.no-border
-                  .tesseract-font.font-size-medium.font-weight-light
-                    %i.fa.fa-bars
+    .tesseract-header.position-fixed.width-full.z-index-top.background-color-white.border-bottom
+      .padding-all-extra-small-fixed
+        .row.height-medium-fixed
+          .column.column1of3
+          .column.column1of3.text-align-center
+            .display-inline-block(title="Tesseract" style="position: relative; left: -20px; top: -10px;")
+              %i.icon-tesseract.font-size-extra-large.position-absolute.text-color-grey
+              %i.icon-tesseract-small.font-size-extra-large.position-absolute
+          .column.column1of3.text-align-right.height-full
+            .display-table.width-full.height-full
+              .display-table-row
+                .display-table-cell.vertical-align-middle.padding-right-small.width-full(navigation-toggle)
+                  .button.no-border
+                    .tesseract-font.font-size-medium.font-weight-light
+                      %i.fa.fa-bars
 
     .starfield-background.height-full.width-full.position-absolute.z-index-minus.display
       %canvas.starfield-canvas.height-full.width-full
@@ -569,9 +570,9 @@
                   %button.button.button-black.no-border(expandable)
                     %i.fa.fa-arrows-alt
         .background-color-white.padding-all-medium
-          .border-top-style-solid.border-right-style-solid.border-bottom-style-solid.border-left-style-solid.padding-all-small
-          .border-top-style-dotted.border-right-style-dotted.border-bottom-style-dotted.border-left-style-dotted.padding-all-small.margin-top-small
-          .border-top-style-dashed.border-right-style-dashed.border-bottom-style-dashed.border-left-style-dashed.padding-all-small.margin-top-small
+          .border-top-style-solid.border-right-style-solid.border-bottom-style-solid.border-left-style-solid.padding-all-small.border-all
+          .border-top-style-dotted.border-right-style-dotted.border-bottom-style-dotted.border-left-style-dotted.padding-all-small.margin-top-small.border-all
+          .border-top-style-dashed.border-right-style-dashed.border-bottom-style-dashed.border-left-style-dashed.padding-all-small.margin-top-small.border-all
 
       %section.overflow-scroll(data-module='border-width')
         .padding-horizontal-small.padding-vertical-extra-small.row
@@ -632,6 +633,7 @@
           .display-inline-block.border-all.padding-all-small
           .display-inline-block.border-all.padding-all-small
           .display-inline-block.border-all.padding-all-small
+          .display-inherit.border-all-dashed.padding-all-small
           .display-block.margin-top-small.border-all.padding-all-small.text-align-center
           .display-table.margin-top-small.border-all.height-extra-large-fixed.width-full.padding-all-extra-small
             .display-table-row
@@ -1316,7 +1318,7 @@
           .button.button-black.margin-top-extra-small Warp
           .button.button-grey.margin-top-extra-small Edit
           .button.margin-top-extra-small
-            %i.icon-tesseracts
+            %i.icon-tesseract
 
       %section.overflow-scroll(data-component='clearfix')
         .padding-horizontal-small.padding-vertical-extra-small.row
@@ -1589,12 +1591,82 @@
                     .column.column2of3.display-table-cell.vertical-align-middle.font-weight-bold.white-space-nowrap.text-align-left
                       or me
           .row.padding-all-extra-small
-            %textarea.textarea(placeholder="What are you doing")
+            %textarea.textarea(placeholder="What are you doing?")
           .row.padding-all-extra-small.padding-top-small
             %select.select
               %option Choice 1
               %option Choice 2
               %option Choice 3
+
+      %section.overflow-scroll(data-component='responsive-show')
+        .padding-horizontal-small.padding-vertical-extra-small.row
+          .column.column1of2.height-medium-fixed
+            .display-table.width-full.height-full
+              .display-table-row
+                .display-table-cell.vertical-align-middle
+                  %h3.font-size-medium.text-color-white.tesseract-font
+                    Responsive Show
+          .column.column1of2.height-medium-fixed
+            .display-table.width-full.height-full
+              .display-table-row
+                .display-table-cell.vertical-align-middle.text-align-right
+                  %button.button.button-black.no-border(expandable)
+                    %i.fa.fa-arrows-alt
+        .background-color-white.padding-all-medium.text-align-center
+          .show-on-small.border-all.padding-all-small.border-radius-small.margin-bottom-extra-small
+            Smaller than small
+          .show-on-medium.border-all.padding-all-small.border-radius-small.margin-bottom-extra-small
+            Between small and medium
+          .show-on-large.border-all.padding-all-small.border-radius-small.margin-bottom-extra-small
+            Between medium and large
+          .border-all.padding-all-small.border-radius-small.margin-bottom-extra-small
+            Bigger than large
+
+      %section.overflow-scroll(data-component='responsive-hide')
+        .padding-horizontal-small.padding-vertical-extra-small.row
+          .column.column1of2.height-medium-fixed
+            .display-table.width-full.height-full
+              .display-table-row
+                .display-table-cell.vertical-align-middle
+                  %h3.font-size-medium.text-color-white.tesseract-font
+                    Responsive Hide
+          .column.column1of2.height-medium-fixed
+            .display-table.width-full.height-full
+              .display-table-row
+                .display-table-cell.vertical-align-middle.text-align-right
+                  %button.button.button-black.no-border(expandable)
+                    %i.fa.fa-arrows-alt
+        .background-color-white.padding-all-medium.text-align-center
+          .hide-on-small.border-all.padding-all-small.border-radius-small.margin-bottom-extra-small
+            Smaller than small
+          .hide-on-medium.border-all.padding-all-small.border-radius-small.margin-bottom-extra-small
+            Between small and medium
+          .hide-on-large.border-all.padding-all-small.border-radius-small.margin-bottom-extra-small
+            Between medium and large
+          .border-all.padding-all-small.border-radius-small.margin-bottom-extra-small
+            Bigger than large
+
+      %section.overflow-scroll(data-component='responsive-block')
+        .padding-horizontal-small.padding-vertical-extra-small.row
+          .column.column1of2.height-medium-fixed
+            .display-table.width-full.height-full
+              .display-table-row
+                .display-table-cell.vertical-align-middle
+                  %h3.font-size-medium.text-color-white.tesseract-font
+                    Responsive Block
+          .column.column1of2.height-medium-fixed
+            .display-table.width-full.height-full
+              .display-table-row
+                .display-table-cell.vertical-align-middle.text-align-right
+                  %button.button.button-black.no-border(expandable)
+                    %i.fa.fa-arrows-alt
+        .background-color-white.padding-all-medium.text-align-center
+          .display-block-on-small.display-inline-block.border-all.padding-all-small.border-radius-small.margin-bottom-extra-small
+            Smaller than small
+          .display-block-on-medium.display-inline-block.border-all.padding-all-small.border-radius-small.margin-bottom-extra-small
+            Between small and medium
+          .display-block-on-large.display-inline-block.border-all.padding-all-small.border-radius-small.margin-bottom-extra-small
+            Between medium and large
 
       %section.overflow-scroll(data-component='row')
         .padding-horizontal-small.padding-vertical-extra-small.row

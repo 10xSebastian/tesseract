@@ -1,0 +1,15 @@
+@each $name, $value in $breakpoints
+
+  .show-on-#{$name}
+    @extend .display-none
+
+  @media screen and (max-width: $value)
+    
+    .show-on-#{$name}
+      display: inherit
+
+    .hide-on-#{$name}
+      display: none
+
+    .display-block-on-#{$name}
+      display: block
