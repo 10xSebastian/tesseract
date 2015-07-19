@@ -17,21 +17,31 @@
 <script src='js/browser-detection.js'></script>
 </head>
 <body class='height-full no-padding'>
-<div class='tesseract-header position-fixed width-full height-medium-fixed z-index-top background-color-white border-bottom'>
-<div class='row height-full'>
-<div class='column column1of3'></div>
-<div class='column column1of3 text-align-center'>
-<div class='display-inline-block' style='position: relative; left: -20px;' title='Tesseract'>
+<div class='tesseract-header position-fixed width-full z-index-top background-color-white border-bottom'>
+<div class='row overflow-hidden'>
+<div class='column column1of3'>
+<a class='position-absolute top0' href='https://github.com/pape-io/tesseract'>
+<img alt='Fork me on GitHub' data-canonical-src='https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png' src='https://camo.githubusercontent.com/82b228a3648bf44fc1163ef44c62fcc60081495e/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f7265645f6161303030302e706e67' style='width: 80%;'>
+</a>
+</div>
+<div class='column column1of3 text-align-center padding-vertical-extra-small-fixed'>
+<div class='display-table width-full height-small-fixed'>
+<div class='display-table-row'>
+<div class='display-table-cell vertical-align-middle padding-right-small width-full'>
+<a class='font-size-medium display-inline-block' href='#start' style='position: relative; left: -20px; top: -22px;' title='Tesseract'>
 <i class='icon-tesseract font-size-extra-large position-absolute text-color-grey'></i>
 <i class='icon-tesseract-small font-size-extra-large position-absolute'></i>
+</a>
 </div>
 </div>
-<div class='column column1of3 text-align-right height-full'>
-<div class='display-table width-full height-full'>
+</div>
+</div>
+<div class='column column1of3 text-align-right padding-vertical-extra-small-fixed'>
+<div class='display-table width-full height-small-fixed'>
 <div class='display-table-row'>
 <div class='display-table-cell vertical-align-middle padding-right-small width-full' navigation-toggle>
 <div class='button no-border'>
-<div class='tesseract-font font-size-medium font-weight-light'>
+<div class='font-size-medium'>
 <i class='fa fa-bars'></i>
 </div>
 </div>
@@ -45,6 +55,7 @@
 <canvas class='starfield-canvas height-full width-full'></canvas>
 <div class='starfield-image height-full width-full display-none'></div>
 </div>
+<a name='start'></a>
 <div class='height-full width-full position-absolute'>
 <div class='row1of3'></div>
 <div class='row1of3'>
@@ -721,9 +732,9 @@ Border Style
 </div>
 </div>
 <div class='background-color-white padding-all-medium'>
-<div class='border-top-style-solid border-right-style-solid border-bottom-style-solid border-left-style-solid padding-all-small'></div>
-<div class='border-top-style-dotted border-right-style-dotted border-bottom-style-dotted border-left-style-dotted padding-all-small margin-top-small'></div>
-<div class='border-top-style-dashed border-right-style-dashed border-bottom-style-dashed border-left-style-dashed padding-all-small margin-top-small'></div>
+<div class='border-top-style-solid border-right-style-solid border-bottom-style-solid border-left-style-solid padding-all-small border-all'></div>
+<div class='border-top-style-dotted border-right-style-dotted border-bottom-style-dotted border-left-style-dotted padding-all-small margin-top-small border-all'></div>
+<div class='border-top-style-dashed border-right-style-dashed border-bottom-style-dashed border-left-style-dashed padding-all-small margin-top-small border-all'></div>
 </div>
 </section>
 <section class='overflow-scroll' data-module='border-width'>
@@ -821,6 +832,7 @@ Display
 <div class='display-inline-block border-all padding-all-small'></div>
 <div class='display-inline-block border-all padding-all-small'></div>
 <div class='display-inline-block border-all padding-all-small'></div>
+<div class='display-inherit border-all-dashed padding-all-small'></div>
 <div class='display-block margin-top-small border-all padding-all-small text-align-center'></div>
 <div class='display-table margin-top-small border-all height-extra-large-fixed width-full padding-all-extra-small'>
 <div class='display-table-row'>
@@ -939,6 +951,49 @@ Fonts
 <div class='display-inline-block padding-right-extra-small padding-left-small'>
 <span class='font-weight-lighter'>.font-weight-lighter</span>
 </div>
+</div>
+</div>
+</section>
+<section class='overflow-scroll' data-module='line-height'>
+<div class='padding-horizontal-small padding-vertical-extra-small row'>
+<div class='column column1of2 height-medium-fixed'>
+<div class='display-table width-full height-full'>
+<div class='display-table-row'>
+<div class='display-table-cell vertical-align-middle'>
+<h3 class='font-size-medium text-color-white tesseract-font'>
+Line-Height
+</h3>
+</div>
+</div>
+</div>
+</div>
+<div class='column column1of2 height-medium-fixed'>
+<div class='display-table width-full height-full'>
+<div class='display-table-row'>
+<div class='display-table-cell vertical-align-middle text-align-right'>
+<button class='button button-black no-border' expandable>
+<i class='fa fa-arrows-alt'></i>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='background-color-white padding-all-medium text-align-center'>
+<div class='line-height-extra-small padding-vertical-small'>
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+</div>
+<div class='line-height-small padding-vertical-small'>
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+</div>
+<div class='line-height-medium padding-vertical-small'>
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+</div>
+<div class='line-height-large padding-vertical-small'>
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+</div>
+<div class='line-height-extra-large padding-vertical-small'>
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
 </div>
 </div>
 </section>
@@ -1562,11 +1617,11 @@ Height
 <div class='height-medium background-color-grey width-full margin-top-extra-small'></div>
 <div class='height-large background-color-grey width-full margin-top-extra-small'></div>
 <div class='height-extra-large height-full background-color-grey width-full margin-top-extra-small'></div>
-<div class='height-extra-small-fixed background-color-grey width-full margin-top-extra-small'></div>
-<div class='height-small-fixed background-color-grey width-full margin-top-extra-small'></div>
-<div class='height-medium-fixed background-color-grey width-full margin-top-extra-small'></div>
-<div class='height-large-fixed background-color-grey width-full margin-top-extra-small'></div>
-<div class='height-extra-large-fixed background-color-grey width-full margin-top-extra-small'></div>
+<div class='height-extra-small-fixed max-height-extra-small-fixed background-color-grey width-full margin-top-extra-small'></div>
+<div class='height-small-fixed max-height-small-fixed background-color-grey width-full margin-top-extra-small'></div>
+<div class='height-medium-fixed max-height-medium-fixed background-color-grey width-full margin-top-extra-small'></div>
+<div class='height-large-fixed max-height-large-fixed background-color-grey width-full margin-top-extra-small'></div>
+<div class='height-extra-large-fixed max-height-extra-large-fixed background-color-grey width-full margin-top-extra-small'></div>
 </div>
 </section>
 <section class='overflow-scroll' data-module='overflow'>
@@ -2185,6 +2240,209 @@ Column
 </div>
 </div>
 </section>
+<section class='overflow-scroll' data-component='form-elements'>
+<div class='padding-horizontal-small padding-vertical-extra-small row'>
+<div class='column column1of2 height-medium-fixed'>
+<div class='display-table width-full height-full'>
+<div class='display-table-row'>
+<div class='display-table-cell vertical-align-middle'>
+<h3 class='font-size-medium text-color-white tesseract-font'>
+Form Elements
+</h3>
+</div>
+</div>
+</div>
+</div>
+<div class='column column1of2 height-medium-fixed'>
+<div class='display-table width-full height-full'>
+<div class='display-table-row'>
+<div class='display-table-cell vertical-align-middle text-align-right'>
+<button class='button button-black no-border' expandable>
+<i class='fa fa-arrows-alt'></i>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='background-color-white padding-all-medium text-align-center'>
+<div class='row padding-all-extra-small'>
+<input class='textfield' placeholder='John Doe' type='text'>
+</div>
+<div class='row padding-all-extra-small'>
+<input class='textfield' placeholder='Secure Password' type='password'>
+</div>
+<div class='row padding-all-extra-small text-align-center padding-vertical-small'>
+<div class='display-inline-block'>
+<div class='display-table width-large-fixed'>
+<div class='display-table-row'>
+<label class='row width-full'>
+<div class='column column1of3 display-table-cell vertical-align-middle padding-horizontal-small'>
+<input type='checkbox'>
+</div>
+<div class='column column2of3 display-table-cell vertical-align-middle font-weight-bold white-space-nowrap text-align-left'>
+Check me
+</div>
+</label>
+</div>
+</div>
+</div>
+</div>
+<div class='row padding-all-extra-small text-align-center padding-vertical-small'>
+<div class='display-inline-block'>
+<div class='display-table width-large-fixed'>
+<div class='display-table-row'>
+<label class='row width-full'>
+<div class='column column1of3 display-table-cell vertical-align-middle padding-horizontal-small'>
+<input name='radio' type='radio'>
+</div>
+<div class='column column2of3 display-table-cell vertical-align-middle font-weight-bold white-space-nowrap text-align-left'>
+Check either me
+</div>
+</label>
+</div>
+<div class='display-table-row'>
+<label class='row width-full'>
+<div class='column column1of3 display-table-cell vertical-align-middle padding-horizontal-small'>
+<input name='radio' type='radio'>
+</div>
+<div class='column column2of3 display-table-cell vertical-align-middle font-weight-bold white-space-nowrap text-align-left'>
+or me
+</div>
+</label>
+</div>
+</div>
+</div>
+</div>
+<div class='row padding-all-extra-small'>
+<textarea class='textarea' placeholder='What are you doing?'></textarea>
+</div>
+<div class='row padding-all-extra-small padding-top-small'>
+<select class='select'>
+<option>Choice 1</option>
+<option>Choice 2</option>
+<option>Choice 3</option>
+</select>
+</div>
+</div>
+</section>
+<section class='overflow-scroll' data-component='responsive-show'>
+<div class='padding-horizontal-small padding-vertical-extra-small row'>
+<div class='column column1of2 height-medium-fixed'>
+<div class='display-table width-full height-full'>
+<div class='display-table-row'>
+<div class='display-table-cell vertical-align-middle'>
+<h3 class='font-size-medium text-color-white tesseract-font'>
+Responsive Show
+</h3>
+</div>
+</div>
+</div>
+</div>
+<div class='column column1of2 height-medium-fixed'>
+<div class='display-table width-full height-full'>
+<div class='display-table-row'>
+<div class='display-table-cell vertical-align-middle text-align-right'>
+<button class='button button-black no-border' expandable>
+<i class='fa fa-arrows-alt'></i>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='background-color-white padding-all-medium text-align-center'>
+<div class='show-on-small border-all padding-all-small border-radius-small margin-bottom-extra-small'>
+Smaller than small
+</div>
+<div class='show-on-medium border-all padding-all-small border-radius-small margin-bottom-extra-small'>
+Between small and medium
+</div>
+<div class='show-on-large border-all padding-all-small border-radius-small margin-bottom-extra-small'>
+Between medium and large
+</div>
+<div class='border-all padding-all-small border-radius-small margin-bottom-extra-small'>
+Bigger than large
+</div>
+</div>
+</section>
+<section class='overflow-scroll' data-component='responsive-hide'>
+<div class='padding-horizontal-small padding-vertical-extra-small row'>
+<div class='column column1of2 height-medium-fixed'>
+<div class='display-table width-full height-full'>
+<div class='display-table-row'>
+<div class='display-table-cell vertical-align-middle'>
+<h3 class='font-size-medium text-color-white tesseract-font'>
+Responsive Hide
+</h3>
+</div>
+</div>
+</div>
+</div>
+<div class='column column1of2 height-medium-fixed'>
+<div class='display-table width-full height-full'>
+<div class='display-table-row'>
+<div class='display-table-cell vertical-align-middle text-align-right'>
+<button class='button button-black no-border' expandable>
+<i class='fa fa-arrows-alt'></i>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='background-color-white padding-all-medium text-align-center'>
+<div class='hide-on-small border-all padding-all-small border-radius-small margin-bottom-extra-small'>
+Smaller than small
+</div>
+<div class='hide-on-medium border-all padding-all-small border-radius-small margin-bottom-extra-small'>
+Between small and medium
+</div>
+<div class='hide-on-large border-all padding-all-small border-radius-small margin-bottom-extra-small'>
+Between medium and large
+</div>
+<div class='border-all padding-all-small border-radius-small margin-bottom-extra-small'>
+Bigger than large
+</div>
+</div>
+</section>
+<section class='overflow-scroll' data-component='responsive-block'>
+<div class='padding-horizontal-small padding-vertical-extra-small row'>
+<div class='column column1of2 height-medium-fixed'>
+<div class='display-table width-full height-full'>
+<div class='display-table-row'>
+<div class='display-table-cell vertical-align-middle'>
+<h3 class='font-size-medium text-color-white tesseract-font'>
+Responsive Block
+</h3>
+</div>
+</div>
+</div>
+</div>
+<div class='column column1of2 height-medium-fixed'>
+<div class='display-table width-full height-full'>
+<div class='display-table-row'>
+<div class='display-table-cell vertical-align-middle text-align-right'>
+<button class='button button-black no-border' expandable>
+<i class='fa fa-arrows-alt'></i>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='background-color-white padding-all-medium text-align-center'>
+<div class='display-block-on-small display-inline-block border-all padding-all-small border-radius-small margin-bottom-extra-small'>
+Smaller than small
+</div>
+<div class='display-block-on-medium display-inline-block border-all padding-all-small border-radius-small margin-bottom-extra-small'>
+Between small and medium
+</div>
+<div class='display-block-on-large display-inline-block border-all padding-all-small border-radius-small margin-bottom-extra-small'>
+Between medium and large
+</div>
+</div>
+</section>
 <section class='overflow-scroll' data-component='row'>
 <div class='padding-horizontal-small padding-vertical-extra-small row'>
 <div class='column column1of2 height-medium-fixed'>
@@ -2522,6 +2780,24 @@ Text Ellipsis
 </section>
 </section>
 </body>
+<section class='margin-top-small'>
+<h2 class='font-size-extra-large text-align-center text-color-white tesseract-font font-weight-light'>
+Credits
+</h2>
+<section class='padding-top-extra-small' data-principle='Single responsibility'>
+<div class='padding-horizontal-small padding-vertical-extra-small row'>
+<h3 class='font-size-medium text-color-white tesseract-font'>
+BrowserStack
+</h3>
+</div>
+<p class='font-size-small text-color-white tesseract-font padding-horizontal-small padding-bottom-extra-small'>
+This project uses BrowserStack to test on various browsers in an easy and automated way.
+</p>
+</section>
+<a class='background-color-white padding-all-extra-small text-align-center width-full display-block margin-top-extra-small' href='https://www.browserstack.com/'>
+<img class='height-medium-fixed' src='BrowserStack.png'>
+</a>
+</section>
 <div class='tesseract-navigation top0 position-fixed height-full width-full'>
 <div class='row height-full'>
 <div class='column column1of3 height-full'></div>
@@ -2536,11 +2812,11 @@ Text Ellipsis
 </li>
 <li class='width-full text-ellipsis padding-bottom-small' data-section='module'>
 <div class='tesseract-font font-size-medium padding-bottom-small'>Modules</div>
-<ul class='width-ful'></ul>
+<ul class='width-full'></ul>
 </li>
 <li class='width-full text-ellipsis padding-bottom-small' data-section='component'>
 <div class='tesseract-font font-size-medium padding-bottom-small'>Components</div>
-<ul class='width-ful'></ul>
+<ul class='width-full'></ul>
 </li>
 </ul>
 </div>
