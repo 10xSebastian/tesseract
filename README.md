@@ -90,6 +90,6 @@ This project was started as part of his thesis in computer science.
 
 ### BrowserStack
 
-![BrowserStack](/BrowserStack.png)
-This project uses BrowserStack to test the software on multiple browsers in an easy and automated way.
+[![BrowserStack](/BrowserStack.png)](https://www.browserstack.com/)
+This project uses BrowserStack to test on various browsers in an easy and automated way.
 Thanks to BrowserStack for supporting this project.

@@ -28,6 +28,9 @@ module.exports = {
         cwd: 'icons/',
         src: 'favicon.ico',
         dest: '.tmp'
+      },{
+        src: 'BrowserStack.png',
+        dest: '.tmp/BrowserStack.png'
       }
     ]
   },
@@ -56,10 +59,8 @@ module.exports = {
         src: 'browser-detection.js',
         dest: 'dist/js'
       },{
-        expand: true,
-        cwd: 'icons/',
-        src: 'favicon.ico',
-        dest: 'dist'
+        src: 'BrowserStack.png',
+        dest: 'dist/BrowserStack.png'
       }
     ]
   }
