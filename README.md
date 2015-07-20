@@ -11,6 +11,39 @@ This css framework is build upon existing software principles and terminology to
 
 ## Principles
 
+In software development, principles are needed to make complex things managable.
+
+### Single responsibility
+
+A class should have responsibility over only a single part of your system:
+
+```css
+.padding-all-medium {
+  padding: 15px;
+}
+
+.margin-bottom-large {
+  margin-bottom: 20px;
+}
+
+.border-all {
+  border: 1px solid transparent;
+}
+
+.border-radius-small {
+  border-radius: 4px;
+}
+
+```css
+.alert {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+```
+Responsible for multiple things!
+
 ## Modules
 With modules, concerns are separated. It's a self-contained unit that in a bigger context can be reused to execute the same action/functionality over and over again.
 Flexibility and reuseablity are the benefits of modules. 
@@ -46,7 +79,7 @@ grunt
 
 This project uses [PhanomCSS](https://github.com/Huddle/PhantomCSS) and [grunt-phantomcss](https://github.com/chrisgladd/grunt-phantomcss).
 For every distribution it creates a screenshot from the reference page (overview) and screenshots from every module and component.
-The screenshots are used to compare visual changes.
+Those screenshots are used to compare visual changes.
 
 ### CSS Performance
 
@@ -70,7 +103,7 @@ Builds the framework in `/.tmp`, spawns a webserver, opens the reference page an
 grunt dist
 ```
 
-Builds the framework and a compressed version in `/dist` and opens the reference page.
+Builds the framework and a compressed version in `/dist` and opens the reference page. Afterwards it creates screenshots from the reference page (overview) and screenshots for each module/component. Those screenshots are used to compare/identify visiual changes (see (Regression Testing)[#regression-testing]).
 
 ### Custom Icons
 
