@@ -17,7 +17,7 @@ In software development, principles are needed to make complex things managable.
 
 A class should have responsibility over only a single part of your system.
 
-**Responsible for one thing:**
+**:thumbsup: Responsible for one thing:**
 ```css
 .padding-all-medium {
   padding: 15px;
@@ -36,9 +36,8 @@ A class should have responsibility over only a single part of your system.
 }
 ```
 
-**Responsible for multiple things:**
+**:thumbsdown: Responsible for multiple things:**
 ```css
-<span style="color: green"> TEST </span>
 .alert {
   padding: 15px;
   margin-bottom: 20px;
