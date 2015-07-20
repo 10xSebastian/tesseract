@@ -38,6 +38,7 @@ A class should have responsibility over only a single part of your system.
 
 **Responsible for multiple things:**
 ```css
+<span style="color: green"> TEST </span>
 .alert {
   padding: 15px;
   margin-bottom: 20px;
