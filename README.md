@@ -15,8 +15,9 @@ In software development, principles are needed to make complex things managable.
 
 ### Single responsibility
 
-A class should have responsibility over only a single part of your system:
+A class should have responsibility over only a single part of your system.
 
+**Responsible for one thing:**
 ```css
 .padding-all-medium {
   padding: 15px;
@@ -33,7 +34,9 @@ A class should have responsibility over only a single part of your system:
 .border-radius-small {
   border-radius: 4px;
 }
+```
 
+**Responsible for multiple things:**
 ```css
 .alert {
   padding: 15px;
@@ -42,7 +45,6 @@ A class should have responsibility over only a single part of your system:
   border-radius: 4px;
 }
 ```
-Responsible for multiple things!
 
 ## Modules
 With modules, concerns are separated. It's a self-contained unit that in a bigger context can be reused to execute the same action/functionality over and over again.
