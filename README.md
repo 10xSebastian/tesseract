@@ -17,7 +17,7 @@ In software development, principles are needed to make complex things managable.
 
 A class should have responsibility over only a single part of your system.
 
-**:thumbsup: Responsible for one thing:**
+**Responsible for one thing: :thumbsup:**
 ```css
 .padding-all-medium {
   padding: 15px;
@@ -36,13 +36,245 @@ A class should have responsibility over only a single part of your system.
 }
 ```
 
-**:thumbsdown: Responsible for multiple things:**
+**Responsible for multiple things: :thumbsdown:**
 ```css
 .alert {
   padding: 15px;
   margin-bottom: 20px;
   border: 1px solid transparent;
   border-radius: 4px;
+}
+```
+
+### Separation of concerns
+
+Do not mix concerns by styling native html elements that you may want to use just for their semantic reason.
+
+**Concerns seperated: :thumbsup:**
+```html
+<h1 class="headline-large">Thats my Seo optimized title<h1/>
+<h3 class="headline-large">Thats another realy big text, visually</h3>
+```
+
+```css
+.headline-extra-large {
+  @extend .font-size-large
+  @extend .font-weight-bold
+  @extend .margin-bottom-small
+}
+```
+
+**Concerns not seperated: :thumbsdown:**
+```html
+<h1>Thats my Seo optimized title</h1>
+<h1>Text that should just look like a big headline</h1>
+```
+
+```css
+h1 {
+  font-size: 6em;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+```
+
+### Conceptual integrity
+
+Stick to a single, simple set of design principles and stay consistent
+
+**Consistent: :thumbsup:**
+```css
+.font-size-small {
+  font-size: 100%;
+}
+
+.font-size-medium {
+  font-size: 110%;
+}
+
+.font-size-large {
+  font-size: 140%;
+}
+```
+
+**Inconsistent: :thumbsdown:**
+```css
+.font-size-small {
+  font-size: 100%;
+}
+
+.font-size-medium {
+  font-size: 4em;
+}
+
+.font-size-large {
+  font-size: 100px;
+}
+```
+
+### Economic
+
+Prevent unnecessary complexity. Focus on what is really needed and limit yourself
+
+**Limited complexity: :thumbsup:**
+```css
+.font-size-small {
+  font-size: 100%;
+}
+
+.font-size-medium {
+  font-size: 110%;
+}
+
+.padding-left-large {
+  font-size: 140%;
+}
+```
+
+**Unfocused, useless complexity: :thumbsdown:**
+```css
+.font-size-xxs {
+  font-size: 70%;
+}
+
+.font-size-xs {
+  font-size: 90%;
+}
+
+.font-size-s {
+  font-size: 100%;
+}
+
+.font-size-m {
+  font-size: 110%;
+}
+
+.font-size-l {
+  font-size: 140%;
+}
+
+.font-size-xl {
+  font-size: 160%;
+}
+
+.font-size-xxl {
+  font-size: 200%;
+}
+```
+
+### Visibility & symmetry
+
+Using a consistent and comprehensible way of terminology makes classnames predictable and easy to use
+
+**Comprehensible, predictable: :thumbsup:**
+```css
+.font-size-small {
+  font-size: 100%;
+}
+
+.margin-top-medium {
+  margin-top: 5%;
+}
+
+.padding-bottom-large {
+  padding-bottom: 10%;
+}
+```
+
+**Incomprehensible: :thumbsdown:**
+```css
+.fsS {
+  font-size: 100%;
+}
+
+.mt-M {
+  margin-top: 5%;
+}
+
+.pbL {
+  padding-bottom: 10%;
+}
+```
+
+### Self-organized
+
+Create scaleable, efficent and economical systems with self-organized, decentralized components
+
+**Self-organized: :thumbsup:**
+```css
+.message {
+  ...
+}
+
+.message-image {
+  ...
+}
+
+.message-image-subtitle {
+  ...
+}
+```
+
+**Dependent, not reusable: :thumbsdown:**
+```css
+.message {
+  ...
+}
+
+.message .image {
+  ...
+}
+
+.message .image .subtitle {
+  ...
+}
+```
+
+### Abstraction, Structuring, Hierarchising, Modularity
+
+Abstract, structure, hierarchise repeating patterns to make them reusable/modular
+
+**Hierarchised, abstracted, modularized: :thumbsup:**
+```css
+.border-top {
+  border-top: 1px solid grey;
+}
+.border-right {
+  border-right: 1px solid grey;
+}
+.border-bottom {
+  border-bottom: 1px solid grey;
+}
+.border-left {
+  border-left: 1px solid grey;
+}
+.border-all {
+  @extend .border-top;
+  @extend .border-right;
+  @extend .border-bottom;
+  @extend .border-left;
+}
+```
+
+**Repeated, redundant: :thumbsdown:**
+```css
+.border-top {
+  border-top: 1px solid grey;
+}
+.border-right {
+  border-right: 1px solid grey;
+}
+.border-bottom {
+  border-bottom: 1px solid grey;
+}
+.border-left {
+  border-left: 1px solid grey;
+}
+.border-all {
+  border-top: 1px solid grey;
+  border-right: 1px solid grey;
+  border-bottom: 1px solid grey;
+  border-left: 1px solid grey;
 }
 ```
 
