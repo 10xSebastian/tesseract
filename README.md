@@ -17,7 +17,7 @@ In software development, principles are needed to make complex things managable.
 
 A class should have responsibility over only a single part of your system.
 
-**Responsible for one thing: :thumbsup:**
+**:thumbsup: Responsible for one thing**
 ```css
 .padding-all-medium {
   padding: 15px;
@@ -36,7 +36,7 @@ A class should have responsibility over only a single part of your system.
 }
 ```
 
-**Responsible for multiple things: :thumbsdown:**
+**:thumbsdown: Responsible for multiple things**
 ```css
 .alert {
   padding: 15px;
@@ -50,7 +50,7 @@ A class should have responsibility over only a single part of your system.
 
 Do not mix concerns by styling native html elements that you may want to use just for their semantic reason.
 
-**Concerns seperated: :thumbsup:**
+**:thumbsup: Concerns seperated**
 ```html
 <h1 class="headline-large">Thats my Seo optimized title<h1/>
 <h3 class="headline-large">Thats another realy big text, visually</h3>
@@ -64,7 +64,7 @@ Do not mix concerns by styling native html elements that you may want to use jus
 }
 ```
 
-**Concerns not seperated: :thumbsdown:**
+**:thumbsdown: Concerns not seperated**
 ```html
 <h1>Thats my Seo optimized title</h1>
 <h1>Text that should just look like a big headline</h1>
@@ -82,7 +82,7 @@ h1 {
 
 Stick to a single, simple set of design principles and stay consistent
 
-**Consistent: :thumbsup:**
+**:thumbsup: Consistent**
 ```css
 .font-size-small {
   font-size: 100%;
@@ -97,7 +97,7 @@ Stick to a single, simple set of design principles and stay consistent
 }
 ```
 
-**Inconsistent: :thumbsdown:**
+**:thumbsdown: Inconsistent**
 ```css
 .font-size-small {
   font-size: 100%;
@@ -116,7 +116,7 @@ Stick to a single, simple set of design principles and stay consistent
 
 Prevent unnecessary complexity. Focus on what is really needed and limit yourself
 
-**Limited complexity: :thumbsup:**
+**:thumbsup: Limited complexity**
 ```css
 .font-size-small {
   font-size: 100%;
@@ -131,7 +131,7 @@ Prevent unnecessary complexity. Focus on what is really needed and limit yoursel
 }
 ```
 
-**Unfocused, useless complexity: :thumbsdown:**
+**:thumbsdown: Unfocused, useless complexity**
 ```css
 .font-size-xxs {
   font-size: 70%;
@@ -166,7 +166,7 @@ Prevent unnecessary complexity. Focus on what is really needed and limit yoursel
 
 Using a consistent and comprehensible way of terminology makes classnames predictable and easy to use
 
-**Comprehensible, predictable: :thumbsup:**
+**:thumbsup: Comprehensible, predictable**
 ```css
 .font-size-small {
   font-size: 100%;
@@ -181,7 +181,7 @@ Using a consistent and comprehensible way of terminology makes classnames predic
 }
 ```
 
-**Incomprehensible: :thumbsdown:**
+**:thumbsdown: Incomprehensible**
 ```css
 .fsS {
   font-size: 100%;
@@ -200,7 +200,7 @@ Using a consistent and comprehensible way of terminology makes classnames predic
 
 Create scaleable, efficent and economical systems with self-organized, decentralized components
 
-**Self-organized: :thumbsup:**
+**:thumbsup: Self-organized**
 ```css
 .message {
   ...
@@ -215,7 +215,7 @@ Create scaleable, efficent and economical systems with self-organized, decentral
 }
 ```
 
-**Dependent, not reusable: :thumbsdown:**
+**:thumbsdown: Dependent, not reusable**
 ```css
 .message {
   ...
@@ -234,7 +234,7 @@ Create scaleable, efficent and economical systems with self-organized, decentral
 
 Abstract, structure, hierarchise repeating patterns to make them reusable/modular
 
-**Hierarchised, abstracted, modularized: :thumbsup:**
+**:thumbsup: Hierarchised, abstracted, modularized**
 ```css
 .border-top {
   border-top: 1px solid grey;
@@ -256,7 +256,7 @@ Abstract, structure, hierarchise repeating patterns to make them reusable/modula
 }
 ```
 
-**Repeated, redundant: :thumbsdown:**
+**:thumbsdown: Repeated, redundant**
 ```css
 .border-top {
   border-top: 1px solid grey;
