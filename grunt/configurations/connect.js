@@ -13,5 +13,17 @@ module.exports = {
         }
       ]
     }
+  },
+  dist: {
+    options: {
+      base: [
+        {
+          path: 'dist',
+          options: {
+            index: 'index.html'
+          }
+        }
+      ]
+    }
   }
 };

@@ -1295,7 +1295,7 @@ table {
   color: #FFF;
 }
 
-.text-color-black, .button-black:active, a:visited, a:focus, a:hover, a:active {
+.text-color-black, .button-black:active, a, a:visited, a:focus, a:hover, a:active {
   color: #000;
 }
 

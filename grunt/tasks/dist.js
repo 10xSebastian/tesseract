@@ -9,7 +9,9 @@ module.exports = function(grunt) {
       'concat_css',
       'haml:dist',
       'cssmin:dist',
-      'open:dist'
+      'connect:dist',
+      'open:dist',
+      'webdriver:screenshots'
     ]);
   });
 };
