@@ -11,7 +11,7 @@ This css framework is build upon existing software principles and terminology to
 
 ## Principles
 
-In software development, principles are needed to make complex things managable.
+In software development, principles help you to make complex things managable.
 
 ### Single responsibility
 
@@ -202,32 +202,20 @@ Create scaleable, efficent and economical systems with self-organized, decentral
 
 **:thumbsup: Self-organized**
 ```css
-.message {
-  ...
-}
+.message { ... }
 
-.message-image {
-  ...
-}
+.message-image { ... }
 
-.message-image-subtitle {
-  ...
-}
+.message-image-subtitle { ... }
 ```
 
 **:thumbsdown: Dependent, not reusable**
 ```css
-.message {
-  ...
-}
+.message { ... }
 
-.message .image {
-  ...
-}
+.message .image { ... }
 
-.message .image .subtitle {
-  ...
-}
+.message .image .subtitle { ... }
 ```
 
 ### Abstraction, Structuring, Hierarchising, Modularity
