@@ -4,6 +4,6 @@ module.exports = {
     path : 'http://localhost:8000'
   },
   dist: {
-    path : 'http://localhost:8000'
+    path : 'dist/index.html'
   }
 };
