@@ -20,10 +20,6 @@
     "grunt-concat-css": "~0.3.1",
     "diff": "~1.4.0",
     "grunt-csscss": "~0.6.2",
-    "phantomcss": "~0.10.1",
-    "phantomjs": "~1.9.17",
-    "grunt-phantomcss": "git://github.com/pape-io/grunt-phantomcss",
-    "casperjs": "~1.1.0-beta3",
     "grunt-contrib-copy": "~0.8.0",
     "bower": "~1.4.1",
     "grunt-webdriver": "~0.5.2"
