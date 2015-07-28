@@ -9,6 +9,8 @@ This css framework is build upon existing software principles and terminology to
 
 ## Quick start guide
 
+## Create own components
+
 ## Principles
 
 In software development, principles help you to make complex things managable.
