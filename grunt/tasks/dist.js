@@ -11,7 +11,7 @@ module.exports = function(grunt) {
       'cssmin:dist',
       'connect:dist',
       'open:dist',
-      'webdriver:screenshots'
+      // 'webdriver:screenshots'
     ]);
   });
 };
