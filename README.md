@@ -301,14 +301,12 @@ grunt
 
 ### Regression testing
 
-This project uses [PhanomCSS](https://github.com/Huddle/PhantomCSS) and [grunt-phantomcss](https://github.com/chrisgladd/grunt-phantomcss).
-For every distribution it creates a screenshot from the reference page (overview) and screenshots from every module and component.
-Those screenshots are used to compare visual changes.
+For every distribution created locally screenshots from every module and component are created.
+Those screenshots are used to compare visual changes during releases and pull requests.
 
-### CSS Performance
+### Unused and redundant css
 
 Because the amount of css rules has a big impact on the browsers rendering performance, Tesseract uses [uncss](https://github.com/giakki/uncss) for detecting unused and [csscss](https://github.com/zmoazeni/csscss) for detecting redundant css rules.
-
 
 ### Build processes
 
