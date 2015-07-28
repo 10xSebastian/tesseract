@@ -137,7 +137,7 @@ A CSS-Framework on Principles
 Principles
 </h2>
 <p class='font-size-small text-align-center text-color-white tesseract-font padding-top-extra-small padding-horizontal-small'>
-In software development, principles are used to make complex things managable
+In software development, principles help you to make complex things managable
 </p>
 <section class='padding-top-medium' data-principle='Single responsibility'>
 <div class='padding-horizontal-small padding-vertical-extra-small row'>
@@ -223,7 +223,7 @@ Concerns seperated
 <div class='column column1of2'>
 <div class='row background-color-white padding-all-small'>
 <pre class='tesseract-code overflow-scroll'>&lt;h1>Thats my Seo optimized title&lt;/h1&gt;
-&lt;h1>Text that should look like h1&lt;/h1&gt;
+&lt;h1>Text that should just look like a big headline&lt;/h1&gt;
 
 h1 {
   font-size: 6em;
@@ -260,8 +260,8 @@ Stick to a single, simple set of design principles and stay consistent
   font-size: 110%;
 }
 
-.padding-left-large {
-  padding-left: 10%;
+.font-size-large {
+  font-size: 140%;
 }</pre>
 </div>
 <div class='row'>
@@ -281,8 +281,8 @@ Consistent
   font-size: 4em;
 }
 
-.padding-left-large {
-  padding-left: 80px;
+.font-size-large {
+  font-size: 100px;
 }</pre>
 </div>
 <div class='row'>
@@ -371,7 +371,7 @@ Visibility & symmetry
 </h3>
 </div>
 <p class='font-size-small text-color-white tesseract-font padding-horizontal-small padding-bottom-extra-small'>
-Make classnames predictable by keep a consistent and comprehensible way of terminology
+Using a consistent and comprehensible way of terminology makes classnames predictable and easy to use
 </p>
 <div class='row padding-horizontal-small padding-vertical-extra-small'>
 <div class='column column1of2'>
@@ -391,7 +391,7 @@ Make classnames predictable by keep a consistent and comprehensible way of termi
 <div class='row'>
 <p class='font-size-small text-color-green tesseract-font padding-all-extra-small'>
 <i class='fa fa-check'></i>
-Comprehensible, predictable wording
+Comprehensible, predictable
 </p>
 </div>
 </div>
@@ -412,7 +412,7 @@ Comprehensible, predictable wording
 <div class='row'>
 <p class='font-size-small text-color-red tesseract-font padding-all-extra-small text-align-right'>
 <i class='fa fa-times'></i>
-Incomprehensible wording
+Incomprehensible
 </p>
 </div>
 </div>
@@ -425,22 +425,16 @@ Self-organized
 </h3>
 </div>
 <p class='font-size-small text-color-white tesseract-font padding-horizontal-small padding-bottom-extra-small'>
-Scaleable, efficent and economical system with self-organized, decentralized components
+Create scaleable, efficent and economical systems with self-organized, decentralized components
 </p>
 <div class='row padding-horizontal-small padding-vertical-extra-small'>
 <div class='column column1of2'>
 <div class='row background-color-white padding-all-small border-right'>
-<pre class='tesseract-code overflow-scroll'>.table {
-  display: table;
-}
+<pre class='tesseract-code overflow-scroll'>.message { ... }
 
-.table-cell {
-  display: table-row;
-}
+.message-image { ... }
 
-.table-row {
-  display: table-cell;
-}</pre>
+.message-image-subtitle { ... }</pre>
 </div>
 <div class='row'>
 <p class='font-size-small text-color-green tesseract-font padding-all-extra-small'>
@@ -451,17 +445,11 @@ Self-organized
 </div>
 <div class='column column1of2'>
 <div class='row background-color-white padding-all-small'>
-<pre class='tesseract-code overflow-scroll'>.table {
-  display: table;
-}
+<pre class='tesseract-code overflow-scroll'>.message { ... }
 
-.table .table-row {
-  display: table-row;
-}
+.message .image { ... }
 
-.table .table-row .table-cell {
-  display: table-cell;
-}</pre>
+.message .image .subtitle { ... }</pre>
 </div>
 <div class='row'>
 <p class='font-size-small text-color-red tesseract-font padding-all-extra-small text-align-right'>
@@ -542,6 +530,7 @@ Repeated, redundant
 </section>
 </section>
 <section class='margin-top-medium'>
+<a name='modules'></a>
 <h2 class='font-size-extra-large text-align-center text-color-white tesseract-font font-weight-light'>
 Modules
 </h2>
@@ -1862,6 +1851,7 @@ Width
 </section>
 </section>
 <section class='margin-top-medium'>
+<a name='components'></a>
 <h2 class='font-size-extra-large text-align-center text-color-white tesseract-font font-weight-light'>
 Components
 </h2>
@@ -2784,7 +2774,7 @@ Text Ellipsis
 <h2 class='font-size-extra-large text-align-center text-color-white tesseract-font font-weight-light'>
 Credits
 </h2>
-<section class='padding-top-extra-small' data-principle='Single responsibility'>
+<section class='padding-top-extra-small'>
 <div class='padding-horizontal-small padding-vertical-extra-small row'>
 <h3 class='font-size-medium text-color-white tesseract-font'>
 BrowserStack
