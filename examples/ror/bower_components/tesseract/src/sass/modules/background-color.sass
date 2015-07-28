@@ -1,0 +1,10 @@
+@each $name, $value in $colors
+
+  .background-color-#{$name}
+    background-color: $value
+
+  .background-color-#{$name}-intense
+    background-color: darken($value, 8%)
+
+.no-background-color
+  background-color: transparent !important

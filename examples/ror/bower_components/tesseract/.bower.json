@@ -1,0 +1,21 @@
+{
+  "name": "tesseract",
+  "description": "CSS-Framework based on existing software principles.",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "reset-css": "~2.0.2011012602",
+    "BrowserDetection": "git@github.com:pape-io/browser-detection.git#~1.0.2"
+  },
+  "homepage": "https://github.com/pape-io/tesseract",
+  "_release": "276fe6d936",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "276fe6d9366549b4021f24e4b9c7ffb88030f320"
+  },
+  "_source": "git@github.com:pape-io/tesseract.git",
+  "_target": "*",
+  "_originalSource": "git@github.com:pape-io/tesseract.git",
+  "_direct": true
+}

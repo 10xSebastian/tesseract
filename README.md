@@ -1,4 +1,5 @@
 [![alt tag](tesseract.png)](https://pape-io.github.io/tesseract/)
+
 → [Reference page containing all components and modules](https://pape-io.github.io/tesseract/)
 
 It’s a challenge in any web development project to structure and organize all the css code.
@@ -9,7 +10,84 @@ This css framework is build upon existing software principles to help keeping th
 
 ## Quick start guide
 
+Embed tesseract using Github's CDN and use [existing modules and components](https://pape-io.github.io/tesseract/) right away.
+```html
+  <link href='https://cdn.rawgit.com/pape-io/tesseract/master/dist/tesseract.min.css' rel='stylesheet' type='text/css'>
+
+  ...
+
+  <div class='padding-all-small border-all'>
+    ...
+  </div>
+```
+→ [Example using CDN](examples/simple.html)
+
 ## Create own components
+
+You need access to tesseract's source sass files in order to create own components.
+
+Install tesseract source files via Bower:
+
+```
+bower install git@github.com:pape-io/tesseract.git
+```
+
+Install dependencies: sass, sass-globbing and compass.
+
+e.g. via Gemfile:
+
+```
+gem 'sass'
+gem 'sass-globbing'
+gem 'compass'
+```
+
+e.g. Rails Gemfile:
+
+```
+gem 'sass'
+gem 'sass-globbing'
+gem 'compass-rails'
+```
+
+Make source available.
+
+Ruby on Rails example:
+
+```ruby
+# config/application.rb
+
+config.assets.paths << Rails.root.join('bower_components', 'tesseract', 'src', 'sass')
+```
+
+Now that you have access to tesseract modules, you can start to create own components:
+
+```sass
+@import 'tesseract'
+
+.navigation
+  @extend .background-color-grey
+  @extend .border-radius-small
+  @extend .border-all-grey
+
+.navigation-item
+  @extend .cursor-pointer
+  @extend .display-inline-block
+  @extend .font-weight-bold
+  @extend .no-outline
+  @extend .padding-all-extra-small-fixed
+  @extend .text-ellipsis
+  @extend .user-select-none
+  @extend .vertical-align-middle
+
+.navigation-item:hover
+  @extend .background-color-white
+
+.navigation-item:active
+  @extend .background-color-grey-intense
+```
+
+→ [Custom component example](examples/ror/app/assets/stylesheets/application.sass)
 
 ## Principles
 
@@ -271,10 +349,12 @@ Abstract, structure, hierarchise repeating patterns to make them reusable/modula
 ## Modules
 With modules, concerns are separated. It's a self-contained unit that in a bigger context can be reused to execute the same action/functionality over and over again.
 Flexibility and reuseablity are the benefits of modules. 
+
 → [Modules on reference page](https://pape-io.github.io/tesseract/#modules)
 
 ## Components
 A component, by definition, is a unit of composition. It the context of this css-framwork, a component is made up of multiple modules.
+
 → [Components on reference page](https://pape-io.github.io/tesseract/#components)
 
 ## CSS Reset vs. CSS Normalization

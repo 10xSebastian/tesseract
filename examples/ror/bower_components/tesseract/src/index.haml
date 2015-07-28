@@ -1,0 +1,1969 @@
+!!!
+%html.background-color-black.height-full{:lang => "en"}
+
+  %head
+    %title Tesseract | A CSS-Framework on Principles ▣
+    %link(rel="stylesheet" type="text/css" href="tesseract.css")
+    %link(rel="stylesheet" type="text/css" href="tesseract-page.css")
+    %link(rel="stylesheet" type="text/css" href="fontawesome/font-awesome.css")
+    %link{:href => "https://fonts.googleapis.com/css?family=Advent+Pro:400,200", :rel => "stylesheet", :type => "text/css"}
+    %meta{:content => "maximum-scale=1.0,width=device-width,initial-scale=1.0,user-scalable=0", :name => "viewport"}
+    %script(src="js/jquery.js")
+    %script(src="js/underscore.js")
+    %script(src="js/starfield.js")
+    %script(src="js/tesseract-roll.js")
+    %script(src="js/tesseract-header.js")
+    %script(src="js/expandable.js")
+    %script(src="js/navigation.js")
+    %script(src="js/browser-detection.js")
+
+  %body.height-full.no-padding
+
+    .tesseract-header.position-fixed.width-full.z-index-top.background-color-white.border-bottom
+      .row.overflow-hidden
+        .column.column1of3
+          %a.position-absolute.top0{:href => "https://github.com/pape-io/tesseract"}
+            %img{:alt => "Fork me on GitHub", "data-canonical-src" => "https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png", :src => "https://camo.githubusercontent.com/82b228a3648bf44fc1163ef44c62fcc60081495e/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f7265645f6161303030302e706e67", style: 'width: 80%;'}
+        .column.column1of3.text-align-center.padding-vertical-extra-small-fixed
+          .display-table.width-full.height-small-fixed
+            .display-table-row
+              .display-table-cell.vertical-align-middle.padding-right-small.width-full
+                %a.font-size-medium.display-inline-block(title="Tesseract" href="#start" style='position: relative; left: -20px; top: -22px;')
+                  %i.icon-tesseract.font-size-extra-large.position-absolute.text-color-grey
+                  %i.icon-tesseract-small.font-size-extra-large.position-absolute
+        .column.column1of3.text-align-right.padding-vertical-extra-small-fixed
+          .display-table.width-full.height-small-fixed
+            .display-table-row
+              .display-table-cell.vertical-align-middle.padding-right-small.width-full(navigation-toggle)
+                .button.no-border
+                  .font-size-medium
+                    %i.fa.fa-bars
+
+    .starfield-background.height-full.width-full.position-absolute.z-index-minus.display
+      %canvas.starfield-canvas.height-full.width-full
+      .starfield-image.height-full.width-full.display-none
+
+    %a(name='start')
+    .height-full.width-full.position-absolute
+      .row1of3
+      .row1of3
+        .display-table.width-full.height-full
+          .display-table-row
+            .display-table-cell.vertical-align-middle
+              .text-align-center.padding-top-medium
+                %img.tesseract-image(src='img/tesseract.png')
+                .tesseract-container.display-inline-block
+                  .tesseract.display-inline-block.display-none
+                    .tesseract-inside
+                      .tesseract-side.tesseract-front
+                      .tesseract-side.tesseract-back
+                      .tesseract-side.tesseract-right
+                      .tesseract-side.tesseract-left
+                      .tesseract-side.tesseract-top
+                      .tesseract-side.tesseract-bottom
+                  .tesseract.display-inline-block.display-none
+                    .tesseract-outside
+                      .tesseract-side.tesseract-blur.tesseract-front
+                      .tesseract-side.tesseract-blur.tesseract-back
+                      .tesseract-side.tesseract-blur.tesseract-right
+                      .tesseract-side.tesseract-blur.tesseract-left
+                      .tesseract-side.tesseract-blur.tesseract-top
+                      .tesseract-side.tesseract-blur.tesseract-bottom
+                  .tesseract.display-inline-block.display-none
+                    .tesseract-outside
+                      .tesseract-side.tesseract-front
+                        %canvas.tesseract-starfield
+                      .tesseract-side.tesseract-back
+                        %canvas.tesseract-starfield
+                      .tesseract-side.tesseract-right
+                        %canvas.tesseract-starfield
+                      .tesseract-side.tesseract-left
+                        %canvas.tesseract-starfield
+                      .tesseract-side.tesseract-top
+                        %canvas.tesseract-starfield
+                      .tesseract-side.tesseract-bottom
+                        %canvas.tesseract-starfield
+      .row1of3
+
+    .height-full.width-full.position-absolute
+      .row1of3.padding-top-medium
+        .display-table.width-full.height-full
+          .display-table-row
+            .display-table-cell.vertical-align-middle
+              %h1.font-size-extra-large.text-align-center.text-color-white.tesseract-font.font-weight-light.text-shadow-strong
+                Tesseract
+              %h2.font-size-small.text-align-center.text-color-white.tesseract-font.padding-vertical-extra-small.text-shadow-strong
+                A CSS-Framework on Principles
+
+    .height-full.width-full
+
+    %section.margin-top-small
+
+      %h2.font-size-extra-large.text-align-center.text-color-white.tesseract-font.font-weight-light
+        Principles
+
+      %p.font-size-small.text-align-center.text-color-white.tesseract-font.padding-top-extra-small.padding-horizontal-small
+        In software development, principles help you to make complex things managable
+
+      %section.padding-top-medium(data-principle='Single responsibility')
+        .padding-horizontal-small.padding-vertical-extra-small.row
+          %h3.font-size-medium.text-color-white.tesseract-font
+            Single responsibility
+        %p.font-size-small.text-color-white.tesseract-font.padding-horizontal-small.padding-bottom-extra-small
+          A class should have responsibility over only a single part of your system
+        .row.padding-horizontal-small.padding-vertical-extra-small
+          .column.column1of2
+            .row.background-color-white.padding-all-small.border-right
+              %pre.tesseract-code.overflow-scroll
+                :plain
+                  .padding-all-medium {
+                    padding: 15px;
+                  }
+
+                  .margin-bottom-large {
+                    margin-bottom: 20px;
+                  }
+
+                  .border-all {
+                    border: 1px solid transparent;
+                  }
+
+                  .border-radius-small {
+                    border-radius: 4px;
+                  }
+            .row 
+              %p.font-size-small.text-color-green.tesseract-font.padding-all-extra-small
+                %i.fa.fa-check
+                Single responsibility
+          .column.column1of2
+            .row.background-color-white.padding-all-small
+              %pre.tesseract-code.overflow-scroll
+                :plain
+                  .alert {
+                    padding: 15px;
+                    margin-bottom: 20px;
+                    border: 1px solid transparent;
+                    border-radius: 4px;
+                  }
+            .row 
+              %p.font-size-small.text-color-red.tesseract-font.padding-all-extra-small.text-align-right
+                %i.fa.fa-times
+                Responsible for multiple things
+
+      %section.padding-top-medium(data-principle='Separation of concerns')
+        .padding-horizontal-small.padding-vertical-extra-small.row
+          %h3.font-size-medium.text-color-white.tesseract-font
+            Separation of concerns
+        %p.font-size-small.text-color-white.tesseract-font.padding-horizontal-small.padding-bottom-extra-small
+          Do not mix concerns by styling native html elements that you may want to use just for their semantic reason
+        .row.padding-horizontal-small.padding-vertical-extra-small
+          .column.column1of2
+            .row.background-color-white.padding-all-small.border-right
+              %pre.tesseract-code.overflow-scroll
+                :plain
+                  &lt;h1 class="headline-large">Thats my Seo optimized title&lt;/h1&gt;
+                  &lt;h3 class="headline-large">Thats another realy big text, visually&lt;/h3&gt;
+
+                  .headline-extra-large {
+                    @extend .font-size-large
+                    @extend .font-weight-bold
+                    @extend .margin-bottom-small
+                  }
+            .row 
+              %p.font-size-small.text-color-green.tesseract-font.padding-all-extra-small
+                %i.fa.fa-check
+                Concerns seperated
+          .column.column1of2
+            .row.background-color-white.padding-all-small
+              %pre.tesseract-code.overflow-scroll
+                :plain
+                  &lt;h1>Thats my Seo optimized title&lt;/h1&gt;
+                  &lt;h1>Text that should just look like a big headline&lt;/h1&gt;
+
+                  h1 {
+                    font-size: 6em;
+                    font-weight: bold;
+                    margin-bottom: 16px;
+                  }
+            .row 
+              %p.font-size-small.text-color-red.tesseract-font.padding-all-extra-small.text-align-right
+                %i.fa.fa-times
+                Concerns not seperated
+
+      %section.padding-top-medium(data-principle='Conceptual integrity')
+        .padding-horizontal-small.padding-vertical-extra-small.row
+          %h3.font-size-medium.text-color-white.tesseract-font
+            Conceptual integrity
+        %p.font-size-small.text-color-white.tesseract-font.padding-horizontal-small.padding-bottom-extra-small
+          Stick to a single, simple set of design principles and stay consistent
+        .row.padding-horizontal-small.padding-vertical-extra-small
+          .column.column1of2
+            .row.background-color-white.padding-all-small.border-right
+              %pre.tesseract-code.overflow-scroll
+                :plain
+                  .font-size-small {
+                    font-size: 100%;
+                  }
+
+                  .font-size-medium {
+                    font-size: 110%;
+                  }
+
+                  .font-size-large {
+                    font-size: 140%;
+                  }
+            .row 
+              %p.font-size-small.text-color-green.tesseract-font.padding-all-extra-small
+                %i.fa.fa-check
+                Consistent
+          .column.column1of2
+            .row.background-color-white.padding-all-small
+              %pre.tesseract-code.overflow-scroll
+                :plain
+                  .font-size-small {
+                    font-size: 100%;
+                  }
+
+                  .font-size-medium {
+                    font-size: 4em;
+                  }
+
+                  .font-size-large {
+                    font-size: 100px;
+                  }
+            .row 
+              %p.font-size-small.text-color-red.tesseract-font.padding-all-extra-small.text-align-right
+                %i.fa.fa-times
+                Inconsistent
+
+      %section.padding-top-medium(data-principle='Economic')
+        .padding-horizontal-small.padding-vertical-extra-small.row
+          %h3.font-size-medium.text-color-white.tesseract-font
+            Economic
+        %p.font-size-small.text-color-white.tesseract-font.padding-horizontal-small.padding-bottom-extra-small
+          Prevent unnecessary complexity. Focus on what is really needed and limit yourself
+        .row.padding-horizontal-small.padding-vertical-extra-small
+          .column.column1of2
+            .row.background-color-white.padding-all-small.border-right
+              %pre.tesseract-code.overflow-scroll
+                :plain
+                  .font-size-small {
+                    font-size: 100%;
+                  }
+
+                  .font-size-medium {
+                    font-size: 110%;
+                  }
+
+                  .padding-left-large {
+                    font-size: 140%;
+                  }
+            .row 
+              %p.font-size-small.text-color-green.tesseract-font.padding-all-extra-small
+                %i.fa.fa-check
+                Limited complexity 
+          .column.column1of2
+            .row.background-color-white.padding-all-small
+              %pre.tesseract-code.overflow-scroll
+                :plain
+                  .font-size-xxs {
+                    font-size: 70%;
+                  }
+
+                  .font-size-xs {
+                    font-size: 90%;
+                  }
+
+                  .font-size-s {
+                    font-size: 100%;
+                  }
+
+                  .font-size-m {
+                    font-size: 110%;
+                  }
+
+                  .font-size-l {
+                    font-size: 140%;
+                  }
+
+                  .font-size-xl {
+                    font-size: 160%;
+                  }
+
+                  .font-size-xxl {
+                    font-size: 200%;
+                  }
+            .row 
+              %p.font-size-small.text-color-red.tesseract-font.padding-all-extra-small.text-align-right
+                %i.fa.fa-times
+                Unfocused, useless complexity
+
+      %section.padding-top-medium(data-principle='Visibility & symmetry')
+        .padding-horizontal-small.padding-vertical-extra-small.row
+          %h3.font-size-medium.text-color-white.tesseract-font
+            Visibility & symmetry
+        %p.font-size-small.text-color-white.tesseract-font.padding-horizontal-small.padding-bottom-extra-small
+          Using a consistent and comprehensible way of terminology makes classnames predictable and easy to use
+        .row.padding-horizontal-small.padding-vertical-extra-small
+          .column.column1of2
+            .row.background-color-white.padding-all-small.border-right
+              %pre.tesseract-code.overflow-scroll
+                :plain
+                  .font-size-small {
+                    font-size: 100%;
+                  }
+
+                  .margin-top-medium {
+                    margin-top: 5%;
+                  }
+
+                  .padding-bottom-large {
+                    padding-bottom: 10%;
+                  }
+            .row 
+              %p.font-size-small.text-color-green.tesseract-font.padding-all-extra-small
+                %i.fa.fa-check
+                Comprehensible, predictable
+          .column.column1of2
+            .row.background-color-white.padding-all-small
+              %pre.tesseract-code.overflow-scroll
+                :plain
+                  .fsS {
+                    font-size: 100%;
+                  }
+
+                  .mt-M {
+                    margin-top: 5%;
+                  }
+
+                  .pbL {
+                    padding-bottom: 10%;
+                  }
+            .row 
+              %p.font-size-small.text-color-red.tesseract-font.padding-all-extra-small.text-align-right
+                %i.fa.fa-times
+                Incomprehensible
+
+      %section.padding-top-medium(data-principle='Self-organized')
+        .padding-horizontal-small.padding-vertical-extra-small.row
+          %h3.font-size-medium.text-color-white.tesseract-font
+            Self-organized
+        %p.font-size-small.text-color-white.tesseract-font.padding-horizontal-small.padding-bottom-extra-small
+          Create scaleable, efficent and economical systems with self-organized, decentralized components
+        .row.padding-horizontal-small.padding-vertical-extra-small
+          .column.column1of2
+            .row.background-color-white.padding-all-small.border-right
+              %pre.tesseract-code.overflow-scroll
+                :plain
+                  .message { ... }
+
+                  .message-image { ... }
+
+                  .message-image-subtitle { ... }
+            .row 
+              %p.font-size-small.text-color-green.tesseract-font.padding-all-extra-small
+                %i.fa.fa-check
+                Self-organized
+          .column.column1of2
+            .row.background-color-white.padding-all-small
+              %pre.tesseract-code.overflow-scroll
+                :plain
+                  .message { ... }
+
+                  .message .image { ... }
+
+                  .message .image .subtitle { ... }
+            .row 
+              %p.font-size-small.text-color-red.tesseract-font.padding-all-extra-small.text-align-right
+                %i.fa.fa-times
+                Dependent, not reusable
+
+      %section.padding-top-medium(data-principle='Abstraction, Structuring, Hierarchising, Modularity')
+        .padding-horizontal-small.padding-vertical-extra-small.row
+          %h3.font-size-medium.text-color-white.tesseract-font
+            Abstraction, Structuring, Hierarchising, Modularity
+        %p.font-size-small.text-color-white.tesseract-font.padding-horizontal-small.padding-bottom-extra-small
+          Abstract, structure, hierarchise repeating patterns to make them reusable/modular
+        .row.padding-horizontal-small.padding-vertical-extra-small
+          .column.column1of2
+            .row.background-color-white.padding-all-small.border-right
+              %pre.tesseract-code.overflow-scroll
+                :plain
+                  .border-top {
+                    border-top: 1px solid grey;
+                  }
+                  .border-right {
+                    border-right: 1px solid grey;
+                  }
+                  .border-bottom {
+                    border-bottom: 1px solid grey;
+                  }
+                  .border-left {
+                    border-left: 1px solid grey;
+                  }
+                  .border-all {
+                    @extend .border-top;
+                    @extend .border-right;
+                    @extend .border-bottom;
+                    @extend .border-left;
+                  }
+            .row 
+              %p.font-size-small.text-color-green.tesseract-font.padding-all-extra-small
+                %i.fa.fa-check
+                Hierarchised, abstracted, modularized
+          .column.column1of2
+            .row.background-color-white.padding-all-small
+              %pre.tesseract-code.overflow-scroll
+                :plain
+                  .border-top {
+                    border-top: 1px solid grey;
+                  }
+                  .border-right {
+                    border-right: 1px solid grey;
+                  }
+                  .border-bottom {
+                    border-bottom: 1px solid grey;
+                  }
+                  .border-left {
+                    border-left: 1px solid grey;
+                  }
+                  .border-all {
+                    border-top: 1px solid grey;
+                    border-right: 1px solid grey;
+                    border-bottom: 1px solid grey;
+                    border-left: 1px solid grey;
+                  }
+            .row 
+              %p.font-size-small.text-color-red.tesseract-font.padding-all-extra-small.text-align-right
+                %i.fa.fa-times
+                Repeated, redundant
+
+    %a(name="modules")
+    %section.padding-top-medium
+    
+      %h2.font-size-extra-large.text-align-center.text-color-white.tesseract-font.font-weight-light.padding-top-medium
+        Modules
+
+      %p.font-size-small.text-align-center.text-color-white.tesseract-font.padding-top-extra-small.padding-horizontal-small
+        Smallest unit: enclosed and self-organized
+
+      %section.overflow-scroll(data-module='background-color')
+        .padding-horizontal-small.padding-vertical-extra-small.row
+          .column.column1of2.height-medium-fixed
+            .display-table.width-full.height-full
+              .display-table-row
+                .display-table-cell.vertical-align-middle
+                  %h3.font-size-medium.text-color-white.tesseract-font
+                    Background Color
+          .column.column1of2.height-medium-fixed
+            .display-table.width-full.height-full
+              .display-table-row
+                .display-table-cell.vertical-align-middle.text-align-right
+                  %button.button.button-black.no-border(expandable)
+                    %i.fa.fa-arrows-alt
+        .background-color-white.padding-all-medium
+          .row.background-color-black.padding-all-small.text-align-center.margin-bottom-extra-small
+          .row.background-color-white.padding-all-small.text-align-center.margin-bottom-extra-small.border-all
+          .row.background-color-grey.padding-all-small.text-align-center.margin-bottom-extra-small
+          .row.background-color-green.padding-all-small.text-align-center.margin-bottom-extra-small
+          .row.background-color-red.padding-all-small.text-align-center.margin-bottom-extra-small
+          .row.background-color-blue.padding-all-small.text-align-center.margin-bottom-extra-small
+          .row.background-color-black-intense.padding-all-small.text-align-center.margin-bottom-extra-small
+          .row.background-color-white-intense.padding-all-small.text-align-center.margin-bottom-extra-small
+          .row.background-color-grey-intense.padding-all-small.text-align-center.margin-bottom-extra-small
+          .row.background-color-green-intense.padding-all-small.text-align-center.margin-bottom-extra-small
+          .row.background-color-red-intense.padding-all-small.text-align-center.margin-bottom-extra-small
+          .row.background-color-blue-intense.padding-all-small.text-align-center.margin-bottom-extra-small
+          .row.background-color-white.no-background-color.padding-all-small.text-align-center
+
+      %section.overflow-scroll(data-module='borders')
+        .padding-horizontal-small.padding-vertical-extra-small.row
+          .column.column1of2.height-medium-fixed
+            .display-table.width-full.height-full
+              .display-table-row
+                .display-table-cell.vertical-align-middle
+                  %h3.font-size-medium.text-color-white.tesseract-font
+                    Border
+          .column.column1of2.height-medium-fixed
+            .display-table.width-full.height-full
+              .display-table-row
+                .display-table-cell.vertical-align-middle.text-align-right
+                  %button.button.button-black.no-border(expandable)
+                    %i.fa.fa-arrows-alt
+        .background-color-white.padding-all-medium.text-align-center
+          .border-top.padding-all-extra-small.margin-top-extra-small
+            .background-color-grey.display-block.padding-all-small.opacity-40
+          .border-right.padding-all-small.margin-top-extra-small
+            .background-color-grey.display-block.padding-all-small.opacity-40
+          .border-bottom.padding-all-small.margin-top-extra-small
+            .background-color-grey.display-block.padding-all-small.opacity-40
+          .border-left.padding-all-small.margin-top-extra-small
+            .background-color-grey.display-block.padding-all-small.opacity-40
+          .border-all.padding-all-small.margin-top-extra-small
+            .background-color-grey.display-block.padding-all-small.opacity-40
+          .no-border.border-all.padding-all-small.margin-top-extra-small
+            .background-color-grey.display-block.padding-all-small.opacity-40
+      
+      %section.overflow-scroll(data-module='border-color')
+        .padding-horizontal-small.padding-vertical-extra-small.row
+          .column.column1of2.height-medium-fixed
+            .display-table.width-full.height-full
+              .display-table-row
+                .display-table-cell.vertical-align-middle
+                  %h3.font-size-medium.text-color-white.tesseract-font
+                    Border Color
+          .column.column1of2.height-medium-fixed
+            .display-table.width-full.height-full
+              .display-table-row
+                .display-table-cell.vertical-align-middle.text-align-right
+                  %button.button.button-black.no-border(expandable)
+                    %i.fa.fa-arrows-alt
+        .background-color-white.padding-all-medium.text-align-center
+          .background-color-black.padding-all-small
+            .border-color-white.border-top-color-white.border-right-color-white.border-bottom-color-white.border-all-white.border-left-color-white.padding-all-small
+          .border-color-black.border-top-color-black.border-right-color-black.border-bottom-color-black.border-all-black.border-left-color-black.padding-all-small.margin-top-extra-small
+          .border-color-grey.border-top-color-grey.border-right-color-grey.border-bottom-color-grey.border-left-color-grey.border-all-grey.padding-all-small.margin-top-extra-small
+          .border-color-blue.border-top-color-blue.border-right-color-blue.border-bottom-color-blue.border-left-color-blue.border-all-blue.padding-all-small.margin-top-extra-small
+          .border-color-red.border-top-color-red.border-right-color-red.border-bottom-color-red.border-left-color-red.border-all-red.padding-all-small.margin-top-extra-small
+          .border-color-green.border-top-color-green.border-right-color-green.border-bottom-color-green.border-left-color-green.border-all-green.padding-all-small.margin-top-extra-small
+
+      %section.overflow-scroll(data-module='border-radius')
+        .padding-horizontal-small.padding-vertical-extra-small.row
+          .column.column1of2.height-medium-fixed
+            .display-table.width-full.height-full
+              .display-table-row
+                .display-table-cell.vertical-align-middle
+                  %h3.font-size-medium.text-color-white.tesseract-font
+                    Border Radius
+          .column.column1of2.height-medium-fixed
+            .display-table.width-full.height-full
+              .display-table-row
+                .display-table-cell.vertical-align-middle.text-align-right
+                  %button.button.button-black.no-border(expandable)
+                    %i.fa.fa-arrows-alt
+        .background-color-white.padding-all-medium.text-align-center
+          .border-radius-extra-small.border-all.padding-all-small.margin-top-extra-small
+          .border-radius-small.border-all.padding-all-small.margin-top-extra-small
+          .border-radius-medium.border-all.padding-all-small.margin-top-extra-small
+          .border-radius-large.border-all.padding-all-small.margin-top-extra-small
+          .row.margin-top-extra-small.text-align-center
+            .border-radius-extra-large.width-large-fixed.height-large-fixed.border-all.display-inline-block
+
+      %section.overflow-scroll(data-module='border-styles')
+        .padding-horizontal-small.padding-vertical-extra-small.row
+          .column.column1of2.height-medium-fixed
+            .display-table.width-full.height-full
+              .display-table-row
+                .display-table-cell.vertical-align-middle
+                  %h3.font-size-medium.text-color-white.tesseract-font
+                    Border Style
+          .column.column1of2.height-medium-fixed
+            .display-table.width-full.height-full
+              .display-table-row
+                .display-table-cell.vertical-align-middle.text-align-right
+                  %button.button.button-black.no-border(expandable)
+                    %i.fa.fa-arrows-alt
+        .background-color-white.padding-all-medium
+          .border-top-style-solid.border-right-style-solid.border-bottom-style-solid.border-left-style-solid.padding-all-small.border-all
+          .border-top-style-dotted.border-right-style-dotted.border-bottom-style-dotted.border-left-style-dotted.padding-all-small.margin-top-small.border-all
+          .border-top-style-dashed.border-right-style-dashed.border-bottom-style-dashed.border-left-style-dashed.padding-all-small.margin-top-small.border-all
+
+      %section.overflow-scroll(data-module='border-width')
+        .padding-horizontal-small.padding-vertical-extra-small.row
+          .column.column1of2.height-medium-fixed
+            .display-table.width-full.height-full
+              .display-table-row
+                .display-table-cell.vertical-align-middle
+                  %h3.font-size-medium.text-color-white.tesseract-font
+                    Border Width
+          .column.column1of2.height-medium-fixed
+            .display-table.width-full.height-full
+              .display-table-row
+                .display-table-cell.vertical-align-middle.text-align-right
+                  %button.button.button-black.no-border(expandable)
+                    %i.fa.fa-arrows-alt
+        .background-color-white.padding-all-medium
+          .border-all-width-extra-small.border-top-width-extra-small.border-right-width-extra-small.border-bottom-width-extra-small.border-left-width-extra-small.padding-all-small.border-radius-large.margin-top-extra-small.border-all
+          .border-all-width-small.border-top-width-small.border-right-width-small.border-bottom-width-small.border-left-width-small.padding-all-small.border-radius-large.margin-top-small.border-all
+          .border-all-width-medium.border-top-width-medium.border-right-width-medium.border-bottom-width-medium.border-left-width-medium.padding-all-small.border-radius-large.margin-top-small.border-all
+          .border-all-width-large.border-top-width-large.border-right-width-large.border-bottom-width-large.border-left-width-large.padding-all-small.border-radius-large.margin-top-small.border-all
+          .border-all-width-extra-large.border-top-width-extra-large.border-right-width-extra-large.border-bottom-width-extra-large.border-left-width-extra-large.padding-all-small.border-radius-large.margin-top-small.border-all
+
+      %section.overflow-scroll(data-module='cursor')
+        .padding-horizontal-small.padding-vertical-extra-small
+          .column.column1of2.height-medium-fixed
+            .display-table.width-full.height-full
+              .display-table-row
+                .display-table-cell.vertical-align-middle
+                  %h3.font-size-medium.text-color-white.tesseract-font
+                    Cursor
+          .column.column1of2.height-medium-fixed
+            .display-table.width-full.height-full
+              .display-table-row
+                .display-table-cell.vertical-align-middle.text-align-right
+                  %button.button.button-black.no-border(expandable)
+                    %i.fa.fa-arrows-alt
+        .row.background-color-white.padding-all-medium.text-align-center
+          .column.column2of5
+          .column.column1of5
+            .padding-all-small.border-all.cursor-pointer Hover Me
+          .column.column2of5
+
+      %section.overflow-scroll(data-module='display')
+        .padding-horizontal-small.padding-vertical-extra-small.row
+          .column.column1of2.height-medium-fixed
+            .display-table.width-full.height-full
+              .display-table-row
+                .display-table-cell.vertical-align-middle
+                  %h3.font-size-medium.text-color-white.tesseract-font
+                    Display
+          .column.column1of2.height-medium-fixed
+            .display-table.width-full.height-full
+              .display-table-row
+                .display-table-cell.vertical-align-middle.text-align-right
+                  %button.button.button-black.no-border(expandable)
+                    %i.fa.fa-arrows-alt
+        .background-color-white.padding-all-medium
+          .display-inline-block.border-all.padding-all-small
+          .display-inline-block.border-all.padding-all-small
+          .display-inline-block.border-all.padding-all-small
+          .display-inherit.border-all-dashed.padding-all-small
+          .display-block.margin-top-small.border-all.padding-all-small.text-align-center
+          .display-table.margin-top-small.border-all.height-extra-large-fixed.width-full.padding-all-extra-small
+            .display-table-row
+              .display-table-cell.vertical-align-middle.border-all.text-align-center
+                %span.font-size-small.padding-all-small aligned
+          .row.background-color-grey.padding-all-extra-small.margin-top-small
+            .column.column1of3.padding-all-extra-small
+              .background-color-white.padding-all-small
+            .display-none.column.column1of3.padding-all-extra-small
+              .background-color-white.padding-all-small
+            .column.column1of3.padding-all-extra-small
+              .background-color-white.padding-all-small
+
+      %section.overflow-scroll(data-module='float')
+        .padding-horizontal-small.padding-vertical-extra-small.row
+          .column.column1of2.height-medium-fixed
+            .display-table.width-full.height-full
+              .display-table-row
+                .display-table-cell.vertical-align-middle
+                  %h3.font-size-medium.text-color-white.tesseract-font
+                    Float
+          .column.column1of2.height-medium-fixed
+            .display-table.width-full.height-full
+              .display-table-row
+                .display-table-cell.vertical-align-middle.text-align-right
+                  %button.button.button-black.no-border(expandable)
+                    %i.fa.fa-arrows-alt
+        .background-color-white.padding-all-medium
+          .clear-both.clearfix.background-color-grey.padding-all-extra-small
+            .float-left.background-color-white.padding-all-small
+            .float-right.background-color-white.padding-all-small
+
+      %section.overflow-scroll(data-module='fonts')
+        .padding-horizontal-small.padding-vertical-extra-small.row
+          .column.column1of2.height-medium-fixed
+            .display-table.width-full.height-full
+              .display-table-row
+                .display-table-cell.vertical-align-middle
+                  %h3.font-size-medium.text-color-white.tesseract-font
+                    Fonts
+          .column.column1of2.height-medium-fixed
+            .display-table.width-full.height-full
+              .display-table-row
+                .display-table-cell.vertical-align-middle.text-align-right
+                  %button.button.button-black.no-border(expandable)
+                    %i.fa.fa-arrows-alt
+        .background-color-white.padding-all-medium.text-align-center
+          .row.padding-bottom-medium
+            .display-inline-block.padding-right-small
+              %span.font-size-extra-small .font-size-extra-small
+            .display-inline-block.padding-right-small.padding-left-small
+              %span.font-size-small .font-size-small
+            .display-inline-block.padding-right-small.padding-left-small
+              %span.font-size-medium .font-size-medium
+            .display-inline-block.padding-right-small.padding-left-small
+              %span.font-size-large .font-size-large
+            .display-inline-block.padding-right-small.padding-left-small
+              %span.font-size-extra-large .font-size-extra-large
+          .row
+            .display-inline-block.padding-right-extra-small.padding-left-small
+              %span.font-weight-light .font-weight-light
+            .display-inline-block.padding-right-extra-small.padding-left-small
+              %span.font-weight-normal .font-weight-normal
+            .display-inline-block.padding-right-extra-small.padding-left-small
+              %span.font-weight-bold .font-weight-bold
+            .display-inline-block.padding-right-extra-small.padding-left-small
+              %span.font-weight-extra-bold .font-weight-extra-bold
+            .display-inline-block.padding-right-extra-small.padding-left-small
+              %span.font-weight-black .font-weight-black
+            .display-inline-block.padding-right-extra-small.padding-left-small
+              %span.font-weight-bolder .font-weight-bolder
+            .display-inline-block.padding-right-extra-small.padding-left-small
+              %span.font-weight-lighter .font-weight-lighter
+
+      %section.overflow-scroll(data-module='line-height')
+        .padding-horizontal-small.padding-vertical-extra-small.row
+          .column.column1of2.height-medium-fixed
+            .display-table.width-full.height-full
+              .display-table-row
+                .display-table-cell.vertical-align-middle
+                  %h3.font-size-medium.text-color-white.tesseract-font
+                    Line-Height
+          .column.column1of2.height-medium-fixed
+            .display-table.width-full.height-full
+              .display-table-row
+                .display-table-cell.vertical-align-middle.text-align-right
+                  %button.button.button-black.no-border(expandable)
+                    %i.fa.fa-arrows-alt
+        .background-color-white.padding-all-medium.text-align-center
+          .line-height-extra-small.padding-vertical-small
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+          .line-height-small.padding-vertical-small
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+          .line-height-medium.padding-vertical-small
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+          .line-height-large.padding-vertical-small
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+          .line-height-extra-large.padding-vertical-small
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+      %section.overflow-scroll(data-module='margin')
+        .padding-horizontal-small.padding-vertical-extra-small.row
+          .column.column1of2.height-medium-fixed
+            .display-table.width-full.height-full
+              .display-table-row
+                .display-table-cell.vertical-align-middle
+                  %h3.font-size-medium.text-color-white.tesseract-font
+                    Margin
+          .column.column1of2.height-medium-fixed
+            .display-table.width-full.height-full
+              .display-table-row
+                .display-table-cell.vertical-align-middle.text-align-right
+                  %button.button.button-black.no-border(expandable)
+                    %i.fa.fa-arrows-alt
+        .background-color-white.padding-all-medium.text-align-center
+          .row.border-all
+            .column.column1of4
+              .margin-left-extra-small.background-color-grey.float-left.width-medium.height-medium-fixed
+            .column.column1of4
+              .margin-top-extra-small.background-color-grey.float-left.width-medium.height-medium-fixed
+            .column.column1of4
+              .margin-bottom-extra-small.background-color-grey.float-left.width-medium.height-medium-fixed
+            .column.column1of4
+              .margin-right-extra-small.background-color-grey.float-left.width-medium.height-medium-fixed
+          .row.margin-top-extra-small.border-all
+            .column.column1of4
+              .margin-left-small.background-color-grey.float-left.width-medium.height-medium-fixed
+            .column.column1of4
+              .margin-top-small.background-color-grey.float-left.width-medium.height-medium-fixed
+            .column.column1of4
+              .margin-bottom-small.background-color-grey.float-left.width-medium.height-medium-fixed
+            .column.column1of4
+              .margin-right-small.background-color-grey.float-left.width-medium.height-medium-fixed
+          .row.margin-top-extra-small.border-all
+            .column.column1of4
+              .margin-left-medium.background-color-grey.float-left.width-medium.height-medium-fixed
+            .column.column1of4
+              .margin-top-medium.background-color-grey.float-left.width-medium.height-medium-fixed
+            .column.column1of4
+              .margin-bottom-medium.background-color-grey.float-left.width-medium.height-medium-fixed
+            .column.column1of4
+              .margin-right-medium.background-color-grey.float-left.width-medium.height-medium-fixed
+          .row.margin-top-extra-small.border-all
+            .column.column1of4
+              .margin-left-large.background-color-grey.float-left.width-medium.height-medium-fixed
+            .column.column1of4
+              .margin-top-large.background-color-grey.float-left.width-medium.height-medium-fixed
+            .column.column1of4
+              .margin-bottom-large.background-color-grey.float-left.width-medium.height-medium-fixed
+            .column.column1of4
+              .margin-right-large.background-color-grey.float-left.width-medium.height-medium-fixed
+          .row.margin-top-extra-small.border-all
+            .column.column1of4
+              .margin-left-extra-large.background-color-grey.float-left.width-medium.height-medium-fixed
+            .column.column1of4
+              .margin-top-extra-large.background-color-grey.float-left.width-medium.height-medium-fixed
+            .column.column1of4
+              .margin-bottom-extra-large.background-color-grey.float-left.width-medium.height-medium-fixed
+            .column.column1of4
+              .margin-right-extra-large.background-color-grey.float-left.width-medium.height-medium-fixed
+          .row.margin-top-extra-small.border-all
+            .margin-vertical-extra-small.background-color-grey.float-left.width-full.height-medium-fixed
+            .margin-vertical-small.background-color-grey.float-left.width-full.height-medium-fixed
+            .margin-vertical-medium.background-color-grey.float-left.width-full.height-medium-fixed
+            .margin-vertical-large.background-color-grey.float-left.width-full.height-medium-fixed
+            .margin-vertical-extra-large.background-color-grey.float-left.width-full.height-medium-fixed
+          .row.margin-top-extra-small.border-all
+            .margin-horizontal-extra-small.background-color-grey.float-left.width-medium-fixed.height-medium-fixed.margin-top-extra-small
+            .margin-horizontal-small.background-color-grey.float-left.width-medium-fixed.height-medium-fixed.margin-top-extra-small
+            .margin-horizontal-medium.background-color-grey.float-left.width-medium-fixed.height-medium-fixed.margin-top-extra-small
+            .margin-horizontal-large.background-color-grey.float-left.width-medium-fixed.height-medium-fixed.margin-top-extra-small
+            .margin-horizontal-extra-large.background-color-grey.float-left.width-medium-fixed.height-medium-fixed.margin-top-extra-small
+          .row.margin-top-extra-small.border-all
+            .margin-all-extra-small.background-color-grey.float-left.width-medium-fixed.height-medium-fixed.margin-top-extra-small
+            .margin-all-small.background-color-grey.float-left.width-medium-fixed.height-medium-fixed.margin-top-extra-small
+            .margin-all-medium.background-color-grey.float-left.width-medium-fixed.height-medium-fixed.margin-top-extra-small
+            .margin-all-large.background-color-grey.float-left.width-medium-fixed.height-medium-fixed.margin-top-extra-small
+            .margin-all-extra-large.background-color-grey.float-left.width-medium-fixed.height-medium-fixed.margin-top-extra-small
+          .row.margin-top-extra-small.border-all
+            .column.column1of4
+              .margin-left-extra-small-fixed.background-color-grey.float-left.width-medium.height-medium-fixed
+            .column.column1of4
+              .margin-top-extra-small-fixed.background-color-grey.float-left.width-medium.height-medium-fixed
+            .column.column1of4
+              .margin-bottom-extra-small-fixed.background-color-grey.float-left.width-medium.height-medium-fixed
+            .column.column1of4
+              .margin-right-extra-small-fixed.background-color-grey.float-left.width-medium.height-medium-fixed
+          .row.margin-top-extra-small.border-all
+            .column.column1of4
+              .margin-left-small-fixed.background-color-grey.float-left.width-medium.height-medium-fixed
+            .column.column1of4
+              .margin-top-small-fixed.background-color-grey.float-left.width-medium.height-medium-fixed
+            .column.column1of4
+              .margin-bottom-small-fixed.background-color-grey.float-left.width-medium.height-medium-fixed
+            .column.column1of4
+              .margin-right-small-fixed.background-color-grey.float-left.width-medium.height-medium-fixed
+          .row.margin-top-extra-small.border-all
+            .column.column1of4
+              .margin-left-medium-fixed.background-color-grey.float-left.width-medium.height-medium-fixed
+            .column.column1of4
+              .margin-top-medium-fixed.background-color-grey.float-left.width-medium.height-medium-fixed
+            .column.column1of4
+              .margin-bottom-medium-fixed.background-color-grey.float-left.width-medium.height-medium-fixed
+            .column.column1of4
+              .margin-right-medium-fixed.background-color-grey.float-left.width-medium.height-medium-fixed
+          .row.margin-top-extra-small.border-all
+            .column.column1of4
+              .margin-left-large-fixed.background-color-grey.float-left.width-medium.height-medium-fixed
+            .column.column1of4
+              .margin-top-large-fixed.background-color-grey.float-left.width-medium.height-medium-fixed
+            .column.column1of4
+              .margin-bottom-large-fixed.background-color-grey.float-left.width-medium.height-medium-fixed
+            .column.column1of4
+              .margin-right-large-fixed.background-color-grey.float-left.width-medium.height-medium-fixed
+          .row.margin-top-extra-small.border-all
+            .column.column1of4
+              .margin-left-extra-large-fixed.background-color-grey.float-left.width-medium.height-medium-fixed
+            .column.column1of4
+              .margin-top-extra-large-fixed.background-color-grey.float-left.width-medium.height-medium-fixed
+            .column.column1of4
+              .margin-bottom-extra-large-fixed.background-color-grey.float-left.width-medium.height-medium-fixed
+            .column.column1of4
+              .margin-right-extra-large-fixed.background-color-grey.float-left.width-medium.height-medium-fixed
+          .row.margin-top-extra-small.border-all
+            .margin-vertical-extra-small-fixed.background-color-grey.float-left.width-full.height-medium-fixed
+            .margin-vertical-small-fixed.background-color-grey.float-left.width-full.height-medium-fixed
+            .margin-vertical-medium-fixed.background-color-grey.float-left.width-full.height-medium-fixed
+            .margin-vertical-large-fixed.background-color-grey.float-left.width-full.height-medium-fixed
+            .margin-vertical-extra-large-fixed.background-color-grey.float-left.width-full.height-medium-fixed
+          .row.margin-top-extra-small.border-all
+            .margin-horizontal-extra-small-fixed.background-color-grey.float-left.width-medium.height-medium-fixed.margin-top-extra-small
+            .margin-horizontal-small-fixed.background-color-grey.float-left.width-medium.height-medium-fixed.margin-top-extra-small
+            .margin-horizontal-medium-fixed.background-color-grey.float-left.width-medium.height-medium-fixed.margin-top-extra-small
+            .margin-horizontal-large-fixed.background-color-grey.float-left.width-medium.height-medium-fixed.margin-top-extra-small
+            .margin-horizontal-extra-large-fixed.background-color-grey.float-left.width-medium.height-medium-fixed.margin-top-extra-small
+          .row.margin-top-extra-small.border-all
+            .margin-all-extra-small-fixed.background-color-grey.float-left.width-medium.height-medium-fixed.margin-top-extra-small
+            .margin-all-small-fixed.background-color-grey.float-left.width-medium.height-medium-fixed.margin-top-extra-small
+            .margin-all-medium-fixed.background-color-grey.float-left.width-medium.height-medium-fixed.margin-top-extra-small
+            .margin-all-large-fixed.background-color-grey.float-left.width-medium.height-medium-fixed.margin-top-extra-small
+            .margin-all-extra-large-fixed.background-color-grey.float-left.width-medium.height-medium-fixed.margin-top-extra-small
+          .row.margin-top-extra-small.border-all
+            .no-margin.margin-all-large.background-color-grey.float-left.width-medium.height-medium-fixed
+
+      %section.overflow-scroll(data-module='opacity')
+        .padding-horizontal-small.padding-vertical-extra-small.row
+          .column.column1of2.height-medium-fixed
+            .display-table.width-full.height-full
+              .display-table-row
+                .display-table-cell.vertical-align-middle
+                  %h3.font-size-medium.text-color-white.tesseract-font
+                    Opacity
+          .column.column1of2.height-medium-fixed
+            .display-table.width-full.height-full
+              .display-table-row
+                .display-table-cell.vertical-align-middle.text-align-right
+                  %button.button.button-black.no-border(expandable)
+                    %i.fa.fa-arrows-alt
+        .background-color-white.padding-all-medium.text-align-center.row
+          .opacity-10.column.column1of10.background-color-black.height-medium-fixed
+          .opacity-20.column.column1of10.background-color-black.height-medium-fixed
+          .opacity-30.column.column1of10.background-color-black.height-medium-fixed
+          .opacity-40.column.column1of10.background-color-black.height-medium-fixed
+          .opacity-50.column.column1of10.background-color-black.height-medium-fixed
+          .opacity-60.column.column1of10.background-color-black.height-medium-fixed
+          .opacity-70.column.column1of10.background-color-black.height-medium-fixed
+          .opacity-80.column.column1of10.background-color-black.height-medium-fixed
+          .opacity-90.column.column1of10.background-color-black.height-medium-fixed
+          .opacity-100.column.column1of10.background-color-black.height-medium-fixed
+
+      %section.overflow-scroll(data-module='outline')
+        .padding-horizontal-small.padding-vertical-extra-small.row
+          .column.column1of2.height-medium-fixed
+            .display-table.width-full.height-full
+              .display-table-row
+                .display-table-cell.vertical-align-middle
+                  %h3.font-size-medium.text-color-white.tesseract-font
+                    Outline
+          .column.column1of2.height-medium-fixed
+            .display-table.width-full.height-full
+              .display-table-row
+                .display-table-cell.vertical-align-middle.text-align-right
+                  %button.button.button-black.no-border(expandable)
+                    %i.fa.fa-arrows-alt
+        .background-color-white.padding-all-medium.text-align-center
+          %button.no-outline Button
+
+      %section.overflow-scroll(data-module='overflow')
+        .padding-horizontal-small.padding-vertical-extra-small.row
+          .column.column1of2.height-medium-fixed
+            .display-table.width-full.height-full
+              .display-table-row
+                .display-table-cell.vertical-align-middle
+                  %h3.font-size-medium.text-color-white.tesseract-font
+                    Overflow
+          .column.column1of2.height-medium-fixed
+            .display-table.width-full.height-full
+              .display-table-row
+                .display-table-cell.vertical-align-middle.text-align-right
+                  %button.button.button-black.no-border(expandable)
+                    %i.fa.fa-arrows-alt
+        .background-color-white.padding-all-medium.text-align-center
+          .overflow-hidden.border-all
+            .width-full.padding-all-large.margin-left-large.white-space-nowrap Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+          .overflow-scroll.border-all
+            .width-full.padding-all-large.margin-left-large.white-space-nowrap Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+      %section.overflow-scroll(data-module='padding')
+        .padding-horizontal-small.padding-vertical-extra-small.row
+          .column.column1of2.height-medium-fixed
+            .display-table.width-full.height-full
+              .display-table-row
+                .display-table-cell.vertical-align-middle
+                  %h3.font-size-medium.text-color-white.tesseract-font
+                    Padding
+          .column.column1of2.height-medium-fixed
+            .display-table.width-full.height-full
+              .display-table-row
+                .display-table-cell.vertical-align-middle.text-align-right
+                  %button.button.button-black.no-border(expandable)
+                    %i.fa.fa-arrows-alt
+        .background-color-white.padding-all-medium.text-align-center.overflow-hidden
+          .padding-top-extra-small.border-all.margin-top-extra-small
+            .height-medium-fixed.widt-full.background-color-grey
+          .padding-right-extra-small.border-all.margin-top-extra-small
+            .height-medium-fixed.widt-full.background-color-grey
+          .padding-bottom-extra-small.border-all.margin-top-extra-small
+            .height-medium-fixed.widt-full.background-color-grey
+          .padding-left-extra-small.border-all.margin-top-extra-small
+            .height-medium-fixed.widt-full.background-color-grey
+          .padding-top-small.border-all.margin-top-extra-small
+            .height-medium-fixed.widt-full.background-color-grey
+          .padding-right-small.border-all.margin-top-extra-small
+            .height-medium-fixed.widt-full.background-color-grey
+          .padding-bottom-small.border-all.margin-top-extra-small
+            .height-medium-fixed.widt-full.background-color-grey
+          .padding-left-small.border-all.margin-top-extra-small
+            .height-medium-fixed.widt-full.background-color-grey
+          .padding-top-medium.border-all.margin-top-extra-small
+            .height-medium-fixed.widt-full.background-color-grey
+          .padding-right-medium.border-all.margin-top-extra-small
+            .height-medium-fixed.widt-full.background-color-grey
+          .padding-bottom-medium.border-all.margin-top-extra-small
+            .height-medium-fixed.widt-full.background-color-grey
+          .padding-left-medium.border-all.margin-top-extra-small
+            .height-medium-fixed.widt-full.background-color-grey
+          .padding-top-large.border-all.margin-top-extra-small
+            .height-medium-fixed.widt-full.background-color-grey
+          .padding-right-large.border-all.margin-top-extra-small
+            .height-medium-fixed.widt-full.background-color-grey
+          .padding-bottom-large.border-all.margin-top-extra-small
+            .height-medium-fixed.widt-full.background-color-grey
+          .padding-left-large.border-all.margin-top-extra-small
+            .height-medium-fixed.widt-full.background-color-grey
+          .padding-top-extra-large.border-all.margin-top-extra-small
+            .height-medium-fixed.widt-full.background-color-grey
+          .padding-right-extra-large.border-all.margin-top-extra-small
+            .height-medium-fixed.widt-full.background-color-grey
+          .padding-bottom-extra-large.border-all.margin-top-extra-small
+            .height-medium-fixed.widt-full.background-color-grey
+          .padding-left-extra-large.border-all.margin-top-extra-small
+            .height-medium-fixed.widt-full.background-color-grey
+          .padding-vertical-extra-small.border-all.margin-top-extra-small
+            .height-medium-fixed.widt-full.background-color-grey
+          .padding-horizontal-extra-small.border-all.margin-top-extra-small
+            .height-medium-fixed.widt-full.background-color-grey
+          .padding-vertical-small.border-all.margin-top-extra-small
+            .height-medium-fixed.widt-full.background-color-grey
+          .padding-horizontal-small.border-all.margin-top-extra-small
+            .height-medium-fixed.widt-full.background-color-grey
+          .padding-vertical-medium.border-all.margin-top-extra-small
+            .height-medium-fixed.widt-full.background-color-grey
+          .padding-horizontal-medium.border-all.margin-top-extra-small
+            .height-medium-fixed.widt-full.background-color-grey
+          .padding-vertical-large.border-all.margin-top-extra-small
+            .height-medium-fixed.widt-full.background-color-grey
+          .padding-horizontal-large.border-all.margin-top-extra-small
+            .height-medium-fixed.widt-full.background-color-grey
+          .padding-vertical-extra-large.border-all.margin-top-extra-small
+            .height-medium-fixed.widt-full.background-color-grey
+          .padding-horizontal-extra-large.border-all.margin-top-extra-small
+            .height-medium-fixed.widt-full.background-color-grey
+          .padding-all-extra-small.border-all.margin-top-extra-small
+            .height-medium-fixed.widt-full.background-color-grey
+          .padding-all-small.border-all.margin-top-extra-small
+            .height-medium-fixed.widt-full.background-color-grey
+          .padding-all-medium.border-all.margin-top-extra-small
+            .height-medium-fixed.widt-full.background-color-grey
+          .padding-all-large.border-all.margin-top-extra-small
+            .height-medium-fixed.widt-full.background-color-grey
+          .padding-all-extra-large.border-all.margin-top-extra-small
+            .height-medium-fixed.widt-full.background-color-grey
+          .padding-top-extra-small-fixed.border-all.margin-top-extra-small
+            .height-medium-fixed.widt-full.background-color-grey
+          .padding-right-extra-small-fixed.border-all.margin-top-extra-small
+            .height-medium-fixed.widt-full.background-color-grey
+          .padding-bottom-extra-small-fixed.border-all.margin-top-extra-small
+            .height-medium-fixed.widt-full.background-color-grey
+          .padding-left-extra-small-fixed.border-all.margin-top-extra-small
+            .height-medium-fixed.widt-full.background-color-grey
+          .padding-top-small-fixed.border-all.margin-top-extra-small
+            .height-medium-fixed.widt-full.background-color-grey
+          .padding-right-small-fixed.border-all.margin-top-extra-small
+            .height-medium-fixed.widt-full.background-color-grey
+          .padding-bottom-small-fixed.border-all.margin-top-extra-small
+            .height-medium-fixed.widt-full.background-color-grey
+          .padding-left-small-fixed.border-all.margin-top-extra-small
+            .height-medium-fixed.widt-full.background-color-grey
+          .padding-top-medium-fixed.border-all.margin-top-extra-small
+            .height-medium-fixed.widt-full.background-color-grey
+          .padding-right-medium-fixed.border-all.margin-top-extra-small
+            .height-medium-fixed.widt-full.background-color-grey
+          .padding-bottom-medium-fixed.border-all.margin-top-extra-small
+            .height-medium-fixed.widt-full.background-color-grey
+          .padding-left-medium-fixed.border-all.margin-top-extra-small
+            .height-medium-fixed.widt-full.background-color-grey
+          .padding-top-large-fixed.border-all.margin-top-extra-small
+            .height-medium-fixed.widt-full.background-color-grey
+          .padding-right-large-fixed.border-all.margin-top-extra-small
+            .height-medium-fixed.widt-full.background-color-grey
+          .padding-bottom-large-fixed.border-all.margin-top-extra-small
+            .height-medium-fixed.widt-full.background-color-grey
+          .padding-left-large-fixed.border-all.margin-top-extra-small
+            .height-medium-fixed.widt-full.background-color-grey
+          .padding-top-extra-large-fixed.border-all.margin-top-extra-small
+            .height-medium-fixed.widt-full.background-color-grey
+          .padding-right-extra-large-fixed.border-all.margin-top-extra-small
+            .height-medium-fixed.widt-full.background-color-grey
+          .padding-bottom-extra-large-fixed.border-all.margin-top-extra-small
+            .height-medium-fixed.widt-full.background-color-grey
+          .padding-left-extra-large-fixed.border-all.margin-top-extra-small
+            .height-medium-fixed.widt-full.background-color-grey
+          .padding-vertical-extra-small-fixed.border-all.margin-top-extra-small
+            .height-medium-fixed.widt-full.background-color-grey
+          .padding-horizontal-extra-small-fixed.border-all.margin-top-extra-small
+            .height-medium-fixed.widt-full.background-color-grey
+          .padding-vertical-small-fixed.border-all.margin-top-extra-small
+            .height-medium-fixed.widt-full.background-color-grey
+          .padding-horizontal-small-fixed.border-all.margin-top-extra-small
+            .height-medium-fixed.widt-full.background-color-grey
+          .padding-vertical-medium-fixed.border-all.margin-top-extra-small
+            .height-medium-fixed.widt-full.background-color-grey
+          .padding-horizontal-medium-fixed.border-all.margin-top-extra-small
+            .height-medium-fixed.widt-full.background-color-grey
+          .padding-vertical-large-fixed.border-all.margin-top-extra-small
+            .height-medium-fixed.widt-full.background-color-grey
+          .padding-horizontal-large-fixed.border-all.margin-top-extra-small
+            .height-medium-fixed.widt-full.background-color-grey
+          .padding-vertical-extra-large-fixed.border-all.margin-top-extra-small
+            .height-medium-fixed.widt-full.background-color-grey
+          .padding-horizontal-extra-large-fixed.border-all.margin-top-extra-small
+            .height-medium-fixed.widt-full.background-color-grey
+          .padding-all-extra-small-fixed.border-all.margin-top-extra-small
+            .height-medium-fixed.widt-full.background-color-grey
+          .padding-all-small-fixed.border-all.margin-top-extra-small
+            .height-medium-fixed.widt-full.background-color-grey
+          .padding-all-medium-fixed.border-all.margin-top-extra-small
+            .height-medium-fixed.widt-full.background-color-grey
+          .padding-all-large-fixed.border-all.margin-top-extra-small
+            .height-medium-fixed.widt-full.background-color-grey
+          .padding-all-extra-large-fixed.border-all.margin-top-extra-small
+            .height-medium-fixed.widt-full.background-color-grey
+          .no-padding.padding-all-large.margin-top-extra-small
+            .height-medium-fixed.widt-full.background-color-grey
+
+      %section.overflow-scroll(data-module='position')
+        .padding-horizontal-small.padding-vertical-extra-small.row
+          .column.column1of2.height-medium-fixed
+            .display-table.width-full.height-full
+              .display-table-row
+                .display-table-cell.vertical-align-middle
+                  %h3.font-size-medium.text-color-white.tesseract-font
+                    Position
+          .column.column1of2.height-medium-fixed
+            .display-table.width-full.height-full
+              .display-table-row
+                .display-table-cell.vertical-align-middle.text-align-right
+                  %button.button.button-black.no-border(expandable)
+                    %i.fa.fa-arrows-alt
+        .background-color-white.padding-all-medium.text-align-center.overflow-hidden
+          .position-relative.background-color-grey.padding-all-medium
+            .position-absolute.opacity-30.background-color-white.margin-left-small.padding-all-small.width-large
+            .position-absolute.opacity-30.background-color-white.margin-left-medium.padding-all-small.width-large
+            .position-absolute.opacity-30.background-color-white.margin-left-large.padding-all-small.width-large
+
+      %section.overflow-scroll(data-module='height')
+        .padding-horizontal-small.padding-vertical-extra-small.row
+          .column.column1of2.height-medium-fixed
+            .display-table.width-full.height-full
+              .display-table-row
+                .display-table-cell.vertical-align-middle
+                  %h3.font-size-medium.text-color-white.tesseract-font
+                    Height
+          .column.column1of2.height-medium-fixed
+            .display-table.width-full.height-full
+              .display-table-row
+                .display-table-cell.vertical-align-middle.text-align-right
+                  %button.button.button-black.no-border(expandable)
+                    %i.fa.fa-arrows-alt
+        .background-color-white.padding-all-medium.text-align-center.overflow-hidden
+          .height-minimum-fixed.background-color-grey.width-full.margin-top-extra-small
+          .height-extra-small.background-color-grey.width-full
+          .height-small.background-color-grey.width-full.margin-top-extra-small
+          .height-medium.background-color-grey.width-full.margin-top-extra-small
+          .height-large.background-color-grey.width-full.margin-top-extra-small
+          .height-extra-large.height-full.background-color-grey.width-full.margin-top-extra-small
+          .height-extra-small-fixed.max-height-extra-small-fixed.background-color-grey.width-full.margin-top-extra-small
+          .height-small-fixed.max-height-small-fixed.background-color-grey.width-full.margin-top-extra-small
+          .height-medium-fixed.max-height-medium-fixed.background-color-grey.width-full.margin-top-extra-small
+          .height-large-fixed.max-height-large-fixed.background-color-grey.width-full.margin-top-extra-small
+          .height-extra-large-fixed.max-height-extra-large-fixed.background-color-grey.width-full.margin-top-extra-small
+      
+      %section.overflow-scroll(data-module='overflow')
+        .padding-horizontal-small.padding-vertical-extra-small.row
+          .column.column1of2.height-medium-fixed
+            .display-table.width-full.height-full
+              .display-table-row
+                .display-table-cell.vertical-align-middle
+                  %h3.font-size-medium.text-color-white.tesseract-font
+                    Text Overflow
+          .column.column1of2.height-medium-fixed
+            .display-table.width-full.height-full
+              .display-table-row
+                .display-table-cell.vertical-align-middle.text-align-right
+                  %button.button.button-black.no-border(expandable)
+                    %i.fa.fa-arrows-alt
+        .background-color-white.padding-all-medium.text-align-center
+          .text-align-center
+            .text-overflow-ellipsis.width-medium-fixed.white-space-nowrap.overflow-hidden.display-inline-block
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+      %section.overflow-scroll(data-module='text-align')
+        .padding-horizontal-small.padding-vertical-extra-small.row
+          .column.column1of2.height-medium-fixed
+            .display-table.width-full.height-full
+              .display-table-row
+                .display-table-cell.vertical-align-middle
+                  %h3.font-size-medium.text-color-white.tesseract-font
+                    Text Align
+          .column.column1of2.height-medium-fixed
+            .display-table.width-full.height-full
+              .display-table-row
+                .display-table-cell.vertical-align-middle.text-align-right
+                  %button.button.button-black.no-border(expandable)
+                    %i.fa.fa-arrows-alt
+        .background-color-white.padding-all-medium.text-align-center
+          .text-align-center.border-all.padding-all-extra-small
+            Lorem ipsum dolor sit amet
+          .text-align-left.border-all.padding-all-extra-small.margin-top-extra-small
+            Lorem ipsum dolor sit amet
+          .text-align-right.border-all.padding-all-extra-small.margin-top-extra-small
+            Lorem ipsum dolor sit amet
+
+      %section.overflow-scroll(data-module='text-color')
+        .padding-horizontal-small.padding-vertical-extra-small.row
+          .column.column1of2.height-medium-fixed
+            .display-table.width-full.height-full
+              .display-table-row
+                .display-table-cell.vertical-align-middle
+                  %h3.font-size-medium.text-color-white.tesseract-font
+                    Text Color
+          .column.column1of2.height-medium-fixed
+            .display-table.width-full.height-full
+              .display-table-row
+                .display-table-cell.vertical-align-middle.text-align-right
+                  %button.button.button-black.no-border(expandable)
+                    %i.fa.fa-arrows-alt
+        .background-color-white.padding-all-medium.text-align-center
+          .text-color-black.display-inline-block BLACK
+          .text-color-white.display-inline-block.background-color-black WHITE
+          .text-color-blue.display-inline-block BLUE
+          .text-color-red.display-inline-block RED
+          .text-color-green.display-inline-block GREEN
+
+      %section.overflow-scroll(data-module='text-shadow')
+        .padding-horizontal-small.padding-vertical-extra-small.row
+          .column.column1of2.height-medium-fixed
+            .display-table.width-full.height-full
+              .display-table-row
+                .display-table-cell.vertical-align-middle
+                  %h3.font-size-medium.text-color-white.tesseract-font
+                    Text Shadow
+          .column.column1of2.height-medium-fixed
+            .display-table.width-full.height-full
+              .display-table-row
+                .display-table-cell.vertical-align-middle.text-align-right
+                  %button.button.button-black.no-border(expandable)
+                    %i.fa.fa-arrows-alt
+        .background-color-white.padding-all-medium.text-align-center
+          .text-shadow.font-size-large.display-inline-block.margin-all-extra-small Text
+          .text-shadow-strong.font-size-large.display-inline-block.margin-all-extra-small Text
+
+      %section.overflow-scroll(data-module='user-select')
+        .padding-horizontal-small.padding-vertical-extra-small.row
+          .column.column1of2.height-medium-fixed
+            .display-table.width-full.height-full
+              .display-table-row
+                .display-table-cell.vertical-align-middle
+                  %h3.font-size-medium.text-color-white.tesseract-font
+                    User Select
+          .column.column1of2.height-medium-fixed
+            .display-table.width-full.height-full
+              .display-table-row
+                .display-table-cell.vertical-align-middle.text-align-right
+                  %button.button.button-black.no-border(expandable)
+                    %i.fa.fa-arrows-alt
+        .background-color-white.padding-all-medium.text-align-center
+          .paddin-all-small.user-select-none Try to select this text
+
+      %section.overflow-scroll(data-module='white-space')
+        .padding-horizontal-small.padding-vertical-extra-small.row
+          .column.column1of2.height-medium-fixed
+            .display-table.width-full.height-full
+              .display-table-row
+                .display-table-cell.vertical-align-middle
+                  %h3.font-size-medium.text-color-white.tesseract-font
+                    White Space
+          .column.column1of2.height-medium-fixed
+            .display-table.width-full.height-full
+              .display-table-row
+                .display-table-cell.vertical-align-middle.text-align-right
+                  %button.button.button-black.no-border(expandable)
+                    %i.fa.fa-arrows-alt
+        .background-color-white.padding-all-medium.text-align-center
+          .white-space-nowrap.width-small-fixed.display-inline-block
+            This text does not break even though it should
+
+      %section.overflow-scroll(data-module='width')
+        .padding-horizontal-small.padding-vertical-extra-small.row
+          .column.column1of2.height-medium-fixed
+            .display-table.width-full.height-full
+              .display-table-row
+                .display-table-cell.vertical-align-middle
+                  %h3.font-size-medium.text-color-white.tesseract-font
+                    Width
+          .column.column1of2.height-medium-fixed
+            .display-table.width-full.height-full
+              .display-table-row
+                .display-table-cell.vertical-align-middle.text-align-right
+                  %button.button.button-black.no-border(expandable)
+                    %i.fa.fa-arrows-alt
+        .background-color-white.padding-all-medium.text-align-center
+          .width-extra-small.background-color-grey.height-small-fixed.display-inline-block
+          .width-small.background-color-grey.height-small-fixed.display-inline-block
+          .width-medium.background-color-grey.height-small-fixed.display-inline-block
+          .width-large.background-color-grey.height-small-fixed.display-inline-block
+          .margin-top-small
+            .width-extra-large.width-full.background-color-grey.height-small-fixed
+          .margin-top-small
+            .width-minimum-fixed.background-color-grey.height-small-fixed.display-inline-block
+            .width-extra-small-fixed.background-color-grey.height-small-fixed.display-inline-block
+            .width-small-fixed.background-color-grey.height-small-fixed.display-inline-block
+            .width-medium-fixed.background-color-grey.height-small-fixed.display-inline-block
+            .width-large-fixed.background-color-grey.height-small-fixed.display-inline-block
+            .width-extra-large-fixed.background-color-grey.height-small-fixed.display-inline-block
+
+    %a(name="components")
+    %section.padding-top-medium
+
+      %h2.font-size-extra-large.text-align-center.text-color-white.tesseract-font.font-weight-light.padding-top-medium
+        Components
+
+      %p.font-size-small.text-align-center.text-color-white.tesseract-font.padding-top-extra-small.padding-horizontal-small
+        Reusable elements, based on one or multiple modules
+
+      %section.overflow-scroll(data-component='border')
+        .padding-horizontal-small.padding-vertical-extra-small.row
+          .column.column1of2.height-medium-fixed
+            .display-table.width-full.height-full
+              .display-table-row
+                .display-table-cell.vertical-align-middle
+                  %h3.font-size-medium.text-color-white.tesseract-font
+                    Border
+          .column.column1of2.height-medium-fixed
+            .display-table.width-full.height-full
+              .display-table-row
+                .display-table-cell.vertical-align-middle.text-align-right
+                  %button.button.button-black.no-border(expandable)
+                    %i.fa.fa-arrows-alt
+        .background-color-white.padding-all-medium.text-align-center
+          .background-color-black.padding-all-extra-small
+            .border-all-white.border-top-white.border-right-white.border-bottom-white.border-left-white.padding-all-small.border-radius-large
+          .border-all-black.border-top-black.border-right-black.border-bottom-black.border-left-black.padding-all-small.border-radius-large.margin-top-extra-small
+          .border-all-grey.border-top-grey.border-right-grey.border-bottom-grey.border-left-grey.padding-all-small.border-radius-large.margin-top-extra-small
+          .border-all-blue.border-top-blue.border-right-blue.border-bottom-blue.border-left-blue.padding-all-small.border-radius-large.margin-top-extra-small
+          .border-all-red.border-top-red.border-right-red.border-bottom-red.border-left-red.padding-all-small.border-radius-large.margin-top-extra-small
+          .border-all-green.border-top-green.border-right-green.border-bottom-green.border-left-green.padding-all-small.border-radius-large.margin-top-extra-small
+
+      %section.overflow-scroll(data-component='button')
+        .padding-horizontal-small.padding-vertical-extra-small.row
+          .column.column1of2.height-medium-fixed
+            .display-table.width-full.height-full
+              .display-table-row
+                .display-table-cell.vertical-align-middle
+                  %h3.font-size-medium.text-color-white.tesseract-font
+                    Button
+          .column.column1of2.height-medium-fixed
+            .display-table.width-full.height-full
+              .display-table-row
+                .display-table-cell.vertical-align-middle.text-align-right
+                  %button.button.button-black.no-border(expandable)
+                    %i.fa.fa-arrows-alt
+        .background-color-white.padding-all-medium.text-align-center
+          .button.margin-top-extra-small Ok
+          .button.button-green.margin-top-extra-small Save
+          %button.button.button-red.margin-top-extra-small Delete
+          %input.button.button-blue.margin-top-extra-small(type="submit" value="Refresh")
+          .button.button-white.margin-top-extra-small Like
+          .button.button-black.margin-top-extra-small Warp
+          .button.button-grey.margin-top-extra-small Edit
+          .button.margin-top-extra-small
+            %i.icon-tesseract
+
+      %section.overflow-scroll(data-component='clearfix')
+        .padding-horizontal-small.padding-vertical-extra-small.row
+          .column.column1of2.height-medium-fixed
+            .display-table.width-full.height-full
+              .display-table-row
+                .display-table-cell.vertical-align-middle
+                  %h3.font-size-medium.text-color-white.tesseract-font
+                    Clearfix
+          .column.column1of2.height-medium-fixed
+            .display-table.width-full.height-full
+              .display-table-row
+                .display-table-cell.vertical-align-middle.text-align-right
+                  %button.button.button-black.no-border(expandable)
+                    %i.fa.fa-arrows-alt
+        .background-color-white.padding-all-medium.text-align-center
+          .clearfix.border-all.padding-all-small
+            .column1of3.float-left.border-right.border-top.border-bottom.border-left.padding-all-small
+            .column1of3.float-left.border-right.border-top.border-bottom.padding-all-small
+
+      %section.overflow-scroll(data-component='column')
+        .padding-horizontal-small.padding-vertical-extra-small.row
+          .column.column1of2.height-medium-fixed
+            .display-table.width-full.height-full
+              .display-table-row
+                .display-table-cell.vertical-align-middle
+                  %h3.font-size-medium.text-color-white.tesseract-font
+                    Column
+          .column.column1of2.height-medium-fixed
+            .display-table.width-full.height-full
+              .display-table-row
+                .display-table-cell.vertical-align-middle.text-align-right
+                  %button.button.button-black.no-border(expandable)
+                    %i.fa.fa-arrows-alt
+        .background-color-white.padding-all-medium.text-align-center
+          .row
+            .column1of1.column2of2.column3of3.column4of4.column5of5.column6of6.column7of7.column8of8.column9of9.column10of10.column11of11.column12of12.border-all.padding-all-extra-small
+          .row
+            .column.column1of2.column2of4.column3of6.column4of8.column5of10.column6of12.border-left.border-right.border-bottom.padding-all-extra-small
+            .column.column1of2.column2of4.column3of6.column4of8.column5of10.column6of12.border-right.border-bottom.padding-all-extra-small
+          .row
+            .column.column1of3.column2of6.column4of12.border-left.border-bottom.padding-all-extra-small
+            .column.column1of3.column2of6.column4of12.border-left.border-right.border-bottom.padding-all-extra-small
+            .column.column1of3.column2of6.column4of12.border-right.border-bottom.padding-all-extra-small
+          .row
+            .column.column1of4.column2of8.column3of12.border-left.border-bottom.padding-all-extra-small
+            .column.column1of4.column2of8.column3of12.border-left.border-right.border-bottom.padding-all-extra-small
+            .column.column1of4.column2of8.column3of12.border-right.border-bottom.padding-all-extra-small
+            .column.column1of4.column2of8.column3of12.border-right.border-bottom.padding-all-extra-small
+          .row
+            .column.column1of5.column2of10.border-left.border-bottom.padding-all-extra-small
+            .column.column1of5.column2of10.border-left.border-right.border-bottom.padding-all-extra-small
+            .column.column1of5.column2of10.border-right.border-bottom.padding-all-extra-small
+            .column.column1of5.column2of10.border-right.border-bottom.padding-all-extra-small
+            .column.column1of5.column2of10.border-right.border-bottom.padding-all-extra-small
+          .row
+            .column.column1of6.column2of12.border-left.border-bottom.padding-all-extra-small
+            .column.column1of6.column2of12.border-left.border-right.border-bottom.padding-all-extra-small
+            .column.column1of6.column2of12.border-right.border-bottom.padding-all-extra-small
+            .column.column1of6.column2of12.border-right.border-bottom.padding-all-extra-small
+            .column.column1of6.column2of12.border-right.border-bottom.padding-all-extra-small
+            .column.column1of6.column2of12.border-right.border-bottom.padding-all-extra-small
+          .row
+            .column.column1of7.border-left.border-bottom.padding-all-extra-small
+            .column.column1of7.border-left.border-right.border-bottom.padding-all-extra-small
+            .column.column1of7.border-right.border-bottom.padding-all-extra-small
+            .column.column1of7.border-right.border-bottom.padding-all-extra-small
+            .column.column1of7.border-right.border-bottom.padding-all-extra-small
+            .column.column1of7.border-right.border-bottom.padding-all-extra-small
+            .column.column1of7.border-right.border-bottom.padding-all-extra-small
+          .row
+            .column.column1of8.border-left.border-bottom.padding-all-extra-small
+            .column.column1of8.border-left.border-right.border-bottom.padding-all-extra-small
+            .column.column1of8.border-right.border-bottom.padding-all-extra-small
+            .column.column1of8.border-right.border-bottom.padding-all-extra-small
+            .column.column1of8.border-right.border-bottom.padding-all-extra-small
+            .column.column1of8.border-right.border-bottom.padding-all-extra-small
+            .column.column1of8.border-right.border-bottom.padding-all-extra-small
+            .column.column1of8.border-right.border-bottom.padding-all-extra-small
+          .row
+            .column.column1of9.border-left.border-bottom.padding-all-extra-small
+            .column.column1of9.border-left.border-right.border-bottom.padding-all-extra-small
+            .column.column1of9.border-right.border-bottom.padding-all-extra-small
+            .column.column1of9.border-right.border-bottom.padding-all-extra-small
+            .column.column1of9.border-right.border-bottom.padding-all-extra-small
+            .column.column1of9.border-right.border-bottom.padding-all-extra-small
+            .column.column1of9.border-right.border-bottom.padding-all-extra-small
+            .column.column1of9.border-right.border-bottom.padding-all-extra-small
+            .column.column1of9.border-right.border-bottom.padding-all-extra-small
+          .row
+            .column.column1of10.border-left.border-bottom.padding-all-extra-small
+            .column.column1of10.border-left.border-right.border-bottom.padding-all-extra-small
+            .column.column1of10.border-right.border-bottom.padding-all-extra-small
+            .column.column1of10.border-right.border-bottom.padding-all-extra-small
+            .column.column1of10.border-right.border-bottom.padding-all-extra-small
+            .column.column1of10.border-right.border-bottom.padding-all-extra-small
+            .column.column1of10.border-right.border-bottom.padding-all-extra-small
+            .column.column1of10.border-right.border-bottom.padding-all-extra-small
+            .column.column1of10.border-right.border-bottom.padding-all-extra-small
+            .column.column1of10.border-right.border-bottom.padding-all-extra-small
+          .row
+            .column.column1of11.border-left.border-bottom.padding-all-extra-small
+            .column.column1of11.border-left.border-right.border-bottom.padding-all-extra-small
+            .column.column1of11.border-right.border-bottom.padding-all-extra-small
+            .column.column1of11.border-right.border-bottom.padding-all-extra-small
+            .column.column1of11.border-right.border-bottom.padding-all-extra-small
+            .column.column1of11.border-right.border-bottom.padding-all-extra-small
+            .column.column1of11.border-right.border-bottom.padding-all-extra-small
+            .column.column1of11.border-right.border-bottom.padding-all-extra-small
+            .column.column1of11.border-right.border-bottom.padding-all-extra-small
+            .column.column1of11.border-right.border-bottom.padding-all-extra-small
+            .column.column1of11.border-right.border-bottom.padding-all-extra-small
+          .row
+            .column.column1of12.border-left.border-bottom.padding-all-extra-small
+            .column.column1of12.border-left.border-right.border-bottom.padding-all-extra-small
+            .column.column1of12.border-right.border-bottom.padding-all-extra-small
+            .column.column1of12.border-right.border-bottom.padding-all-extra-small
+            .column.column1of12.border-right.border-bottom.padding-all-extra-small
+            .column.column1of12.border-right.border-bottom.padding-all-extra-small
+            .column.column1of12.border-right.border-bottom.padding-all-extra-small
+            .column.column1of12.border-right.border-bottom.padding-all-extra-small
+            .column.column1of12.border-right.border-bottom.padding-all-extra-small
+            .column.column1of12.border-right.border-bottom.padding-all-extra-small
+            .column.column1of12.border-right.border-bottom.padding-all-extra-small
+            .column.column1of12.border-right.border-bottom.padding-all-extra-small
+          .row
+            .column.column2of3.column4of6.column8of12.border-left.border-right.border-bottom.padding-all-extra-small
+            .column.column1of3.border-right.border-bottom.padding-all-extra-small
+          .row
+            .column.column2of5.border-left.border-right.border-bottom.padding-all-extra-small
+            .column.column3of5.column6of10.border-right.border-bottom.padding-all-extra-small
+          .row
+            .column.column2of7.border-left.border-right.border-bottom.padding-all-extra-small
+            .column.column5of7.border-right.border-bottom.padding-all-extra-small
+          .row
+            .column.column2of9.border-left.border-right.border-bottom.padding-all-extra-small
+            .column.column7of9.border-right.border-bottom.padding-all-extra-small
+          .row
+            .column.column2of11.border-left.border-right.border-bottom.padding-all-extra-small
+            .column.column9of11.border-right.border-bottom.padding-all-extra-small
+          .row
+            .column.column3of4.column6of8.column9of12.border-left.border-right.border-right.border-bottom.padding-all-extra-small
+            .column.column1of4.border-right.border-bottom.padding-all-extra-small
+          .row
+            .column.column3of5.border-left.border-right.border-bottom.border-right.padding-all-extra-small
+            .column.column2of5.column4of10.border-right.border-bottom.padding-all-extra-small
+          .row
+            .column.column3of7.border-left.border-right.border-bottom.border-right.padding-all-extra-small
+            .column.column4of7.border-right.border-bottom.padding-all-extra-small
+          .row
+            .column.column3of9.border-left.border-right.border-bottom.border-right.padding-all-extra-small
+            .column.column6of9.border-right.border-bottom.padding-all-extra-small
+          .row
+            .column.column3of11.border-left.border-right.border-bottom.border-right.padding-all-extra-small
+            .column.column8of11.border-right.border-bottom.padding-all-extra-small
+          .row
+            .column.column4of5.column8of10.border-left.border-bottom.border-right.padding-all-extra-small
+            .column.column1of5.border-right.border-bottom.padding-all-extra-small
+          .row
+            .column.column4of7.border-left.border-bottom.border-right.padding-all-extra-small
+            .column.column3of7.border-right.border-bottom.padding-all-extra-small
+          .row
+            .column.column4of9.border-left.border-bottom.border-right.padding-all-extra-small
+            .column.column5of9.border-right.border-bottom.padding-all-extra-small
+          .row
+            .column.column4of11.border-left.border-bottom.border-right.padding-all-extra-small
+            .column.column7of11.border-right.border-bottom.padding-all-extra-small
+          .row
+            .column.column5of6.column10of12.border-left.border-bottom.border-right.padding-all-extra-small
+            .column.column1of6.border-right.border-bottom.padding-all-extra-small
+          .row
+            .column.column5of7.border-left.border-bottom.border-right.padding-all-extra-small
+            .column.column2of7.border-right.border-bottom.padding-all-extra-small
+          .row
+            .column.column5of8.border-left.border-bottom.border-right.padding-all-extra-small
+            .column.column3of8.border-right.border-bottom.padding-all-extra-small
+          .row
+            .column.column5of9.border-left.border-bottom.border-right.padding-all-extra-small
+            .column.column4of9.border-right.border-bottom.padding-all-extra-small
+          .row
+            .column.column5of11.border-left.border-bottom.border-right.padding-all-extra-small
+            .column.column6of11.border-right.border-bottom.padding-all-extra-small
+          .row
+            .column.column5of12.border-left.border-bottom.border-right.padding-all-extra-small
+            .column.column7of12.border-right.border-bottom.padding-all-extra-small
+          .row
+            .column.column6of7.border-left.border-bottom.border-right.padding-all-extra-small
+            .column.column1of7.border-right.border-bottom.padding-all-extra-small
+          .row
+            .column.column6of9.border-left.border-bottom.border-right.padding-all-extra-small
+            .column.column3of9.border-right.border-bottom.padding-all-extra-small
+          .row
+            .column.column6of11.border-left.border-bottom.border-right.padding-all-extra-small
+            .column.column5of11.border-right.border-bottom.padding-all-extra-small
+          .row
+            .column.column7of8.border-left.border-bottom.border-right.padding-all-extra-small
+            .column.column1of8.border-right.border-bottom.padding-all-extra-small
+          .row
+            .column.column7of9.border-left.border-bottom.border-right.padding-all-extra-small
+            .column.column2of9.border-right.border-bottom.padding-all-extra-small
+          .row
+            .column.column7of10.border-left.border-bottom.border-right.padding-all-extra-small
+            .column.column3of10.border-right.border-bottom.padding-all-extra-small
+          .row
+            .column.column7of11.border-left.border-bottom.border-right.padding-all-extra-small
+            .column.column4of11.border-right.border-bottom.padding-all-extra-small
+          .row
+            .column.column7of12.border-left.border-bottom.border-right.padding-all-extra-small
+            .column.column5of12.border-right.border-bottom.padding-all-extra-small
+          .row
+            .column.column8of9.border-left.border-bottom.border-right.padding-all-extra-small
+            .column.column1of9.border-right.border-bottom.padding-all-extra-small
+          .row
+            .column.column8of11.border-left.border-bottom.border-right.padding-all-extra-small
+            .column.column3of11.border-right.border-bottom.padding-all-extra-small
+          .row
+            .column.column9of10.border-left.border-bottom.border-right.padding-all-extra-small
+            .column.column1of10.border-right.border-bottom.padding-all-extra-small
+          .row
+            .column.column9of11.border-left.border-bottom.border-right.padding-all-extra-small
+            .column.column2of11.border-right.border-bottom.padding-all-extra-small
+          .row
+            .column.column10of11.border-left.border-bottom.border-right.padding-all-extra-small
+            .column.column1of11.border-right.border-bottom.padding-all-extra-small
+          .row
+            .column.column11of12.border-left.border-bottom.border-right.padding-all-extra-small
+            .column.column1of12.border-right.border-bottom.padding-all-extra-small
+
+      %section.overflow-scroll(data-component='form-elements')
+        .padding-horizontal-small.padding-vertical-extra-small.row
+          .column.column1of2.height-medium-fixed
+            .display-table.width-full.height-full
+              .display-table-row
+                .display-table-cell.vertical-align-middle
+                  %h3.font-size-medium.text-color-white.tesseract-font
+                    Form Elements
+          .column.column1of2.height-medium-fixed
+            .display-table.width-full.height-full
+              .display-table-row
+                .display-table-cell.vertical-align-middle.text-align-right
+                  %button.button.button-black.no-border(expandable)
+                    %i.fa.fa-arrows-alt
+        .background-color-white.padding-all-medium.text-align-center
+          .row.padding-all-extra-small
+            %input.textfield(type="text" placeholder="John Doe")
+          .row.padding-all-extra-small
+            %input.textfield(type="password" placeholder="Secure Password")
+          .row.padding-all-extra-small.text-align-center.padding-vertical-small
+            .display-inline-block
+              .display-table.width-large-fixed
+                .display-table-row
+                  %label.row.width-full
+                    .column.column1of3.display-table-cell.vertical-align-middle.padding-horizontal-small
+                      %input(type="checkbox")
+                    .column.column2of3.display-table-cell.vertical-align-middle.font-weight-bold.white-space-nowrap.text-align-left
+                      Check me
+          .row.padding-all-extra-small.text-align-center.padding-vertical-small
+            .display-inline-block
+              .display-table.width-large-fixed
+                .display-table-row
+                  %label.row.width-full
+                    .column.column1of3.display-table-cell.vertical-align-middle.padding-horizontal-small
+                      %input(type="radio" name="radio")
+                    .column.column2of3.display-table-cell.vertical-align-middle.font-weight-bold.white-space-nowrap.text-align-left
+                      Check either me
+                .display-table-row
+                  %label.row.width-full
+                    .column.column1of3.display-table-cell.vertical-align-middle.padding-horizontal-small
+                      %input(type="radio" name="radio")
+                    .column.column2of3.display-table-cell.vertical-align-middle.font-weight-bold.white-space-nowrap.text-align-left
+                      or me
+          .row.padding-all-extra-small
+            %textarea.textarea(placeholder="What are you doing?")
+          .row.padding-all-extra-small.padding-top-small
+            %select.select
+              %option Choice 1
+              %option Choice 2
+              %option Choice 3
+
+      %section.overflow-scroll(data-component='responsive-show')
+        .padding-horizontal-small.padding-vertical-extra-small.row
+          .column.column1of2.height-medium-fixed
+            .display-table.width-full.height-full
+              .display-table-row
+                .display-table-cell.vertical-align-middle
+                  %h3.font-size-medium.text-color-white.tesseract-font
+                    Responsive Show
+          .column.column1of2.height-medium-fixed
+            .display-table.width-full.height-full
+              .display-table-row
+                .display-table-cell.vertical-align-middle.text-align-right
+                  %button.button.button-black.no-border(expandable)
+                    %i.fa.fa-arrows-alt
+        .background-color-white.padding-all-medium.text-align-center
+          .show-on-small.border-all.padding-all-small.border-radius-small.margin-bottom-extra-small
+            Smaller than small
+          .show-on-medium.border-all.padding-all-small.border-radius-small.margin-bottom-extra-small
+            Between small and medium
+          .show-on-large.border-all.padding-all-small.border-radius-small.margin-bottom-extra-small
+            Between medium and large
+          .border-all.padding-all-small.border-radius-small.margin-bottom-extra-small
+            Bigger than large
+
+      %section.overflow-scroll(data-component='responsive-hide')
+        .padding-horizontal-small.padding-vertical-extra-small.row
+          .column.column1of2.height-medium-fixed
+            .display-table.width-full.height-full
+              .display-table-row
+                .display-table-cell.vertical-align-middle
+                  %h3.font-size-medium.text-color-white.tesseract-font
+                    Responsive Hide
+          .column.column1of2.height-medium-fixed
+            .display-table.width-full.height-full
+              .display-table-row
+                .display-table-cell.vertical-align-middle.text-align-right
+                  %button.button.button-black.no-border(expandable)
+                    %i.fa.fa-arrows-alt
+        .background-color-white.padding-all-medium.text-align-center
+          .hide-on-small.border-all.padding-all-small.border-radius-small.margin-bottom-extra-small
+            Smaller than small
+          .hide-on-medium.border-all.padding-all-small.border-radius-small.margin-bottom-extra-small
+            Between small and medium
+          .hide-on-large.border-all.padding-all-small.border-radius-small.margin-bottom-extra-small
+            Between medium and large
+          .border-all.padding-all-small.border-radius-small.margin-bottom-extra-small
+            Bigger than large
+
+      %section.overflow-scroll(data-component='responsive-block')
+        .padding-horizontal-small.padding-vertical-extra-small.row
+          .column.column1of2.height-medium-fixed
+            .display-table.width-full.height-full
+              .display-table-row
+                .display-table-cell.vertical-align-middle
+                  %h3.font-size-medium.text-color-white.tesseract-font
+                    Responsive Block
+          .column.column1of2.height-medium-fixed
+            .display-table.width-full.height-full
+              .display-table-row
+                .display-table-cell.vertical-align-middle.text-align-right
+                  %button.button.button-black.no-border(expandable)
+                    %i.fa.fa-arrows-alt
+        .background-color-white.padding-all-medium.text-align-center
+          .display-block-on-small.display-inline-block.border-all.padding-all-small.border-radius-small.margin-bottom-extra-small
+            Smaller than small
+          .display-block-on-medium.display-inline-block.border-all.padding-all-small.border-radius-small.margin-bottom-extra-small
+            Between small and medium
+          .display-block-on-large.display-inline-block.border-all.padding-all-small.border-radius-small.margin-bottom-extra-small
+            Between medium and large
+
+      %section.overflow-scroll(data-component='row')
+        .padding-horizontal-small.padding-vertical-extra-small.row
+          .column.column1of2.height-medium-fixed
+            .display-table.width-full.height-full
+              .display-table-row
+                .display-table-cell.vertical-align-middle
+                  %h3.font-size-medium.text-color-white.tesseract-font
+                    Row
+          .column.column1of2.height-medium-fixed
+            .display-table.width-full.height-full
+              .display-table-row
+                .display-table-cell.vertical-align-middle.text-align-right
+                  %button.button.button-black.no-border(expandable)
+                    %i.fa.fa-arrows-alt
+        .row.background-color-white.padding-all-medium.text-align-center
+          .column.column1of11
+            .row.height-extra-large-fixed.margin-bottom-extra-small.border-left
+              .column.column1of12.height-full.border-top.border-bottom.border-right
+                .row1of1.row2of2.row3of3.row4of4.row5of5.row6of6.row7of7.row8of8.row9of9.row10of10.row11of11.row12of12
+              .column.column1of12.height-full.border-bottom.border-right
+                .row.row1of2.row2of4.row3of6.row4of8.row5of10.row6of12.border-top
+                .row.row1of2.row2of4.row3of6.row4of8.row5of10.row6of12.border-top
+              .column.column1of12.height-full.border-bottom.border-right
+                .row.row1of3.row2of6.row4of12.border-top
+                .row.row1of3.row2of6.row4of12.border-top
+                .row.row1of3.row2of6.row4of12.border-top
+              .column.column1of12.height-full.border-bottom.border-right
+                .row.row1of4.row2of8.row3of12.border-top
+                .row.row1of4.row2of8.row3of12.border-top
+                .row.row1of4.row2of8.row3of12.border-top
+                .row.row1of4.row2of8.row3of12.border-top
+              .column.column1of12.height-full.border-bottom.border-right
+                .row.row1of5.row2of10.border-top
+                .row.row1of5.row2of10.border-top
+                .row.row1of5.row2of10.border-top
+                .row.row1of5.row2of10.border-top
+                .row.row1of5.row2of10.border-top
+              .column.column1of12.height-full.border-bottom.border-right
+                .row.row1of6.row2of12.border-top
+                .row.row1of6.row2of12.border-top
+                .row.row1of6.row2of12.border-top
+                .row.row1of6.row2of12.border-top
+                .row.row1of6.row2of12.border-top
+                .row.row1of6.row2of12.border-top
+              .column.column1of12.height-full.border-bottom.border-right
+                .row.row1of7.border-top
+                .row.row1of7.border-top
+                .row.row1of7.border-top
+                .row.row1of7.border-top
+                .row.row1of7.border-top
+                .row.row1of7.border-top
+                .row.row1of7.border-top
+              .column.column1of12.height-full.border-bottom.border-right
+                .row.row1of8.border-top
+                .row.row1of8.border-top
+                .row.row1of8.border-top
+                .row.row1of8.border-top
+                .row.row1of8.border-top
+                .row.row1of8.border-top
+                .row.row1of8.border-top
+                .row.row1of8.border-top
+              .column.column1of12.height-full.border-bottom.border-right
+                .row.row1of9.border-top
+                .row.row1of9.border-top
+                .row.row1of9.border-top
+                .row.row1of9.border-top
+                .row.row1of9.border-top
+                .row.row1of9.border-top
+                .row.row1of9.border-top
+                .row.row1of9.border-top
+                .row.row1of9.border-top
+              .column.column1of12.height-full.border-bottom.border-right
+                .row.row1of10.border-top
+                .row.row1of10.border-top
+                .row.row1of10.border-top
+                .row.row1of10.border-top
+                .row.row1of10.border-top
+                .row.row1of10.border-top
+                .row.row1of10.border-top
+                .row.row1of10.border-top
+                .row.row1of10.border-top
+                .row.row1of10.border-top
+              .column.column1of12.height-full.border-bottom.border-right
+                .row.row1of11.border-top
+                .row.row1of11.border-top
+                .row.row1of11.border-top
+                .row.row1of11.border-top
+                .row.row1of11.border-top
+                .row.row1of11.border-top
+                .row.row1of11.border-top
+                .row.row1of11.border-top
+                .row.row1of11.border-top
+                .row.row1of11.border-top
+                .row.row1of11.border-top
+              .column.column1of12.height-full.border-bottom.border-right
+                .row.row1of12.border-top
+                .row.row1of12.border-top
+                .row.row1of12.border-top
+                .row.row1of12.border-top
+                .row.row1of12.border-top
+                .row.row1of12.border-top
+                .row.row1of12.border-top
+                .row.row1of12.border-top
+                .row.row1of12.border-top
+                .row.row1of12.border-top
+                .row.row1of12.border-top
+                .row.row1of12.border-top
+          .column.column1of11
+            .row.height-extra-large-fixed.margin-bottom-extra-small
+              .column.column1of5.height-full.border-bottom.border-right
+                .row.row2of3.row4of6.row8of12.border-top
+                .row.row1of3.border-top
+              .column.column1of5.height-full.border-bottom.border-right
+                .row.row2of5.border-top
+                .row.row3of5.row6of10.border-top
+              .column.column1of5.height-full.border-bottom.border-right
+                .row.row2of7.border-top
+                .row.row5of7.border-top
+              .column.column1of5.height-full.border-bottom.border-right
+                .row.row2of9.border-top
+                .row.row7of9.border-top
+              .column.column1of5.height-full.border-bottom.border-right
+                .row.row2of11.border-top
+                .row.row9of11.border-top
+          .column.column1of11
+            .row.height-extra-large-fixed.margin-bottom-extra-small
+              .column.column1of5.height-full.border-bottom.border-right
+                .row.row3of4.row6of8.row9of12.border-top
+                .row.row1of4.border-top
+              .column.column1of5.height-full.border-bottom.border-right
+                .row.row3of5.border-top
+                .row.row2of5.row4of10.border-top
+              .column.column1of5.height-full.border-bottom.border-right
+                .row.row3of7.border-top
+                .row.row4of7.border-top
+              .column.column1of5.height-full.border-bottom.border-right
+                .row.row3of9.border-top
+                .row.row6of9.border-top
+              .column.column1of5.height-full.border-bottom.border-right
+                .row.row3of11.border-top
+                .row.row8of11.border-top
+          .column.column1of11
+            .row.height-extra-large-fixed.margin-bottom-extra-small
+              .column.column1of4.height-full.border-bottom.border-right
+                .row.row4of5.row8of10.border-top
+                .row.row1of5.border-top
+              .column.column1of4.height-full.border-bottom.border-right
+                .row.row4of7.border-top
+                .row.row3of7.border-top
+              .column.column1of4.height-full.border-bottom.border-right
+                .row.row4of9.border-top
+                .row.row5of9.border-top
+              .column.column1of4.height-full.border-bottom.border-right
+                .row.row4of11.border-top
+                .row.row7of11.border-top
+          .column.column1of11
+            .row.height-extra-large-fixed.margin-bottom-extra-small
+              .column.column1of6.height-full.border-bottom.border-right
+                .row.row5of6.row10of12.border-top
+                .row.row1of6.border-top
+              .column.column1of6.height-full.border-bottom.border-right
+                .row.row5of7.border-top
+                .row.row2of7.border-top
+              .column.column1of6.height-full.border-bottom.border-right
+                .row.row5of8.border-top
+                .row.row3of8.border-top
+              .column.column1of6.height-full.border-bottom.border-right
+                .row.row5of9.border-top
+                .row.row4of9.border-top
+              .column.column1of6.height-full.border-bottom.border-right
+                .row.row5of11.border-top
+                .row.row6of11.border-top
+              .column.column1of6.height-full.border-bottom.border-right
+                .row.row5of12.border-top
+                .row.row7of12.border-top
+          .column.column1of11
+            .row.height-extra-large-fixed.margin-bottom-extra-small
+              .column.column1of3.height-full.border-bottom.border-right
+                .row.row6of7.border-top
+                .row.row1of7.border-top
+              .column.column1of3.height-full.border-bottom.border-right
+                .row.row6of9.border-top
+                .row.row3of9.border-top
+              .column.column1of3.height-full.border-bottom.border-right
+                .row.row6of11.border-top
+                .row.row5of11.border-top
+          .column.column1of11
+            .row.height-extra-large-fixed.margin-bottom-extra-small
+              .column.column1of5.height-full.border-bottom.border-right
+                .row.row7of8.border-top
+                .row.row1of8.border-top
+              .column.column1of5.height-full.border-bottom.border-right
+                .row.row7of9.border-top
+                .row.row2of9.border-top
+              .column.column1of5.height-full.border-bottom.border-right
+                .row.row7of10.border-top
+                .row.row3of10.border-top
+              .column.column1of5.height-full.border-bottom.border-right
+                .row.row7of11.border-top
+                .row.row4of11.border-top
+              .column.column1of5.height-full.border-bottom.border-right
+                .row.row7of12.border-top
+                .row.row5of12.border-top
+          .column.column1of11
+            .row.height-extra-large-fixed.margin-bottom-extra-small
+              .column.column1of2.height-full.border-bottom.border-right
+                .row.row8of9.border-top
+                .row.row1of9.border-top
+              .column.column1of2.height-full.border-bottom.border-right
+                .row.row8of11.border-top
+                .row.row3of11.border-top
+          .column.column1of11
+            .row.height-extra-large-fixed.margin-bottom-extra-small
+              .column.column1of2.height-full.border-bottom.border-right
+                .row.row9of10.border-top
+                .row.row1of10.border-top
+              .column.column1of2.height-full.border-bottom.border-right
+                .row.row9of11.border-top
+                .row.row2of11.border-top
+          .column.column1of11
+            .row.height-extra-large-fixed.margin-bottom-extra-small.border-bottom.border-right
+              .row.row10of11.border-top
+              .row.row1of11.border-top
+          .column.column1of11
+            .row.height-extra-large-fixed.margin-bottom-extra-small.border-bottom.border-right
+              .row.row11of12.border-top
+              .row.row1of12.border-top
+
+      %section.overflow-scroll(data-component='text-ellipsis')
+        .padding-horizontal-small.padding-vertical-extra-small.row
+          .column.column1of2.height-medium-fixed
+            .display-table.width-full.height-full
+              .display-table-row
+                .display-table-cell.vertical-align-middle
+                  %h3.font-size-medium.text-color-white.tesseract-font
+                    Text Ellipsis
+          .column.column1of2.height-medium-fixed
+            .display-table.width-full.height-full
+              .display-table-row
+                .display-table-cell.vertical-align-middle.text-align-right
+                  %button.button.button-black.no-border(expandable)
+                    %i.fa.fa-arrows-alt
+        .background-color-white.padding-all-medium.text-align-center
+          .text-ellipsis Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+
+  %section.margin-top-small
+
+    %h2.font-size-extra-large.text-align-center.text-color-white.tesseract-font.font-weight-light
+      Credits
+
+    %section.padding-top-extra-small
+      .padding-horizontal-small.padding-vertical-extra-small.row
+        %h3.font-size-medium.text-color-white.tesseract-font
+          BrowserStack
+      %p.font-size-small.text-color-white.tesseract-font.padding-horizontal-small.padding-bottom-extra-small
+        This project uses BrowserStack to test on various browsers in an easy and automated way.
+    
+    %a.background-color-white.padding-all-extra-small.text-align-center.width-full.display-block.margin-top-extra-small(href='https://www.browserstack.com/')
+      %img.height-medium-fixed(src='BrowserStack.png')
+
+  .tesseract-navigation.top0.position-fixed.height-full.width-full
+    .row.height-full
+      .column.column1of3.height-full
+      .column.column2of3.background-color-white.border-left.height-full
+        .row.padding-top-medium-fixed.overflow-scroll.height-full
+          .column.column1of5
+          .column.column4of5.text-align-rirght.padding-vertical-small
+            %ul.width-full
+              %li.width-full.text-ellipsis.padding-bottom-small(data-section='principle')
+                .tesseract-font.font-size-medium.padding-bottom-small Principles
+                %ul.width-full
+              %li.width-full.text-ellipsis.padding-bottom-small(data-section='module')
+                .tesseract-font.font-size-medium.padding-bottom-small Modules
+                %ul.width-full
+              %li.width-full.text-ellipsis.padding-bottom-small(data-section='component')
+                .tesseract-font.font-size-medium.padding-bottom-small Components
+                %ul.width-full

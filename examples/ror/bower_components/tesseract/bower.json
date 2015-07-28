@@ -1,0 +1,11 @@
+{
+  "name": "tesseract",
+  "description": "CSS-Framework based on existing software principles.",
+  "version": "0.0.1",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "BrowserDetection": "git@github.com:pape-io/browser-detection.git#~1.0.2",
+    "reset-css": "~2.0.2011012602"
+  }
+}

@@ -1,0 +1,6 @@
+@import "compass/css3/opacity"
+
+@each $opacity_name, $opacity_value in $opacities
+
+  .opacity-#{$opacity_name}
+    @include opacity($opacity_value)

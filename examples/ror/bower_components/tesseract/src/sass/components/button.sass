@@ -1,0 +1,29 @@
+.button
+  @extend .border-all
+  @extend .border-radius-small
+  @extend .cursor-pointer
+  @extend .display-inline-block
+  @extend .font-weight-bold
+  @extend .no-outline
+  @extend .padding-all-extra-small-fixed
+  @extend .text-ellipsis
+  @extend .user-select-none
+  @extend .vertical-align-middle
+
+@each $color, $value in $colors
+
+  .button-#{$color}
+    @extend .border-all-#{$color}
+    @extend .background-color-#{$color}-intense
+
+  .button-#{$color}:active
+    @extend .background-color-#{$color}
+
+.button:active
+  @extend .button-grey:active
+  
+.button-black
+  @extend .text-color-white
+  
+.button-black:active
+  @extend .text-color-black

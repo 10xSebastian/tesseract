@@ -1,0 +1,249 @@
+@font-face {
+  font-family: "tesseract-icons";
+  src: url("icons/fonts/tesseract-icons.eot");
+  src: url("icons/fonts/tesseract-icons.eot?#iefix") format("embedded-opentype"), url("icons/fonts/tesseract-icons.woff") format("woff"), url("icons/fonts/tesseract-icons.ttf") format("truetype"), url("icons/fonts/tesseract-icons.svg#tesseract-icons") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  @font-face {
+    font-family: "tesseract-icons";
+    src: url("icons/fonts/tesseract-icons.svg#tesseract-icons") format("svg");
+  }
+}
+[data-icon]:before {
+  content: attr(data-icon);
+}
+
+[data-icon]:before,
+.icon-tesseract:before,
+.icon-tesseract-small:before {
+  display: inline-block;
+  font-family: "tesseract-icons";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
+.icon-tesseract:before {
+  content: "\f100";
+}
+
+.icon-tesseract-small:before {
+  content: "\f101";
+}
+
+.starfield-image {
+  background: url("../img/starfield.jpg");
+  background-size: cover;
+  background-position: center center;
+}
+
+.starfield-canvas {
+  -moz-transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=18);
+  opacity: 0.18;
+}
+
+.tesseract-font {
+  font-family: "Advent Pro", "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+.tesseract {
+  height: 200px;
+  margin-left: -100px;
+  margin-top: -100px;
+  perspective: 1000px;
+  position: absolute;
+  width: 200px;
+}
+
+.tesseract-outside {
+  height: 100%;
+  position: absolute;
+  -moz-transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -moz-transform: translateZ(-100px) rotateX(-220deg) rotateY(45deg);
+  -ms-transform: translateZ(-100px) rotateX(-220deg) rotateY(45deg);
+  -webkit-transform: translateZ(-100px) rotateX(-220deg) rotateY(45deg);
+  transform: translateZ(-100px) rotateX(-220deg) rotateY(45deg);
+  width: 100%;
+}
+
+.tesseract-inside {
+  height: 100%;
+  position: absolute;
+  -moz-transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -moz-transform: translateZ(-150px) scale(0.5) rotateX(-220deg) rotateY(45deg);
+  -ms-transform: translateZ(-150px) scale(0.5) rotateX(-220deg) rotateY(45deg);
+  -webkit-transform: translateZ(-150px) scale(0.5) rotateX(-220deg) rotateY(45deg);
+  transform: translateZ(-150px) scale(0.5) rotateX(-220deg) rotateY(45deg);
+  width: 100%;
+}
+
+.tesseract-side {
+  background: rgba(180, 180, 255, 0.3);
+  border: 1px solid white;
+  display: block;
+  height: 200px;
+  position: absolute;
+  width: 200px;
+  -moz-transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.tesseract-inside .tesseract-side {
+  -moz-animation: tesseractglow 10s 1;
+  -webkit-animation: tesseractglow 10s 1;
+  animation: tesseractglow 10s 1;
+  -moz-animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -moz-animation-timing-function: linear;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+}
+
+.tesseract-blur {
+  background: rgba(180, 180, 255, 0.4);
+  -webkit-filter: blur(20px);
+}
+
+.tesseract-starfield {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
+  opacity: 0.3;
+}
+
+.tesseract-front {
+  -moz-transform: rotateY(0deg) translateZ(100px);
+  -ms-transform: rotateY(0deg) translateZ(100px);
+  -webkit-transform: rotateY(0deg) translateZ(100px);
+  transform: rotateY(0deg) translateZ(100px);
+}
+
+.tesseract-back {
+  -moz-transform: rotateX(180deg) translateZ(100px);
+  -ms-transform: rotateX(180deg) translateZ(100px);
+  -webkit-transform: rotateX(180deg) translateZ(100px);
+  transform: rotateX(180deg) translateZ(100px);
+}
+
+.tesseract-right {
+  -moz-transform: rotateY(90deg) translateZ(100px);
+  -ms-transform: rotateY(90deg) translateZ(100px);
+  -webkit-transform: rotateY(90deg) translateZ(100px);
+  transform: rotateY(90deg) translateZ(100px);
+}
+
+.tesseract-left {
+  -moz-transform: rotateY(-90deg) translateZ(100px);
+  -ms-transform: rotateY(-90deg) translateZ(100px);
+  -webkit-transform: rotateY(-90deg) translateZ(100px);
+  transform: rotateY(-90deg) translateZ(100px);
+}
+
+.tesseract-top {
+  -moz-transform: rotateX(90deg) translateZ(100px);
+  -ms-transform: rotateX(90deg) translateZ(100px);
+  -webkit-transform: rotateX(90deg) translateZ(100px);
+  transform: rotateX(90deg) translateZ(100px);
+}
+
+.tesseract-bottom {
+  -moz-transform: rotateX(-90deg) translateZ(100px);
+  -ms-transform: rotateX(-90deg) translateZ(100px);
+  -webkit-transform: rotateX(-90deg) translateZ(100px);
+  transform: rotateX(-90deg) translateZ(100px);
+}
+
+@-moz-keyframes tesseractglow {
+  0% {
+    background: rgba(180, 180, 255, 0.4);
+  }
+  50% {
+    background: white;
+  }
+  100% {
+    background: rgba(180, 180, 255, 0.4);
+  }
+}
+@-webkit-keyframes tesseractglow {
+  0% {
+    background: rgba(180, 180, 255, 0.4);
+  }
+  50% {
+    background: white;
+  }
+  100% {
+    background: rgba(180, 180, 255, 0.4);
+  }
+}
+@keyframes tesseractglow {
+  0% {
+    background: rgba(180, 180, 255, 0.4);
+  }
+  50% {
+    background: white;
+  }
+  100% {
+    background: rgba(180, 180, 255, 0.4);
+  }
+}
+.tesseract-header {
+  top: -100px;
+  -moz-transition-property: top;
+  -o-transition-property: top;
+  -webkit-transition-property: top;
+  transition-property: top;
+  -moz-transition-duration: 0.6s;
+  -o-transition-duration: 0.6s;
+  -webkit-transition-duration: 0.6s;
+  transition-duration: 0.6s;
+}
+
+.tesseract-header-show {
+  top: 0px;
+}
+
+.tesseract-navigation {
+  right: -100%;
+  -moz-transition-property: right;
+  -o-transition-property: right;
+  -webkit-transition-property: right;
+  transition-property: right;
+  -moz-transition-duration: 0.6s;
+  -o-transition-duration: 0.6s;
+  -webkit-transition-duration: 0.6s;
+  transition-duration: 0.6s;
+}
+
+.tesseract-navigation-show {
+  right: 0;
+}
+
+.tesseract-code {
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+  line-height: 1.3em;
+}
+
+.tesseract-image {
+  height: 304px;
+  position: relative;
+  top: -60px;
+  width: 312px;
+}
+
+/*# sourceMappingURL=tesseract-page.css.map */
