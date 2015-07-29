@@ -10,8 +10,8 @@ module.exports = function(grunt) {
       'haml:dist',
       'cssmin:dist',
       'connect:dist',
-      'open:dist',
-      // 'webdriver:screenshots'
+      'webdriver:screenshots',
+      'open:dist'
     ]);
   });
 };
