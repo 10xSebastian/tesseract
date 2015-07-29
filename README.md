@@ -52,8 +52,14 @@ You need access to tesseract's source sass files in order to create own componen
   ```sass
   @import 'tesseract'
 
+  .button-success
+    @extend .button-green
+
+  .button-danger
+    @extend .button-red
+
   .navigation
-    @extend .background-color-grey
+    @extend .background-color-black
     @extend .border-radius-small
     @extend .border-all-grey
 
@@ -66,15 +72,20 @@ You need access to tesseract's source sass files in order to create own componen
     @extend .text-ellipsis
     @extend .user-select-none
     @extend .vertical-align-middle
+    @extend .text-color-white
 
-  .navigation-item:hover
-    @extend .background-color-white
+  .headline-extra-large
+    @extend .font-weight-extra-bold
+    @extend .font-size-extra-small
+    @extend .line-height-medium
 
-  .navigation-item:active
-    @extend .background-color-grey-intense
+  .headline-large
+    @extend .font-weight-bold
+    @extend .font-size-large
+    @extend .line-height-medium
   ```
 
-  → [Custom component example](examples/ror/app/assets/stylesheets/application.sass)
+  → [Custom component examples](examples/ror/app/assets/stylesheets/components)
 
 ## Principles
 
