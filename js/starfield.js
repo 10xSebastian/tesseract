@@ -178,7 +178,7 @@ StarField.prototype.render = function(numStars, maxStarSpeed) {
 }());
 
 jQuery(function(){
-    if(BrowserDetection.match([{name: "Chrome"}, {name: "Firefox"}, {name: "Opera"}, {name: "Safari"}])){    
+    if(BrowserDetection.match([{name: "Chrome"}, {name: "Opera"}])){    
         $('.tesseract').removeClass('display-none');
         $('.tesseract-starfield').each(function(i, el){
           new StarField(el, '180,180,255').render(333, 3);
