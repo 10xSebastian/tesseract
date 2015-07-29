@@ -32,15 +32,7 @@ Install tesseract source files via Bower:
 bower install git@github.com:pape-io/tesseract.git
 ```
 
-Install dependencies: sass, sass-globbing and compass.
-
-e.g. via Gemfile:
-
-```
-gem 'sass'
-gem 'sass-globbing'
-gem 'compass'
-```
+Install dependencies: [sass](https://github.com/sass/sass), [sass-globbing](https://github.com/chriseppstein/sass-globbing) and [compass](https://github.com/Compass/compass).
 
 e.g. Rails Gemfile:
 
