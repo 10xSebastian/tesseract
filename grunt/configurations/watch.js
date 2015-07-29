@@ -9,7 +9,7 @@ module.exports = {
       'copy:serve',
       'haml:serve', 
       'compass:serve', 
-      // 'uncss:serve', 
+      'uncss:serve', 
       'diffalert:serve', 
       'csscss:serve', 
       'concat_css:serve'
@@ -22,10 +22,16 @@ module.exports = {
       'copy:serve',
       'haml:serve', 
       'compass:serve', 
-      // 'uncss:serve', 
+      'uncss:serve', 
       'diffalert:serve', 
       'csscss:serve', 
       'concat_css:serve'
+    ]
+  },
+  js: {
+    files: 'js/{**/,}*.js',
+    tasks: [
+      'copy:serve'
     ]
   }
 };
