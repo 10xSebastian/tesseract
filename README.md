@@ -11,75 +11,70 @@ This css framework is build upon existing software principles to help keeping th
 ## Quick start guide
 
 Embed tesseract using Github's CDN and use [existing modules and components](https://pape-io.github.io/tesseract/) right away.
+
 ```html
   <link href='https://cdn.rawgit.com/pape-io/tesseract/1.0.0/dist/tesseract.min.css' rel='stylesheet' type='text/css'>
-
-  ...
-
-  <div class='padding-all-small border-all'>
-    ...
-  </div>
 ```
+
 → [Example using CDN](examples/simple.html)
 
 ## Create own components
 
 You need access to tesseract's source sass files in order to create own components.
 
-Install tesseract source files via Bower:
+1. Install tesseract source files via Bower
 
-```
-bower install git@github.com:pape-io/tesseract.git
-```
+  ```
+  bower install git@github.com:pape-io/tesseract.git
+  ```
 
-Install dependencies: [sass](https://github.com/sass/sass), [sass-globbing](https://github.com/chriseppstein/sass-globbing) and [compass](https://github.com/Compass/compass).
+1. Install dependencies: [sass](https://github.com/sass/sass), [sass-globbing](https://github.com/chriseppstein/sass-globbing) and [compass](https://github.com/Compass/compass)
 
-e.g. Rails Gemfile:
+  e.g. Rails' Gemfile:
 
-```
-gem 'sass'
-gem 'sass-globbing'
-gem 'compass-rails'
-```
+  ```ruby
+  gem 'sass'
+  gem 'sass-globbing'
+  gem 'compass-rails'
+  ```
 
-Make source available.
+1. Make source available
 
-Ruby on Rails example:
+  Ruby on Rails example:
 
-```ruby
-# config/application.rb
+  ```ruby
+  # config/application.rb
+  config.assets.paths << Rails.root.join('bower_components', 'tesseract', 'src', 'sass')
+  ```
 
-config.assets.paths << Rails.root.join('bower_components', 'tesseract', 'src', 'sass')
-```
+1. Start to create own components
 
-Now that you have access to tesseract modules, you can start to create own components:
+  ```sass
+  @import 'tesseract'
 
-```sass
-@import 'tesseract'
+  .navigation
+    @extend .background-color-grey
+    @extend .border-radius-small
+    @extend .border-all-grey
 
-.navigation
-  @extend .background-color-grey
-  @extend .border-radius-small
-  @extend .border-all-grey
+  .navigation-item
+    @extend .cursor-pointer
+    @extend .display-inline-block
+    @extend .font-weight-bold
+    @extend .no-outline
+    @extend .padding-all-extra-small-fixed
+    @extend .text-ellipsis
+    @extend .user-select-none
+    @extend .vertical-align-middle
 
-.navigation-item
-  @extend .cursor-pointer
-  @extend .display-inline-block
-  @extend .font-weight-bold
-  @extend .no-outline
-  @extend .padding-all-extra-small-fixed
-  @extend .text-ellipsis
-  @extend .user-select-none
-  @extend .vertical-align-middle
+  .navigation-item:hover
+    @extend .background-color-white
 
-.navigation-item:hover
-  @extend .background-color-white
+  .navigation-item:active
+    @extend .background-color-grey-intense
+  ```
 
-.navigation-item:active
-  @extend .background-color-grey-intense
-```
-
-→ [Custom component example](examples/ror/app/assets/stylesheets/application.sass)
+  → [Custom component example](examples/ror/app/assets/stylesheets/application.sass)
 
 ## Principles
 
