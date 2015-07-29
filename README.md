@@ -26,7 +26,7 @@ Embed tesseract using Github's CDN and use [existing modules and components](htt
 
 You need access to tesseract's source sass files in order to create own components.
 
-Install tesseract source files via bower:
+Install tesseract source files via Bower:
 
 ```
 bower install git@github.com:pape-io/tesseract.git
