@@ -620,6 +620,10 @@ table {
   font-weight: lighter;
 }
 
+.font-sans-serif {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
 .height-minimum-fixed, .column {
   min-height: 1px;
 }
@@ -1290,27 +1294,27 @@ table {
   text-align: right;
 }
 
-.text-color-white, .button-black {
+.text-color-white, .button-black, .text-color-white:visited, .button-black:visited, .text-color-white:focus, .button-black:focus, .text-color-white:hover, .button-black:hover, .text-color-white:active, .button-black:active {
   color: #FFF;
 }
 
-.text-color-black, .button-black:active, a, a:visited, a:focus, a:hover, a:active {
+.text-color-black, .button-black:active, .text-color-black:visited, .button-black:visited:active, .text-color-black:focus, .button-black:focus:active, .text-color-black:hover, .button-black:hover:active, .text-color-black:active, .button-black:active {
   color: #000;
 }
 
-.text-color-grey {
+.text-color-grey, .text-color-grey:visited, .text-color-grey:focus, .text-color-grey:hover, .text-color-grey:active {
   color: #CCC;
 }
 
-.text-color-blue {
+.text-color-blue, .text-color-blue:visited, .text-color-blue:focus, .text-color-blue:hover, .text-color-blue:active {
   color: #acace8;
 }
 
-.text-color-red {
+.text-color-red, .text-color-red:visited, .text-color-red:focus, .text-color-red:hover, .text-color-red:active {
   color: #ef7676;
 }
 
-.text-color-green {
+.text-color-green, .text-color-green:visited, .text-color-green:focus, .text-color-green:hover, .text-color-green:active {
   color: #84dd84;
 }
 
@@ -1447,10 +1451,6 @@ table {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-}
-
-html {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 /*# sourceMappingURL=tesseract.css.map */
