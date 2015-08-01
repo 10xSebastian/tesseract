@@ -1,17 +1,7 @@
-.height-extra-small
-  height: 5%
+@each $name, $value in $sizes
 
-.height-small
-  height: 15%
-
-.height-medium
-  height: 20%
-
-.height-large
-  height: 50%
-
-.height-extra-large
-  height: 100%
+  .height-#{$name}
+    height: $value
 
 .height-full
   @extend .height-extra-large

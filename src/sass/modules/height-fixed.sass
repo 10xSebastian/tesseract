@@ -1,17 +1,7 @@
 .height-minimum-fixed
   min-height: 1px
 
-.height-extra-small-fixed
-  height: 8px
+@each $name, $value in $fixed-sizes
 
-.height-small-fixed
-  height: 24px
-
-.height-medium-fixed
-  height: 52px
-
-.height-large-fixed
-  height: 216px
-
-.height-extra-large-fixed
-  height: 648px
+  .height-#{$name}-fixed
+    height: $value

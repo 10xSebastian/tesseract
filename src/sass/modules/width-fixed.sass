@@ -1,0 +1,7 @@
+.width-minimum-fixed
+  min-width: 1px
+
+@each $name, $value in $fixed-sizes
+
+  .width-#{$name}-fixed
+    width: $value
