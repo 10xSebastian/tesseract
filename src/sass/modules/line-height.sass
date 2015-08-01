@@ -1,14 +1,4 @@
-.line-height-extra-small
-  line-height: 100%
+@each $name, $value in $line-heights
 
-.line-height-small
-  line-height: 130%
-
-.line-height-medium
-  line-height: 170%
-
-.line-height-large
-  line-height: 230%
-
-.line-height-extra-large
-  line-height: 330%
+  .line-height-#{name}
+    line-height: $value

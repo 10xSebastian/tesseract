@@ -1,5 +1,5 @@
 !!!
-%html.background-color-black.height-full{:lang => "en"}
+%html.font-sans-serif.background-color-black.height-full{:lang => "en"}
 
   %head
     %title Tesseract | A CSS-Framework on Principles ▣
@@ -28,7 +28,7 @@
           .display-table.width-full.height-small-fixed
             .display-table-row
               .display-table-cell.vertical-align-middle.padding-right-small.width-full
-                %a.font-size-medium.display-inline-block(title="Tesseract" href="#start" style='position: relative; left: -20px; top: -22px;')
+                %a.text-color-black.font-size-medium.display-inline-block(title="Tesseract" href="#start" style='position: relative; left: -20px; top: -22px;')
                   %i.icon-tesseract.font-size-extra-large.position-absolute.text-color-grey
                   %i.icon-tesseract-small.font-size-extra-large.position-absolute
         .column.column1of3.text-align-right.padding-vertical-extra-small-fixed
@@ -589,6 +589,7 @@
           .border-all-width-large.border-top-width-large.border-right-width-large.border-bottom-width-large.border-left-width-large.padding-all-small.border-radius-large.margin-top-small.border-all
           .border-all-width-extra-large.border-top-width-extra-large.border-right-width-extra-large.border-bottom-width-extra-large.border-left-width-extra-large.padding-all-small.border-radius-large.margin-top-small.border-all
 
+
       %section(data-module='cursor')
         .padding-horizontal-small.padding-vertical-extra-small
           .column.column1of2.height-medium-fixed
@@ -1134,11 +1135,11 @@
           .height-medium.background-color-grey.width-full.margin-top-extra-small
           .height-large.background-color-grey.width-full.margin-top-extra-small
           .height-extra-large.height-full.background-color-grey.width-full.margin-top-extra-small
-          .height-extra-small-fixed.max-height-extra-small-fixed.background-color-grey.width-full.margin-top-extra-small
-          .height-small-fixed.max-height-small-fixed.background-color-grey.width-full.margin-top-extra-small
-          .height-medium-fixed.max-height-medium-fixed.background-color-grey.width-full.margin-top-extra-small
-          .height-large-fixed.max-height-large-fixed.background-color-grey.width-full.margin-top-extra-small
-          .height-extra-large-fixed.max-height-extra-large-fixed.background-color-grey.width-full.margin-top-extra-small
+          .height-extra-small-fixed.max-height-extra-small.background-color-grey.width-full.margin-top-extra-small
+          .height-small-fixed.max-height-small.background-color-grey.width-full.margin-top-extra-small
+          .height-medium-fixed.max-height-medium.background-color-grey.width-full.margin-top-extra-small
+          .height-large-fixed.max-height-large.background-color-grey.width-full.margin-top-extra-small
+          .height-extra-large-fixed.max-height-extra-large.background-color-grey.width-full.margin-top-extra-small
       
       %section(data-module='overflow')
         .padding-horizontal-small.padding-vertical-extra-small.row
@@ -1198,6 +1199,7 @@
         .background-color-white.padding-all-medium.text-align-center
           .text-color-black.display-inline-block BLACK
           .text-color-white.display-inline-block.background-color-black WHITE
+          .text-color-grey.display-inline-block GREY
           .text-color-blue.display-inline-block BLUE
           .text-color-red.display-inline-block RED
           .text-color-green.display-inline-block GREEN
@@ -1278,11 +1280,15 @@
             .width-extra-large.width-full.background-color-grey.height-small-fixed
           .margin-top-small
             .width-minimum-fixed.background-color-grey.height-small-fixed.display-inline-block
-            .width-extra-small-fixed.background-color-grey.height-small-fixed.display-inline-block
-            .width-small-fixed.background-color-grey.height-small-fixed.display-inline-block
-            .width-medium-fixed.background-color-grey.height-small-fixed.display-inline-block
-            .width-large-fixed.background-color-grey.height-small-fixed.display-inline-block
-            .width-extra-large-fixed.background-color-grey.height-small-fixed.display-inline-block
+            .width-extra-small-fixed.max-width-extra-small.background-color-grey.height-small-fixed.display-inline-block
+            .width-small-fixed.max-width-small-fixed.background-color-grey.height-small-fixed.display-inline-block
+            .width-medium-fixed.max-width-medium-fixed.background-color-grey.height-small-fixed.display-inline-block
+            .width-large-fixed.max-width-large-fixed.background-color-grey.height-small-fixed.display-inline-block
+            .width-extra-large-fixed.max-width-extra-large.background-color-grey.height-small-fixed.display-inline-block
+          .margin-top-small.text-align-center
+            .width-full.max-width-960.background-color-grey.height-small-fixed.display-inline-block
+          .margin-top-small.text-align-center
+            .width-full.max-width-990.background-color-grey.height-small-fixed.display-inline-block
 
     %a(name="components")
     %section.padding-top-medium
@@ -1947,7 +1953,7 @@
       %p.font-size-small.text-color-white.tesseract-font.padding-horizontal-small.padding-bottom-extra-small
         This project uses BrowserStack to test on various browsers in an easy and automated way.
     
-    %a.background-color-white.padding-all-extra-small.text-align-center.width-full.display-block.margin-top-extra-small(href='https://www.browserstack.com/')
+    %a.text-color-black.background-color-white.padding-all-extra-small.text-align-center.width-full.display-block.margin-top-extra-small(href='https://www.browserstack.com/')
       %img.height-medium-fixed(src='BrowserStack.png')
 
   .tesseract-navigation.top0.position-fixed.height-full.width-full
