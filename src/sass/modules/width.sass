@@ -1,35 +1,7 @@
-.width-minimum-fixed
-  min-width: 1px
+@each $name, $value in $sizes
 
-.width-extra-small-fixed
-  width: 8px
-
-.width-small-fixed
-  width: 24px
-
-.width-medium-fixed
-  width: 72px
-
-.width-large-fixed
-  width: 216px
-
-.width-extra-large-fixed
-  width: 648px
-
-.width-extra-small
-  width: 5%
-
-.width-small
-  width: 15%
-
-.width-medium
-  width: 20%
-
-.width-large
-  width: 50%
-
-.width-extra-large
-  width: 100%
+  .width-#{$name}
+    width: $value
 
 .width-full
   @extend .width-extra-large
