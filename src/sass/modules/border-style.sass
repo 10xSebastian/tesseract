@@ -8,3 +8,13 @@
 
   .border-#{$side}-style-dashed
     border-#{$side}-style: dashed
+
+.border-all-dotted
+
+  @each $side in $sides
+    @extend .border-#{$side}-style-dotted
+
+.border-all-dashed
+
+  @each $side in $sides
+    @extend .border-#{$side}-style-dashed
