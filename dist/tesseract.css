@@ -228,11 +228,11 @@ table {
   border-top-style: solid;
 }
 
-.border-top-style-dotted {
+.border-top-style-dotted, .border-all-dotted {
   border-top-style: dotted;
 }
 
-.border-top-style-dashed {
+.border-top-style-dashed, .border-all-dashed {
   border-top-style: dashed;
 }
 
@@ -240,11 +240,11 @@ table {
   border-right-style: solid;
 }
 
-.border-right-style-dotted {
+.border-right-style-dotted, .border-all-dotted {
   border-right-style: dotted;
 }
 
-.border-right-style-dashed {
+.border-right-style-dashed, .border-all-dashed {
   border-right-style: dashed;
 }
 
@@ -252,11 +252,11 @@ table {
   border-bottom-style: solid;
 }
 
-.border-bottom-style-dotted {
+.border-bottom-style-dotted, .border-all-dotted {
   border-bottom-style: dotted;
 }
 
-.border-bottom-style-dashed {
+.border-bottom-style-dashed, .border-all-dashed {
   border-bottom-style: dashed;
 }
 
@@ -264,11 +264,11 @@ table {
   border-left-style: solid;
 }
 
-.border-left-style-dotted {
+.border-left-style-dotted, .border-all-dotted {
   border-left-style: dotted;
 }
 
-.border-left-style-dashed {
+.border-left-style-dashed, .border-all-dashed {
   border-left-style: dashed;
 }
 
@@ -668,23 +668,23 @@ table {
   height: 100%;
 }
 
-.line-height-name {
+.line-height-extra-small {
   line-height: 100%;
 }
 
-.line-height-name {
+.line-height-small {
   line-height: 130%;
 }
 
-.line-height-name {
+.line-height-medium {
   line-height: 170%;
 }
 
-.line-height-name {
+.line-height-large {
   line-height: 230%;
 }
 
-.line-height-name {
+.line-height-extra-large {
   line-height: 330%;
 }
 
@@ -852,23 +852,23 @@ table {
   margin: 0 !important;
 }
 
-.max-height-extra-small-fixed {
+.max-height-extra-small {
   max-height: 8px;
 }
 
-.max-height-small-fixed {
+.max-height-small {
   max-height: 24px;
 }
 
-.max-height-medium-fixed {
+.max-height-medium {
   max-height: 72px;
 }
 
-.max-height-large-fixed {
+.max-height-large {
   max-height: 216px;
 }
 
-.max-height-extra-large-fixed {
+.max-height-extra-large {
   max-height: 648px;
 }
 
