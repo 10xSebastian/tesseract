@@ -13,7 +13,7 @@ This css framework is build upon existing software principles to help keeping th
 Embed tesseract using RawGit's CDN and use [existing modules and components](https://pape-io.github.io/tesseract/) right away.
 
 ```html
-  <link href='https://cdn.rawgit.com/pape-io/tesseract/1.0.0/dist/tesseract.min.css' rel='stylesheet' type='text/css'>
+  <link href='https://cdn.rawgit.com/pape-io/tesseract/1.0.1/dist/tesseract.min.css' rel='stylesheet' type='text/css'>
 ```
 
 → [Example using CDN](examples/simple.html)
