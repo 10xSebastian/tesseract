@@ -1,7 +1,7 @@
 {
   "name": "tesseract",
   "description": "CSS-Framework based on existing software principles.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "dependencies": {},
   "devDependencies": {
     "reset-css": "~2.0.2011012602",
