@@ -150,6 +150,22 @@ A class should have responsibility over only a single part of your system
 </p>
 <div class='row padding-horizontal-small padding-vertical-extra-small'>
 <div class='column column1of2'>
+<div class='row background-color-white padding-all-small'>
+<pre class='tesseract-code overflow-scroll'>.alert {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}</pre>
+</div>
+<div class='row'>
+<p class='font-size-small text-color-red tesseract-font padding-all-extra-small'>
+<i class='fa fa-times'></i>
+Responsible for multiple things
+</p>
+</div>
+</div>
+<div class='column column1of2'>
 <div class='row background-color-white padding-all-small border-right'>
 <pre class='tesseract-code overflow-scroll'>.padding-all-medium {
   padding: 15px;
@@ -168,25 +184,9 @@ A class should have responsibility over only a single part of your system
 }</pre>
 </div>
 <div class='row'>
-<p class='font-size-small text-color-green tesseract-font padding-all-extra-small'>
+<p class='font-size-small text-color-green tesseract-font padding-all-extra-small text-align-right'>
 <i class='fa fa-check'></i>
 Single responsibility
-</p>
-</div>
-</div>
-<div class='column column1of2'>
-<div class='row background-color-white padding-all-small'>
-<pre class='tesseract-code overflow-scroll'>.alert {
-  padding: 15px;
-  margin-bottom: 20px;
-  border: 1px solid transparent;
-  border-radius: 4px;
-}</pre>
-</div>
-<div class='row'>
-<p class='font-size-small text-color-red tesseract-font padding-all-extra-small text-align-right'>
-<i class='fa fa-times'></i>
-Responsible for multiple things
 </p>
 </div>
 </div>
@@ -203,24 +203,6 @@ Do not mix concerns by styling native html elements that you may want to use jus
 </p>
 <div class='row padding-horizontal-small padding-vertical-extra-small'>
 <div class='column column1of2'>
-<div class='row background-color-white padding-all-small border-right'>
-<pre class='tesseract-code overflow-scroll'>&lt;h1 class="headline-large">Thats my Seo optimized title&lt;/h1&gt;
-&lt;h3 class="headline-large">Thats another realy big text, visually&lt;/h3&gt;
-
-.headline-extra-large {
-  @extend .font-size-large
-  @extend .font-weight-bold
-  @extend .margin-bottom-small
-}</pre>
-</div>
-<div class='row'>
-<p class='font-size-small text-color-green tesseract-font padding-all-extra-small'>
-<i class='fa fa-check'></i>
-Concerns seperated
-</p>
-</div>
-</div>
-<div class='column column1of2'>
 <div class='row background-color-white padding-all-small'>
 <pre class='tesseract-code overflow-scroll'>&lt;h1>Thats my Seo optimized title&lt;/h1&gt;
 &lt;h1>Text that should just look like a big headline&lt;/h1&gt;
@@ -232,9 +214,27 @@ h1 {
 }</pre>
 </div>
 <div class='row'>
-<p class='font-size-small text-color-red tesseract-font padding-all-extra-small text-align-right'>
+<p class='font-size-small text-color-red tesseract-font padding-all-extra-small'>
 <i class='fa fa-times'></i>
 Concerns not seperated
+</p>
+</div>
+</div>
+<div class='column column1of2'>
+<div class='row background-color-white padding-all-small border-right'>
+<pre class='tesseract-code overflow-scroll'>&lt;h1 class="headline-large">Thats my Seo optimized title&lt;/h1&gt;
+&lt;h3 class="headline-large">Thats another realy big text, visually&lt;/h3&gt;
+
+.headline-extra-large {
+  @extend .font-size-large
+  @extend .font-weight-bold
+  @extend .margin-bottom-small
+}</pre>
+</div>
+<div class='row'>
+<p class='font-size-small text-color-green tesseract-font padding-all-extra-small text-align-right'>
+<i class='fa fa-check'></i>
+Concerns seperated
 </p>
 </div>
 </div>
@@ -251,27 +251,6 @@ Stick to a single, simple set of design principles and stay consistent
 </p>
 <div class='row padding-horizontal-small padding-vertical-extra-small'>
 <div class='column column1of2'>
-<div class='row background-color-white padding-all-small border-right'>
-<pre class='tesseract-code overflow-scroll'>.font-size-small {
-  font-size: 100%;
-}
-
-.font-size-medium {
-  font-size: 110%;
-}
-
-.font-size-large {
-  font-size: 140%;
-}</pre>
-</div>
-<div class='row'>
-<p class='font-size-small text-color-green tesseract-font padding-all-extra-small'>
-<i class='fa fa-check'></i>
-Consistent
-</p>
-</div>
-</div>
-<div class='column column1of2'>
 <div class='row background-color-white padding-all-small'>
 <pre class='tesseract-code overflow-scroll'>.font-size-small {
   font-size: 100%;
@@ -286,9 +265,30 @@ Consistent
 }</pre>
 </div>
 <div class='row'>
-<p class='font-size-small text-color-red tesseract-font padding-all-extra-small text-align-right'>
+<p class='font-size-small text-color-red tesseract-font padding-all-extra-small'>
 <i class='fa fa-times'></i>
 Inconsistent
+</p>
+</div>
+</div>
+<div class='column column1of2'>
+<div class='row background-color-white padding-all-small border-right'>
+<pre class='tesseract-code overflow-scroll'>.font-size-small {
+  font-size: 100%;
+}
+
+.font-size-medium {
+  font-size: 110%;
+}
+
+.font-size-large {
+  font-size: 140%;
+}</pre>
+</div>
+<div class='row'>
+<p class='font-size-small text-color-green tesseract-font padding-all-extra-small text-align-right'>
+<i class='fa fa-check'></i>
+Consistent
 </p>
 </div>
 </div>
@@ -304,27 +304,6 @@ Economic
 Prevent unnecessary complexity. Focus on what is really needed and limit yourself
 </p>
 <div class='row padding-horizontal-small padding-vertical-extra-small'>
-<div class='column column1of2'>
-<div class='row background-color-white padding-all-small border-right'>
-<pre class='tesseract-code overflow-scroll'>.font-size-small {
-  font-size: 100%;
-}
-
-.font-size-medium {
-  font-size: 110%;
-}
-
-.padding-left-large {
-  font-size: 140%;
-}</pre>
-</div>
-<div class='row'>
-<p class='font-size-small text-color-green tesseract-font padding-all-extra-small'>
-<i class='fa fa-check'></i>
-Limited complexity
-</p>
-</div>
-</div>
 <div class='column column1of2'>
 <div class='row background-color-white padding-all-small'>
 <pre class='tesseract-code overflow-scroll'>.font-size-xxs {
@@ -356,9 +335,30 @@ Limited complexity
 }</pre>
 </div>
 <div class='row'>
-<p class='font-size-small text-color-red tesseract-font padding-all-extra-small text-align-right'>
+<p class='font-size-small text-color-red tesseract-font padding-all-extra-small'>
 <i class='fa fa-times'></i>
 Unfocused, useless complexity
+</p>
+</div>
+</div>
+<div class='column column1of2'>
+<div class='row background-color-white padding-all-small border-right'>
+<pre class='tesseract-code overflow-scroll'>.font-size-small {
+  font-size: 100%;
+}
+
+.font-size-medium {
+  font-size: 110%;
+}
+
+.padding-left-large {
+  font-size: 140%;
+}</pre>
+</div>
+<div class='row'>
+<p class='font-size-small text-color-green tesseract-font padding-all-extra-small text-align-right'>
+<i class='fa fa-check'></i>
+Limited complexity
 </p>
 </div>
 </div>
@@ -375,27 +375,6 @@ Using a consistent and comprehensible way of terminology makes classnames predic
 </p>
 <div class='row padding-horizontal-small padding-vertical-extra-small'>
 <div class='column column1of2'>
-<div class='row background-color-white padding-all-small border-right'>
-<pre class='tesseract-code overflow-scroll'>.font-size-small {
-  font-size: 100%;
-}
-
-.margin-top-medium {
-  margin-top: 5%;
-}
-
-.padding-bottom-large {
-  padding-bottom: 10%;
-}</pre>
-</div>
-<div class='row'>
-<p class='font-size-small text-color-green tesseract-font padding-all-extra-small'>
-<i class='fa fa-check'></i>
-Comprehensible, predictable
-</p>
-</div>
-</div>
-<div class='column column1of2'>
 <div class='row background-color-white padding-all-small'>
 <pre class='tesseract-code overflow-scroll'>.fsS {
   font-size: 100%;
@@ -410,9 +389,30 @@ Comprehensible, predictable
 }</pre>
 </div>
 <div class='row'>
-<p class='font-size-small text-color-red tesseract-font padding-all-extra-small text-align-right'>
+<p class='font-size-small text-color-red tesseract-font padding-all-extra-small'>
 <i class='fa fa-times'></i>
 Incomprehensible
+</p>
+</div>
+</div>
+<div class='column column1of2'>
+<div class='row background-color-white padding-all-small border-right'>
+<pre class='tesseract-code overflow-scroll'>.font-size-small {
+  font-size: 100%;
+}
+
+.margin-top-medium {
+  margin-top: 5%;
+}
+
+.padding-bottom-large {
+  padding-bottom: 10%;
+}</pre>
+</div>
+<div class='row'>
+<p class='font-size-small text-color-green tesseract-font padding-all-extra-small text-align-right'>
+<i class='fa fa-check'></i>
+Comprehensible, predictable
 </p>
 </div>
 </div>
@@ -429,21 +429,6 @@ Create scaleable, efficent and economical systems with self-organized, decentral
 </p>
 <div class='row padding-horizontal-small padding-vertical-extra-small'>
 <div class='column column1of2'>
-<div class='row background-color-white padding-all-small border-right'>
-<pre class='tesseract-code overflow-scroll'>.message { ... }
-
-.message-image { ... }
-
-.message-image-subtitle { ... }</pre>
-</div>
-<div class='row'>
-<p class='font-size-small text-color-green tesseract-font padding-all-extra-small'>
-<i class='fa fa-check'></i>
-Self-organized
-</p>
-</div>
-</div>
-<div class='column column1of2'>
 <div class='row background-color-white padding-all-small'>
 <pre class='tesseract-code overflow-scroll'>.message { ... }
 
@@ -452,9 +437,24 @@ Self-organized
 .message .image .subtitle { ... }</pre>
 </div>
 <div class='row'>
-<p class='font-size-small text-color-red tesseract-font padding-all-extra-small text-align-right'>
+<p class='font-size-small text-color-red tesseract-font padding-all-extra-small'>
 <i class='fa fa-times'></i>
 Dependent, not reusable
+</p>
+</div>
+</div>
+<div class='column column1of2'>
+<div class='row background-color-white padding-all-small border-right'>
+<pre class='tesseract-code overflow-scroll'>.message { ... }
+
+.message-image { ... }
+
+.message-image-subtitle { ... }</pre>
+</div>
+<div class='row'>
+<p class='font-size-small text-color-green tesseract-font padding-all-extra-small text-align-right'>
+<i class='fa fa-check'></i>
+Self-organized
 </p>
 </div>
 </div>
@@ -470,6 +470,34 @@ Abstraction, Structuring, Hierarchising, Modularity
 Abstract, structure, hierarchise repeating patterns to make them reusable/modular
 </p>
 <div class='row padding-horizontal-small padding-vertical-extra-small'>
+<div class='column column1of2'>
+<div class='row background-color-white padding-all-small'>
+<pre class='tesseract-code overflow-scroll'>.border-top {
+  border-top: 1px solid grey;
+}
+.border-right {
+  border-right: 1px solid grey;
+}
+.border-bottom {
+  border-bottom: 1px solid grey;
+}
+.border-left {
+  border-left: 1px solid grey;
+}
+.border-all {
+  border-top: 1px solid grey;
+  border-right: 1px solid grey;
+  border-bottom: 1px solid grey;
+  border-left: 1px solid grey;
+}</pre>
+</div>
+<div class='row'>
+<p class='font-size-small text-color-red tesseract-font padding-all-extra-small'>
+<i class='fa fa-times'></i>
+Repeated, redundant
+</p>
+</div>
+</div>
 <div class='column column1of2'>
 <div class='row background-color-white padding-all-small border-right'>
 <pre class='tesseract-code overflow-scroll'>.border-top {
@@ -492,37 +520,9 @@ Abstract, structure, hierarchise repeating patterns to make them reusable/modula
 }</pre>
 </div>
 <div class='row'>
-<p class='font-size-small text-color-green tesseract-font padding-all-extra-small'>
+<p class='font-size-small text-color-green tesseract-font padding-all-extra-small text-align-right'>
 <i class='fa fa-check'></i>
 Hierarchised, abstracted, modularized
-</p>
-</div>
-</div>
-<div class='column column1of2'>
-<div class='row background-color-white padding-all-small'>
-<pre class='tesseract-code overflow-scroll'>.border-top {
-  border-top: 1px solid grey;
-}
-.border-right {
-  border-right: 1px solid grey;
-}
-.border-bottom {
-  border-bottom: 1px solid grey;
-}
-.border-left {
-  border-left: 1px solid grey;
-}
-.border-all {
-  border-top: 1px solid grey;
-  border-right: 1px solid grey;
-  border-bottom: 1px solid grey;
-  border-left: 1px solid grey;
-}</pre>
-</div>
-<div class='row'>
-<p class='font-size-small text-color-red tesseract-font padding-all-extra-small text-align-right'>
-<i class='fa fa-times'></i>
-Repeated, redundant
 </p>
 </div>
 </div>
