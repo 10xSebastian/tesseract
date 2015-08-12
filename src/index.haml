@@ -113,6 +113,20 @@
           A class should have responsibility over only a single part of your system
         .row.padding-horizontal-small.padding-vertical-extra-small
           .column.column1of2
+            .row.background-color-white.padding-all-small
+              %pre.tesseract-code.overflow-scroll
+                :plain
+                  .alert {
+                    padding: 15px;
+                    margin-bottom: 20px;
+                    border: 1px solid transparent;
+                    border-radius: 4px;
+                  }
+            .row 
+              %p.font-size-small.text-color-red.tesseract-font.padding-all-extra-small
+                %i.fa.fa-times
+                Responsible for multiple things
+          .column.column1of2
             .row.background-color-white.padding-all-small.border-right
               %pre.tesseract-code.overflow-scroll
                 :plain
@@ -132,23 +146,9 @@
                     border-radius: 4px;
                   }
             .row 
-              %p.font-size-small.text-color-green.tesseract-font.padding-all-extra-small
+              %p.font-size-small.text-color-green.tesseract-font.padding-all-extra-small.text-align-right
                 %i.fa.fa-check
                 Single responsibility
-          .column.column1of2
-            .row.background-color-white.padding-all-small
-              %pre.tesseract-code.overflow-scroll
-                :plain
-                  .alert {
-                    padding: 15px;
-                    margin-bottom: 20px;
-                    border: 1px solid transparent;
-                    border-radius: 4px;
-                  }
-            .row 
-              %p.font-size-small.text-color-red.tesseract-font.padding-all-extra-small.text-align-right
-                %i.fa.fa-times
-                Responsible for multiple things
 
       %section.padding-top-medium(data-principle='Separation of concerns')
         .padding-horizontal-small.padding-vertical-extra-small.row
@@ -157,22 +157,6 @@
         %p.font-size-small.text-color-white.tesseract-font.padding-horizontal-small.padding-bottom-extra-small
           Do not mix concerns by styling native html elements that you may want to use just for their semantic reason
         .row.padding-horizontal-small.padding-vertical-extra-small
-          .column.column1of2
-            .row.background-color-white.padding-all-small.border-right
-              %pre.tesseract-code.overflow-scroll
-                :plain
-                  &lt;h1 class="headline-large">Thats my Seo optimized title&lt;/h1&gt;
-                  &lt;h3 class="headline-large">Thats another realy big text, visually&lt;/h3&gt;
-
-                  .headline-extra-large {
-                    @extend .font-size-large
-                    @extend .font-weight-bold
-                    @extend .margin-bottom-small
-                  }
-            .row 
-              %p.font-size-small.text-color-green.tesseract-font.padding-all-extra-small
-                %i.fa.fa-check
-                Concerns seperated
           .column.column1of2
             .row.background-color-white.padding-all-small
               %pre.tesseract-code.overflow-scroll
@@ -186,9 +170,25 @@
                     margin-bottom: 16px;
                   }
             .row 
-              %p.font-size-small.text-color-red.tesseract-font.padding-all-extra-small.text-align-right
+              %p.font-size-small.text-color-red.tesseract-font.padding-all-extra-small
                 %i.fa.fa-times
                 Concerns not seperated
+          .column.column1of2
+            .row.background-color-white.padding-all-small.border-right
+              %pre.tesseract-code.overflow-scroll
+                :plain
+                  &lt;h1 class="headline-large">Thats my Seo optimized title&lt;/h1&gt;
+                  &lt;h3 class="headline-large">Thats another realy big text, visually&lt;/h3&gt;
+
+                  .headline-extra-large {
+                    @extend .font-size-large
+                    @extend .font-weight-bold
+                    @extend .margin-bottom-small
+                  }
+            .row 
+              %p.font-size-small.text-color-green.tesseract-font.padding-all-extra-small.text-align-right
+                %i.fa.fa-check
+                Concerns seperated
 
       %section.padding-top-medium(data-principle='Conceptual integrity')
         .padding-horizontal-small.padding-vertical-extra-small.row
@@ -197,25 +197,6 @@
         %p.font-size-small.text-color-white.tesseract-font.padding-horizontal-small.padding-bottom-extra-small
           Stick to a single, simple set of design principles and stay consistent
         .row.padding-horizontal-small.padding-vertical-extra-small
-          .column.column1of2
-            .row.background-color-white.padding-all-small.border-right
-              %pre.tesseract-code.overflow-scroll
-                :plain
-                  .font-size-small {
-                    font-size: 100%;
-                  }
-
-                  .font-size-medium {
-                    font-size: 110%;
-                  }
-
-                  .font-size-large {
-                    font-size: 140%;
-                  }
-            .row 
-              %p.font-size-small.text-color-green.tesseract-font.padding-all-extra-small
-                %i.fa.fa-check
-                Consistent
           .column.column1of2
             .row.background-color-white.padding-all-small
               %pre.tesseract-code.overflow-scroll
@@ -232,17 +213,9 @@
                     font-size: 100px;
                   }
             .row 
-              %p.font-size-small.text-color-red.tesseract-font.padding-all-extra-small.text-align-right
+              %p.font-size-small.text-color-red.tesseract-font.padding-all-extra-small
                 %i.fa.fa-times
                 Inconsistent
-
-      %section.padding-top-medium(data-principle='Economic')
-        .padding-horizontal-small.padding-vertical-extra-small.row
-          %h3.font-size-medium.text-color-white.tesseract-font
-            Economic
-        %p.font-size-small.text-color-white.tesseract-font.padding-horizontal-small.padding-bottom-extra-small
-          Prevent unnecessary complexity. Focus on what is really needed and limit yourself
-        .row.padding-horizontal-small.padding-vertical-extra-small
           .column.column1of2
             .row.background-color-white.padding-all-small.border-right
               %pre.tesseract-code.overflow-scroll
@@ -255,13 +228,21 @@
                     font-size: 110%;
                   }
 
-                  .padding-left-large {
+                  .font-size-large {
                     font-size: 140%;
                   }
             .row 
-              %p.font-size-small.text-color-green.tesseract-font.padding-all-extra-small
+              %p.font-size-small.text-color-green.tesseract-font.padding-all-extra-small.text-align-right
                 %i.fa.fa-check
-                Limited complexity 
+                Consistent
+
+      %section.padding-top-medium(data-principle='Economic')
+        .padding-horizontal-small.padding-vertical-extra-small.row
+          %h3.font-size-medium.text-color-white.tesseract-font
+            Economic
+        %p.font-size-small.text-color-white.tesseract-font.padding-horizontal-small.padding-bottom-extra-small
+          Prevent unnecessary complexity. Focus on what is really needed and limit yourself
+        .row.padding-horizontal-small.padding-vertical-extra-small 
           .column.column1of2
             .row.background-color-white.padding-all-small
               %pre.tesseract-code.overflow-scroll
@@ -294,17 +275,9 @@
                     font-size: 200%;
                   }
             .row 
-              %p.font-size-small.text-color-red.tesseract-font.padding-all-extra-small.text-align-right
+              %p.font-size-small.text-color-red.tesseract-font.padding-all-extra-small
                 %i.fa.fa-times
                 Unfocused, useless complexity
-
-      %section.padding-top-medium(data-principle='Visibility & symmetry')
-        .padding-horizontal-small.padding-vertical-extra-small.row
-          %h3.font-size-medium.text-color-white.tesseract-font
-            Visibility & symmetry
-        %p.font-size-small.text-color-white.tesseract-font.padding-horizontal-small.padding-bottom-extra-small
-          Using a consistent and comprehensible way of terminology makes classnames predictable and easy to use
-        .row.padding-horizontal-small.padding-vertical-extra-small
           .column.column1of2
             .row.background-color-white.padding-all-small.border-right
               %pre.tesseract-code.overflow-scroll
@@ -313,17 +286,25 @@
                     font-size: 100%;
                   }
 
-                  .margin-top-medium {
-                    margin-top: 5%;
+                  .font-size-medium {
+                    font-size: 110%;
                   }
 
-                  .padding-bottom-large {
-                    padding-bottom: 10%;
+                  .padding-left-large {
+                    font-size: 140%;
                   }
             .row 
-              %p.font-size-small.text-color-green.tesseract-font.padding-all-extra-small
+              %p.font-size-small.text-color-green.tesseract-font.padding-all-extra-small.text-align-right
                 %i.fa.fa-check
-                Comprehensible, predictable
+                Limited complexity
+
+      %section.padding-top-medium(data-principle='Visibility & symmetry')
+        .padding-horizontal-small.padding-vertical-extra-small.row
+          %h3.font-size-medium.text-color-white.tesseract-font
+            Visibility & symmetry
+        %p.font-size-small.text-color-white.tesseract-font.padding-horizontal-small.padding-bottom-extra-small
+          Using a consistent and comprehensible way of terminology makes classnames predictable and easy to use
+        .row.padding-horizontal-small.padding-vertical-extra-small
           .column.column1of2
             .row.background-color-white.padding-all-small
               %pre.tesseract-code.overflow-scroll
@@ -340,9 +321,28 @@
                     padding-bottom: 10%;
                   }
             .row 
-              %p.font-size-small.text-color-red.tesseract-font.padding-all-extra-small.text-align-right
+              %p.font-size-small.text-color-red.tesseract-font.padding-all-extra-small
                 %i.fa.fa-times
                 Incomprehensible
+          .column.column1of2
+            .row.background-color-white.padding-all-small.border-right
+              %pre.tesseract-code.overflow-scroll
+                :plain
+                  .font-size-small {
+                    font-size: 100%;
+                  }
+
+                  .margin-top-medium {
+                    margin-top: 5%;
+                  }
+
+                  .padding-bottom-large {
+                    padding-bottom: 10%;
+                  }
+            .row 
+              %p.font-size-small.text-color-green.tesseract-font.padding-all-extra-small.text-align-right
+                %i.fa.fa-check
+                Comprehensible, predictable
 
       %section.padding-top-medium(data-principle='Self-organized')
         .padding-horizontal-small.padding-vertical-extra-small.row
@@ -351,19 +351,6 @@
         %p.font-size-small.text-color-white.tesseract-font.padding-horizontal-small.padding-bottom-extra-small
           Create scaleable, efficent and economical systems with self-organized, decentralized components
         .row.padding-horizontal-small.padding-vertical-extra-small
-          .column.column1of2
-            .row.background-color-white.padding-all-small.border-right
-              %pre.tesseract-code.overflow-scroll
-                :plain
-                  .message { ... }
-
-                  .message-image { ... }
-
-                  .message-image-subtitle { ... }
-            .row 
-              %p.font-size-small.text-color-green.tesseract-font.padding-all-extra-small
-                %i.fa.fa-check
-                Self-organized
           .column.column1of2
             .row.background-color-white.padding-all-small
               %pre.tesseract-code.overflow-scroll
@@ -374,9 +361,22 @@
 
                   .message .image .subtitle { ... }
             .row 
-              %p.font-size-small.text-color-red.tesseract-font.padding-all-extra-small.text-align-right
+              %p.font-size-small.text-color-red.tesseract-font.padding-all-extra-small
                 %i.fa.fa-times
                 Dependent, not reusable
+          .column.column1of2
+            .row.background-color-white.padding-all-small.border-right
+              %pre.tesseract-code.overflow-scroll
+                :plain
+                  .message { ... }
+
+                  .message-image { ... }
+
+                  .message-image-subtitle { ... }
+            .row 
+              %p.font-size-small.text-color-green.tesseract-font.padding-all-extra-small.text-align-right
+                %i.fa.fa-check
+                Self-organized
 
       %section.padding-top-medium(data-principle='Abstraction, Structuring, Hierarchising, Modularity')
         .padding-horizontal-small.padding-vertical-extra-small.row
@@ -385,6 +385,32 @@
         %p.font-size-small.text-color-white.tesseract-font.padding-horizontal-small.padding-bottom-extra-small
           Abstract, structure, hierarchise repeating patterns to make them reusable/modular
         .row.padding-horizontal-small.padding-vertical-extra-small
+          .column.column1of2
+            .row.background-color-white.padding-all-small
+              %pre.tesseract-code.overflow-scroll
+                :plain
+                  .border-top {
+                    border-top: 1px solid grey;
+                  }
+                  .border-right {
+                    border-right: 1px solid grey;
+                  }
+                  .border-bottom {
+                    border-bottom: 1px solid grey;
+                  }
+                  .border-left {
+                    border-left: 1px solid grey;
+                  }
+                  .border-all {
+                    border-top: 1px solid grey;
+                    border-right: 1px solid grey;
+                    border-bottom: 1px solid grey;
+                    border-left: 1px solid grey;
+                  }
+            .row 
+              %p.font-size-small.text-color-red.tesseract-font.padding-all-extra-small
+                %i.fa.fa-times
+                Repeated, redundant
           .column.column1of2
             .row.background-color-white.padding-all-small.border-right
               %pre.tesseract-code.overflow-scroll
@@ -408,35 +434,9 @@
                     @extend .border-left;
                   }
             .row 
-              %p.font-size-small.text-color-green.tesseract-font.padding-all-extra-small
+              %p.font-size-small.text-color-green.tesseract-font.padding-all-extra-small.text-align-right
                 %i.fa.fa-check
                 Hierarchised, abstracted, modularized
-          .column.column1of2
-            .row.background-color-white.padding-all-small
-              %pre.tesseract-code.overflow-scroll
-                :plain
-                  .border-top {
-                    border-top: 1px solid grey;
-                  }
-                  .border-right {
-                    border-right: 1px solid grey;
-                  }
-                  .border-bottom {
-                    border-bottom: 1px solid grey;
-                  }
-                  .border-left {
-                    border-left: 1px solid grey;
-                  }
-                  .border-all {
-                    border-top: 1px solid grey;
-                    border-right: 1px solid grey;
-                    border-bottom: 1px solid grey;
-                    border-left: 1px solid grey;
-                  }
-            .row 
-              %p.font-size-small.text-color-red.tesseract-font.padding-all-extra-small.text-align-right
-                %i.fa.fa-times
-                Repeated, redundant
 
     %a(name="modules")
     %section.padding-top-medium

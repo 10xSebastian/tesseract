@@ -95,6 +95,16 @@ In software development, principles help you to make complex things managable.
 
 A class should have responsibility over only a single part of your system.
 
+**:thumbsdown: Responsible for multiple things**
+```css
+.alert {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+```
+
 **:thumbsup: Responsible for one thing**
 ```css
 .padding-all-medium {
@@ -114,16 +124,6 @@ A class should have responsibility over only a single part of your system.
 }
 ```
 
-**:thumbsdown: Responsible for multiple things**
-```css
-.alert {
-  padding: 15px;
-  margin-bottom: 20px;
-  border: 1px solid transparent;
-  border-radius: 4px;
-}
-```
-
 ### Separation of concerns
 
 Do not mix concerns by styling native html elements that you may want to use just for their semantic reason.
@@ -132,14 +132,6 @@ Do not mix concerns by styling native html elements that you may want to use jus
 ```html
 <h1 class="headline-large">Thats my Seo optimized title<h1/>
 <h3 class="headline-large">Thats another realy big text, visually</h3>
-```
-
-```css
-.headline-extra-large {
-  @extend .font-size-large
-  @extend .font-weight-bold
-  @extend .margin-bottom-small
-}
 ```
 
 **:thumbsdown: Concerns not seperated**
@@ -156,24 +148,17 @@ h1 {
 }
 ```
 
+```css
+.headline-extra-large {
+  @extend .font-size-large
+  @extend .font-weight-bold
+  @extend .margin-bottom-small
+}
+```
+
 ### Conceptual integrity
 
 Stick to a single, simple set of design principles and stay consistent
-
-**:thumbsup: Consistent**
-```css
-.font-size-small {
-  font-size: 100%;
-}
-
-.font-size-medium {
-  font-size: 110%;
-}
-
-.font-size-large {
-  font-size: 140%;
-}
-```
 
 **:thumbsdown: Inconsistent**
 ```css
@@ -190,11 +175,7 @@ Stick to a single, simple set of design principles and stay consistent
 }
 ```
 
-### Economic
-
-Prevent unnecessary complexity. Focus on what is really needed and limit yourself
-
-**:thumbsup: Limited complexity**
+**:thumbsup: Consistent**
 ```css
 .font-size-small {
   font-size: 100%;
@@ -204,10 +185,14 @@ Prevent unnecessary complexity. Focus on what is really needed and limit yoursel
   font-size: 110%;
 }
 
-.padding-left-large {
+.font-size-large {
   font-size: 140%;
 }
 ```
+
+### Economic
+
+Prevent unnecessary complexity. Focus on what is really needed and limit yourself
 
 **:thumbsdown: Unfocused, useless complexity**
 ```css
@@ -240,24 +225,24 @@ Prevent unnecessary complexity. Focus on what is really needed and limit yoursel
 }
 ```
 
-### Visibility & symmetry
-
-Using a consistent and comprehensible way of terminology makes classnames predictable and easy to use
-
-**:thumbsup: Comprehensible, predictable**
+**:thumbsup: Limited complexity**
 ```css
 .font-size-small {
   font-size: 100%;
 }
 
-.margin-top-medium {
-  margin-top: 5%;
+.font-size-medium {
+  font-size: 110%;
 }
 
-.padding-bottom-large {
-  padding-bottom: 10%;
+.padding-left-large {
+  font-size: 140%;
 }
 ```
+
+### Visibility & symmetry
+
+Using a consistent and comprehensible way of terminology makes classnames predictable and easy to use
 
 **:thumbsdown: Incomprehensible**
 ```css
@@ -274,18 +259,24 @@ Using a consistent and comprehensible way of terminology makes classnames predic
 }
 ```
 
+**:thumbsup: Comprehensible, predictable**
+```css
+.font-size-small {
+  font-size: 100%;
+}
+
+.margin-top-medium {
+  margin-top: 5%;
+}
+
+.padding-bottom-large {
+  padding-bottom: 10%;
+}
+```
+
 ### Self-organized
 
 Create scaleable, efficent and economical systems with self-organized, decentralized components
-
-**:thumbsup: Self-organized**
-```css
-.message { ... }
-
-.message-image { ... }
-
-.message-image-subtitle { ... }
-```
 
 **:thumbsdown: Dependent, not reusable**
 ```css
@@ -296,31 +287,19 @@ Create scaleable, efficent and economical systems with self-organized, decentral
 .message .image .subtitle { ... }
 ```
 
+**:thumbsup: Self-organized**
+```css
+.message { ... }
+
+.message-image { ... }
+
+.message-image-subtitle { ... }
+```
+
+
 ### Abstraction, Structuring, Hierarchising, Modularity
 
 Abstract, structure, hierarchise repeating patterns to make them reusable/modular
-
-**:thumbsup: Hierarchised, abstracted, modularized**
-```css
-.border-top {
-  border-top: 1px solid grey;
-}
-.border-right {
-  border-right: 1px solid grey;
-}
-.border-bottom {
-  border-bottom: 1px solid grey;
-}
-.border-left {
-  border-left: 1px solid grey;
-}
-.border-all {
-  @extend .border-top;
-  @extend .border-right;
-  @extend .border-bottom;
-  @extend .border-left;
-}
-```
 
 **:thumbsdown: Repeated, redundant**
 ```css
@@ -341,6 +320,28 @@ Abstract, structure, hierarchise repeating patterns to make them reusable/modula
   border-right: 1px solid grey;
   border-bottom: 1px solid grey;
   border-left: 1px solid grey;
+}
+```
+
+**:thumbsup: Hierarchised, abstracted, modularized**
+```css
+.border-top {
+  border-top: 1px solid grey;
+}
+.border-right {
+  border-right: 1px solid grey;
+}
+.border-bottom {
+  border-bottom: 1px solid grey;
+}
+.border-left {
+  border-left: 1px solid grey;
+}
+.border-all {
+  @extend .border-top;
+  @extend .border-right;
+  @extend .border-bottom;
+  @extend .border-left;
 }
 ```
 
