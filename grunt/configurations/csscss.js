@@ -12,7 +12,10 @@ module.exports = {
       '.show-on-large',
       '.display-block-on-small',
       '.display-block-on-medium',
-      '.display-block-on-large'
+      '.display-block-on-large',
+      '.break-on-small',
+      '.break-on-medium',
+      '.break-on-large'
     ],
     minMatch: 1,
     outputJson: true
