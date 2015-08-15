@@ -112,7 +112,7 @@
         %p.font-size-small.text-color-white.tesseract-font.padding-horizontal-small.padding-bottom-extra-small
           A class should have responsibility over only a single part of your system
         .row.padding-horizontal-small.padding-vertical-extra-small
-          .column.column1of2
+          .column.column1of2.break-on-medium
             .row.background-color-white.padding-all-small
               %pre.tesseract-code.overflow-scroll
                 :plain
@@ -122,12 +122,12 @@
                     border: 1px solid transparent;
                     border-radius: 4px;
                   }
-            .row 
+            .row.padding-bottom-small 
               %p.font-size-small.text-color-red.tesseract-font.padding-all-extra-small
                 %i.fa.fa-times
                 Responsible for multiple things
-          .column.column1of2
-            .row.background-color-white.padding-all-small.border-right
+          .column.column1of2.break-on-medium
+            .row.background-color-white.padding-all-small.border-left
               %pre.tesseract-code.overflow-scroll
                 :plain
                   .padding-all-medium {
@@ -157,7 +157,7 @@
         %p.font-size-small.text-color-white.tesseract-font.padding-horizontal-small.padding-bottom-extra-small
           Do not mix concerns by styling native html elements that you may want to use just for their semantic reason
         .row.padding-horizontal-small.padding-vertical-extra-small
-          .column.column1of2
+          .column.column1of2.break-on-medium
             .row.background-color-white.padding-all-small
               %pre.tesseract-code.overflow-scroll
                 :plain
@@ -169,12 +169,12 @@
                     font-weight: bold;
                     margin-bottom: 16px;
                   }
-            .row 
+            .row.padding-bottom-small 
               %p.font-size-small.text-color-red.tesseract-font.padding-all-extra-small
                 %i.fa.fa-times
                 Concerns not seperated
-          .column.column1of2
-            .row.background-color-white.padding-all-small.border-right
+          .column.column1of2.break-on-medium
+            .row.background-color-white.padding-all-small.border-left
               %pre.tesseract-code.overflow-scroll
                 :plain
                   &lt;h1 class="headline-large">Thats my Seo optimized title&lt;/h1&gt;
@@ -197,7 +197,7 @@
         %p.font-size-small.text-color-white.tesseract-font.padding-horizontal-small.padding-bottom-extra-small
           Stick to a single, simple set of design principles and stay consistent
         .row.padding-horizontal-small.padding-vertical-extra-small
-          .column.column1of2
+          .column.column1of2.break-on-medium
             .row.background-color-white.padding-all-small
               %pre.tesseract-code.overflow-scroll
                 :plain
@@ -212,12 +212,12 @@
                   .font-size-large {
                     font-size: 100px;
                   }
-            .row 
+            .row.padding-bottom-small 
               %p.font-size-small.text-color-red.tesseract-font.padding-all-extra-small
                 %i.fa.fa-times
                 Inconsistent
-          .column.column1of2
-            .row.background-color-white.padding-all-small.border-right
+          .column.column1of2.break-on-medium
+            .row.background-color-white.padding-all-small.border-left
               %pre.tesseract-code.overflow-scroll
                 :plain
                   .font-size-small {
@@ -243,7 +243,7 @@
         %p.font-size-small.text-color-white.tesseract-font.padding-horizontal-small.padding-bottom-extra-small
           Prevent unnecessary complexity. Focus on what is really needed and limit yourself
         .row.padding-horizontal-small.padding-vertical-extra-small 
-          .column.column1of2
+          .column.column1of2.break-on-medium
             .row.background-color-white.padding-all-small
               %pre.tesseract-code.overflow-scroll
                 :plain
@@ -274,12 +274,12 @@
                   .font-size-xxl {
                     font-size: 200%;
                   }
-            .row 
+            .row.padding-bottom-small 
               %p.font-size-small.text-color-red.tesseract-font.padding-all-extra-small
                 %i.fa.fa-times
                 Unfocused, useless complexity
-          .column.column1of2
-            .row.background-color-white.padding-all-small.border-right
+          .column.column1of2.break-on-medium
+            .row.background-color-white.padding-all-small.border-left
               %pre.tesseract-code.overflow-scroll
                 :plain
                   .font-size-small {
@@ -305,7 +305,7 @@
         %p.font-size-small.text-color-white.tesseract-font.padding-horizontal-small.padding-bottom-extra-small
           Using a consistent and comprehensible way of terminology makes classnames predictable and easy to use
         .row.padding-horizontal-small.padding-vertical-extra-small
-          .column.column1of2
+          .column.column1of2.break-on-medium
             .row.background-color-white.padding-all-small
               %pre.tesseract-code.overflow-scroll
                 :plain
@@ -320,12 +320,12 @@
                   .pbL {
                     padding-bottom: 10%;
                   }
-            .row 
+            .row.padding-bottom-small 
               %p.font-size-small.text-color-red.tesseract-font.padding-all-extra-small
                 %i.fa.fa-times
                 Incomprehensible
-          .column.column1of2
-            .row.background-color-white.padding-all-small.border-right
+          .column.column1of2.break-on-medium
+            .row.background-color-white.padding-all-small.border-left
               %pre.tesseract-code.overflow-scroll
                 :plain
                   .font-size-small {
@@ -351,7 +351,7 @@
         %p.font-size-small.text-color-white.tesseract-font.padding-horizontal-small.padding-bottom-extra-small
           Create scaleable, efficent and economical systems with self-organized, decentralized components
         .row.padding-horizontal-small.padding-vertical-extra-small
-          .column.column1of2
+          .column.column1of2.break-on-medium
             .row.background-color-white.padding-all-small
               %pre.tesseract-code.overflow-scroll
                 :plain
@@ -360,12 +360,12 @@
                   .message .image { ... }
 
                   .message .image .subtitle { ... }
-            .row 
+            .row.padding-bottom-small 
               %p.font-size-small.text-color-red.tesseract-font.padding-all-extra-small
                 %i.fa.fa-times
                 Dependent, not reusable
-          .column.column1of2
-            .row.background-color-white.padding-all-small.border-right
+          .column.column1of2.break-on-medium
+            .row.background-color-white.padding-all-small.border-left
               %pre.tesseract-code.overflow-scroll
                 :plain
                   .message { ... }
@@ -385,7 +385,7 @@
         %p.font-size-small.text-color-white.tesseract-font.padding-horizontal-small.padding-bottom-extra-small
           Abstract, structure, hierarchise repeating patterns to make them reusable/modular
         .row.padding-horizontal-small.padding-vertical-extra-small
-          .column.column1of2
+          .column.column1of2.break-on-medium
             .row.background-color-white.padding-all-small
               %pre.tesseract-code.overflow-scroll
                 :plain
@@ -407,12 +407,12 @@
                     border-bottom: 1px solid grey;
                     border-left: 1px solid grey;
                   }
-            .row 
+            .row.padding-bottom-small 
               %p.font-size-small.text-color-red.tesseract-font.padding-all-extra-small
                 %i.fa.fa-times
                 Repeated, redundant
-          .column.column1of2
-            .row.background-color-white.padding-all-small.border-right
+          .column.column1of2.break-on-medium
+            .row.background-color-white.padding-all-small.border-left
               %pre.tesseract-code.overflow-scroll
                 :plain
                   .border-top {
@@ -2731,6 +2731,35 @@
               hide-on-large
           .hide-on-large.border-all.padding-all-small.border-radius-small.margin-bottom-extra-small
             Between medium and large
+
+      %section(data-component='responsive-break')
+        .padding-horizontal-small.padding-vertical-extra-small.row
+          .column.column1of2.height-medium-fixed
+            .display-table.width-full.height-full
+              .display-table-row
+                .display-table-cell.vertical-align-middle
+                  %h3.font-size-medium.text-color-white.tesseract-font
+                    Responsive Break
+          .column.column1of2.height-medium-fixed
+            .display-table.width-full.height-full
+              .display-table-row
+                .display-table-cell.vertical-align-middle.text-align-right
+                  %button.button.button-black.no-border(expandable)
+                    %i.fa.fa-arrows-alt
+        .background-color-white.padding-all-medium.text-align-center
+          .row
+            .break-on-small.column.column1of3.border-all.padding-all-small.border-radius-small.margin-bottom-extra-small
+              %pre.tesseract-code.text-color-grey.overflow-scroll.margin-vertical-extra-small-fixed.text-align-center
+                :plain
+                  break-on-small
+            .break-on-medium.column.column1of3.border-all.padding-all-small.border-radius-small.margin-bottom-extra-small
+              %pre.tesseract-code.text-color-grey.overflow-scroll.margin-vertical-extra-small-fixed.text-align-center
+                :plain
+                  break-on-medium
+            .break-on-large.column.column1of3.border-all.padding-all-small.border-radius-small.margin-bottom-extra-small
+              %pre.tesseract-code.text-color-grey.overflow-scroll.margin-vertical-extra-small-fixed.text-align-center
+                :plain
+                  break-on-large
 
       %section(data-component='responsive-block')
         .padding-horizontal-small.padding-vertical-extra-small.row
