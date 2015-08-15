@@ -1448,6 +1448,13 @@ table {
   .display-block-on-large {
     display: block;
   }
+
+  .break-on-large {
+    clear: both;
+    float: none;
+    display: block;
+    width: 100%;
+  }
 }
 @media screen and (max-width: 600px) {
   .show-on-medium {
@@ -1461,6 +1468,13 @@ table {
   .display-block-on-medium {
     display: block;
   }
+
+  .break-on-medium {
+    clear: both;
+    float: none;
+    display: block;
+    width: 100%;
+  }
 }
 @media screen and (max-width: 400px) {
   .show-on-small {
@@ -1473,6 +1487,13 @@ table {
 
   .display-block-on-small {
     display: block;
+  }
+
+  .break-on-small {
+    clear: both;
+    float: none;
+    display: block;
+    width: 100%;
   }
 }
 * {
