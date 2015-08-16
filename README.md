@@ -4,7 +4,7 @@
 
 It’s a challenge in any web development project to structure and organize all the css code.
 
-Existing css frameworks often disregard basic software principles. This makes the usage of them harder and your own software even harder to manage.
+Existing css frameworks often disregard basic software principles. This makes the use of them difficult and your own software even more difficult to manage.
 
 This css framework is build upon existing software principles to help keeping things simple and manageable.
 
