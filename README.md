@@ -134,6 +134,14 @@ Do not mix concerns by styling native html elements that you may want to use jus
 <h3 class="headline-large">Thats another realy big text, visually</h3>
 ```
 
+```css
+.headline-large {
+  @extend .font-size-large
+  @extend .font-weight-bold
+  @extend .margin-bottom-small
+}
+```
+
 **:thumbsdown: Concerns not seperated**
 ```html
 <h1>Thats my Seo optimized title</h1>
@@ -145,14 +153,6 @@ h1 {
   font-size: 6em;
   font-weight: bold;
   margin-bottom: 16px;
-}
-```
-
-```css
-.headline-extra-large {
-  @extend .font-size-large
-  @extend .font-weight-bold
-  @extend .margin-bottom-small
 }
 ```
 
