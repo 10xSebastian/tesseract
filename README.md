@@ -128,7 +128,7 @@ A class should have responsibility over only a single part of your system.
 
 Do not mix concerns by styling native html elements that you may want to use just for their semantic reason.
 
-**:thumbsdown: Concerns not seperated**
+**:thumbsdown: Concerns not separated**
 ```html
 <h1>Thats my Seo optimized title</h1>
 <h1>Text that should just look like a big headline</h1>
@@ -142,7 +142,7 @@ h1 {
 }
 ```
 
-**:thumbsup: Concerns seperated**
+**:thumbsup: Concerns separated**
 ```html
 <h1 class="headline-large">Thats my Seo optimized title<h1/>
 <h3 class="headline-large">Thats another realy big text, visually</h3>
@@ -358,7 +358,7 @@ A component, by definition, is a unit of composition. It the context of this css
 
 ## CSS Reset vs. CSS Normalization
 Tesseract uses [css-reset](https://github.com/shannonmoeller/reset-css) to remove all default browser css values for elements.
-This follows the principle of seperation of concerns (see [principles](https://github.com/pape-io/tesseract#principles)).
+This follows the principle of separation of concerns (see [principles](https://github.com/pape-io/tesseract#principles)).
 
 ## Development
 
