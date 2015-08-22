@@ -95,7 +95,7 @@ In software development, principles help you to make complex things managable.
 
 A class should have responsibility over only a single part of your system.
 
-**:thumbsdown: Responsible for multiple things**
+**Responsible for multiple things (bad)**
 ```css
 .alert {
   padding: 15px;
@@ -105,7 +105,7 @@ A class should have responsibility over only a single part of your system.
 }
 ```
 
-**:thumbsup: Responsible for one thing**
+**Responsible for one thing (good)**
 ```css
 .padding-all-medium {
   padding: 15px;
@@ -128,7 +128,7 @@ A class should have responsibility over only a single part of your system.
 
 Do not mix concerns by styling native html elements that you may want to use just for their semantic reason.
 
-**:thumbsdown: Concerns not separated**
+**Concerns not separated (bad)**
 ```html
 <h1>Thats my Seo optimized title</h1>
 <h1>Text that should just look like a big headline</h1>
@@ -142,7 +142,7 @@ h1 {
 }
 ```
 
-**:thumbsup: Concerns separated**
+**Concerns separated (good)**
 ```html
 <h1 class="headline-large">Thats my Seo optimized title<h1/>
 <h3 class="headline-large">Thats another realy big text, visually</h3>
@@ -160,7 +160,7 @@ h1 {
 
 Stick to a single, simple set of design principles and stay consistent
 
-**:thumbsdown: Inconsistent**
+**Inconsistent (bad)**
 ```css
 .font-size-small {
   font-size: 100%;
@@ -175,7 +175,7 @@ Stick to a single, simple set of design principles and stay consistent
 }
 ```
 
-**:thumbsup: Consistent**
+**Consistent (good)**
 ```css
 .font-size-small {
   font-size: 100%;
@@ -194,7 +194,7 @@ Stick to a single, simple set of design principles and stay consistent
 
 Prevent unnecessary complexity. Focus on what is really needed and limit yourself
 
-**:thumbsdown: Unfocused, useless complexity**
+**Unfocused, useless complexity (bad)**
 ```css
 .font-size-xxs {
   font-size: 70%;
@@ -225,7 +225,7 @@ Prevent unnecessary complexity. Focus on what is really needed and limit yoursel
 }
 ```
 
-**:thumbsup: Limited complexity**
+**Limited complexity (good)**
 ```css
 .font-size-small {
   font-size: 100%;
@@ -244,7 +244,7 @@ Prevent unnecessary complexity. Focus on what is really needed and limit yoursel
 
 Using a consistent and comprehensible way of terminology makes classnames predictable and easy to use
 
-**:thumbsdown: Incomprehensible**
+**Incomprehensible (bad)**
 ```css
 .fsS {
   font-size: 100%;
@@ -259,7 +259,7 @@ Using a consistent and comprehensible way of terminology makes classnames predic
 }
 ```
 
-**:thumbsup: Comprehensible, predictable**
+**Comprehensible, predictable (good)**
 ```css
 .font-size-small {
   font-size: 100%;
@@ -278,7 +278,7 @@ Using a consistent and comprehensible way of terminology makes classnames predic
 
 Create scaleable, efficent and economical systems with self-organized, decentralized components
 
-**:thumbsdown: Dependent, not reusable**
+**Dependent, not reusable (bad)**
 ```css
 .message { ... }
 
@@ -287,7 +287,7 @@ Create scaleable, efficent and economical systems with self-organized, decentral
 .message .image .subtitle { ... }
 ```
 
-**:thumbsup: Self-organized**
+**Self-organized (good)**
 ```css
 .message { ... }
 
@@ -301,7 +301,7 @@ Create scaleable, efficent and economical systems with self-organized, decentral
 
 Abstract, structure, hierarchise repeating patterns to make them reusable/modular
 
-**:thumbsdown: Repeated, redundant**
+**Repeated, redundant (bad)**
 ```css
 .border-top {
   border-top: 1px solid grey;
@@ -323,7 +323,7 @@ Abstract, structure, hierarchise repeating patterns to make them reusable/modula
 }
 ```
 
-**:thumbsup: Hierarchised, abstracted, modularized**
+**Hierarchised, abstracted, modularized (good)**
 ```css
 .border-top {
   border-top: 1px solid grey;
