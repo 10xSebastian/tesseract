@@ -90,7 +90,7 @@ You need access to tesseract's source sass files in order to create own componen
 ### Change variables (like color)
 
 It's possible to change variables (like color), which allows you to modify default modules and components provided by tesseract.
-Just import your own additional, overwriting, variables before you import tesseract:
+Just import your own additional, overriding, variables before you import tesseract:
 
 ```sass
 @import 'variables'
