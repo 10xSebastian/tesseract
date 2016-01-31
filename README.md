@@ -87,6 +87,21 @@ You need access to tesseract's source sass files in order to create own componen
 
   → [Custom component examples](examples/ror/app/assets/stylesheets/components)
 
+### Change variables (like color)
+
+It's possible to change variables (like color), which allows you to modify default modules and components provided by tesseract.
+Just import your own additional, overwriting, variables before you import tesseract:
+
+```sass
+@import 'variables'
+@import 'tesseract'
+```
+
+```sass
+# your own variables
+$colors: ('pink': #ff69b4, 'purple': #551a8b) !default
+```
+
 ## Principles
 
 In software development, principles help you to make complex things managable.
