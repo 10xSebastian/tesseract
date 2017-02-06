@@ -1,6 +1,6 @@
-[![alt tag](tesseract.png)](https://pape-io.github.io/tesseract/)
+[![alt tag](tesseract.png)](https://spape.github.io/tesseract/)
 
-→ [Reference page containing all components and modules](https://pape-io.github.io/tesseract/)
+→ [Reference page containing all components and modules](https://spape.github.io/tesseract/)
 
 It’s a challenge in any web development project to structure and organize all the css code.
 
@@ -10,10 +10,10 @@ This css framework is build upon existing software principles to help keeping th
 
 ## Quick start guide
 
-Embed tesseract using RawGit's CDN and use [existing modules and components](https://pape-io.github.io/tesseract/) right away.
+Embed tesseract using RawGit's CDN and use [existing modules and components](https://spape.github.io/tesseract/) right away.
 
 ```html
-  <link href='https://cdn.rawgit.com/pape-io/tesseract/1.1.0/dist/tesseract.min.css' rel='stylesheet' type='text/css'>
+  <link href='https://cdn.rawgit.com/spape/tesseract/1.1.0/dist/tesseract.min.css' rel='stylesheet' type='text/css'>
 ```
 
 → [Example using CDN](examples/simple.html)
@@ -25,7 +25,7 @@ You need access to tesseract's source sass files in order to create own componen
 1. Install tesseract source files via Bower
 
   ```
-  bower install git@github.com:pape-io/tesseract.git
+  bower install git@github.com:spape/tesseract.git
   ```
 
 1. Install dependencies: [sass](https://github.com/sass/sass), [sass-globbing](https://github.com/chriseppstein/sass-globbing) and [compass](https://github.com/Compass/compass)
@@ -364,16 +364,16 @@ Abstract, structure, hierarchise repeating patterns to make them reusable/modula
 With modules, concerns are separated. It's a self-contained unit that in a bigger context can be reused to execute the same action/functionality over and over again.
 Flexibility and reuseablity are the benefits of modules. 
 
-→ [Modules on reference page](https://pape-io.github.io/tesseract/#modules)
+→ [Modules on reference page](https://spape.github.io/tesseract/#modules)
 
 ## Components
 A component, by definition, is a unit of composition. It the context of this css-framwork, a component is made up of multiple modules.
 
-→ [Components on reference page](https://pape-io.github.io/tesseract/#components)
+→ [Components on reference page](https://spape.github.io/tesseract/#components)
 
 ## CSS Reset vs. CSS Normalization
 Tesseract uses [css-reset](https://github.com/shannonmoeller/reset-css) to remove all default browser css values for elements.
-This follows the principle of separation of concerns (see [principles](https://github.com/pape-io/tesseract#principles)).
+This follows the principle of separation of concerns (see [principles](https://github.com/spape/tesseract#principles)).
 
 ## Development
 
@@ -382,7 +382,7 @@ Requires to have node.js, ruby and bundler installed.
 ### Intitial checkout
 
 ```
-git clone git@github.com:pape-io/tesseract.git
+git clone git@github.com:spape/tesseract.git
 
 cd tesseract
 
@@ -436,7 +436,7 @@ fontcustom compile icons/vectors --templates scss --no-hash
 
 ### Author
 
-[Sebastian Pape](https://github.com/pape-io) is web-developer at heart and software craftsman focusing on full-stack application development.
+[Sebastian Pape](https://github.com/spape) is web-developer at heart and software craftsman focusing on full-stack application development.
 This project was started as part of his thesis in computer science.
 
 ### BrowserStack
